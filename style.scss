@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+/*
+	Theme Name: America.gov Base Theme
+	Theme URI: http://www.america.gov
+	Description: The base theme for America.gov and its derivatives.
+	Author: Office of Design, Bureau of International Information Programs
+	Author URI: http://d.esign.haus
+	Version: 1.0.0
+
+	Template: genesis
+	Template Version: 2.1
+
+	License: GPL-2.0+
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/**
+ 	* Contents
+	*
+	* [-- VARIABLES --]
+	* Globals....................Globally-available variables and configuration.
+	*
+	* [-- MIXINS --
+	* Mixins.....................Useful mixins, icluding EM conversion and media
+	* 													 queries.
+	*
+	* [-- BASE --]
+	* Normalize.css..............v3.0.2 - Render elements more consistently and
+	*														 with modern standards.
+	* Box sizing.................Better default box sizing across browsers.
+	* Float claring..............Improved float clearing.
+	* Default styling............Setting default styles for HTML elements.
+	*
+	* [-- LAYOUT --]
+	*	Site containers............Variety of site widths and other layout styles.
+	* Content containers.........Content, Sidebar layout styles.
+	* Column classes.............Responsive columns for use within the main
+	* 													 Content container.
+	*
+	* [-- MODULES --]
+	* Wordpress styles...........Tweaks to default Wordpress styles. Mostly deals
+	* 													 with avatars, alignment, and default search
+	* 													 forms/widget.
+	* Wordpress widget...........Primarily sets styles for list items within
+	*														 widgets and tweaks the default Wordpress calendar
+	*														 widget.
+	* Genesis styles.............Tweaks to the default Genesis styles. Author box,
+	* 													 breadcrumbs, etc.
+	* Titles.....................Shared styling for titles.
+	* Homepage...................Styles for the homepage.
+	* Featured content...........The featured category widget styles on the home
+	*														 page.
+	* Featured publications......Top promoted content boxes on the homepage.
+	* Featured posts.............How America - Featured Post widget content
+	*														 appears on the homepage.
+	* Publications search........Publications search, with filters, on the
+	*														 homepage.
+	* Post entry.................Post entry styles, after entry widget.
+	* Sidebars...................Styles for the various sidebars throughout the
+	* 													 theme.
+	* Site header................Title area, full width (no widgets), logo image
+	*														 (with no text title), widget area, and site
+	*														 header navigation.
+	* Site navigation............Base styles; secondary and responsive navigation.
+	* Archive page...............General styles, large background images for each
+	* 													 of the categories and publication types, returned
+	*														 results styling, and pagination.
+	* Single publication.........Includes general styles and layout, downloads
+	*														 box, and icons.
+	* Contact Us.................Normalizing styles for the contact form.
+	* Site footer................The legal text in the footer.
+	*
+	* [-- STATE --]
+	* JavaScript states..........Styles applied to elements when JS has changed
+	*														 its state.
+	*
+	* [-- THEME --]
+	* TODO: not sure if this file will remain.
+ */
+
+@import 'styles/variables';
+@import 'styles/mixins';
+@import 'styles/base';
+@import 'styles/layout';
+@import 'styles/modules';
+@import 'styles/state';
+@import 'styles/theme';
+
+//@import 'styles/media-queries';

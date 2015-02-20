@@ -1,0 +1,68 @@
+/*------------------------------------*\
+  #AMERICA.GOV-THEME
+\*------------------------------------*/
+
+
+.america ::selection {
+    background: $highlight;
+    color: $white;
+}
+
+.america a,
+.america a:hover {
+    color: $body-link;
+}
+
+.america .genesis-nav-menu a {
+    @include bp($tablet) {
+      color: $black;
+    }
+}
+
+.america .entry-title a,
+.america .site-title a,
+.america .site-title a:hover {
+    color: $black;
+}
+
+.america.tax-publication-type .archive-title,
+.america.category .archive-title,
+.america a.feature-primary-headline,
+.america a.feature-secondary-headline,
+.america .content .entry-header .entry-meta .entry-comments-link a,
+.america.footer-widgets .entry-title a,
+.america .genesis-nav-menu .sub-menu .current-menu-item > a,
+.america .genesis-nav-menu a:active,
+.america a.button {
+    color: $white;
+}
+
+.america .genesis-nav-menu .sub-menu .current-menu-item > a,
+.america .archive-pagination li a {
+    color: $white;
+
+    @include bp($tablet) {
+      background-color: $america-blue;
+      border: 1px solid $america-blue;
+    }
+}
+
+.america .archive-pagination li a:hover {
+  background-color: darken($america-blue, 5);
+}
+
+.america .archive-pagination li.active a {
+  background-color: $white;
+  border: 1px solid $america-blue;
+  color: $america-blue;
+}
+
+.term-book.america .genesis-nav-menu .menu-item-type-custom > a[title~=books],
+.term-pamphlet.america .genesis-nav-menu .menu-item-type-custom > a[title~=pamphlets],
+.america .genesis-nav-menu .current-menu-parent > a,
+.america .genesis-nav-menu .current-menu-item > a {
+    @include bp($tablet) {
+      background-color: $white;
+      border-bottom: 3px solid $america-blue;
+    }
+}

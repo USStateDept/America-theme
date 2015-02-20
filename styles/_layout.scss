@@ -1,0 +1,181 @@
+/*------------------------------------*\
+  #SITE-CONTAINERS
+\*------------------------------------*/
+
+
+.site-container {
+    margin: 0 auto;
+
+    @include bp($big-mobile) {
+      max-width: em(630);
+    }
+
+    @include bp($tablet) {
+      max-width: em(768);
+    }
+
+    @include bp($laptop) {
+      max-width: em(960);
+    }
+
+    @include bp($desktop) {
+      max-width: em(1140);
+    }
+}
+
+.america-landing .site-container {
+    max-width: em(800);
+}
+
+.site-inner {
+    background-color: $white;
+    clear: both;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.america-home .site-inner {
+    overflow: visible;
+}
+
+
+
+
+/*------------------------------------*\
+  #CONTENT-CONTAINERS
+\*------------------------------------*/
+
+
+/* Content  */
+.content {
+    float: right;
+    padding: em(30) em(10) em(10);
+    width: 100%;
+
+    @include bp($tablet) {
+      padding: em(30) em(40) em(10);
+    }
+
+    @include bp($laptop) {
+      width: em(660);
+    }
+
+    @include bp($desktop) {
+      padding: em(40) em(60) em(10);
+      width: em(800);
+    }
+}
+
+.content-sidebar .content {
+    float: left;
+}
+
+.full-width-content .content {
+    width: 100%;
+}
+
+.america-home .content {
+    padding: 0;
+}
+
+
+/* Primary Sidebar */
+.sidebar-primary {
+    width: 100%;
+
+    @include bp($laptop) {
+      float: right;
+      width: em(300);
+    }
+
+    @include bp($desktop) {
+      width: em(340);
+    }
+}
+
+.sidebar-content .sidebar-primary {
+    float: left;
+}
+
+
+
+
+/*------------------------------------*\
+  #COLUMN-CLASSES
+\*------------------------------------*/
+
+
+.five-sixths,
+.four-sixths,
+.one-fourth,
+.one-half,
+.one-sixth,
+.one-third,
+.three-fourths,
+.three-sixths,
+.two-fourths,
+.two-sixths,
+.two-thirds {
+  float: left;
+  margin: 0;
+  width: 100%;
+}
+
+/**
+  * Using an old school media query rather than the "bp" mixin because it is
+  * more efficient.
+  *
+  */
+
+@media (min-width: $tablet) {
+  .five-sixths,
+  .four-sixths,
+  .one-fourth,
+  .one-half,
+  .one-sixth,
+  .one-third,
+  .three-fourths,
+  .three-sixths,
+  .two-fourths,
+  .two-sixths,
+  .two-thirds {
+    margin-left: 2.564102564102564%;
+  }
+
+  .one-half,
+  .three-sixths,
+  .two-fourths {
+    width: 48.717948717948715%;
+  }
+
+  .one-third,
+  .two-sixths {
+    width: 31.623931623931625%;
+  }
+
+  .four-sixths,
+  .two-thirds {
+    width: 65.81196581196582%;
+  }
+
+  .one-fourth {
+    width: 23.076923076923077%;
+  }
+
+  .three-fourths {
+    width: 74.35897435897436%;
+  }
+
+  .one-sixth {
+    width: 14.52991452991453%;
+  }
+
+  .five-sixths {
+    width: 82.90598290598291%;
+  }
+}
+
+.first {
+  clear: both;
+  margin-left: 0;
+}

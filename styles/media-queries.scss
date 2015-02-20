@@ -1,0 +1,245 @@
+/*
+Media Queries
+---------------------------------------------------------------------------------------------------- */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-moz-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min-device-pixel-ratio: 1.5) {
+
+    .search-form input[type="search"] {
+        background-image: url(images/icon-search@2x.png);
+    }
+
+    .content .entry-header .entry-meta .entry-comments-link a {
+        background-image: url(images/icon-comments@2x.png)
+    }
+
+    .sidebar li {
+        background-image: url(images/icon-li@2x.png);
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .content {
+        width: 660px;
+    }
+
+    .sidebar-primary {
+        width: 300px;
+    }
+
+    .title-area {
+        width: 40%;
+    }
+
+    .breadcrumb {
+        margin: -30px -40px 30px;
+    }
+
+    .content {
+        padding: 30px 40px 10px;
+    }
+
+    /* .site-header .genesis-nav-menu a {
+        padding: 33px 18px;
+    } */
+
+    .content #genesis-responsive-slider .flex-control-nav,
+    .content #genesis-responsive-slider .flex-direction-nav li a,
+    .content #genesis-responsive-slider .flex-direction-nav li a.prev {
+        display: none;
+    }
+
+    .feature-image-container--primary:before {
+        width: 607px;
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+
+    .content,
+    .sidebar-primary,
+    .sidebar-secondary,
+    .wrap {
+        width: 100%;
+    }
+
+    .title-area {
+        width: 50%;
+    }
+
+    .header-image .title-area,
+    .header-image .site-title,
+    .header-image .site-title a {
+        float: none;
+        margin: 0 auto;
+    }
+
+    .genesis-nav-menu li {
+        float: none;
+    }
+
+    .genesis-nav-menu {
+        text-align: center;
+    }
+
+    .genesis-nav-menu li.right {
+        display: none;
+    }
+
+    .content #genesis-responsive-slider .slide-excerpt {
+        display: none;
+    }
+
+    .comment-list li.depth-1,
+    .ping-list li.depth-1 {
+        margin: 30px 0;
+    }
+
+    .featuredpost .entry {
+        clear: right;
+        float: left;
+        padding: 0 2.8%;
+        width: 25%;
+    }
+
+    .featuredpost .entry:nth-child(7) {
+        display: none;
+        visibility: hidden;
+    }
+
+    .feature-image-container--primary:before {
+        width: 485px;
+    }
+
+    .archive .publication {
+      min-height: 465px;
+      width: 33%;
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+
+    .footer-widgets-1 {
+        margin: 0;
+    }
+
+    .nav-secondary .genesis-nav-menu > .first > a,
+    .nav-secondary .genesis-nav-menu > .last > a,
+    .nav-secondary .genesis-nav-menu a {
+        font-size: 12px;
+        padding: 12px;
+    }
+
+    .featuredpost .entry {
+        clear: right;
+        float: left;
+        padding: 0 2.8%;
+        width: 50%;
+    }
+
+    .featuredpost .entry:nth-child(7) {
+        display: none;
+        visibility: hidden;
+    }
+
+    .featuredpost .entry-title {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .featuredpost .more-from-category {
+        display: none;
+        visibility: hidden;
+    }
+
+
+    .featuredpost .widget-title {
+        display: block;
+    }
+
+    .featuredpost .more-from-category__mobile {
+        display: block;
+        visibility: visible;
+    }
+
+    .tax-publication-type .content,
+    .category .content {
+        padding: 30px 10px 10px;
+    }
+
+    .tax-publication-type .archive-description,
+    .category .archive-description {
+        padding: 150px 10px 0;
+    }
+
+    .tax-publication-type .archive-title,
+    .category .archive-title {
+        font-size: 30px;
+    }
+
+    .archive .publication {
+      min-height: 560px;
+      width: 50%;
+    }
+
+    .feature-image-container--primary:before,
+    .feature-image-container--secondary:before {
+      display: none;
+    }
+
+
+}
+
+@media only screen and (max-width: 500px) {
+
+    .entry-title {
+        font-size: 24px;
+    }
+
+    .content .entry-header .entry-meta .entry-comments-link {
+        display: none;
+    }
+
+    .archive .publication {
+        min-height: 465px;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+
+    .featuredpost .entry {
+        clear: both;
+        width: 100%;
+    }
+
+    .featuredpost .entry-title {
+        text-align: center;
+    }
+
+    .archive .publication {
+      margin-bottom: 30px;
+      width: 100%;
+    }
+
+    .homepage-subject-header {
+
+    }
+
+}
+
+
+@media only screen and (max-width: 270px) {
+
+    .site-title {
+        font-size: 26px;
+    }
+
+}

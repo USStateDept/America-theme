@@ -1,0 +1,1686 @@
+/*------------------------------------*\
+  #WORDPRESS-STYLES
+\*------------------------------------*/
+
+
+.avatar {
+  border: 1px solid $white;
+  float: left;
+}
+
+.alignleft .avatar {
+  margin-right: 24px;
+}
+
+.alignright .avatar {
+  margin-left: 24px;
+}
+
+.search-form {
+  overflow: hidden;
+}
+
+.genesis-nav-menu .search input[type="submit"],
+.widget_search input[type="submit"] {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.search-form input[type="search"] {
+  background: $white url(images/icon-search.png) no-repeat right;
+  background-size: 36px 16px;
+  color: $dark-gray;
+  font-size: 10px;
+  margin-bottom: 10px;
+  padding: 16px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+a.aligncenter img {
+  display: block;
+  margin: 0 auto;
+}
+
+img.centered,
+.aligncenter {
+  display: block;
+  margin: 0 auto 24px;
+}
+
+a.alignnone img,
+img.alignnone {
+  margin-bottom: 12px;
+}
+
+.alignleft {
+  float: left;
+  text-align: left;
+}
+
+.alignright {
+  float: right;
+  text-align: right;
+}
+
+a.alignleft,
+a.alignnone,
+a.alignright {
+  max-width: 100%;
+}
+
+a.alignnone {
+  display: inline-block;
+}
+
+a.alignleft img,
+img.alignleft,
+.wp-caption.alignleft {
+  margin: 0 24px 12px 0;
+}
+
+a.alignright img,
+img.alignright,
+.wp-caption.alignright {
+  margin: 0 0 24px 24px;
+}
+
+.entry-content .wp-caption-text {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+
+
+
+
+/*------------------------------------*\
+  #WORDPRESS-WIDGET
+\*------------------------------------*/
+
+
+.widget {
+  word-wrap: break-word;
+}
+
+.widget li {
+  list-style-type: none;
+  margin-bottom: 6px;
+  margin-top: 6px;
+  text-align: left;
+}
+
+.widget ol > li {
+  background-image: none;
+  list-style-position: inside;
+  list-style-type: decimal;
+  padding-left: 20px;
+  text-indent: -20px;
+}
+
+.widget ul > li {
+  text-indent: 0;
+}
+
+.widget ul > li {
+  list-style-position: outside;
+  padding: 0 0 0 16px;
+}
+
+.widget ol > li:last-child,
+.widget ul > li:last-child {
+  margin-bottom: 0;
+}
+
+.widget_calendar table {
+  width: 100%;
+}
+
+.widget_calendar td,
+.widget_calendar th {
+  text-align: center;
+}
+
+.widget_calendar caption {
+  font-size: 12px;
+  font-style: italic;
+  padding: 2px 6px 0 0;
+  text-align: right;
+}
+
+
+
+
+/*------------------------------------*\
+  #GENESIS-STYLES
+\*------------------------------------*/
+
+
+.breadcrumb {
+  background-color: $gray;
+  color: $dark-gray;
+  font-size: 12px;
+  margin: -40px -60px 30px;
+  padding: 20px;
+}
+
+.america-home .breadcrumb {
+  margin: 0;
+}
+
+.archive-description,
+.author-box {
+  margin-bottom: 30px;
+}
+
+.author-box {
+  background-color: $gray;
+  padding: 30px;
+}
+
+.author-box-title {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.author-box p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.author-box .avatar {
+  margin-right: 24px;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #TITLES
+\*------------------------------------*/
+
+
+.entry-title {
+  font-size: 42px;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.entry-title a,
+.sidebar .widget-title a {
+  color: $black;
+}
+
+.entry-title a:hover,
+.footer-widgets .entry-title a:hover {
+  color: $body-link;
+  text-decoration: none;
+}
+
+.archive-title,
+.widget-title {
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer-widgets .entry-title,
+.sidebar .entry-title {
+  font-size: 16px;
+}
+
+.home-cta .widget-title {
+  font-size: 24px;
+  margin-bottom: 6px;
+  text-transform: none;
+}
+
+.home-cta .entry-title a,
+.home-cta .widget-title,
+.footer-widgets .entry-title a,
+.footer-widgets .widget-title {
+  color: $white;
+}
+
+
+
+
+/*------------------------------------*\
+  #HOMEPAGE
+\*------------------------------------*/
+
+
+.home-middle {
+  padding: 0 30px 0;
+}
+
+.home-bottom,
+.home-middle {
+  background-color: $white;
+  clear: both;
+  overflow: hidden;
+}
+
+.home-bottom {
+  padding: 60px 30px 0;
+}
+
+.home-bottom .widget,
+.home-middle .widget {
+
+  @include bp($tablet) {
+    float: left;
+    padding: 0 2.8%;
+    width: 33.33333333333%;
+  }
+}
+
+.home-bottom .widget:nth-of-type(3n+1),
+.home-middle .widget:nth-of-type(3n+1) {
+  clear: left;
+}
+
+.america-home a.more-link {
+  clear: both;
+  display: block;
+  margin: 30px 0 0;
+}
+
+.america-home .home-cta {
+  background-color: $black;
+  color: $gray;
+  float: left;
+  padding: 60px;
+  width: 100%
+}
+
+.america-home .home-cta p {
+  color: $gray;
+}
+
+.home-cta .button {
+  display: inline-block;
+  float: none;
+  margin: 16px 0 0;
+  text-align: center;
+
+  @include bp($tablet) {
+    float: right;
+    margin-top: -30px;
+  }
+}
+
+
+
+
+/*------------------------------------*\
+  #FEATURED-CONTENT
+\*------------------------------------*/
+
+
+.featured-content .entry {
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.featured-content .entry-title {
+  font-size: 18px;
+}
+
+.america-home .featured-content .entry {
+  margin-bottom: 36px;
+}
+
+
+
+
+// TODO: This is not flexible enough
+
+/*------------------------------------*\
+  #FEATURED-PUBLICATIONS
+\*------------------------------------*/
+
+
+.features {
+  padding: 30px 0 0;
+  overflow: hidden;
+}
+
+.feature-primary {
+  width: 100%;
+
+  @include bp($tablet) {
+    float: left;
+    padding: 0 2.5% 0 0;
+    width: 65.7%;
+  }
+}
+
+.feature-secondary {
+  display: none;
+  visibility: hidden;
+
+  @include bp($tablet) {
+    float: right;
+    padding: 0 0 0 2.5%;
+    visibility: visible;
+    width: 34%;
+  }
+}
+
+.feature-primary,
+.feature-secondary {
+  overflow: hidden;
+  position: relative;
+
+  @include bp($tablet) {
+    display: inline-block;
+  }
+}
+
+.features img {
+  min-width: 100%;
+}
+
+.features h2 {
+  margin-bottom: 10px;
+}
+
+/*.feature-primary-image-container:before {
+    bottom: 1.75em;
+    font-size: 35px;
+    width: 720px;
+}
+
+.feature-secondary-image-container:before {
+    bottom: 1.75em;
+    font-size: 36px;
+    width: 359px;
+}
+
+// TODO: This needs to be more general so that it can be applied to images at
+// will by just add class, ideally
+.archive .archive-description:before,
+.feature-primary-image-container:before,
+.feature-secondary-image-container:before {
+    content: "";
+    display: block;
+    height: 50%;
+    position: absolute;
+    z-index: 0;
+    background: -moz-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.85) 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(0,0,0,0)),color-stop(100%,rgba(0,0,0,.85)));
+    background: -webkit-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.85) 100%);
+    background: -o-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.85) 100%);
+    background: -ms-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.85) 100%);
+    background: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.85) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#b3000000', GradientType=0);
+}*/
+
+
+.feature-primary-headline,
+.feature-secondary-headline {
+  bottom: 80px;
+  left: 10px;
+  position: relative;
+}
+
+.feature-primary-headline {
+  font-size: 7vw;
+
+  @include bp($big-mobile) {
+    font-size: 6.5vw;
+  }
+
+  @include bp($tablet) {
+    font-size: 27px;
+  }
+
+  @include bp($laptop) {
+    font-size: 36px;
+  }
+}
+
+.feature-secondary-headline {
+  font-size: 20px;
+
+  @include bp($laptop) {
+    font-size: 23px;
+  }
+
+  @include bp($desktop) {
+    font-size: 30px;
+  }
+}
+
+.homepage-subject-header {
+  border-bottom: $border;
+  font-family: $body-font;
+  margin: -10px 0 30px 0;
+  padding: 0 15px 10px;
+
+  @include bp($big-mobile) {
+    padding: 0 30px 10px;
+  }
+}
+
+
+
+
+// TODO: This is very focused on how the publications should appear on the
+// homepage of the Publication's site. The widget should be refactored and
+// allow the web producers to configure the posts should display.
+
+/*------------------------------------*\
+  #FEATURED-POST
+\*------------------------------------*/
+
+
+.featuredpost .widget-title {
+  display: inline-block;
+}
+
+.featuredpost .more-from-category {
+  display: inline-block;
+  float: right;
+}
+
+.featuredpost .more-from-category-mobile {
+  clear: both;
+  display: none;
+  visibility: hidden;
+}
+
+.featuredpost .more-from-category-mobile a,
+.featuredpost .more-from-category a {
+  color: $black;
+}
+
+.featuredpost .more-from-category-mobile a:after,
+.featuredpost .more-from-category a:after {
+  content: '\00BB';
+  display: inline-block;
+  padding-left: 5px;
+}
+
+.home-bottom .widget.featuredpost,
+.home-middle .widget.featuredpost {
+  padding: 0;
+  width: 100%;
+}
+
+.featuredpost .entry {
+  clear: right;
+  float: left;
+  overflow: hidden;
+  padding: 0 2.8%;
+  width: 20%;
+}
+
+.featuredpost .entry-title {
+  word-wrap: normal;
+}
+
+
+
+
+/*------------------------------------*\
+  #PUBLICATIONS-SEARCH
+\*------------------------------------*/
+
+
+.resources-search {
+  border: $border;
+  border-top: 0;
+}
+
+.resources-search .widget-wrap {
+  background-color: $gray;
+  margin: 0 1px 1px;
+  padding: 20px 10px;
+
+  @include bp($tablet) {
+    padding: 20px;
+  }
+}
+
+.resources-search input[type="search"] {
+  float:left;
+  background-color: $white;
+  border: 1px solid darken($gray, 10);
+  border-radius: 0;
+  box-shadow: none;
+  line-height: 1;
+  margin: 0 2vw 5px 0;
+  padding: 10px;
+  width: 65vw;
+
+  @include bp($tablet) {
+    margin-right: 1%;
+    width: 40%;
+  }
+}
+
+.resources-search .select-holder {
+  display: none;
+  visibility: hidden;
+
+  @include bp($tablet) {
+    background: $white url(images/icon-select-arrow.png) 90% 50% no-repeat;
+    display: block;
+    float: left;
+    margin-right: 1%;
+    overflow: hidden;
+    visibility: visible;
+  }
+}
+
+.resources-search .select-holder.category,
+.resources-search .select-holder.type {
+  width: 20%;
+}
+
+.resources-search .select-holder select {
+  background: transparent;
+  background-image: none;
+  border: 1px solid darken($gray, 10);
+  border-radius: 0;
+  box-shadow: none;
+  line-height: 1em;
+  padding: 12px;
+  -webkit-appearance: none;
+}
+
+.resources-search .select-holder select:focus {
+  outline: none;
+}
+
+.resources-search .searchsubmit {
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: $america-blue;
+  margin-right: 0;
+  padding: 10px;
+  width: auto;
+
+  @include bp($tablet) {
+    padding: 10px 30px;
+    width: 17%;
+  }
+}
+
+.resources-search .searchsubmit:hover {
+  background-color: $america-blue;
+}
+
+.resources-search ::-webkit-input-placeholder {
+  padding-top: 2px;
+  color: $black;
+}
+
+.resources-search :-moz-placeholder { /* Firefox 18- */
+  color: $black;
+}
+
+.resources-search ::-moz-placeholder {  /* Firefox 19+ */
+  color: $black;
+}
+
+.resources-search :-ms-input-placeholder {
+  color: $black;
+}
+
+
+
+
+/*------------------------------------*\
+  #POST-ENTRIES
+\*------------------------------------*/
+
+
+.entry {
+  margin-bottom: 40px;
+}
+
+.entry-content ol,
+.entry-content p,
+.entry-content ul,
+.quote-caption {
+  margin-bottom: 26px;
+}
+
+.entry-content ol li,
+.entry-content ul li {
+  margin-left: 40px;
+}
+
+.entry-content ol > li {
+  list-style-type: decimal;
+}
+
+.entry-content ul > li {
+  list-style-type: disc;
+}
+
+.entry-content ol ol,
+.entry-content ul ul,
+.entry-content .wp-caption p {
+  margin-bottom: 0;
+}
+
+.content .entry-header .entry-meta {
+  background-color: $gray;
+  clear: both;
+  color: $black;
+  font-size: 12px;
+  line-height: 5;
+  margin: 0 0 24px -60px;
+  max-width: 600px;
+  overflow: hidden;
+  padding-left: 60px;
+  text-transform: uppercase;
+}
+
+.content .entry-header .entry-meta a {
+  color: $black;
+  font-weight: 700;
+}
+
+.content .entry-header .entry-meta {
+  margin-bottom: 24px;
+}
+
+.content .entry-header .entry-meta .entry-comments-link {
+  background-color: $body-link;
+  color: $white;
+  float: right;
+  font-size: 12px;
+  padding: 0 20px;
+  text-transform: uppercase;
+}
+
+.content .entry-header .entry-meta .entry-comments-link a {
+  background: url(images/icon-comments.png) no-repeat left;
+  background-size: 16px 16px;
+  color: $white;
+  padding-left: 32px;
+}
+
+.entry-footer .entry-meta {
+  border-top: 1px dotted $gray;
+  font-size: 14px;
+  margin: 0;
+  padding-top: 10px;
+}
+
+.entry-footer .entry-tags {
+  background: url(images/icon-dot.png) no-repeat left;
+  margin-left: 4px;
+  padding-left: 10px;
+}
+
+
+/**
+  * After entry widget.
+  */
+
+.after-entry {
+  background-color: $gray;
+  margin-bottom: 30px;
+  padding: 30px;
+  text-align: center;
+}
+
+.after-entry .widget {
+  margin-bottom: 30px;
+}
+
+.after-entry .widget:last-child,
+.after-entry p:last-child {
+  margin: 0;
+}
+
+.after-entry li {
+  list-style-type: none;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #SIDEBARS
+\*------------------------------------*/
+
+
+.sidebar {
+  display: inline;
+  font-size: 14px;
+  padding-bottom: 30px;
+}
+
+.sidebar p {
+  margin-bottom: 16px;
+}
+
+.sidebar p:last-child,
+.sidebar ul {
+  margin-bottom: 0;
+}
+
+.sidebar li,
+.sidebar .more-from-category a {
+  background: url(images/icon-li.png) no-repeat 0 7px;
+  background-size: 8px 8px;
+  margin-bottom: 6px;
+  padding: 0 0 6px 16px;
+}
+
+.sidebar .more-from-category {
+  padding-top: 6px;
+}
+
+.sidebar .widget {
+  margin-bottom: 0;
+  padding: 30px 40px;
+  word-wrap: break-word;
+}
+
+.sidebar .search-form {
+  width: 100%;
+}
+
+
+
+
+/*------------------------------------*\
+  #SITE-HEADER
+\*------------------------------------*/
+
+
+.site-header {
+  border-bottom: $border;
+  margin: 1px auto;
+  min-height: 0;
+  padding: 10px 0 0;
+  width: 100%;
+
+  @include bp($tablet) {
+    min-height: 88px;
+    padding: 20px 0;
+  }
+}
+
+
+/**
+  * Title area.
+  */
+
+.title-area {
+  float: left;
+  font-weight: 700;
+  display: inline-block;
+  overflow: hidden;
+  width: 75%;
+
+  @include bp($tablet) {
+    display: block;
+    width: 40%;
+  }
+}
+
+.site-title {
+  background: url(images/dos-seal.png) 3% center no-repeat;
+  background-size: 15%;
+  font-family: $body-font;
+  font-size: 25px;
+  font-size: 7.5vw;
+  margin: 0 0 5px;
+  padding-left: 30px;
+  text-align: center;
+
+  @include bp($big-mobile) {
+    font-size: 25px;
+    font-size: 6vw;
+    background-size: 13%;
+    padding-left: 18%;
+    text-align: left;
+  }
+
+  @include bp($tablet) {
+    background-position: left center;
+    background-size: auto;
+    font-size: 36px;
+    line-height: 1.25;
+    padding-left: 100px;
+  }
+}
+
+.site-title a,
+.site-title a:hover {
+  color: $black;
+  display: block;
+  line-height: 2em;
+  text-decoration: none;
+
+  @include bp($tablet) {
+    line-height: 88px;
+  }
+}
+
+
+/**
+  * Full width header. No widgets.
+  */
+
+.header-full-width .title-area,
+.header-full-width .site-title {
+  width: 100%;
+}
+
+.header-image .site-description,
+.header-image .site-title a {
+  display: block;
+  text-indent: -9999px;
+}
+
+/**
+  * Logo image. Hide text.
+  */
+
+.header-image .site-description,
+.header-image .site-title a {
+  display: block;
+  text-indent: -9999px;
+}
+
+.header-image .title-area,
+.header-image .site-title,
+.header-image .site-title a {
+  float: left;
+  margin: 0;
+  max-width: 260px;
+  min-height: 100px;
+  padding: 0;
+  width: 100%;
+}
+
+.header-image .site-title a {
+  background-size: contain !important;
+}
+
+
+/**
+  * Site header widget area.
+  */
+
+.site-header .widget-area {
+  float: right;
+  width: 100%;
+
+  @include bp($tablet) {
+    width: 50%;
+  }
+
+  @include bp($desktop) {
+    width: 60%;
+  }
+}
+
+.site-header .header-widget-area {
+  background-color: $mobile-nav;
+  display: block;
+
+  @include bp($tablet) {
+    background: transparent;
+  }
+}
+
+.site-header .widget {
+  padding: 28px 0 0;
+}
+
+
+/**
+  * Site header navigation.
+  */
+
+.site-header .widget_nav_menu {
+  padding: 0;
+}
+
+.site-header .genesis-nav-menu {
+  float: right;
+  width: auto;
+}
+
+.site-header .genesis-nav-menu a {
+  font-size: 1.1em;
+  line-height: 88px;
+  padding: 0 18px;
+}
+
+.site-header .genesis-nav-menu .sub-menu a {
+  @include bp($tablet) {
+    padding: 10px 18px;
+    line-height: 1em;
+  }
+}
+
+.site-header .sub-menu .sub-menu {
+  margin-top: -40px;
+}
+
+
+
+/*------------------------------------*\
+  #SITE-NAVIGATION
+\*------------------------------------*/
+
+
+.genesis-nav-menu {
+  background-color: $white;
+  clear: both;
+  color: $black;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+}
+
+.genesis-nav-menu .menu-item {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.genesis-nav-menu a {
+  color: $black;
+  display: block;
+  padding: 16px 20px;
+  position: relative;
+}
+
+.genesis-nav-menu li:hover,
+.genesis-nav-menu a:hover {
+  background-color: $white;
+  color: $black;
+  text-decoration: none;
+}
+
+.genesis-nav-menu .current-menu-item > a {
+  background-color: $body-link;
+  color: $white;
+}
+
+.genesis-nav-menu .menu-item-has-children > a:after {
+  content: '\f140';
+  display: inline-block;
+  font: normal 20px/1 'dashicons';
+  height: 20px;
+  position: relative;
+  top: 5px;
+  width: 20px;
+}
+
+.genesis-nav-menu .sub-menu {
+  left: -9999px;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  position: absolute;
+  -webkit-transition: opacity .4s ease-in-out;
+  -moz-transition:    opacity .4s ease-in-out;
+  -ms-transition:     opacity .4s ease-in-out;
+  -o-transition:      opacity .4s ease-in-out;
+  transition:         opacity .4s ease-in-out;
+  width: 155px;
+  z-index: 999;
+}
+
+.genesis-nav-menu .sub-menu a {
+  background-color: $white;
+  border: $border;
+  border-top: none;
+  color: $black;
+  padding: 10px 18px;
+  position: relative;
+  width: 155px;
+}
+
+.genesis-nav-menu .sub-menu a:hover {
+  background-color: $gray;
+  color: $black;
+}
+
+.genesis-nav-menu .sub-menu .sub-menu {
+  margin: -40px 0 0 147px;
+}
+
+.sub-menu .current-menu-item > a {
+  border: 0;
+}
+
+.genesis-nav-menu .menu-item:hover {
+  position: static;
+}
+
+.genesis-nav-menu .menu-item:hover > .sub-menu {
+  left: auto;
+  opacity: 1;
+}
+
+.genesis-nav-menu > .first > a {
+  padding-left: 0;
+}
+
+.genesis-nav-menu > .last > a {
+  padding-right: 0;
+}
+
+.genesis-nav-menu > .right {
+  display: inline-block;
+  float: right;
+  list-style-type: none;
+  padding: 16px 20px;
+}
+
+.genesis-nav-menu > .right > a {
+  display: inline;
+  padding: 0;
+}
+
+.genesis-nav-menu > .rss > a {
+  background: url(images/icon-rss.png) no-repeat left;
+  background-size: 12px 12px;
+  margin-left: 12px;
+  padding-left: 16px;
+}
+
+.genesis-nav-menu > .twitter > a {
+  background: url(images/icon-twitter-nav.png) no-repeat left;
+  background-size: 16px 16px;
+  padding-left: 20px;
+}
+
+.genesis-nav-menu > .search {
+  padding: 0;
+}
+
+.genesis-nav-menu .search-form {
+  width: 100%;
+}
+
+
+/**
+  * Responsive Navigation
+  */
+
+.responsive-menu-icon::before {
+  content: "\f333";
+  display: block;
+  font: normal 25px/2em 'dashicons';
+  font: normal 7.5vw/2em 'dashicons';
+  margin: 0 auto;
+  padding: 0 3px;
+  text-align: right;
+
+  @include bp($big-mobile) {
+    font: normal 6vw/2em 'dashicons';
+  }
+}
+
+.responsive-menu-icon {
+  background-color: $white;
+  cursor: pointer;
+
+  @include bp($tablet) {
+    display: none;
+  }
+}
+
+.genesis-nav-menu.responsive-menu {
+  background-color: transparent;
+  float: left;
+  width: 100%;
+}
+
+.genesis-nav-menu.responsive-menu > .menu-item > .sub-menu,
+.genesis-nav-menu.responsive-menu {
+  display: none;
+}
+
+.genesis-nav-menu.responsive-menu .menu-item {
+  display: block;
+}
+
+.genesis-nav-menu.responsive-menu .menu-item:hover {
+  position: static;
+}
+
+.genesis-nav-menu.responsive-menu .menu-item-has-children {
+  cursor: pointer;
+}
+
+.genesis-nav-menu.responsive-menu .menu-item-has-children > a {
+  margin-right: 60px;
+}
+
+.genesis-nav-menu.responsive-menu > .menu-item-has-children:before {
+  content: "\f140";
+  float: right;
+  font: normal 20px/1 'dashicons';
+  height: 20px;
+  padding: 12px 20px;
+  right: 0;
+  text-align: right;
+  z-index: 9999;
+}
+
+.genesis-nav-menu.responsive-menu .menu-open.menu-item-has-children:before {
+  content: "\f142";
+}
+
+.genesis-nav-menu.responsive-menu .sub-menu {
+  background-color: $mobile-navL2;
+  border: none;
+  left: auto;
+  opacity: 1;
+  padding-left: 20px;
+  position: relative;
+  width: 100%;
+  z-index: 99;
+}
+
+.genesis-nav-menu.responsive-menu .sub-menu .sub-menu {
+  margin: 0;
+}
+
+.genesis-nav-menu.responsive-menu a,
+.genesis-nav-menu.responsive-menu li,
+.genesis-nav-menu.responsive-menu a:hover,
+.genesis-nav-menu.responsive-menu li:hover {
+  color: $gray;
+  background: transparent;
+  border: 0;
+  display: block;
+  line-height: 1em;
+  padding: 16px;
+  position: relative;
+  text-transform: none;
+  width: 100%;
+}
+
+.genesis-nav-menu.responsive-menu li,
+.genesis-nav-menu.responsive-menu li:hover {
+  padding: 0;
+}
+
+.genesis-nav-menu.responsive-menu .menu-item-has-children > a:after {
+  content: '';
+  display: none;
+}
+
+.genesis-nav-menu.responsive-menu .sub-menu .current-menu-item > a {
+  background: none;
+}
+
+
+/**
+  * Secondary navigation. // TODO: Do we need this?
+  */
+
+.nav-secondary .genesis-nav-menu li:hover,
+.nav-secondary .genesis-nav-menu a:hover,
+.nav-secondary .genesis-nav-menu li.current-menu-item a:hover {
+  background-color: transparent;
+  color: $black;
+}
+
+.nav-secondary .genesis-nav-menu .current-menu-item > a {
+  background-color: transparent;
+  color: $body-link;
+}
+
+
+
+
+/*------------------------------------*\
+  #ARCHIVE-PAGE
+\*------------------------------------*/
+
+
+.archive .content {
+    padding-top: 30px;
+}
+
+
+.archive .archive-title {
+  font-size: 30px;
+  overflow: hidden;
+  position: relative;
+  text-transform: none;
+
+  @include bp($tablet) {
+    font-size: 45px;
+  }
+}
+
+.archive .archive-description:before {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.archive .archive-description {
+    margin-bottom: 70px;
+    padding: 150px 10px 0;
+    position: relative;
+
+    @include bp($tablet) {
+      padding: 325px 50px 25px;
+    }
+}
+
+
+/**
+  * About America category page.
+  */
+
+.category-about-america .archive-description {
+    background: url(images/about-america.jpg) 0 0 no-repeat;
+    background-size: cover;
+}
+
+
+/**
+  * Democracy category page.
+  */
+
+.category-democracy .archive-description {
+    background: url(images/vote.jpg) center top no-repeat;
+    background-size: cover;
+}
+
+
+/**
+  * Development category page.
+  */
+
+.category-development .archive-description {
+    background: url(images/development.jpg) center top no-repeat;
+    background-size: cover;
+}
+
+
+/**
+  * Education category page.
+  */
+
+.category-education .archive-description {
+    background: url(images/education.jpg) center top no-repeat;
+    background-size: cover;
+}
+
+
+/**
+  * English category page.
+  */
+
+.category-english-learning .archive-description {
+    background: url(images/english.jpg) center top no-repeat;
+    background-size: cover;
+}
+
+
+/**
+  * Entrepreneurship category page.
+  */
+
+.category-entrepreneurship .archive-description {
+    background: url(images/entrepreneurship.jpg) center top no-repeat;
+    background-size: cover;
+}
+
+
+/**
+  * Environment category page.
+  */
+
+.category-environment .archive-description {
+    background: url(images/environment.jpg) center top no-repeat;
+    background-size: cover;
+}
+
+
+/**
+  * Health category page.
+  */
+
+.category-health .archive-description {
+    background: url(images/health.jpg) center top no-repeat;
+    background-size: cover;
+}
+
+
+/**
+  * Human rights category page.
+  */
+
+.category-human-rights .archive-description {
+    background: url(images/human-rights.jpg) center top no-repeat;
+    background-size: cover;
+}
+
+
+/**
+  * Science & technology category page.
+  */
+
+.category-science-technology .archive-description {
+    background: url(images/science-tech.jpg) center top no-repeat;
+    background-size: cover;
+}
+
+
+/**
+  * Visas category page.
+  */
+
+.category-visas .archive-description {
+    background: url(images/visas.jpg) center top no-repeat;
+    background-size: cover;
+}
+
+
+/**
+  * Women & girls category page.
+  */
+
+.category-women-girls .archive-description {
+    background: url(images/women-girls.jpg) center top no-repeat;
+    background-size: cover;
+}
+
+
+/**
+  * Books category page.
+  */
+
+.term-book .archive-description {
+    background: url(images/books.jpg) center top no-repeat;
+    background-size: cover;
+}
+
+
+/**
+  * Pamphlets category page.
+  */
+
+.term-pamphlet .archive-description {
+    background: url(images/pamphlets.jpg) center top no-repeat;
+    background-size: cover;
+}
+
+
+/**
+  * Search archive page.
+  */
+
+.search .archive-description {
+  display: none;
+  visibility: hidden;
+}
+
+
+/**
+  * Returned archive results.
+  */
+
+.archive .publication {
+  margin-bottom: em(30);
+  padding: 0 3%;
+
+  @include bp($big-mobile) {
+    float: left;
+    width: 50%;
+  }
+
+  @include bp($tablet) {
+    width: 33%;
+  }
+
+  @include bp($laptop) {
+    margin-bottom: 0;
+    min-height: 450px;
+    width: 25%;
+  }
+}
+
+.archive .entry-title {
+  font-size: 20px;
+  line-height: 1.25em;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.archive .publication-featured-image img {
+  min-width: 100%;
+}
+
+
+/**
+  * Pagination.
+  */
+
+.archive-pagination {
+  clear: both;
+  font-size: 14px;
+  padding: 30px 0;
+}
+
+.archive-pagination li {
+  display: inline;
+}
+
+.archive-pagination li a {
+  background-color: $body-link;
+  border-radius: 5px;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 2;
+  margin-bottom: 4px;
+  padding: 8px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.archive-pagination li a:hover,
+.archive-pagination li.active a {
+  background-color: $body-link;
+  text-decoration: none;
+}
+
+
+
+
+/*------------------------------------*\
+  #SINGLE-PUBLICATION
+\*------------------------------------*/
+
+
+/**
+  * Basic publication content.
+  */
+
+.single-publication .publication-featured-image {
+    float: left;
+    margin: 0 0 1em 0;
+}
+
+.entry-title {
+  font-size: 30px;
+  line-height: 1.25em;
+}
+
+.single-publication .entry-content {
+    overflow: hidden;
+}
+
+.entry-categories,
+.entry-publication-type,
+.entry-tags {
+  display: block;
+}
+
+
+/**
+  * Downloads box.
+  */
+
+.downloads {
+  clear: both;
+  margin: 1em 0 2em;
+}
+
+// TODO: Standardize with ShareAmerica
+.downloads-title {
+  border-bottom: 1px solid $black;
+  font-family: $body-font;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.downloads p {
+  margin: 0;
+}
+
+.downloads-file.mobi:after,
+.downloads-file.epub:after,
+.downloads-file.pdf:after {
+  color: $black;
+  cursor: default;
+  display: inline-block;
+  padding-left: 5px;
+}
+
+
+.downloads-file.mobi:after {
+  content: "(MOBI)";
+}
+
+.downloads-file.epub:after {
+  content: "(EPUB)";
+}
+
+.downloads-file.pdf:after {
+  content: "(PDF)";
+}
+
+
+/**
+  * Icons. All of them in the single publication.
+  */
+
+.downloads-title:after,
+.entry-publication-type:before,
+.entry-categories:before,
+.entry-tags:before {
+  content: "\f323";;
+  display: inline-block;
+  font: normal 16px/1 'dashicons';
+  padding: 0 5px 0 0;
+  vertical-align: middle;
+}
+
+.entry-categories:before {
+  content: "\f318";
+}
+
+.entry-publication-type:before {
+  content: "\f330";
+}
+
+.downloads-title:after {
+  content: "\f316";
+  padding-left: 5px;
+}
+
+.downloads-file.epub {
+  background: url(images/epub.min.svg) center left no-repeat;
+}
+
+.downloads-file.mobi {
+  background: url(images/mobi.min.svg) center left no-repeat;
+}
+
+.downloads-file.pdf {
+  background: url(images/pdf.min.svg) center left no-repeat;
+}
+
+.downloads-file.mobi,
+.downloads-file.epub,
+.downloads-file.pdf {
+  background-size: 15px 20px;
+  padding: 5px 0 5px 23px;
+}
+
+
+
+
+/*------------------------------------*\
+  #CONTACT-US
+\*------------------------------------*/
+
+
+.contact-form input[type='text'],
+.contact-form input[type='email'],
+.contact-form textarea {
+  padding: 10px;
+  min-width: 98%;
+  width: 98%;
+}
+
+.contact-submit .pushbutton-wide {
+  font-size: 16px;
+}
+
+
+
+
+/*------------------------------------*\
+  #SITE-FOOTER
+\*------------------------------------*/
+
+
+.site-footer {
+  color: $white;
+  font-size: 12px;
+  line-height: 1.6em;
+  text-align: left;
+}
+
+.site-footer a {
+  color: $body-link;
+}
+
+.site-footer-legal {
+  background: $black url(images/shareamerica-flag.png) no-repeat 1em 16px;
+  margin: 0;
+  padding: 1em 5em;
+}
