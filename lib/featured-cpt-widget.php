@@ -30,6 +30,7 @@ class America_Featured_Custom_Post extends WP_Widget {
 
 		$this->defaults = array(
 			'title'                   => '',
+			'post_type'								=> '',
 			'posts_cat'               => '',
 			'posts_num'               => 1,
 			'posts_offset'            => 0,
@@ -56,16 +57,16 @@ class America_Featured_Custom_Post extends WP_Widget {
 
 		$widget_ops = array(
 			'classname'   => 'featured-content featuredpost',
-			'description' => __( 'Displays featured posts with thumbnails', 'genesis' ),
+			'description' => __( 'Displays featured custom post type with thumbnails', 'genesis' ),
 		);
 
 		$control_ops = array(
-			'id_base' => 'featured-post',
+			'id_base' => 'featured-custom-post-type',
 			'width'   => 505,
 			'height'  => 350,
 		);
 
-		parent::__construct( 'featured-post', __( 'America - Featured Posts', 'genesis' ), $widget_ops, $control_ops );
+		parent::__construct( 'featured-custom-post-type', __( 'America - Featured Custom Post Types', 'genesis' ), $widget_ops, $control_ops );
 
 	}
 
@@ -104,7 +105,7 @@ class America_Featured_Custom_Post extends WP_Widget {
 
 
 		$query_args = array(
-			'post_type' => 'publication',
+			'post_type' => $instance['post_type'],
 			'cat'       => $instance['posts_cat'],
 			'showposts' => $instance['posts_num'],
 			'offset'    => $instance['posts_offset'],
@@ -288,6 +289,11 @@ class America_Featured_Custom_Post extends WP_Widget {
 		<div class="genesis-widget-column">
 
 			<div class="genesis-widget-column-box genesis-widget-column-box-top">
+
+				<p>
+					<label for="<?php echo $this->get_field_id( 'post_type' ); ?>"><?php _e( 'Custom Post Type', 'genesis' ); ?>:</label>
+					<input type="text" id="<?php echo $this->get_field_id( 'post_type' ); ?>" name="<?php echo $this->get_field_name( 'post_type' ); ?>" value="<?php echo esc_attr( $instance['post_type'] ); ?>" size="2" />
+				</p>
 
 				<p>
 					<label for="<?php echo $this->get_field_id( 'posts_cat' ); ?>"><?php _e( 'Category', 'genesis' ); ?>:</label>

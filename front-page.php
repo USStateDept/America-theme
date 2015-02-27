@@ -14,11 +14,10 @@ add_action( 'genesis_meta', 'america_home_genesis_meta' );
  */
 function america_home_genesis_meta() {
 
-	if ( is_active_sidebar( 'home-slider' ) || is_active_sidebar( 'home-top' ) || is_active_sidebar( 'home-cta' ) || is_active_sidebar( 'home-bottom' ) ) {
+	if ( is_active_sidebar( 'home-top' ) || is_active_sidebar( 'home-middle' ) || is_active_sidebar( 'home-cta' ) || is_active_sidebar( 'home-bottom' ) ) {
 
 		remove_action( 'genesis_loop', 'genesis_do_loop' );
 		add_action( 'genesis_loop', 'america_home_sections' );
-		add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 		add_filter( 'body_class', 'america_add_home_body_class' );
 
 	}

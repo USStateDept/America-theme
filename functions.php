@@ -194,7 +194,6 @@ include_once( CHILD_DIR . '/lib/featured-cpt-widget.php' );
 include_once( CHILD_DIR . '/lib/featured-category-widget.php' );
 
 function custom_replace_featured_post_widget() {
-	unregister_widget( 'Genesis_Featured_Post' );
 	register_widget( 'America_Featured_Custom_Post' );
 }
 
@@ -206,7 +205,7 @@ add_action( 'widgets_init', 'custom_replace_featured_post_widget' );
 add_action( 'widgets_init', 'custom_replace_featured_category_widget' );
 
 
-//* Redirect search, category and taxonomy archives to use archive-publication template 
+//* Redirect search, category and taxonomy archives to use archive-publication template
 function get_publication_template( $template ) {
   if(  is_category() || is_search() || is_tax() ) {
   	$template = get_query_template( 'archive-publication' );
