@@ -292,7 +292,7 @@ class America_Featured_Custom_Post extends WP_Widget {
 
 				<p>
 					<label for="<?php echo $this->get_field_id( 'post_type' ); ?>"><?php _e( 'Custom Post Type', 'genesis' ); ?>:</label>
-					<input type="text" id="<?php echo $this->get_field_id( 'post_type' ); ?>" name="<?php echo $this->get_field_name( 'post_type' ); ?>" value="<?php echo esc_attr( $instance['post_type'] ); ?>" size="2" />
+					<input type="text" id="<?php echo $this->get_field_id( 'post_type' ); ?>" name="<?php echo $this->get_field_name( 'post_type' ); ?>" value="<?php echo esc_attr( $instance['post_type'] ); ?>" class="widefat" />
 				</p>
 
 				<p>
