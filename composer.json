@@ -9,5 +9,8 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "type": "wordpress-theme",
+    "require": {
+        "composer/installers": "v1.0.21"
+    }
 }
