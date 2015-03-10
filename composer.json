@@ -1,0 +1,13 @@
+{
+    "name": "iip-design/america-theme",
+    "description": "The America.gov base theme",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nathan Kleekamp",
+            "email": "nkleekamp@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
