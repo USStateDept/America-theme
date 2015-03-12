@@ -1,0 +1,32 @@
+{
+  "name": "america",
+  "version": "0.1.0",
+  "author": "Office of Design, U.S. Department of State",
+  "description": "The America.gov base theme",
+  "contributors": [
+    {
+      "name": "Nathan Kleekamp",
+      "twitter": "@nathankleekamp"
+    },
+    {
+      "name": "Terri Regan"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IIP-Design/America-theme.git"
+  },
+  "license": "MIT",
+  "private": "false",
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-sass": "*",
+    "grunt-cssc": "*",
+    "grunt-contrib-imagemin": "*",
+    "grunt-svgmin": "*",
+    "grunt-contrib-compress": "*",
+    "matchdep": "*",
+    "svgo": "*"
+  }
+}
