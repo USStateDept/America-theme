@@ -21,7 +21,7 @@
   "devDependencies": {
     "grunt": "*",
     "grunt-contrib-uglify": "*",
-    "grunt-sass": "*",
+    "grunt-contrib-sass": "*",
     "grunt-cssc": "*",
     "grunt-contrib-imagemin": "*",
     "grunt-svgmin": "*",
