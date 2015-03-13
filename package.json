@@ -22,7 +22,6 @@
     "grunt": "*",
     "grunt-contrib-uglify": "*",
     "grunt-contrib-sass": "*",
-    "grunt-cssc": "*",
     "grunt-contrib-imagemin": "*",
     "grunt-svgmin": "*",
     "grunt-contrib-compress": "*",

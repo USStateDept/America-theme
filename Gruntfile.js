@@ -6,23 +6,11 @@ module.exports = function(grunt) {
 
         sass: {
           dist: {
+            options: {
+              style: 'compressed'
+            },
             files: {
               'style.css': 'style.scss'
-            }
-          }
-        },
-
-        cssc: {
-          build: {
-            options: {
-              sortSelectors: false,
-              sortDeclarations: false,
-              sort: false,
-              safe: true
-            },
-            // dest: src
-            files: {
-              'style.min.css': 'style.css'
             }
           }
         },
@@ -85,7 +73,6 @@ module.exports = function(grunt) {
       'sass',
       'optimages',
       'uglify',
-      'cssc'
     ]);
 
     grunt.task.registerTask('optimages', [
