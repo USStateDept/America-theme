@@ -1,0 +1,154 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+
+
+
+/*------------------------------------*\
+  #Site-Title
+\*------------------------------------*/
+
+
+.site-title {
+  background-image: url(images/whisper-in-ear-3084.jpg);
+  background-position: 0 85%;
+  font-size: 130px;
+  height: 2em;
+  padding: 0;
+}
+
+.site-title a {
+  line-height: 2em;
+  padding: 10px 0;
+  text-align: center;
+  text-shadow: 1px 1px 1px $black;
+}
+
+.site-title a:hover {
+  line-height: 2em;
+}
+
+
+
+
+/*------------------------------------*\
+  #Primary-Navigation
+\*------------------------------------*/
+
+
+.nav-primary {
+  border-bottom: 1px solid $border-color;
+}
+
+
+
+/*------------------------------------*\
+  #Featured-Content
+\*------------------------------------*/
+
+
+.featured-content .entry {
+    float: none;
+    padding: 0;
+    width: 100%;
+}
+
+.featured-content .entry-title {
+    font-size: 36px;
+    font-weight: 400;
+    margin-top: 0;
+    text-transform: none;
+}
+
+.featured-content .entry-header .entry-meta {
+    background: transparent;
+    color: $dark-gray;
+    font-size: em(14);
+    letter-spacing: 1px;
+    line-height: em(20, 14);
+    margin-bottom: 20px;
+    max-width: none;
+    overflow: auto;
+    text-transform: uppercase;
+}
+
+.featured-content .entry-categories {
+    display: inline-block;
+}
+
+.featured-content .entry-author,
+.featured-content .entry-comments-link,
+.featured-content .entry-time {
+    margin-right: 1em;
+}
+
+.featured-content .entry-categories:before,
+.featured-content .entry-time::before {
+    color: $dark-gray;
+    display: inline-block;
+    font: normal 18px/1 'dashicons';
+    margin-right: 5px;
+    vertical-align: top;
+    -webkit-font-smoothing: antialiased;
+}
+
+.featured-content .entry-time::before {
+    content: '\f469';
+}
+
+.featured-content .entry-categories:before {
+    content: '\f318';
+}
+
+.featured-content .entry-content img {
+    width: 100%;
+}
+
+.featuredpost .widget-title {
+    display: block;
+}
+
+.widget-title {
+    background-color: $black;
+    color: $white;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    padding: 12px 15px;
+    text-transform: uppercase;
+}
+
+.home-top,
+.home-middle,
+.home-bottom {
+    padding: 0;
+}
+
+.home-middle .featuredpost .entry {
+	  float: left;
+	  width: 380px;
+}
+
+.home-middle .featured-content .entry:nth-of-type(2n+1) {
+    clear: left;
+    margin-right: 40px;
+}
+
+
+
+
+/*------------------------------------*\
+  #Sidebar-Widget
+\*------------------------------------*/
+
+
+.sidebar .widget {
+    padding: 0;
+}
+
+.search-form input[type="search"] {
+  color: $dark-gray;
+  font-size: 1em;
+  text-transform: none;
+}
