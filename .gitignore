@@ -4,5 +4,4 @@ js/main.min.js
 .DS_Store
 .sass-cache/
 style.min.css
-style.css
 style.css.map
