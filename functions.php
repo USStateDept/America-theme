@@ -42,6 +42,9 @@ function america_load_scripts() {
 //* Add new image sizes
 add_image_size( 'featured-primary', 700, 475, TRUE );
 add_image_size( 'featured-category', 500, 500, TRUE );
+add_image_size( 'disinfo-featured', 720, 470, TRUE );
+add_image_size( 'disinfo-archive', 340, 200, TRUE );
+add_image_size( 'disinfo-sidebar', 100, 100, TRUE );
 //add_image_size( 'publication', 424, 530, TRUE );
 
 
