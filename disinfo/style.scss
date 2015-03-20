@@ -1,7 +1,28 @@
 @import '../styles/variables';
 @import '../styles/mixins';
 
+$red:             #951b21;
+$light-gray:      #f1f3f1;
 
+
+
+
+/*------------------------------------*\
+  #General
+\*------------------------------------*/
+
+
+.site-container {
+  margin: 0 10px;
+
+  @include bp(645px) {
+    margin: 0 auto;
+  }
+}
+
+.more-link {
+  margin-top: 1em;
+}
 
 
 /*------------------------------------*\
@@ -47,8 +68,13 @@
 \*------------------------------------*/
 
 
-.featured-content .entry {
+.home .entry-title {
+  margin-bottom: 0.25em;
+}
+
+.home .featured-content .entry {
     float: none;
+    margin: 0;
     padding: 0;
     width: 100%;
 }
@@ -66,9 +92,10 @@
     font-size: em(14);
     letter-spacing: 1px;
     line-height: em(20, 14);
-    margin-bottom: 20px;
+    margin: 0 0 20px 0;
     max-width: none;
     overflow: auto;
+    padding: 0;
     text-transform: uppercase;
 }
 
@@ -109,14 +136,14 @@
 }
 
 .widget-title {
-    background-color: $black;
-    color: $white;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
-    padding: 12px 15px;
-    text-transform: uppercase;
+  background-color: $light-gray;
+  color: $black;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 15px;
+  padding: 5px 15px;
+  text-transform: uppercase;
 }
 
 .home-top,
@@ -127,7 +154,10 @@
 
 .home-middle .featuredpost .entry {
 	  float: left;
-	  width: 380px;
+
+    @include bp($tablet) {
+      width: 380px;
+    }
 }
 
 .home-middle .featured-content .entry:nth-of-type(2n+1) {
@@ -143,12 +173,49 @@
 \*------------------------------------*/
 
 
+a.alignleft img {
+  margin: 0 10px 20px 0;
+}
+
 .sidebar .widget {
+    margin-bottom: 30px;
     padding: 0;
 }
 
+.sidebar .widget-title {
+  background-color: $red;
+  color: $white;
+}
+
 .search-form input[type="search"] {
+  background: $light-gray;
   color: $dark-gray;
   font-size: 1em;
   text-transform: none;
+}
+
+.sidebar .featured-content .entry {
+  border-bottom: 1px dotted $border-color;
+  margin-bottom: 30px;
+}
+
+.sidebar .featured-content .entry-title {
+  font-size: 20px;
+}
+
+.sidebar .featured-content img {
+  width: 100px;
+}
+
+
+
+
+/*------------------------------------*\
+  #Twitter-Widget
+\*------------------------------------*/
+
+
+#twitter-widget-0 {
+  margin: 0 auto !important;
+  width: 100% !important;
 }
