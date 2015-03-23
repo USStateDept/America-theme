@@ -23,6 +23,7 @@
     "grunt-contrib-uglify": "*",
     "grunt-contrib-sass": "*",
     "grunt-contrib-imagemin": "*",
+    "grunt-contrib-watch": "*",
     "grunt-svgmin": "*",
     "grunt-contrib-compress": "*",
     "matchdep": "*",
