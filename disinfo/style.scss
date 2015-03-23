@@ -51,7 +51,8 @@ $light-gray:      #f1f3f1;
   }
 }
 
-.site-title a {
+.america .site-title a,
+.america .site-title a:hover {
   background-color: $black;
   color: $white;
   display: inline-block;
@@ -67,12 +68,6 @@ $light-gray:      #f1f3f1;
     text-align: left;
     width: 80%;
   }
-}
-
-.site-title a:hover {
-  color: $white;
-  display: inline-block;
-  line-height: 1em;
 }
 
 .genesis-nav-menu.responsive-menu a,
@@ -256,7 +251,7 @@ a.alignleft img {
 .search-form input[type="search"],
 .sidebar input {
   background: $light-gray;
-  color: $dark-gray;
+  color: $black;
   font-size: 1em;
   text-transform: none;
 }
