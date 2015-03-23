@@ -105,9 +105,10 @@ function america_secondary_menu_args( $args ){
 }
 
 
+/************************************** Removed for Disinfo; Check publications ************************************** */
 //* Relocate the post info
-remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
-add_action( 'genesis_entry_header', 'genesis_post_info', 5 );
+// remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
+// add_action( 'genesis_entry_header', 'genesis_post_info', 5 );
 
 
 //* Remove comment form allowed tags
