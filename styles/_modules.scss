@@ -1684,3 +1684,20 @@ img.alignright,
   margin: 0;
   padding: 1em 5em;
 }
+
+
+
+
+/*------------------------------------*\
+  #HELPERS
+\*------------------------------------*/
+
+
+.hidden {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}

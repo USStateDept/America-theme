@@ -2,6 +2,7 @@
 @import '../styles/mixins';
 
 $red:             #951b21;
+$blue:            #3f6b85;
 $light-gray:      #f1f3f1;
 
 
@@ -20,6 +21,10 @@ $light-gray:      #f1f3f1;
   }
 }
 
+.content {
+  padding: 0;
+}
+
 .more-link {
   margin-top: 1em;
 }
@@ -32,21 +37,49 @@ $light-gray:      #f1f3f1;
 
 .site-title {
   background-image: url(images/whisper-in-ear-3084.jpg);
-  background-position: 0 85%;
-  font-size: 130px;
-  height: 2em;
+  background-position: 0 0;
+  background-size: cover;
+  height: 3em;
   padding: 0;
+
+  @include bp($big-mobile) {
+    height: 4em;
+  }
+
+  @include bp($tablet) {
+    font-size: 50px;
+  }
 }
 
 .site-title a {
-  line-height: 2em;
-  padding: 10px 0;
+  background-color: $black;
+  color: $white;
+  display: inline-block;
+  letter-spacing: 2px;
+  line-height: 1em;
+  margin-top: em(20, 24);
+  padding: 5px 10px;
   text-align: center;
-  text-shadow: 1px 1px 1px $black;
+  text-transform: uppercase;
+
+  @include bp($big-mobile) {
+    margin-left: 50px;
+    text-align: left;
+    width: 80%;
+  }
 }
 
 .site-title a:hover {
-  line-height: 2em;
+  color: $white;
+  display: inline-block;
+  line-height: 1em;
+}
+
+.genesis-nav-menu.responsive-menu a,
+.genesis-nav-menu.responsive-menu li,
+.genesis-nav-menu.responsive-menu a:hover,
+.genesis-nav-menu.responsive-menu li:hover {
+  color: $black;
 }
 
 
@@ -59,6 +92,7 @@ $light-gray:      #f1f3f1;
 
 .nav-primary {
   border-bottom: 1px solid $border-color;
+  margin-bottom: 2em;
 }
 
 
@@ -68,7 +102,7 @@ $light-gray:      #f1f3f1;
 \*------------------------------------*/
 
 
-.home .entry-title {
+.entry-title {
   margin-bottom: 0.25em;
 }
 
@@ -79,14 +113,16 @@ $light-gray:      #f1f3f1;
     width: 100%;
 }
 
-.featured-content .entry-title {
+.featured-content .entry-title,
+.single-post .entry-title {
     font-size: 36px;
     font-weight: 400;
     margin-top: 0;
     text-transform: none;
 }
 
-.featured-content .entry-header .entry-meta {
+.featured-content .entry-header .entry-meta,
+.single-post .entry-header .entry-meta {
     background: transparent;
     color: $dark-gray;
     font-size: em(14);
@@ -99,18 +135,22 @@ $light-gray:      #f1f3f1;
     text-transform: uppercase;
 }
 
-.featured-content .entry-categories {
+.featured-content .entry-categories,
+.single-post .entry-categories {
     display: inline-block;
 }
 
 .featured-content .entry-author,
 .featured-content .entry-comments-link,
-.featured-content .entry-time {
+.featured-content .entry-time,
+.single-post .entry-time {
     margin-right: 1em;
 }
 
 .featured-content .entry-categories:before,
-.featured-content .entry-time::before {
+.featured-content .entry-time:before,
+.single-post .entry-time:before,
+.single-post .entry-categories:before {
     color: $dark-gray;
     display: inline-block;
     font: normal 18px/1 'dashicons';
@@ -119,11 +159,13 @@ $light-gray:      #f1f3f1;
     -webkit-font-smoothing: antialiased;
 }
 
-.featured-content .entry-time::before {
+.featured-content .entry-time:before,
+.single-post .entry-time:before {
     content: '\f469';
 }
 
-.featured-content .entry-categories:before {
+.featured-content .entry-categories:before,
+.single-post .entry-categories:before {
     content: '\f318';
 }
 
@@ -154,15 +196,39 @@ $light-gray:      #f1f3f1;
 
 .home-middle .featuredpost .entry {
 	  float: left;
+    width: 100%;
 
     @include bp($tablet) {
-      width: 380px;
+      width: em(364);
+    }
+
+    @include bp($laptop) {
+      width: em(310);
+    }
+
+    @include bp($desktop) {
+      width: em(380);
     }
 }
 
 .home-middle .featured-content .entry:nth-of-type(2n+1) {
     clear: left;
     margin-right: 40px;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #ENTRY-FOOTER
+\*------------------------------------*/
+
+
+.entry-footer .entry-tags {
+  background: none;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 
@@ -187,19 +253,24 @@ a.alignleft img {
   color: $white;
 }
 
-.search-form input[type="search"] {
+.search-form input[type="search"],
+.sidebar input {
   background: $light-gray;
   color: $dark-gray;
   font-size: 1em;
   text-transform: none;
 }
 
-.sidebar .featured-content .entry {
+.sidebar .featuredpost .entry {
   border-bottom: 1px dotted $border-color;
+  clear: none;
   margin-bottom: 30px;
+  overflow: visible;
+  padding: 0;
+  width: 100%;
 }
 
-.sidebar .featured-content .entry-title {
+.sidebar .featuredpost .entry-title {
   font-size: 20px;
 }
 
@@ -218,4 +289,20 @@ a.alignleft img {
 #twitter-widget-0 {
   margin: 0 auto !important;
   width: 100% !important;
+}
+
+
+
+
+/*------------------------------------*\
+  #MAILCHIMP
+\*------------------------------------*/
+
+
+.mc4wp-form input[type="submit"] {
+  color: $white;
+  background-color: $blue;
+  border-radius: 0;
+  text-transform: uppercase;
+  width: 100%;
 }
