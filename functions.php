@@ -210,13 +210,13 @@ add_action( 'widgets_init', 'custom_replace_featured_category_widget' );
 
 
 //* Redirect search, category and taxonomy archives to use archive-publication template
-function get_publication_template( $template ) {
+/*function get_publication_template( $template ) {
   if(  is_category() || is_search() || is_tax() ) {
   	$template = get_query_template( 'archive-publication' );
   }
   return $template;
 }
 
-add_filter( 'template_include', 'get_publication_template' );
+add_filter( 'template_include', 'get_publication_template' );*/
 
 /********************************************** END MOVE TO PLUGIN ******************************************* */
