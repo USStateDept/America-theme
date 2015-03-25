@@ -21,13 +21,16 @@ $light-gray:      #f1f3f1;
   }
 }
 
-.content {
+.content,
+.archive .content {
   padding: 0;
 }
 
 .more-link {
   margin-top: 1em;
 }
+
+
 
 
 /*------------------------------------*\
@@ -92,6 +95,7 @@ $light-gray:      #f1f3f1;
 
 
 
+
 /*------------------------------------*\
   #Featured-Content
 \*------------------------------------*/
@@ -109,15 +113,22 @@ $light-gray:      #f1f3f1;
 }
 
 .featured-content .entry-title,
-.single-post .entry-title {
+.single-post .entry-title,
+.archive .entry-title,
+.archive .featured-content .entry-title {
     font-size: 36px;
     font-weight: 400;
     margin-top: 0;
     text-transform: none;
+    width: auto;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: inherit;
 }
 
 .featured-content .entry-header .entry-meta,
-.single-post .entry-header .entry-meta {
+.single-post .entry-header .entry-meta,
+.archive .entry-header .entry-meta {
     background: transparent;
     color: $dark-gray;
     font-size: em(14);
@@ -131,21 +142,25 @@ $light-gray:      #f1f3f1;
 }
 
 .featured-content .entry-categories,
-.single-post .entry-categories {
+.single-post .entry-categories,
+.archive .entry-categories {
     display: inline-block;
 }
 
 .featured-content .entry-author,
 .featured-content .entry-comments-link,
 .featured-content .entry-time,
-.single-post .entry-time {
+.single-post .entry-time,
+.archive .entry-time {
     margin-right: 1em;
 }
 
 .featured-content .entry-categories:before,
 .featured-content .entry-time:before,
 .single-post .entry-time:before,
-.single-post .entry-categories:before {
+.single-post .entry-categories:before,
+.archive .entry-time:before,
+.archive .entry-categories:before {
     color: $dark-gray;
     display: inline-block;
     font: normal 18px/1 'dashicons';
@@ -155,12 +170,14 @@ $light-gray:      #f1f3f1;
 }
 
 .featured-content .entry-time:before,
-.single-post .entry-time:before {
+.single-post .entry-time:before,
+.archive .entry-time:before {
     content: '\f469';
 }
 
 .featured-content .entry-categories:before,
-.single-post .entry-categories:before {
+.single-post .entry-categories:before,
+.archive .entry-categories:before {
     content: '\f318';
 }
 
@@ -273,6 +290,32 @@ a.alignleft img {
   width: 100px;
 }
 
+
+
+
+/*------------------------------------*\
+  #Archive
+\*------------------------------------*/
+
+
+.archive .entry-content p:nth-child(1) {
+  @include bp($tablet) {
+    float: left;
+    margin: 0 15px 15px 0;
+    overflow: hidden;
+    width: 40%;
+  }
+}
+
+.archive .entry-footer .entry-meta {
+  border-top: 0;
+  padding: 0;
+}
+
+.archive .post {
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 1em; 
+}
 
 
 
