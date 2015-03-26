@@ -29,9 +29,7 @@ add_theme_support( 'genesis-responsive-viewport' );
 add_action( 'wp_enqueue_scripts', 'america_load_scripts' );
 function america_load_scripts() {
 
-	wp_enqueue_script( 'america-responsive-menu', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0' );
-
-	wp_enqueue_script( 'america-file-extensions', get_bloginfo( 'stylesheet_directory' ) . '/js/file-ext.js', array( 'jquery' ), '1.0.0' );
+	wp_enqueue_script( 'america-file-extensions', get_bloginfo( 'stylesheet_directory' ) . '/js/main.min.js', array( 'jquery' ), '1.0.0' );
 
 	wp_enqueue_style( 'dashicons' );
 
