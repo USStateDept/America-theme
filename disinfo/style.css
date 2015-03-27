@@ -29,7 +29,7 @@
 .archive .content {
   padding: 0; }
 
-.more-link {
+.america-home a.more-link {
   margin-top: 1em; }
 
 input, select, textarea {
@@ -82,7 +82,7 @@ input, select, textarea {
 
 .home .featured-content .entry {
   float: none;
-  margin: 0;
+  margin-bottom: 24px;
   padding: 0;
   width: 100%; }
 
@@ -205,8 +205,8 @@ a.alignleft img {
   padding: 0; }
 
 .sidebar .widget-title {
-  background-color: #8b372b;
-  color: #ffffff; }
+  background-color: #f1f3f1;
+  color: #222222; }
 
 .search-form input[type="search"],
 .sidebar input {
