@@ -1,8 +1,8 @@
 @import '../styles/variables';
 @import '../styles/mixins';
 
-$red:             #951b21;
-$blue:            #3f6b85;
+$red:             #8b372b;
+$blue:            #306d85;
 $light-gray:      #f1f3f1;
 
 
@@ -30,6 +30,10 @@ $light-gray:      #f1f3f1;
   margin-top: 1em;
 }
 
+input, select, textarea {
+  background: white;
+}
+
 
 
 
@@ -39,7 +43,7 @@ $light-gray:      #f1f3f1;
 
 
 .site-title {
-  background-image: url(images/whisper-in-ear-3084.jpg);
+  background-image: url(images/gears.jpg);
   background-position: 0 0;
   background-size: cover;
   height: 3em;
@@ -54,23 +58,15 @@ $light-gray:      #f1f3f1;
   }
 }
 
-.america .site-title a,
-.america .site-title a:hover {
-  background-color: $black;
-  color: $white;
-  display: inline-block;
-  letter-spacing: 2px;
-  line-height: 1em;
-  margin-top: em(20, 24);
-  padding: 5px 10px;
-  text-align: center;
-  text-transform: uppercase;
-
-  @include bp($big-mobile) {
-    margin-left: 50px;
-    text-align: left;
-    width: 80%;
-  }
+.america .site-title a {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 .genesis-nav-menu.responsive-menu a,
@@ -256,7 +252,7 @@ a.alignleft img {
 }
 
 .sidebar .widget {
-    margin-bottom: 30px;
+    margin-bottom: em(50);
     padding: 0;
 }
 
@@ -267,7 +263,6 @@ a.alignleft img {
 
 .search-form input[type="search"],
 .sidebar input {
-  background: $light-gray;
   color: $black;
   font-size: 1em;
   text-transform: none;
@@ -314,7 +309,7 @@ a.alignleft img {
 
 .archive .post {
   border-bottom: 1px solid $border-color;
-  padding-bottom: 1em; 
+  padding-bottom: 1em;
 }
 
 
