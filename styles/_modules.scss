@@ -1023,6 +1023,7 @@ img.alignright,
   color: $white;
 }
 
+.genesis-nav-menu .menu-item-language-current > a:after,
 .genesis-nav-menu .menu-item-has-children > a:after {
   content: '\f140';
   display: inline-block;
@@ -1031,6 +1032,10 @@ img.alignright,
   position: relative;
   top: 5px;
   width: 20px;
+}
+
+.genesis-nav-menu .menu-item-language-current .submenu-languages a:after {
+  content: '';
 }
 
 .genesis-nav-menu .sub-menu {

@@ -39,7 +39,7 @@ input, select, textarea {
   #Site-Title
 \*------------------------------------*/
 .site-title {
-  background-image: url(images/gears.jpg);
+  background-image: url(images/pinocchio.jpg);
   background-position: 0 0;
   background-size: cover;
   height: 3em;
@@ -51,15 +51,21 @@ input, select, textarea {
     .site-title {
       font-size: 50px; } }
 
-.america .site-title a {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px; }
+.america .site-title a,
+.america .site-title a:hover {
+  color: #ffffff;
+  font-size: 0.75em;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 5em;
+  padding-left: 1em;
+  text-align: left;
+  text-transform: uppercase;
+  text-shadow: 0 0 40px rgba(0, 0, 0, 0.7); }
+  @media (min-width: 25em) {
+    .america .site-title a,
+    .america .site-title a:hover {
+      font-size: 1em; } }
 
 .genesis-nav-menu.responsive-menu a,
 .genesis-nav-menu.responsive-menu li,
@@ -74,6 +80,27 @@ input, select, textarea {
   border-bottom: 1px solid #ebebeb;
   margin-bottom: 2em; }
 
+.genesis-nav-menu.responsive-menu .sub-menu {
+  background-color: white; }
+
+.america .genesis-nav-menu .sub-menu .current-menu-item > a {
+  color: #222222;
+  font-weight: bold; }
+
+@media (min-width: 64em) {
+  .america .genesis-nav-menu .current-menu-parent > a,
+  .america .genesis-nav-menu .current-menu-item > a {
+    border-bottom: 3px solid #306d85; }
+
+  .america .genesis-nav-menu .sub-menu .current-menu-item > a,
+  .america .archive-pagination li a {
+    background-color: #306d85;
+    border: 1px solid #306d85;
+    color: white;
+    font-weight: normal; }
+
+  .genesis-nav-menu .menu-item-language-current {
+    float: right; } }
 /*------------------------------------*\
   #Featured-Content
 \*------------------------------------*/

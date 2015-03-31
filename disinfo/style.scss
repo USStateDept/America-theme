@@ -43,7 +43,7 @@ input, select, textarea {
 
 
 .site-title {
-  background-image: url(images/gears.jpg);
+  background-image: url(images/pinocchio.jpg);
   background-position: 0 0;
   background-size: cover;
   height: 3em;
@@ -58,15 +58,21 @@ input, select, textarea {
   }
 }
 
-.america .site-title a {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
+.america .site-title a,
+.america .site-title a:hover {
+  color: $white;
+  font-size: 0.75em;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 5em;
+  padding-left: 1em;
+  text-align: left;
+  text-transform: uppercase;
+  text-shadow: 0 0 40px rgba(0,0,0,0.7);
+
+  @include bp($big-mobile) {
+    font-size: 1em;
+  }
 }
 
 .genesis-nav-menu.responsive-menu a,
@@ -87,6 +93,34 @@ input, select, textarea {
 .nav-primary {
   border-bottom: 1px solid $border-color;
   margin-bottom: 2em;
+}
+
+.genesis-nav-menu.responsive-menu .sub-menu {
+  background-color: white;
+}
+
+.america .genesis-nav-menu .sub-menu .current-menu-item > a {
+  color: $black;
+  font-weight: bold;
+}
+
+@include bp($laptop) {
+  .america .genesis-nav-menu .current-menu-parent > a,
+  .america .genesis-nav-menu .current-menu-item > a {
+    border-bottom: 3px solid $blue;
+  }
+
+  .america .genesis-nav-menu .sub-menu .current-menu-item > a,
+  .america .archive-pagination li a {
+    background-color: $blue;
+    border: 1px solid $blue;
+    color: white;
+    font-weight: normal;
+  }
+
+  .genesis-nav-menu .menu-item-language-current {
+    float: right;
+  }
 }
 
 
