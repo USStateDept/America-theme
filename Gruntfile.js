@@ -10,8 +10,9 @@ module.exports = function(grunt) {
               style: 'compressed'
             },
             files: {
-              'style.css': 'style.scss'
-            }
+              'style.css': 'style.scss',
+              'disinfo/style.css': 'disinfo/style.scss'
+            },
           }
         },
 
@@ -25,12 +26,20 @@ module.exports = function(grunt) {
 
         imagemin: {
           dynamic: {
-            files: [{
-              expand: true,
-              cwd: 'images-src/',
-              src: ['**/*.{png,jpg,gif}'],
-              dest: 'images/'
-            }]
+            files: [
+              {
+                expand: true,
+                cwd: 'images-src/',
+                src: ['**/*.{png,jpg,gif}'],
+                dest: 'images/'
+              },
+              {
+                expand: true,
+                cwd: 'disinfo/images-src/',
+                src: ['**/*.{png,jpg,gif}'],
+                dest: 'disinfo/images/'
+              }
+            ]
           }
         },
 
@@ -66,6 +75,12 @@ module.exports = function(grunt) {
                ext: '.svgz'}
             ]
           }
+        },
+        watch: {
+          css: {
+            files: '**/*.scss',
+            tasks: ['sass']
+          }
         }
       });
 
@@ -80,5 +95,4 @@ module.exports = function(grunt) {
       'svgmin',
       'compress'
     ]);
-
 };

@@ -8,7 +8,7 @@ jQuery(function( $ ){
 		$(".genesis-nav-menu").removeClass("responsive-menu");
 	}
 
-	$(".header-widget-area").before('<div class="responsive-menu-icon"></div>');
+	$(".nav-primary .genesis-nav-menu, .nav-secondary .genesis-nav-menu, .header-widget-area").before('<div class="responsive-menu-icon"></div>');
 
 	$(".responsive-menu-icon").click(function(){
 		$(".genesis-nav-menu").slideToggle();

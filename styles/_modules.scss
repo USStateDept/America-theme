@@ -1023,6 +1023,7 @@ img.alignright,
   color: $white;
 }
 
+.genesis-nav-menu .menu-item-language-current > a:after,
 .genesis-nav-menu .menu-item-has-children > a:after {
   content: '\f140';
   display: inline-block;
@@ -1031,6 +1032,10 @@ img.alignright,
   position: relative;
   top: 5px;
   width: 20px;
+}
+
+.genesis-nav-menu .menu-item-language-current .submenu-languages a:after {
+  content: '';
 }
 
 .genesis-nav-menu .sub-menu {
@@ -1683,4 +1688,23 @@ img.alignright,
   background: $black url(images/shareamerica-flag.png) no-repeat 1em 16px;
   margin: 0;
   padding: 1em 5em;
+}
+
+
+
+
+/*------------------------------------*\
+  #HELPERS
+\*------------------------------------*/
+
+
+.hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }

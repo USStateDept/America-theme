@@ -16,7 +16,6 @@ define( 'CHILD_THEME_NAME', __( 'America.gov Theme', 'america' ) );
 define( 'CHILD_THEME_URL', 'http://www.america.gov/' );
 define( 'CHILD_THEME_VERSION', '1.0.0' );
 
-
 //* Add HTML5 markup structure
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
 
@@ -29,9 +28,7 @@ add_theme_support( 'genesis-responsive-viewport' );
 add_action( 'wp_enqueue_scripts', 'america_load_scripts' );
 function america_load_scripts() {
 
-	wp_enqueue_script( 'america-responsive-menu', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0' );
-
-	wp_enqueue_script( 'america-file-extensions', get_bloginfo( 'stylesheet_directory' ) . '/js/file-ext.js', array( 'jquery' ), '1.0.0' );
+	wp_enqueue_script( 'america-file-extensions', get_bloginfo( 'stylesheet_directory' ) . '/js/main.min.js', array( 'jquery' ), '1.0.0' );
 
 	wp_enqueue_style( 'dashicons' );
 
@@ -42,6 +39,9 @@ function america_load_scripts() {
 //* Add new image sizes
 add_image_size( 'featured-primary', 700, 475, TRUE );
 add_image_size( 'featured-category', 500, 500, TRUE );
+add_image_size( 'disinfo-featured', 720, 470, TRUE );
+add_image_size( 'disinfo-archive', 340, 200, TRUE );
+add_image_size( 'disinfo-sidebar', 100, 100, TRUE );
 //add_image_size( 'publication', 424, 530, TRUE );
 
 
@@ -102,9 +102,10 @@ function america_secondary_menu_args( $args ){
 }
 
 
+/************************************** Removed for Disinfo; Check publications ************************************** */
 //* Relocate the post info
-remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
-add_action( 'genesis_entry_header', 'genesis_post_info', 5 );
+// remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
+// add_action( 'genesis_entry_header', 'genesis_post_info', 5 );
 
 
 //* Remove comment form allowed tags
@@ -151,9 +152,12 @@ genesis_register_sidebar( array(
 remove_action( 'genesis_footer', 'genesis_do_footer' );
 add_action( 'genesis_footer', 'sp_custom_footer' );
 function sp_custom_footer() {
-	?>
-	<p class="site-footer-legal">This site is managed by the <a href="http://www.state.gov/r/iip" target="_blank">Bureau of International Information Programs</a> within the  <a href="http://www.state.gov" target="_blank">U.S. Department of State</a>. External links to other Internet sites should not be construed as an endorsement of the views or privacy policies contained therein.</p>
-	<?php
+	echo '<p class="site-footer-legal">';
+	
+	$copyright = __( 'This site is managed by the <a href="http://www.state.gov/r/iip" target="_blank">Bureau of International Information Programs</a> within the  <a href="http://www.state.gov" target="_blank">U.S. Department of State</a>. External links to other Internet sites should not be construed as an endorsement of the views or privacy policies contained therein.', 'america' );
+
+	echo $copyright;
+	echo '</p>';
 }
 
 //* Untility function to get file size
@@ -206,13 +210,13 @@ add_action( 'widgets_init', 'custom_replace_featured_category_widget' );
 
 
 //* Redirect search, category and taxonomy archives to use archive-publication template
-function get_publication_template( $template ) {
+/*function get_publication_template( $template ) {
   if(  is_category() || is_search() || is_tax() ) {
   	$template = get_query_template( 'archive-publication' );
   }
   return $template;
 }
 
-add_filter( 'template_include', 'get_publication_template' );
+add_filter( 'template_include', 'get_publication_template' );*/
 
 /********************************************** END MOVE TO PLUGIN ******************************************* */
