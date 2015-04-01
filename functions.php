@@ -16,7 +16,6 @@ define( 'CHILD_THEME_NAME', __( 'America.gov Theme', 'america' ) );
 define( 'CHILD_THEME_URL', 'http://www.america.gov/' );
 define( 'CHILD_THEME_VERSION', '1.0.0' );
 
-
 //* Add HTML5 markup structure
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
 
@@ -153,9 +152,12 @@ genesis_register_sidebar( array(
 remove_action( 'genesis_footer', 'genesis_do_footer' );
 add_action( 'genesis_footer', 'sp_custom_footer' );
 function sp_custom_footer() {
-	?>
-	<p class="site-footer-legal">This site is managed by the <a href="http://www.state.gov/r/iip" target="_blank">Bureau of International Information Programs</a> within the  <a href="http://www.state.gov" target="_blank">U.S. Department of State</a>. External links to other Internet sites should not be construed as an endorsement of the views or privacy policies contained therein.</p>
-	<?php
+	echo '<p class="site-footer-legal">';
+	
+	$copyright = __( 'This site is managed by the <a href="http://www.state.gov/r/iip" target="_blank">Bureau of International Information Programs</a> within the  <a href="http://www.state.gov" target="_blank">U.S. Department of State</a>. External links to other Internet sites should not be construed as an endorsement of the views or privacy policies contained therein.', 'america' );
+
+	echo $copyright;
+	echo '</p>';
 }
 
 //* Untility function to get file size
