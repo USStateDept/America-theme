@@ -19,7 +19,8 @@ module.exports = function(grunt) {
         uglify: {
           build: {
             files: {
-              'js/main.min.js': ['js/file-ext.js', 'js/responsive-menu.js']
+              'js/main.min.js': ['js/modernizr.min.js', 'js/file-ext.js', 'js/responsive-menu.js'],
+              'js/lte-ie8.min.js': ['js/html5shiv.min.js', 'js/respond.min.js']
             }
           }
         },

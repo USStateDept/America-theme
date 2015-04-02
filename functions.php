@@ -33,6 +33,16 @@ function america_load_scripts() {
 	wp_enqueue_style( 'dashicons' );
 
 	wp_enqueue_style( 'google-font', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Signika', array(), CHILD_THEME_VERSION );
+	
+	// IE Specific Script
+	wp_enqueue_script( 'lte-ie8', get_bloginfo( 'stylesheet_directory' ) . '/js/lte-ie8.min.js', array(), '1.0.0', false );
+	add_filter( 'script_loader_tag', function( $tag, $handle ) {
+	    if ( $handle === 'lte-ie8' ) {
+	        $tag = "<!--[if lte IE 8]>$tag<![endif]-->";
+	    }
+	    return $tag;
+	}, 10, 2 );
+
 }
 
 
