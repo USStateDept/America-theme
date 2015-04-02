@@ -21,6 +21,10 @@ $light-gray:      #f1f3f1;
   }
 }
 
+.no-backgroundsize .site-container {
+  margin: 0 auto;
+}
+
 .content,
 .archive .content {
   padding: 0;
@@ -45,6 +49,7 @@ input, select, textarea {
 .site-title {
   background-image: url(images/pinocchio.jpg);
   background-position: 0 0;
+  background-repeat: no-repeat;
   background-size: cover;
   height: 3em;
   padding: 0;
@@ -54,26 +59,35 @@ input, select, textarea {
   }
 
   @include bp($tablet) {
-    font-size: 50px;
+    height: 5em;
   }
+
+  @include bp($laptop) {
+    height: 7em;
+  }
+}
+
+.no-backgroundsize .site-title {
+  background: url(images/pinocchio-oldIE.jpg) 0 0 no-repeat;
+  height: 7em;
 }
 
 .america .site-title a,
 .america .site-title a:hover {
-  color: $white;
+  color: transparent;
   font-size: 0.75em;
-  font-weight: 500;
-  letter-spacing: 1px;
-  line-height: 5em;
-  padding-left: 1em;
-  text-align: left;
-  text-transform: uppercase;
-  text-shadow: 0 0 40px rgba(0,0,0,0.7);
+  line-height: 7em;
 
   @include bp($big-mobile) {
     font-size: 1em;
   }
 }
+
+.no-backgroundsize .america .site-title a,
+.no-backgroundsize .america .site-title a:hover {
+  @extend %visuallyhidden;
+}
+
 
 .genesis-nav-menu.responsive-menu a,
 .genesis-nav-menu.responsive-menu li,
@@ -281,6 +295,7 @@ input, select, textarea {
 \*------------------------------------*/
 
 
+a.alignleft,
 a.alignleft img {
   margin: 0 10px 20px 0;
 }
@@ -315,7 +330,8 @@ a.alignleft img {
   font-size: 20px;
 }
 
-.sidebar .featured-content img {
+.sidebar .featured-content a {
+  height: auto;
   width: 100px;
 }
 
