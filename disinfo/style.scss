@@ -159,7 +159,9 @@ input, select, textarea {
 .featured-content .entry-title,
 .single-post .entry-title,
 .archive .entry-title,
-.archive .featured-content .entry-title {
+.archive .featured-content .entry-title,
+.search .entry-title,
+.search .featured-content .entry-title {
     font-size: 36px;
     font-weight: 400;
     margin-top: 0;
@@ -172,7 +174,8 @@ input, select, textarea {
 
 .featured-content .entry-header .entry-meta,
 .single-post .entry-header .entry-meta,
-.archive .entry-header .entry-meta {
+.archive .entry-header .entry-meta,
+.search .entry-header .entry-meta {
     background: transparent;
     color: $dark-gray;
     font-size: em(14);
@@ -187,7 +190,8 @@ input, select, textarea {
 
 .featured-content .entry-categories,
 .single-post .entry-categories,
-.archive .entry-categories {
+.archive .entry-categories,
+.search .entry-categories {
     display: inline-block;
 }
 
@@ -195,7 +199,8 @@ input, select, textarea {
 .featured-content .entry-comments-link,
 .featured-content .entry-time,
 .single-post .entry-time,
-.archive .entry-time {
+.archive .entry-time,
+.search .entry-time {
     margin-right: 1em;
 }
 
@@ -204,7 +209,9 @@ input, select, textarea {
 .single-post .entry-time:before,
 .single-post .entry-categories:before,
 .archive .entry-time:before,
-.archive .entry-categories:before {
+.archive .entry-categories:before,
+.search .entry-time:before,
+.search .entry-categories:before {
     color: $dark-gray;
     display: inline-block;
     font: normal 18px/1 'dashicons';
@@ -215,13 +222,15 @@ input, select, textarea {
 
 .featured-content .entry-time:before,
 .single-post .entry-time:before,
-.archive .entry-time:before {
+.archive .entry-time:before,
+.search .entry-time:before {
     content: '\f469';
 }
 
 .featured-content .entry-categories:before,
 .single-post .entry-categories:before,
-.archive .entry-categories:before {
+.archive .entry-categories:before,
+.search .entry-categories:before {
     content: '\f318';
 }
 
@@ -343,7 +352,8 @@ a.alignleft img {
 \*------------------------------------*/
 
 
-.archive .entry-content p:nth-child(1) {
+.archive .entry-content p:nth-child(1),
+.search .entry-content p:nth-child(1) {
   @include bp($tablet) {
     float: left;
     margin: 0 15px 15px 0;
@@ -352,11 +362,13 @@ a.alignleft img {
   }
 }
 
-.archive .entry-footer .entry-meta {
+.archive .entry-footer .entry-meta,
+.search .entry-footer .entry-meta {
   border-top: 0;
   padding: 0;
 }
 
+.search .post,
 .archive .post {
   border-bottom: 1px solid $border-color;
   padding-bottom: 1em;
