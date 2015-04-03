@@ -10,6 +10,9 @@ jQuery(function( $ ){
 
 	$(".nav-primary .genesis-nav-menu, .nav-secondary .genesis-nav-menu, .header-widget-area").before('<div class="responsive-menu-icon"></div>');
 
+	// Add class "menu-item-has-children" to wpml language switcher
+	$(".menu-item-language").addClass("menu-item-has-children");
+
 	$(".responsive-menu-icon").click(function(){
 		$(".genesis-nav-menu").slideToggle();
 	});

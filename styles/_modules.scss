@@ -1027,11 +1027,17 @@ img.alignright,
 .genesis-nav-menu .menu-item-has-children > a:after {
   content: '\f140';
   display: inline-block;
+  float: right;
   font: normal 20px/1 'dashicons';
   height: 20px;
+  padding-right: 4px;
   position: relative;
-  top: 5px;
+  top: -3px;
   width: 20px;
+
+  @include bp($tablet) {
+    top: 0;
+  }
 }
 
 .genesis-nav-menu .menu-item-language-current .submenu-languages a:after {
