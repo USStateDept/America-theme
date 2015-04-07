@@ -20,6 +20,10 @@ define( 'CHILD_THEME_VERSION', '1.0.0' );
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
 
 
+//* Add Post Formats
+add_theme_support( 'post-formats', array( 'gallery', 'image', 'video', 'audio' ) );
+
+
 //* Add viewport meta tag for mobile browsers
 add_theme_support( 'genesis-responsive-viewport' );
 
@@ -163,7 +167,7 @@ remove_action( 'genesis_footer', 'genesis_do_footer' );
 add_action( 'genesis_footer', 'sp_custom_footer' );
 function sp_custom_footer() {
 	echo '<p class="site-footer-legal">';
-	
+
 	$copyright = __( 'This site is managed by the <a href="http://www.state.gov/r/iip" target="_blank">Bureau of International Information Programs</a> within the  <a href="http://www.state.gov" target="_blank">U.S. Department of State</a>. External links to other Internet sites should not be construed as an endorsement of the views or privacy policies contained therein.', 'america' );
 
 	echo $copyright;
