@@ -1,0 +1,118 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+$green: #7cbe30;
+$blue: #128ad3;
+
+
+/*------------------------------------*\
+  #SITE-HEADER
+\*------------------------------------*/
+
+.site-header {
+  border-bottom: 3px solid $green;
+}
+
+.header-image .site-title,
+.header-image .title-area {
+  max-height: 81px;
+  min-height: 0;
+}
+
+.site-title {
+  background: none;
+}
+
+.header-widget-area {
+
+  @include bp($tablet) {
+    position: relative;
+    top: em(27);
+    width: em(260);
+  }
+
+  @include bp($desktop) {
+    width: em(300);
+  }
+}
+
+.nav-primary {
+  border-bottom: 3px solid $green;;
+  margin-bottom: 0;
+
+  @include bp($tablet) {
+    border: 0;
+  }
+}
+
+.america .genesis-nav-menu .current-menu-parent > a,
+.america .genesis-nav-menu .current-menu-item > a {
+  border-bottom: 3px solid $blue;
+}
+
+
+
+
+/*------------------------------------*\
+  #Featured-Content
+\*------------------------------------*/
+
+.entry-time {
+  padding-left: 5px;
+}
+
+
+
+
+/*------------------------------------*\
+  #POST-ENTRIES
+\*------------------------------------*/
+
+.entry-meta {
+  background-color: $gray;
+  padding: 10px;
+}
+
+.entry-footer .entry-meta {
+  background-color: transparent;
+  padding: 0;
+}
+
+
+
+
+/*------------------------------------*\
+  #WIDGET
+\*------------------------------------*/
+
+#text-3 {
+  background-color: $gray;
+  padding: em(15);
+}
+
+.widget-title {
+  font-size: em(22);
+  margin-top: 0;
+  text-transform: none;
+}
+
+input[type="submit"] {
+  background-color: $green;
+  border-radius: 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+
+
+
+/*------------------------------------*\
+  #TWITTER-WIDGET
+\*------------------------------------*/
+
+
+#twitter-widget-0 {
+  margin: 0 auto !important;
+  width: 100% !important;
+}

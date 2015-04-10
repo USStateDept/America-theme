@@ -56,4 +56,18 @@ function america_add_home_body_class( $classes ) {
 
 }
 
+
+//* Set default post info to just date
+add_filter( 'genesis_post_info', 'america_default_post_info_filter' );
+function america_default_post_info_filter($post_meta) {
+	$post_meta = '[post_date]';
+	return $post_meta;
+}
+
+add_filter( 'genesis_post_meta', 'america_default_post_meta' );
+function america_default_post_meta($post_meta) {
+	$post_meta = '[post_categories sep=", " before=""] [post_tags sep=", " before=""]';
+	return $post_meta;
+}
+
 genesis();

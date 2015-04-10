@@ -1,0 +1,41 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+
+/*------------------------------------*\
+  #SITE-HEADER
+\*------------------------------------*/
+
+
+.site-header .widget {
+  padding: 28px 0 0;
+}
+
+.site-header .header-widget-area {
+  background-color: $mobile-nav;
+
+  @include bp($tablet) {
+    background: transparent;
+  }
+}
+
+.genesis-nav-menu.responsive-menu a,
+.genesis-nav-menu.responsive-menu li,
+.genesis-nav-menu.responsive-menu a:hover,
+.genesis-nav-menu.responsive-menu li:hover {
+  color: $gray;
+}
+
+
+
+
+/*------------------------------------*\
+  #SINGLE-PUBLICATION
+\*------------------------------------*/
+
+
+.entry-categories,
+.entry-publication-type,
+.entry-tags {
+  display: block;
+}
