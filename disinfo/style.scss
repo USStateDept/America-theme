@@ -128,6 +128,11 @@ $light-gray:      #f1f3f1;
   margin-bottom: 0.25em;
 }
 
+.entry-meta a,
+.entry-meta a:hover {
+  color: $dark-gray;
+}
+
 .home .featured-content .entry {
     float: none;
     margin-bottom: 24px;
@@ -249,35 +254,6 @@ a.alignleft img {
   width: 100px;
 }
 
-
-
-
-/*------------------------------------*\
-  #Archive
-\*------------------------------------*/
-
-
-.archive .entry-content p:nth-child(1),
-.search .entry-content p:nth-child(1) {
-  @include bp($tablet) {
-    float: left;
-    margin: 0 15px 15px 0;
-    overflow: hidden;
-    width: 40%;
-  }
-}
-
-.archive .entry-footer .entry-meta,
-.search .entry-footer .entry-meta {
-  border-top: 0;
-  padding: 0;
-}
-
-.search .post,
-.archive .post {
-  border-bottom: 1px solid $border-color;
-  padding-bottom: 1em;
-}
 
 
 
