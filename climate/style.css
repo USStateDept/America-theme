@@ -90,7 +90,7 @@
 .home .entry-header .entry-meta {
   background-color: #128ad3;
   color: #ffffff;
-  display: block;
+  display: inline-block;
   margin-left: -1.14286em;
   margin-right: -1.14286em;
   padding: 5px; }
