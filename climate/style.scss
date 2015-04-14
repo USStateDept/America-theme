@@ -1,0 +1,188 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+$green: #7cbe30;
+$blue: #128ad3;
+
+
+/*------------------------------------*\
+  #GENERAL
+\*------------------------------------*/
+
+.content {
+  background: #ffffff;
+}
+
+
+
+
+/*------------------------------------*\
+  #SITE-HEADER
+\*------------------------------------*/
+
+.site-header {
+  border-bottom: 1px solid $green;
+
+  @include bp($tablet) {
+    border-bottom: 3px solid $green;
+  }
+}
+
+.header-image .site-title,
+.header-image .title-area {
+  max-height: 81px;
+  min-height: 0;
+}
+
+.site-title {
+  background: none;
+}
+
+.header-widget-area {
+  margin-top: 1em;
+
+  @include bp($tablet) {
+    margin-top: 0;
+    position: relative;
+    top: em(27);
+    width: em(260);
+  }
+
+  @include bp($desktop) {
+    width: em(300);
+  }
+}
+
+.nav-primary {
+  border-bottom: 1px solid $green;;
+
+  @include bp($tablet) {
+    border: 0;
+  }
+}
+
+.home .nav-primary {
+  margin-bottom: 2em;
+}
+
+.america .genesis-nav-menu .current-menu-parent > a,
+.america .genesis-nav-menu .current-menu-item > a {
+  @include bp($tablet) {
+    border-bottom: 3px solid $blue;
+  }
+}
+
+
+
+
+/*------------------------------------*\
+  #HOME
+\*------------------------------------*/
+
+.home-about {
+  background-color: $green;
+  color: #ffffff;
+  margin-bottom: em(40);
+  padding: 1em;
+}
+
+
+
+
+/*------------------------------------*\
+  #POST-ENTRIES
+\*------------------------------------*/
+
+.home .entry {
+  border: 1px solid $border-color;
+  padding: 1em;
+}
+
+.entry-title {
+  margin-top: 0;
+}
+
+.home .entry-header .entry-meta {
+  background-color: $blue;
+  color: #ffffff;
+  display: inline-block;
+  margin-left: -(em(16, 14));
+  margin-right: -(em(16, 14));
+  padding: 5px;
+}
+
+.home .entry-meta > *:before {
+  color: #ffffff;
+}
+
+.entry-meta > * {
+  display: block;
+  line-height: 1.5em;
+  margin-left: 5px;
+  text-transform: none;
+
+  @include bp($tablet) {
+    display: inline-block;
+  }
+}
+
+.entry-meta a,
+.entry-meta a:hover {
+  color: $dark-gray;
+}
+
+.home .entry-meta a,
+.home .entry-meta a:hover {
+  color: #ffffff;
+}
+
+.entry-footer .entry-meta {
+  background-color: transparent;
+  padding: 0;
+}
+
+.america-home a.more-link {
+  clear: both;
+  float: right;
+  margin-bottom: 0;
+}
+
+
+
+
+/*------------------------------------*\
+  #WIDGET
+\*------------------------------------*/
+
+#text-3 {
+  background-color: $gray;
+  clear: both;
+  padding: em(15);
+}
+
+.widget-title {
+  font-size: em(22);
+  margin-top: 0;
+  text-transform: none;
+}
+
+input[type="submit"] {
+  background-color: $green;
+  border-radius: 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+
+
+
+/*------------------------------------*\
+  #TWITTER-WIDGET
+\*------------------------------------*/
+
+
+#twitter-widget-0 {
+  margin: 0 auto !important;
+  width: 100% !important;
+}

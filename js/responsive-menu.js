@@ -8,7 +8,8 @@ jQuery(function( $ ){
 		$(".genesis-nav-menu").removeClass("responsive-menu");
 	}
 
-	$(".nav-primary .genesis-nav-menu, .nav-secondary .genesis-nav-menu, .header-widget-area").before('<div class="responsive-menu-icon"></div>');
+	//$(".nav-primary .genesis-nav-menu, .nav-secondary .genesis-nav-menu, .header-widget-area").before('<div class="responsive-menu-icon"></div>');
+	$(".nav-primary .genesis-nav-menu, .nav-secondary .genesis-nav-menu").before('<div class="responsive-menu-icon"></div>');
 
 	// Add class "menu-item-has-children" to wpml language switcher
 	$(".menu-item-language").addClass("menu-item-has-children");

@@ -320,27 +320,6 @@ img.alignright,
 
 
 
-/*------------------------------------*\
-  #FEATURED-CONTENT
-\*------------------------------------*/
-
-
-.featured-content .entry {
-  margin-bottom: 12px;
-  padding: 0;
-}
-
-.featured-content .entry-title {
-  font-size: 18px;
-}
-
-.america-home .featured-content .entry {
-  margin-bottom: 36px;
-}
-
-
-
-
 // TODO: This is not flexible enough
 
 /*------------------------------------*\
@@ -516,17 +495,6 @@ img.alignright,
   width: 100%;
 }
 
-.featuredpost .entry {
-  clear: right;
-  float: left;
-  overflow: hidden;
-  padding: 0 2.8%;
-  width: 20%;
-}
-
-.featuredpost .entry-title {
-  word-wrap: normal;
-}
 
 
 
@@ -675,7 +643,7 @@ img.alignright,
   margin-bottom: 0;
 }
 
-.content .entry-header .entry-meta {
+/*.content .entry-header .entry-meta {
   background-color: $gray;
   clear: both;
   color: $black;
@@ -686,11 +654,56 @@ img.alignright,
   overflow: hidden;
   padding-left: 60px;
   text-transform: uppercase;
+}*/
+
+.featured-content .entry-header .entry-meta,
+.single-post .entry-header .entry-meta,
+.archive .entry-header .entry-meta,
+.search .entry-header .entry-meta {
+    background: transparent;
+    color: $dark-gray;
+    font-size: em(14);
+    letter-spacing: 1px;
+    line-height: em(20, 14);
+    margin: 0 0 20px 0;
+    max-width: none;
+    overflow: auto;
+    padding: 0;
+    text-transform: uppercase;
 }
 
-.content .entry-header .entry-meta a {
-  color: $black;
-  font-weight: 700;
+.featured-content .entry-categories,
+.single-post .entry-categories,
+.archive .entry-categories,
+.search .entry-categories {
+    display: inline-block;
+}
+
+.entry .entry-meta > * {
+  margin-right: 1em;
+}
+
+.entry .entry-meta > *:before {
+    color: $dark-gray;
+    display: inline-block;
+    font: normal 18px/1 'dashicons';
+    margin-right: 5px;
+    vertical-align: top;
+    -webkit-font-smoothing: antialiased;
+}
+
+.featured-content .entry-time:before,
+.single-post .entry-time:before,
+.archive .entry-time:before,
+.search .entry-time:before {
+    content: '\f469';
+}
+
+.featured-content .entry-categories:before,
+.single-post .entry-categories:before,
+.archive .entry-categories:before,
+.search .entry-categories:before {
+    content: '\f318';
 }
 
 .content .entry-header .entry-meta {
@@ -762,12 +775,12 @@ img.alignright,
 
 .sidebar {
   display: inline;
-  font-size: 14px;
+  font-size: 16px;
   padding-bottom: 30px;
 }
 
 .sidebar p {
-  margin-bottom: 16px;
+  margin-bottom: 1em;
 }
 
 .sidebar p:last-child,
@@ -788,9 +801,15 @@ img.alignright,
 }
 
 .sidebar .widget {
-  margin-bottom: 0;
-  padding: 30px 40px;
+  margin-bottom: em(50);
   word-wrap: break-word;
+}
+
+.search-form input[type="search"],
+.sidebar input {
+  color: $black;
+  font-size: 1em;
+  text-transform: none;
 }
 
 .sidebar .search-form {
@@ -921,7 +940,7 @@ img.alignright,
   * Site header widget area.
   */
 
-.site-header .widget-area {
+.header-widget-area {
   float: right;
   width: 100%;
 
@@ -934,18 +953,10 @@ img.alignright,
   }
 }
 
-.site-header .header-widget-area {
-  background-color: $mobile-nav;
+.header-widget-area {
   display: block;
-
-  @include bp($tablet) {
-    background: transparent;
-  }
 }
 
-.site-header .widget {
-  padding: 28px 0 0;
-}
 
 
 /**
@@ -1221,7 +1232,7 @@ img.alignright,
 .genesis-nav-menu.responsive-menu li,
 .genesis-nav-menu.responsive-menu a:hover,
 .genesis-nav-menu.responsive-menu li:hover {
-  color: $gray;
+  color: $black;
   background: transparent;
   border: 0;
   display: block;
@@ -1248,6 +1259,16 @@ img.alignright,
 
 
 /**
+  * Primary navigation.
+  */
+
+.nav-primary {
+  border-bottom: 1px solid $border-color;
+  margin-bottom: 2em;
+}
+
+
+/**
   * Secondary navigation. // TODO: Do we need this?
   */
 
@@ -1270,261 +1291,32 @@ img.alignright,
   #ARCHIVE-PAGE
 \*------------------------------------*/
 
-
-.archive .content {
-    padding-top: 30px;
-}
-
-
-.archive .archive-title {
-  font-size: 30px;
+.archive .entry-content p {
   overflow: hidden;
-  position: relative;
-  text-transform: none;
+}
 
+.archive .entry-content div:nth-child(1),
+.archive .entry-content p:nth-child(1),
+.search .entry-content div:nth-child(1),
+.search .entry-content p:nth-child(1) {
   @include bp($tablet) {
-    font-size: 45px;
-  }
-}
-
-.archive .archive-description:before {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
-
-.archive .archive-description {
-    margin-bottom: 70px;
-    padding: 150px 10px 0;
-    position: relative;
-
-    @include bp($tablet) {
-      padding: 325px 50px 25px;
-    }
-}
-
-
-/**
-  * About America category page.
-  */
-
-.category-about-america .archive-description {
-    background: url(images/about-america.jpg) 0 0 no-repeat;
-    background-size: cover;
-}
-
-
-/**
-  * Democracy category page.
-  */
-
-.category-democracy .archive-description {
-    background: url(images/vote.jpg) center top no-repeat;
-    background-size: cover;
-}
-
-
-/**
-  * Development category page.
-  */
-
-.category-development .archive-description {
-    background: url(images/development.jpg) center top no-repeat;
-    background-size: cover;
-}
-
-
-/**
-  * Education category page.
-  */
-
-.category-education .archive-description {
-    background: url(images/education.jpg) center top no-repeat;
-    background-size: cover;
-}
-
-
-/**
-  * English category page.
-  */
-
-.category-english-learning .archive-description {
-    background: url(images/english.jpg) center top no-repeat;
-    background-size: cover;
-}
-
-
-/**
-  * Entrepreneurship category page.
-  */
-
-.category-entrepreneurship .archive-description {
-    background: url(images/entrepreneurship.jpg) center top no-repeat;
-    background-size: cover;
-}
-
-
-/**
-  * Environment category page.
-  */
-
-.category-environment .archive-description {
-    background: url(images/environment.jpg) center top no-repeat;
-    background-size: cover;
-}
-
-
-/**
-  * Health category page.
-  */
-
-.category-health .archive-description {
-    background: url(images/health.jpg) center top no-repeat;
-    background-size: cover;
-}
-
-
-/**
-  * Human rights category page.
-  */
-
-.category-human-rights .archive-description {
-    background: url(images/human-rights.jpg) center top no-repeat;
-    background-size: cover;
-}
-
-
-/**
-  * Science & technology category page.
-  */
-
-.category-science-technology .archive-description {
-    background: url(images/science-tech.jpg) center top no-repeat;
-    background-size: cover;
-}
-
-
-/**
-  * Visas category page.
-  */
-
-.category-visas .archive-description {
-    background: url(images/visas.jpg) center top no-repeat;
-    background-size: cover;
-}
-
-
-/**
-  * Women & girls category page.
-  */
-
-.category-women-girls .archive-description {
-    background: url(images/women-girls.jpg) center top no-repeat;
-    background-size: cover;
-}
-
-
-/**
-  * Books category page.
-  */
-
-.term-book .archive-description {
-    background: url(images/books.jpg) center top no-repeat;
-    background-size: cover;
-}
-
-
-/**
-  * Pamphlets category page.
-  */
-
-.term-pamphlet .archive-description {
-    background: url(images/pamphlets.jpg) center top no-repeat;
-    background-size: cover;
-}
-
-
-/**
-  * Search archive page.
-  */
-
-.search .archive-description {
-  display: none;
-  visibility: hidden;
-}
-
-
-/**
-  * Returned archive results.
-  */
-
-.archive .publication {
-  margin-bottom: em(30);
-  padding: 0 3%;
-
-  @include bp($big-mobile) {
     float: left;
-    width: 50%;
-  }
-
-  @include bp($tablet) {
-    width: 33%;
-  }
-
-  @include bp($laptop) {
-    margin-bottom: 0;
-    min-height: 450px;
-    width: 25%;
+    margin: 0 15px 15px 0;
+    overflow: hidden;
+    width: 40%;
   }
 }
 
-.archive .entry-title {
-  font-size: 20px;
-  line-height: 1.25em;
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.archive .entry-footer .entry-meta,
+.search .entry-footer .entry-meta {
+  border-top: 0;
+  padding: 0;
 }
 
-.archive .publication-featured-image img {
-  min-width: 100%;
-}
-
-
-/**
-  * Pagination.
-  */
-
-.archive-pagination {
-  clear: both;
-  font-size: 14px;
-  padding: 30px 0;
-}
-
-.archive-pagination li {
-  display: inline;
-}
-
-.archive-pagination li a {
-  background-color: $body-link;
-  border-radius: 5px;
-  color: $white;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 2;
-  margin-bottom: 4px;
-  padding: 8px 20px;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.archive-pagination li a:hover,
-.archive-pagination li.active a {
-  background-color: $body-link;
-  text-decoration: none;
+.search .post,
+.archive .post {
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 1em;
 }
 
 
@@ -1551,12 +1343,6 @@ img.alignright,
 
 .single-publication .entry-content {
     overflow: hidden;
-}
-
-.entry-categories,
-.entry-publication-type,
-.entry-tags {
-  display: block;
 }
 
 
@@ -1615,7 +1401,6 @@ img.alignright,
   content: "\f323";;
   display: inline-block;
   font: normal 16px/1 'dashicons';
-  padding: 0 5px 0 0;
   vertical-align: middle;
 }
 

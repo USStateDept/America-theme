@@ -15,6 +15,7 @@ html {
   font-family: sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  overflow-y: scroll
 }
 
 /**
@@ -607,7 +608,7 @@ img {
 input,
 select,
 textarea {
-  background-color: darken($white, 2%);
+  background-color: #ffffff;
   border: $border;
   box-shadow: none;
   font-size: em(14);

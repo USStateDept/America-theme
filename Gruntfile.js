@@ -11,7 +11,8 @@ module.exports = function(grunt) {
             },
             files: {
               'style.css': 'style.scss',
-              'disinfo/style.css': 'disinfo/style.scss'
+              'disinfo/style.css': 'disinfo/style.scss',
+              'climate/style.css': 'climate/style.scss'
             },
           }
         },
@@ -39,6 +40,12 @@ module.exports = function(grunt) {
                 cwd: 'disinfo/images-src/',
                 src: ['**/*.{png,jpg,gif}'],
                 dest: 'disinfo/images/'
+              },
+              {
+                expand: true,
+                cwd: 'climate/images-src/',
+                src: ['**/*.{png,jpg,gif}'],
+                dest: 'climate/images/'
               }
             ]
           }

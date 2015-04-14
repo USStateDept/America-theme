@@ -4,10 +4,14 @@
 
 
 .site-container {
-    margin: 0 auto;
+    margin: 0 10px;
 
     @include bp($big-mobile) {
       max-width: em(630);
+    }
+
+    @include bp(645px) {
+      margin: 0 auto;
     }
 
     @include bp($tablet) {
@@ -21,6 +25,10 @@
     @include bp($desktop) {
       max-width: em(1140);
     }
+}
+
+.no-backgroundsize .site-container {
+  margin: 0 auto;
 }
 
 .america-landing .site-container {
@@ -68,6 +76,7 @@
 
 .content-sidebar .content {
     float: left;
+    padding: 0;
 }
 
 .full-width-content .content {
@@ -85,11 +94,11 @@
 
     @include bp($laptop) {
       float: right;
-      width: em(300);
+      width: em(260);
     }
 
     @include bp($desktop) {
-      width: em(340);
+      width: em(300);
     }
 }
 
