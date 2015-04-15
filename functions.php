@@ -6,6 +6,9 @@ require_once( get_template_directory() . '/lib/init.php' );
 //* Setup Theme
 include_once( get_stylesheet_directory() . '/lib/theme-defaults.php' );
 
+//* Get shortcodes
+include_once( get_stylesheet_directory() . '/lib/shortcodes.php' );
+
 
 //* Set Localization (do not remove)
 load_child_theme_textdomain( 'america', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'america' ) );
@@ -48,6 +51,13 @@ function america_load_scripts() {
 	}, 10, 2 );
 
 }
+
+
+//* init shortcodes
+function america_register_shortcodes(){
+   add_shortcode('iframe', 'america_responsive_iframe');
+}
+add_action('init', 'america_register_shortcodes');
 
 
 //* Add new image sizes

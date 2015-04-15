@@ -1499,3 +1499,23 @@ img.alignright,
   position: absolute;
   width: 1px;
 }
+
+.iframe-wrapper {
+	height: 0;
+  margin-bottom: 1em;
+  padding-bottom: 56.25%;
+	padding-top: 25px;
+  position: relative;
+
+  iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &.chat {
+    min-height: 300px;
+  }
+}
