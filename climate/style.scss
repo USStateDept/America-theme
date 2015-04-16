@@ -28,14 +28,32 @@ $blue: #128ad3;
   }
 }
 
-.header-image .site-title,
-.header-image .title-area {
-  max-height: 81px;
-  min-height: 0;
+.title-area {
+  width: 100%;
+
+  @include bp($tablet) {
+    width: 50%;
+  }
 }
 
 .site-title {
   background: none;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.site-title a {
+  background: url(/wp-content/themes/america/climate/images/mark.png) 0 0 no-repeat;
+  background-size: 260px 81px;
+  display: block;
+  height: 81px;
+  line-height: 1em;
+  text-indent: -9999px;
+
+  &:hover {
+    line-height: 1em;
+  }
 }
 
 .header-widget-area {
