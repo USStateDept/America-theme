@@ -42,7 +42,7 @@
   width: 100%;
 }
 
-a.aligncenter img {
+/*a.aligncenter img {
   display: block;
   margin: 0 auto;
 }
@@ -51,6 +51,7 @@ img.centered,
 .aligncenter {
   display: block;
   margin: 0 auto 24px;
+  text-align: center;
 }
 
 a.alignnone img,
@@ -81,20 +82,40 @@ a.alignnone {
 a.alignleft img,
 img.alignleft,
 .wp-caption.alignleft {
-  margin: 0 24px 12px 0;
+  margin: 0 0 1em 0;
 }
 
 a.alignright img,
 img.alignright,
 .wp-caption.alignright {
-  margin: 0 0 24px 24px;
+  margin: 0 0 1em 0;
+}*/
+
+.wp-caption {
+  margin: 0;
 }
 
-.entry-content .wp-caption-text {
+.wp-caption-text {
   font-size: 14px;
   font-weight: 700;
-  margin: 0;
+  margin-bottom: em(16, 14);
+}
+
+img.centered {
+  display: block;
+  margin: 0 auto;
+}
+
+.aligncenter {
   text-align: center;
+}
+
+.alignright {
+  text-align: right;
+}
+
+.alignleft {
+  text-align: left;
 }
 
 
@@ -1498,4 +1519,24 @@ img.alignright,
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+.iframe-wrapper {
+	height: 0;
+  margin-bottom: 1em;
+  padding-bottom: 56.25%;
+	padding-top: 25px;
+  position: relative;
+
+  iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &.chat {
+    min-height: 300px;
+  }
 }
