@@ -172,7 +172,7 @@ $blue: #128ad3;
   #WIDGET
 \*------------------------------------*/
 
-#text-3 {
+.sidebar .widget:first-child {
   background-color: $gray;
   clear: both;
   padding: em(15);
