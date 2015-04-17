@@ -43,6 +43,10 @@ function america_load_scripts() {
 
 	// IE Specific Script
 	wp_enqueue_script( 'lte-ie8', get_bloginfo( 'stylesheet_directory' ) . '/js/lte-ie8.min.js', array(), '1.0.0', false );
+
+	// Event tracking script
+	wp_enqueue_script( 'analytics-events', get_bloginfo( 'stylesheet_directory' ) . '/js/analytics-events.min.js', array(), '1.0.0', false );
+	
 	add_filter( 'script_loader_tag', function( $tag, $handle ) {
 	    if ( $handle === 'lte-ie8' ) {
 	        $tag = "<!--[if lte IE 8]>$tag<![endif]-->";
