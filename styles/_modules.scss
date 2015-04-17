@@ -42,62 +42,13 @@
   width: 100%;
 }
 
-/*a.aligncenter img {
-  display: block;
-  margin: 0 auto;
-}
-
-img.centered,
-.aligncenter {
-  display: block;
-  margin: 0 auto 24px;
-  text-align: center;
-}
-
-a.alignnone img,
-img.alignnone {
-  margin-bottom: 12px;
-}
-
-.alignleft {
-  float: left;
-  text-align: left;
-}
-
-.alignright {
-  float: right;
-  text-align: right;
-}
-
-a.alignleft,
-a.alignnone,
-a.alignright {
-  max-width: 100%;
-}
-
-a.alignnone {
-  display: inline-block;
-}
-
-a.alignleft img,
-img.alignleft,
-.wp-caption.alignleft {
-  margin: 0 0 1em 0;
-}
-
-a.alignright img,
-img.alignright,
-.wp-caption.alignright {
-  margin: 0 0 1em 0;
-}*/
-
 .wp-caption {
   margin: 0;
 }
 
 .wp-caption-text {
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.25em;
   margin-bottom: em(16, 14);
 }
 
@@ -1485,21 +1436,35 @@ img.centered {
 \*------------------------------------*/
 
 
-.site-footer {
+.footer-widgets {
   color: $white;
   font-size: 12px;
-  line-height: 1.6em;
-  text-align: left;
+  line-height: 1.25em;
 }
 
 .site-footer a {
   color: $body-link;
 }
 
-.site-footer-legal {
-  background: $black url(images/shareamerica-flag.png) no-repeat 1em 16px;
-  margin: 0;
-  padding: 1em 5em;
+.footer-widgets-1 {
+  background: #222 url(images/shareamerica-flag.png) no-repeat 1em em(16, 12);
+  padding: 1em 1em 1em 5em;
+
+  @include bp($tablet) {
+    border-bottom: 0;
+  }
+}
+
+.footer-widgets-2 {
+  background-color: #333;
+  padding-left: 5em;
+}
+
+.footer-widgets .menu-item {
+  display: inline-block;
+  float: left;
+  margin-right: 1em;
+  padding: 0;
 }
 
 
