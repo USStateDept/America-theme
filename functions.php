@@ -43,6 +43,10 @@ function america_load_scripts() {
 
 	// IE Specific Script
 	wp_enqueue_script( 'lte-ie8', get_bloginfo( 'stylesheet_directory' ) . '/js/lte-ie8.min.js', array(), '1.0.0', false );
+
+	// Event tracking script
+	wp_enqueue_script( 'analytics-events', get_bloginfo( 'stylesheet_directory' ) . '/js/analytics-events.min.js', array(), '1.0.0', false );
+	
 	add_filter( 'script_loader_tag', function( $tag, $handle ) {
 	    if ( $handle === 'lte-ie8' ) {
 	        $tag = "<!--[if lte IE 8]>$tag<![endif]-->";
@@ -172,17 +176,13 @@ genesis_register_sidebar( array(
 ) );
 
 
+//* Footer widget area
+add_theme_support( 'genesis-footer-widgets', 2 );
+
+
 //* Remove Footer Credits
 remove_action( 'genesis_footer', 'genesis_do_footer' );
-add_action( 'genesis_footer', 'sp_custom_footer' );
-function sp_custom_footer() {
-	echo '<p class="site-footer-legal">';
 
-	$copyright = __( 'This site is managed by the <a href="http://www.state.gov/r/iip" target="_blank">Bureau of International Information Programs</a> within the  <a href="http://www.state.gov" target="_blank">U.S. Department of State</a>. External links to other Internet sites should not be construed as an endorsement of the views or privacy policies contained therein.', 'america' );
-
-	echo $copyright;
-	echo '</p>';
-}
 
 //* Untility function to get file size
 function remote_filesize($url) {
