@@ -69,6 +69,18 @@ img.centered {
   text-align: left;
 }
 
+img.aligncenter {
+  margin: 0 auto;
+}
+
+img.alignright {
+  float: right;
+}
+
+img.alignleft {
+  float: left;
+}
+
 
 
 
@@ -1263,21 +1275,6 @@ img.centered {
   #ARCHIVE-PAGE
 \*------------------------------------*/
 
-.archive .entry-content p {
-  overflow: hidden;
-}
-
-.archive .entry-content div:nth-child(1),
-.archive .entry-content p:nth-child(1),
-.search .entry-content div:nth-child(1),
-.search .entry-content p:nth-child(1) {
-  @include bp($tablet) {
-    float: left;
-    margin: 0 15px 15px 0;
-    overflow: hidden;
-    width: 40%;
-  }
-}
 
 .archive .entry-footer .entry-meta,
 .search .entry-footer .entry-meta {
@@ -1289,6 +1286,44 @@ img.centered {
 .archive .post {
   border-bottom: 1px solid $border-color;
   padding-bottom: 1em;
+}
+
+.archive img.alignleft,
+.blog img.alignleft {
+  margin: 0 1em 1em 0;
+}
+
+.archive .format-video .play-button,
+.archive .category-video .play-button,
+.blog .format-video .play-button,
+.blog .category-video .play-button {
+  background: url(images/play-button.png) 0 0 no-repeat;
+  background: url(images/play-button.min.svg) 0 0 no-repeat;
+  background-size: em(50);
+  height: em(50);
+  margin: 0.5em;
+  position: absolute;
+  width: em(50);
+}
+
+.archive .content .entry-image,
+.blog .content .entry-image {
+  width: 100%;
+
+  @include bp($tablet) {
+    width: auto;
+    max-width: 340px;
+  }
+}
+
+.archive .content p,
+.blog .content p {
+  clear: both;
+
+  @include bp($tablet) {
+    clear: none;
+    overflow: hidden;
+  }
 }
 
 
@@ -1437,6 +1472,7 @@ img.centered {
 
 
 .footer-widgets {
+  background: #333;
   color: $white;
   font-size: 12px;
   line-height: 1.25em;
@@ -1447,7 +1483,7 @@ img.centered {
 }
 
 .footer-widgets-1 {
-  background: #222 url(images/shareamerica-flag.png) no-repeat 1em em(16, 12);
+  background: url(images/shareamerica-flag.png) no-repeat 1em em(16, 12);
   padding: 1em 1em 1em 5em;
 
   @include bp($tablet) {
@@ -1456,7 +1492,7 @@ img.centered {
 }
 
 .footer-widgets-2 {
-  background-color: #333;
+  background-color: $black;
   padding-left: 5em;
 }
 
