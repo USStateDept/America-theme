@@ -1275,21 +1275,6 @@ img.alignleft {
   #ARCHIVE-PAGE
 \*------------------------------------*/
 
-/* .archive .entry-content p {
-  overflow: hidden;
-} */
-
-/* .archive .entry-content div:nth-child(1),
-.archive .entry-content p:nth-child(1),
-.search .entry-content div:nth-child(1),
-.search .entry-content p:nth-child(1) {
-  @include bp($tablet) {
-    float: left;
-    margin: 0 15px 15px 0;
-    overflow: hidden;
-    width: 40%;
-  }
-} */
 
 .archive .entry-footer .entry-meta,
 .search .entry-footer .entry-meta {
@@ -1319,6 +1304,16 @@ img.alignleft {
   margin: 0.5em;
   position: absolute;
   width: em(50);
+}
+
+.archive .content .entry-image,
+.blog .content .entry-image {
+  width: 100%;
+
+  @include bp($tablet) {
+    width: auto;
+    max-width: 340px;
+  }
 }
 
 
@@ -1467,6 +1462,7 @@ img.alignleft {
 
 
 .footer-widgets {
+  background: #333;
   color: $white;
   font-size: 12px;
   line-height: 1.25em;
@@ -1477,7 +1473,7 @@ img.alignleft {
 }
 
 .footer-widgets-1 {
-  background: #222 url(images/shareamerica-flag.png) no-repeat 1em em(16, 12);
+  background: url(images/shareamerica-flag.png) no-repeat 1em em(16, 12);
   padding: 1em 1em 1em 5em;
 
   @include bp($tablet) {
@@ -1486,7 +1482,7 @@ img.alignleft {
 }
 
 .footer-widgets-2 {
-  background-color: #333;
+  background-color: $black;
   padding-left: 5em;
 }
 
