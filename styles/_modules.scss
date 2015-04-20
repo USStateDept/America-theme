@@ -1293,10 +1293,10 @@ img.alignleft {
   margin: 0 1em 1em 0;
 }
 
-.archive .format-video .play-button,
-.archive .category-video .play-button,
-.blog .format-video .play-button,
-.blog .category-video .play-button {
+.archive .content .format-video .play-button,
+.archive .content .category-video .play-button,
+.blog .content .format-video .play-button,
+.blog .content .category-video .play-button {
   background: url(images/play-button.png) 0 0 no-repeat;
   background: url(images/play-button.min.svg) 0 0 no-repeat;
   background-size: em(50);

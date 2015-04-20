@@ -1,9 +1,9 @@
 jQuery(function($) {
   var $vidThumbs = $(
-    '.archive .format-video .entry-image,
-     .archive .category-video .entry-image,
-     .blog .format-video .entry-image,
-     .blog .category-video .entry-image'
+    '.archive .content .format-video .entry-image,
+     .archive .content .category-video .entry-image,
+     .blog .content .format-video .entry-image,
+     .blog .content .category-video .entry-image'
   );
 
   var $playButton = $('<div/>').addClass('play-button');
