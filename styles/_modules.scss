@@ -1316,6 +1316,16 @@ img.alignleft {
   }
 }
 
+.archive .content p,
+.blog .content p {
+  clear: both;
+
+  @include bp($tablet) {
+    clear: none;
+    overflow: hidden;
+  }
+}
+
 
 
 
