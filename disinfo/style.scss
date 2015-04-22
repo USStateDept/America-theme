@@ -141,11 +141,9 @@ $light-gray:      #f1f3f1;
 }
 
 .featured-content .entry-title,
-.single-post .entry-title,
 .archive .entry-title,
-.archive .featured-content .entry-title,
-.search .entry-title,
-.search .featured-content .entry-title {
+.single-post .entry-title,
+.page .entry-title {
     font-size: 36px;
     font-weight: 400;
     margin-top: 0;
@@ -226,32 +224,9 @@ $light-gray:      #f1f3f1;
 \*------------------------------------*/
 
 
-a.alignleft,
-a.alignleft img {
-  margin: 0 10px 20px 0;
-}
-
 .sidebar .widget-title {
   background-color: $light-gray;
   color: $black;
-}
-
-.sidebar .featuredpost .entry {
-  border-bottom: 1px dotted $border-color;
-  clear: none;
-  margin-bottom: 30px;
-  overflow: visible;
-  padding: 0;
-  width: 100%;
-}
-
-.sidebar .featuredpost .entry-title {
-  font-size: em(20);
-}
-
-.sidebar .featured-content a {
-  height: auto;
-  width: 100px;
 }
 
 
