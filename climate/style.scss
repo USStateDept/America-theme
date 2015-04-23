@@ -13,6 +13,28 @@ $blue: #128ad3;
   background: #ffffff;
 }
 
+.entry-content a,
+.entry-content a:hover,
+.footer-widget a,
+.footer-widget a:hover {
+  color: $blue;
+}
+
+.pagination a {
+  color: white;
+  background-color: $blue;
+  margin-right: 0.25em;
+
+  &:hover {
+    color: white;
+    background-color: darken($blue, 5)
+  }
+}
+
+.pagination .active a {
+  background-color: darken($blue, 5)
+}
+
 
 
 
