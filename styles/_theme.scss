@@ -37,26 +37,6 @@
     color: $white;
 }
 
-.america .genesis-nav-menu .sub-menu .current-menu-item > a,
-.america .archive-pagination li a {
-    color: $white;
-
-    @include bp($tablet) {
-      background-color: $america-blue;
-      border: 1px solid $america-blue;
-    }
-}
-
-.america .archive-pagination li a:hover {
-  background-color: darken($america-blue, 5);
-}
-
-.america .archive-pagination li.active a {
-  background-color: $white;
-  border: 1px solid $america-blue;
-  color: $america-blue;
-}
-
 .term-book.america .genesis-nav-menu .menu-item-type-custom > a[title~=books],
 .term-pamphlet.america .genesis-nav-menu .menu-item-type-custom > a[title~=pamphlets],
 .america .genesis-nav-menu .current-menu-parent > a,
