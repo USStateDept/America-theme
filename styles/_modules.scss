@@ -1577,3 +1577,58 @@ figure.alignleft {
     min-height: 300px;
   }
 }
+
+
+
+
+/*------------------------------------*\
+  #HELPERS
+\*------------------------------------*/
+
+
+.takeaway.alignright {
+  float: right;
+  margin: 0 0 1em 1em;
+}
+
+.takeaway.alignleft {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+
+.takeaway {
+  border: 1px dotted $border-color;
+  padding: 1em;
+  width: 100%;
+
+  @include bp($tablet) {
+    width: 40%;
+  }
+}
+
+.takeaway-title {
+  font-size: em(18, 16);
+  margin-top: 0;
+}
+
+.takeaway ul {
+  margin-bottom: 0;
+}
+
+.takeaway ul > li {
+  border-bottom: 1px solid $border-color;
+  font-size: em(14);
+  line-height: 1.25em;
+  list-style-type: none;
+  margin: 0;
+  padding: 1em 0;
+
+  &:first-child {
+    border-top: 1px solid $border-color;
+  }
+
+  &:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+}
