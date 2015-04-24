@@ -33,3 +33,16 @@ function america_responsive_iframe( $atts, $content = null ) {
 
    return $markup;
 }
+
+
+function america_takeaway ( $atts, $content = null ) {
+  extract(shortcode_atts(array(
+    'title' => 'Key Takeways',
+    'align' => 'alignleft',
+   ), $atts));
+
+  $markup = '<div class="takeaway '.$align.'">';
+    $markup .= '<h3 class="takeaway-title">'.$title.'</h3>';
+    $markup .= '<ul>'.$content.'</ul></div>';
+  return $markup;
+}
