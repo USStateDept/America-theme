@@ -9,7 +9,7 @@ function america_responsive_iframe( $atts, $content = null ) {
       'frameborder' => 0,
       'height' => 315,
       'width' => 560,
-   ), $atts));
+  ), $atts));
 
    $container_classes = '';
 
@@ -35,14 +35,28 @@ function america_responsive_iframe( $atts, $content = null ) {
 }
 
 
-function america_takeaway ( $atts, $content = null ) {
+function america_takeaway( $atts, $content = null ) {
   extract(shortcode_atts(array(
     'title' => 'Key Takeways',
     'align' => 'alignleft',
-   ), $atts));
+  ), $atts));
 
   $markup = '<div class="takeaway '.$align.'">';
     $markup .= '<h3 class="takeaway-title">'.$title.'</h3>';
     $markup .= '<ul>'.$content.'</ul></div>';
+  return $markup;
+}
+
+
+function america_blockquote( $atts, $content = null ) {
+  extract(shortcode_atts(array(
+    'type' => 'default',
+    'align' => 'aligncenter',
+  ), $atts));
+
+  $markup = '<blockquote class="' . $type . ' ' . $align . '">';
+
+  $markup .= $content . '</blockquote>';
+
   return $markup;
 }
