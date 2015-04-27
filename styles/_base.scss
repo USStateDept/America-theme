@@ -574,17 +574,7 @@ blockquote::before {
 
 blockquote {
   margin: 0;
-  padding: 24px 40px;
-}
-
-blockquote::before {
-  content: "\201C";
-  display: block;
-  font-size: 30px;
-  height: 0;
-  left: -20px;
-  position: relative;
-  top: -10px;
+  padding: 0;
 }
 
 embed,
