@@ -1577,3 +1577,153 @@ figure.alignleft {
     min-height: 300px;
   }
 }
+
+
+
+
+/*------------------------------------*\
+  #SHORTCODES
+\*------------------------------------*/
+
+
+/**
+  * Takeaways
+  */
+
+.takeaway.alignright {
+  float: right;
+  margin: 0 0 1em 1em;
+}
+
+.takeaway.alignleft {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+
+.takeaway {
+  border: 1px dotted $border-color;
+  padding: 1em;
+  width: 100%;
+
+  @include bp($tablet) {
+    width: 40%;
+  }
+}
+
+.takeaway-title {
+  font-size: em(18, 16);
+  margin-top: 0;
+}
+
+.takeaway ul {
+  margin-bottom: 0;
+}
+
+.takeaway ul > li {
+  border-bottom: 1px solid $border-color;
+  font-size: em(14);
+  line-height: 1.25em;
+  list-style-type: none;
+  margin: 0;
+  padding: 1em 0;
+
+  &:first-child {
+    border-top: 1px solid $border-color;
+  }
+
+  &:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+
+/**
+  * Blockquotes
+  */
+
+blockquote.default,
+blockquote {
+  font-size: 2em;
+  font-style: oblique;
+  line-height: 1.25em;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+.pull-quote {
+  font-size: em(18);
+  text-transform: none;
+  width: 100%;
+}
+
+.pull-quote.alignright {
+  text-align: center;
+
+  @include bp($tablet) {
+    float: right;
+    margin: 0 0 1em 1em;
+    padding: 1em 1em 0 0;
+    width: 40%;
+  }
+}
+
+.pull-quote.alignleft {
+  text-align: center;
+
+  @include bp($tablet) {
+    float: left;
+    margin: 0 1em 1em 0;
+    padding: 1em 0 0 1em;
+    width: 40%;
+  }
+}
+
+.pull-quote::before,
+.pull-quote::after {
+  display: inline-block;
+  font-size: 1em;
+}
+
+.pull-quote::before {
+  content: "“";
+  text-align: start;
+}
+
+.pull-quote::after {
+  content: "”";
+  text-align: end;
+}
+
+.box-quote {
+  background-color: $gray;
+  border-left: 3px solid $border-color;
+  font-size: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+  text-transform: none;
+  width: 100%;
+}
+
+.box-quote.alignright,
+.box-quote.alignleft {
+  @include bp($tablet) {
+    padding: 1em;
+    text-align: left;
+    width: 40%;
+  }
+}
+
+.box-quote.alignright {
+  @include bp($tablet) {
+    float: right;
+    margin: 0 0 1em 1em;
+  }
+}
+
+.box-quote.alignleft {
+  @include bp($tablet) {
+    float: left;
+    margin: 0 1em 1em 0;
+  }
+}

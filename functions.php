@@ -46,7 +46,7 @@ function america_load_scripts() {
 
 	// Event tracking script
 	wp_enqueue_script( 'analytics-events', get_bloginfo( 'stylesheet_directory' ) . '/js/analytics-events.min.js', array(), '1.0.0', false );
-	
+
 	add_filter( 'script_loader_tag', function( $tag, $handle ) {
 	    if ( $handle === 'lte-ie8' ) {
 	        $tag = "<!--[if lte IE 8]>$tag<![endif]-->";
@@ -59,7 +59,9 @@ function america_load_scripts() {
 
 //* init shortcodes
 function america_register_shortcodes(){
-   add_shortcode('iframe', 'america_responsive_iframe');
+	add_shortcode('iframe', 'america_responsive_iframe');
+	add_shortcode('takeaway', 'america_takeaway');
+	add_shortcode('blockquote', 'america_blockquote');
 }
 add_action('init', 'america_register_shortcodes');
 
@@ -199,6 +201,7 @@ function remote_filesize($url) {
 	return strlen(stream_get_contents($fp));
 }
 
+
 //* Utility function to format file size
 function format_file_size( $size ) {
 	if ( $size >= 1000000000 ) {
@@ -212,6 +215,32 @@ function format_file_size( $size ) {
 	}
 	return $fileSize;
 }
+
+
+//* Remove unwanted p tags
+//* From: https://wordpress.org/plugins/shortcode-empty-paragraph-fix/
+function shortcode_empty_paragraph_fix( $content ) {
+
+    // define your shortcodes to filter, '' filters all shortcodes
+    $shortcodes = array( 'iframe', 'takeaway', 'blockquote' );
+
+    foreach ( $shortcodes as $shortcode ) {
+
+        $array = array (
+            '<p>[' . $shortcode => '[' .$shortcode,
+            '<p>[/' . $shortcode => '[/' .$shortcode,
+            $shortcode . ']</p>' => $shortcode . ']',
+            $shortcode . ']<br />' => $shortcode . ']'
+        );
+
+        $content = strtr( $content, $array );
+    }
+
+    return $content;
+}
+
+add_filter( 'the_content', 'shortcode_empty_paragraph_fix' );
+
 
 /************************************** MOVE TO PLUGIN AND MAKE GENERIC ************************************** */
 
