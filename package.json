@@ -1,8 +1,8 @@
 {
-  "name": "america",
-  "version": "0.1.0",
+  "name": "america-theme-extender",
+  "version": "1.0.0",
   "author": "Office of Design, U.S. Department of State",
-  "description": "The America.gov base theme",
+  "description": "America Base Theme Extender",
   "contributors": [
     {
       "name": "Nathan Kleekamp",
@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/IIP-Design/America-theme.git"
+    "url": "https://github.com/IIP-Design/america-theme-extender.git"
   },
   "license": "MIT",
   "private": "false",
