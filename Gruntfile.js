@@ -11,8 +11,8 @@ module.exports = function(grunt) {
             },
             files: {
               'style.css': 'style.scss',
-              'disinfo/style.css': 'disinfo/style.scss',
-              'climate/style.css': 'climate/style.scss'
+              'sites/misinfo/style.css': 'sites/misinfo/style.scss',
+              'sites/climate/style.css': 'sites/climate/style.scss'
             },
           }
         },
@@ -38,15 +38,15 @@ module.exports = function(grunt) {
               },
               {
                 expand: true,
-                cwd: 'disinfo/images-src/',
+                cwd: 'sites/misinfo/images-src/',
                 src: ['**/*.{png,jpg,gif}'],
-                dest: 'disinfo/images/'
+                dest: 'sites/misinfo/images/'
               },
               {
                 expand: true,
-                cwd: 'climate/images-src/',
+                cwd: 'sites/climate/images-src/',
                 src: ['**/*.{png,jpg,gif}'],
-                dest: 'climate/images/'
+                dest: 'sites/climate/images/'
               }
             ]
           }
