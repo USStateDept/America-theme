@@ -8,11 +8,8 @@
   */
  
 
-$details = get_blog_details();
+
 echo 'CLIMATE<br>';
-foreach ( $details as $key => $value )  {
-	echo $key . ' = ' . $value . '<br>';
-}
 
 
 add_filter( 'genesis_post_info', 'america_post_info_filter' );
