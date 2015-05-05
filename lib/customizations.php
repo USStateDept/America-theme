@@ -48,10 +48,8 @@ function america_load_grandchild_theme() {
 	$grandchild_path = get_stylesheet_directory() . '/' . $grandchild_theme; 
 	$functions_file = $grandchild_path. '/functions.php';
 
-	echo 'functions ' . $functions_file;
-
+	
 	if ( file_exists( $functions_file ) ) {
-		echo 'including custom file';
 		include_once( $functions_file );
 		initialize_site( $grandchild_theme );
 	} 
