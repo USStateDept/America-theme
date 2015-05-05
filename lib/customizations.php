@@ -15,21 +15,15 @@ function america_get_site_path_part( $id ) {
 
 	$details = get_blog_details( $id );
 	$path = get_blog_details( $id )->path;
-	
-	echo 'path : ' . $path . '<br>';
 
 	if( trim($details->path) === '/' ) {
 		// on staging/prod servers
-		echo 'in / : <br>';
 		$part = america_get_site_domain( $details->domain );
 	} else {
-		// on development, local/openshift
-		echo 'in /site : <br>';
+		// on development, local/openshift		
 		$len = strlen( $path ) - 2;
 		$part = substr( $path , 1, $len );
 	}
-
-	echo 'part : ' . $part . '<br>';
 
 	return $part;
 }
@@ -54,7 +48,10 @@ function america_load_grandchild_theme() {
 	$grandchild_path = get_stylesheet_directory() . '/' . $grandchild_theme; 
 	$functions_file = $grandchild_path. '/functions.php';
 
+	echo 'functions ' . $functions_file;
+
 	if ( file_exists( $functions_file ) ) {
+		echo 'including custom file';
 		include_once( $functions_file );
 		initialize_site( $grandchild_theme );
 	} 
