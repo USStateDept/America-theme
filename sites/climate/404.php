@@ -11,6 +11,8 @@
  * @link    http://my.studiopress.com/themes/genesis/
  */
 
+
+
 //* Remove default loop
 remove_action( 'genesis_loop', 'genesis_do_loop' );
 
