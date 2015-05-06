@@ -13,7 +13,6 @@ function initialize_site( $path ) {
 	$uri = get_stylesheet_directory_uri() . '/' . $path;
 
 	if( class_exists ('America_Theme_Extender') ) {
-		echo 'class exists <br>';
 		$america_theme_extender = new America_Theme_Extender( $dir, $uri );
 	}
 }
