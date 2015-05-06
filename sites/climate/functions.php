@@ -9,7 +9,6 @@
  * @param  string $path default path to granchild assets (i.e. sites/climate)
  */
 function initialize_site( $path ) {
-
 	$dir = get_stylesheet_directory() . '/' . $path;
 	$uri = get_stylesheet_directory_uri() . '/' . $path;
 
