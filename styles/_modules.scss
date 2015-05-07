@@ -47,9 +47,9 @@
 }
 
 .wp-caption-text {
-  font-size: 12px;
+  font-size: em(12);
   line-height: 1.25em;
-  margin-bottom: em(16, 14);
+  margin-bottom: em(16, 12);
 }
 
 img.centered,
@@ -200,430 +200,24 @@ figure.alignleft {
 
 
 /*------------------------------------*\
-  #TITLES
-\*------------------------------------*/
-
-
-.entry-title {
-  font-size: 42px;
-  line-height: 1;
-  margin-bottom: 20px;
-}
-
-.entry-title a,
-.sidebar .widget-title a {
-  color: $black;
-}
-
-.entry-title a:hover,
-.footer-widgets .entry-title a:hover {
-  color: $body-link;
-  text-decoration: none;
-}
-
-.archive-title,
-.widget-title {
-  font-size: 16px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-
-.footer-widgets .entry-title,
-.sidebar .entry-title {
-  font-size: 16px;
-}
-
-.home-cta .widget-title {
-  font-size: 24px;
-  margin-bottom: 6px;
-  text-transform: none;
-}
-
-.home-cta .entry-title a,
-.home-cta .widget-title,
-.footer-widgets .entry-title a,
-.footer-widgets .widget-title {
-  color: $white;
-}
-
-
-
-
-/*------------------------------------*\
-  #HOMEPAGE
-\*------------------------------------*/
-
-
-.home-middle {
-  padding: 0 30px 0;
-}
-
-.home-bottom,
-.home-middle {
-  background-color: $white;
-  clear: both;
-  overflow: hidden;
-}
-
-.home-bottom {
-  padding: 60px 30px 0;
-}
-
-.home-bottom .widget,
-.home-middle .widget {
-
-  @include bp($tablet) {
-    float: left;
-    padding: 0 2.8%;
-    width: 33.33333333333%;
-  }
-}
-
-.home-bottom .widget:nth-of-type(3n+1),
-.home-middle .widget:nth-of-type(3n+1) {
-  clear: left;
-}
-
-.america-home a.more-link {
-  clear: both;
-  display: block;
-  margin: 30px 0 0;
-}
-
-.america-home .home-cta {
-  background-color: $black;
-  color: $gray;
-  float: left;
-  padding: 60px;
-  width: 100%
-}
-
-.america-home .home-cta p {
-  color: $gray;
-}
-
-.home-cta .button {
-  display: inline-block;
-  float: none;
-  margin: 16px 0 0;
-  text-align: center;
-
-  @include bp($tablet) {
-    float: right;
-    margin-top: -30px;
-  }
-}
-
-
-
-
-// TODO: This is not flexible enough
-
-/*------------------------------------*\
-  #FEATURED-PUBLICATIONS
-\*------------------------------------*/
-
-
-.features {
-  padding: 30px 0 0;
-  overflow: hidden;
-}
-
-.feature-primary {
-  width: 100%;
-
-  @include bp($tablet) {
-    float: left;
-    padding: 0 2.5% 0 0;
-    width: 65.7%;
-  }
-}
-
-.feature-secondary {
-  display: none;
-  visibility: hidden;
-
-  @include bp($tablet) {
-    float: right;
-    padding: 0 0 0 2.5%;
-    visibility: visible;
-    width: 34%;
-  }
-}
-
-.feature-primary,
-.feature-secondary {
-  overflow: hidden;
-  position: relative;
-
-  @include bp($tablet) {
-    display: inline-block;
-  }
-}
-
-.features img {
-  min-width: 100%;
-}
-
-.features h2 {
-  margin-bottom: 10px;
-}
-
-/*.feature-primary-image-container:before {
-    bottom: 1.75em;
-    font-size: 35px;
-    width: 720px;
-}
-
-.feature-secondary-image-container:before {
-    bottom: 1.75em;
-    font-size: 36px;
-    width: 359px;
-}
-
-// TODO: This needs to be more general so that it can be applied to images at
-// will by just add class, ideally
-.archive .archive-description:before,
-.feature-primary-image-container:before,
-.feature-secondary-image-container:before {
-    content: "";
-    display: block;
-    height: 50%;
-    position: absolute;
-    z-index: 0;
-    background: -moz-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.85) 100%);
-    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(0,0,0,0)),color-stop(100%,rgba(0,0,0,.85)));
-    background: -webkit-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.85) 100%);
-    background: -o-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.85) 100%);
-    background: -ms-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.85) 100%);
-    background: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.85) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#b3000000', GradientType=0);
-}*/
-
-
-.feature-primary-headline,
-.feature-secondary-headline {
-  bottom: 80px;
-  left: 10px;
-  position: relative;
-}
-
-.feature-primary-headline {
-  font-size: 7vw;
-
-  @include bp($big-mobile) {
-    font-size: 6.5vw;
-  }
-
-  @include bp($tablet) {
-    font-size: 27px;
-  }
-
-  @include bp($laptop) {
-    font-size: 36px;
-  }
-}
-
-.feature-secondary-headline {
-  font-size: 20px;
-
-  @include bp($laptop) {
-    font-size: 23px;
-  }
-
-  @include bp($desktop) {
-    font-size: 30px;
-  }
-}
-
-.homepage-subject-header {
-  border-bottom: $border;
-  font-family: $body-font;
-  margin: -10px 0 30px 0;
-  padding: 0 15px 10px;
-
-  @include bp($big-mobile) {
-    padding: 0 30px 10px;
-  }
-}
-
-
-
-
-// TODO: This is very focused on how the publications should appear on the
-// homepage of the Publication's site. The widget should be refactored and
-// allow the web producers to configure the posts should display.
-
-/*------------------------------------*\
-  #FEATURED-POST
-\*------------------------------------*/
-
-
-.featuredpost .widget-title {
-  display: inline-block;
-}
-
-.featuredpost .more-from-category {
-  display: inline-block;
-  float: right;
-}
-
-.featuredpost .more-from-category-mobile {
-  clear: both;
-  display: none;
-  visibility: hidden;
-}
-
-.featuredpost .more-from-category-mobile a,
-.featuredpost .more-from-category a {
-  color: $black;
-}
-
-.featuredpost .more-from-category-mobile a:after,
-.featuredpost .more-from-category a:after {
-  content: '\00BB';
-  display: inline-block;
-  padding-left: 5px;
-}
-
-.home-bottom .widget.featuredpost,
-.home-middle .widget.featuredpost {
-  padding: 0;
-  width: 100%;
-}
-
-
-
-
-
-/*------------------------------------*\
-  #PUBLICATIONS-SEARCH
-\*------------------------------------*/
-
-
-.resources-search {
-  border: $border;
-  border-top: 0;
-}
-
-.resources-search .widget-wrap {
-  background-color: $gray;
-  margin: 0 1px 1px;
-  padding: 20px 10px;
-
-  @include bp($tablet) {
-    padding: 20px;
-  }
-}
-
-.resources-search input[type="search"] {
-  float:left;
-  background-color: $white;
-  border: 1px solid darken($gray, 10);
-  border-radius: 0;
-  box-shadow: none;
-  line-height: 1;
-  margin: 0 2vw 5px 0;
-  padding: 10px;
-  width: 65vw;
-
-  @include bp($tablet) {
-    margin-right: 1%;
-    width: 40%;
-  }
-}
-
-.resources-search .select-holder {
-  display: none;
-  visibility: hidden;
-
-  @include bp($tablet) {
-    background: $white url(images/icon-select-arrow.png) 90% 50% no-repeat;
-    display: block;
-    float: left;
-    margin-right: 1%;
-    overflow: hidden;
-    visibility: visible;
-  }
-}
-
-.resources-search .select-holder.category,
-.resources-search .select-holder.type {
-  width: 20%;
-}
-
-.resources-search .select-holder select {
-  background: transparent;
-  background-image: none;
-  border: 1px solid darken($gray, 10);
-  border-radius: 0;
-  box-shadow: none;
-  line-height: 1em;
-  padding: 12px;
-  -webkit-appearance: none;
-}
-
-.resources-search .select-holder select:focus {
-  outline: none;
-}
-
-.resources-search .searchsubmit {
-  border-radius: 5px;
-  font-size: 16px;
-  background-color: $america-blue;
-  margin-right: 0;
-  padding: 10px;
-  width: auto;
-
-  @include bp($tablet) {
-    padding: 10px 30px;
-    width: 17%;
-  }
-}
-
-.resources-search .searchsubmit:hover {
-  background-color: $america-blue;
-}
-
-.resources-search ::-webkit-input-placeholder {
-  padding-top: 2px;
-  color: $black;
-}
-
-.resources-search :-moz-placeholder { /* Firefox 18- */
-  color: $black;
-}
-
-.resources-search ::-moz-placeholder {  /* Firefox 19+ */
-  color: $black;
-}
-
-.resources-search :-ms-input-placeholder {
-  color: $black;
-}
-
-
-
-
-/*------------------------------------*\
   #POST-ENTRIES
 \*------------------------------------*/
 
 
 .entry {
-  margin-bottom: 40px;
+  margin-bottom: em(40);
 }
 
 .entry-content ol,
 .entry-content p,
 .entry-content ul,
 .quote-caption {
-  margin-bottom: 26px;
+  margin-bottom: em(25);
 }
 
 .entry-content ol li,
 .entry-content ul li {
-  margin-left: 40px;
+  margin-left: em(40);
 }
 
 .entry-content ol > li {
@@ -649,7 +243,7 @@ figure.alignleft {
     font-size: em(14);
     letter-spacing: 1px;
     line-height: em(20, 14);
-    margin: 0 0 20px 0;
+    margin: 0 0 em(20, 14) 0;
     max-width: none;
     overflow: auto;
     padding: 0;
@@ -670,8 +264,8 @@ figure.alignleft {
 .entry .entry-meta > *:before {
     color: $dark-gray;
     display: inline-block;
-    font: normal 18px/1 'dashicons';
-    margin-right: 5px;
+    font: normal em(18, 14)/1 'dashicons';
+    margin-right: em(5, 14);
     vertical-align: top;
     -webkit-font-smoothing: antialiased;
 }
@@ -691,36 +285,30 @@ figure.alignleft {
 }
 
 .content .entry-header .entry-meta {
-  margin-bottom: 24px;
+  margin-bottom: em(25, 14);
 }
 
 .content .entry-header .entry-meta .entry-comments-link {
   background-color: $body-link;
   color: $white;
   float: right;
-  font-size: 12px;
-  padding: 0 20px;
+  font-size: em(12);
+  padding: 0 em(20, 12);
   text-transform: uppercase;
 }
 
 .content .entry-header .entry-meta .entry-comments-link a {
   background: url(images/icon-comments.png) no-repeat left;
-  background-size: 16px 16px;
+  background-size: em(16, 12) em(16, 12);
   color: $white;
-  padding-left: 32px;
+  padding-left: em(32, 12);
 }
 
 .entry-footer .entry-meta {
   border-top: 1px dotted $gray;
-  font-size: 14px;
+  font-size: em(14);
   margin: 0;
-  padding-top: 10px;
-}
-
-.entry-footer .entry-tags {
-  background: url(images/icon-dot.png) no-repeat left;
-  margin-left: 4px;
-  padding-left: 10px;
+  padding-top: em(10, 14);
 }
 
 
@@ -730,13 +318,13 @@ figure.alignleft {
 
 .after-entry {
   background-color: $gray;
-  margin-bottom: 30px;
-  padding: 30px;
+  margin-bottom: em(30);
+  padding: em(30);
   text-align: center;
 }
 
 .after-entry .widget {
-  margin-bottom: 30px;
+  margin-bottom: em(30);
 }
 
 .after-entry .widget:last-child,
@@ -751,7 +339,6 @@ figure.alignleft {
 
 
 
-
 /*------------------------------------*\
   #SIDEBARS
 \*------------------------------------*/
@@ -760,7 +347,7 @@ figure.alignleft {
 .sidebar {
   display: inline;
   font-size: 16px;
-  padding-bottom: 30px;
+  padding-bottom: em(30);
 }
 
 .sidebar p {
@@ -770,18 +357,6 @@ figure.alignleft {
 .sidebar p:last-child,
 .sidebar ul {
   margin-bottom: 0;
-}
-
-.sidebar li,
-.sidebar .more-from-category a {
-  background: url(images/icon-li.png) no-repeat 0 7px;
-  background-size: 8px 8px;
-  margin-bottom: 6px;
-  padding: 0 0 6px 16px;
-}
-
-.sidebar .more-from-category {
-  padding-top: 6px;
 }
 
 .sidebar .widget {
@@ -803,7 +378,7 @@ figure.alignleft {
 .sidebar .featuredpost .entry {
   border-bottom: 1px dotted $border-color;
   clear: none;
-  margin-bottom: 30px;
+  margin-bottom: em(30);
   overflow: visible;
   padding: 0;
   width: 100%;
@@ -823,7 +398,7 @@ figure.alignleft {
   float: left;
   height: auto;
   margin: 0 1em 1em 0;
-  width: 100px;
+  width: em(100);
 }
 
 
@@ -836,14 +411,14 @@ figure.alignleft {
 
 .site-header {
   border-bottom: $border;
-  margin: 1px auto;
+  margin: em(1) auto;
   min-height: 0;
-  padding: 10px 0 0;
+  padding: em(10) 0 0;
   width: 100%;
 
   @include bp($tablet) {
-    min-height: 88px;
-    padding: 20px 0;
+    min-height: em(88);
+    padding: em(20) 0;
   }
 }
 
@@ -871,8 +446,8 @@ figure.alignleft {
   font-family: $body-font;
   font-size: 25px;
   font-size: 7.5vw;
-  margin: 0 0 5px;
-  padding-left: 30px;
+  margin: 0 0 em(5, 25);
+  padding-left: em(30, 25);
   text-align: center;
 
   @include bp($big-mobile) {
@@ -888,7 +463,7 @@ figure.alignleft {
     background-size: auto;
     font-size: 36px;
     line-height: 1.25;
-    padding-left: 100px;
+    padding-left: em(100, 36);
   }
 }
 
@@ -900,7 +475,7 @@ figure.alignleft {
   text-decoration: none;
 
   @include bp($tablet) {
-    line-height: 88px;
+    line-height: em(88, 36);
   }
 }
 
@@ -969,37 +544,6 @@ figure.alignleft {
 
 
 
-/**
-  * Site header navigation.
-  */
-
-.site-header .widget_nav_menu {
-  padding: 0;
-}
-
-.site-header .genesis-nav-menu {
-  float: right;
-  width: auto;
-}
-
-.site-header .genesis-nav-menu a {
-  font-size: 1.1em;
-  line-height: 88px;
-  padding: 0 18px;
-}
-
-.site-header .genesis-nav-menu .sub-menu a {
-  @include bp($tablet) {
-    padding: 10px 18px;
-    line-height: 1em;
-  }
-}
-
-.site-header .sub-menu .sub-menu {
-  margin-top: -40px;
-}
-
-
 
 /*------------------------------------*\
   #SITE-NAVIGATION
@@ -1011,7 +555,7 @@ figure.alignleft {
   clear: both;
   color: $black;
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.5em;
   margin: 0;
   overflow: hidden;
   padding: 0;
@@ -1028,7 +572,7 @@ figure.alignleft {
 .genesis-nav-menu a {
   color: $black;
   display: block;
-  padding: 16px 20px;
+  padding: em(16, 14) em(20, 14);
   position: relative;
 }
 
@@ -1151,6 +695,37 @@ figure.alignleft {
 
 .genesis-nav-menu .search-form {
   width: 100%;
+}
+
+
+/**
+  * Site header navigation.
+  */
+
+.site-header .widget_nav_menu {
+  padding: 0;
+}
+
+.site-header .genesis-nav-menu {
+  float: right;
+  width: auto;
+}
+
+.site-header .genesis-nav-menu a {
+  font-size: em(16, 14);
+  line-height: em(88, 14);
+  padding: 0 em(18, 14);
+}
+
+.site-header .genesis-nav-menu .sub-menu a {
+  @include bp($tablet) {
+    padding: em(10, 14) em(18, 14);
+    line-height: 1em;
+  }
+}
+
+.site-header .sub-menu .sub-menu {
+  margin-top: -40px;
 }
 
 
@@ -1314,15 +889,8 @@ figure.alignleft {
   padding-bottom: 1em;
 }
 
-.archive img.alignleft,
-.blog img.alignleft {
-  margin: 0 1em 1em 0;
-}
-
-.archive .content .format-video .play-button,
-.archive .content .category-video .play-button,
-.blog .content .format-video .play-button,
-.blog .content .category-video .play-button {
+.format-video .play-button,
+.category-video .play-button {
   background: url(images/video.png) 0 0 no-repeat;
   background: url(images/video.min.svg) 0 0 no-repeat;
   background-size: em(50);
@@ -1333,13 +901,13 @@ figure.alignleft {
   width: em(50);
 }
 
-.archive .content .entry-image,
-.blog .content .entry-image {
+.archive .entry-image,
+.blog .entry-image {
   width: 100%;
 
   @include bp($tablet) {
     width: auto;
-    max-width: 340px;
+    max-width: em(340);
   }
 }
 
@@ -1351,143 +919,6 @@ figure.alignleft {
     clear: none;
     overflow: hidden;
   }
-}
-
-
-
-
-/*------------------------------------*\
-  #SINGLE-PUBLICATION
-\*------------------------------------*/
-
-
-/**
-  * Basic publication content.
-  */
-
-.single-publication .publication-featured-image {
-    float: left;
-    margin: 0 0 1em 0;
-}
-
-.entry-title {
-  font-size: 30px;
-  line-height: 1.25em;
-}
-
-.single-publication .entry-content {
-    overflow: hidden;
-}
-
-
-/**
-  * Downloads box.
-  */
-
-.downloads {
-  clear: both;
-  margin: 1em 0 2em;
-}
-
-// TODO: Standardize with ShareAmerica
-.downloads-title {
-  border-bottom: 1px solid $black;
-  font-family: $body-font;
-  font-size: 22px;
-  letter-spacing: 1px;
-}
-
-.downloads p {
-  margin: 0;
-}
-
-.downloads-file.mobi:after,
-.downloads-file.epub:after,
-.downloads-file.pdf:after {
-  color: $black;
-  cursor: default;
-  display: inline-block;
-  padding-left: 5px;
-}
-
-
-.downloads-file.mobi:after {
-  content: "(MOBI)";
-}
-
-.downloads-file.epub:after {
-  content: "(EPUB)";
-}
-
-.downloads-file.pdf:after {
-  content: "(PDF)";
-}
-
-
-/**
-  * Icons. All of them in the single publication.
-  */
-
-.downloads-title:after,
-.entry-publication-type:before,
-.entry-categories:before,
-.entry-tags:before {
-  content: "\f323";;
-  display: inline-block;
-  font: normal 16px/1 'dashicons';
-  vertical-align: middle;
-}
-
-.entry-categories:before {
-  content: "\f318";
-}
-
-.entry-publication-type:before {
-  content: "\f330";
-}
-
-.downloads-title:after {
-  content: "\f316";
-  padding-left: 5px;
-}
-
-.downloads-file.epub {
-  background: url(images/epub.min.svg) center left no-repeat;
-}
-
-.downloads-file.mobi {
-  background: url(images/mobi.min.svg) center left no-repeat;
-}
-
-.downloads-file.pdf {
-  background: url(images/pdf.min.svg) center left no-repeat;
-}
-
-.downloads-file.mobi,
-.downloads-file.epub,
-.downloads-file.pdf {
-  background-size: 15px 20px;
-  padding: 5px 0 5px 23px;
-}
-
-
-
-
-/*------------------------------------*\
-  #CONTACT-US
-\*------------------------------------*/
-
-
-.contact-form input[type='text'],
-.contact-form input[type='email'],
-.contact-form textarea {
-  padding: 10px;
-  min-width: 98%;
-  width: 98%;
-}
-
-.contact-submit .pushbutton-wide {
-  font-size: 16px;
 }
 
 
@@ -1549,6 +980,14 @@ figure.alignleft {
   width: 1px;
 }
 
+
+
+
+/*------------------------------------*\
+  #SHORTCODES
+\*------------------------------------*/
+
+
 /*
  * Responsive iframe embeds
  */
@@ -1577,13 +1016,6 @@ figure.alignleft {
     min-height: 300px;
   }
 }
-
-
-
-
-/*------------------------------------*\
-  #SHORTCODES
-\*------------------------------------*/
 
 
 /**
