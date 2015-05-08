@@ -7,7 +7,6 @@
   * @subpackage Customizations
   */
 
-
 add_filter( 'genesis_post_info', 'america_post_info_filter' );
 function america_post_info_filter($post_info) {
 if ( !is_page() ) {
