@@ -9,6 +9,9 @@ include_once( get_stylesheet_directory() . '/lib/theme-defaults.php' );
 //* Get shortcodes
 include_once( get_stylesheet_directory() . '/lib/shortcodes.php' );
 
+//* Get theme customizations
+include_once( get_stylesheet_directory() . '/lib/customizations.php' );
+
 
 //* Set Localization (do not remove)
 load_child_theme_textdomain( 'america', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'america' ) );
@@ -129,8 +132,6 @@ function america_secondary_menu_args( $args ){
 
 }
 
-
-
 /************************************** Removed for Disinfo; Check publications ************************************** */
 //* Relocate the post info
 // remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
@@ -215,46 +216,8 @@ function format_file_size( $size ) {
 	return $fileSize;
 }
 
-/**
- * Utility class that returns the sub site part of the url; used to locate correct asset folder (i.e. /climate or /misinfo)
- * Folder names MUST match the path entered in the "path" field of the Edit Sites admin screen
- * 
- * @param  int 		$id current blog_id
- * @return string   url part
- */
-function america_get_site_path_part( $id ) {
-	$sites = wp_get_sites();
-
-	foreach ( $sites as $site ) {
-		foreach ( $site as $key => $value )  {
-			if( $key == 'blog_id' ) {
-				if( $value == $id ) {
-					extract($site);
-					$len = strlen($path) - 2;
-						return substr( $path , 1, $len );
-				}
-			}
-		}
-	}
-}
-
-// Loads grandchild theme functons file if file is present and initializes extender
-// Currently each grandchild theme requires a functions.php file in order to load css,
-// templates, etc.
-function load_grandchild_theme() {
-	$grandchild_theme_root = 'sites/';
-	$grandchild_theme = $grandchild_theme_root . america_get_site_path_part( get_current_blog_id() );
-	$grandchild_path = get_stylesheet_directory() . '/' . $grandchild_theme; 
-	$functions_file = $grandchild_path. '/functions.php';
-
-	if ( file_exists( $functions_file ) ) {
-		include_once( $functions_file );
-		initialize_site( $grandchild_theme );
-	} 
-}
-
 // Load theme extender
-load_grandchild_theme();
+america_load_grandchild_theme();
 
 
 //* Remove unwanted p tags
