@@ -65,6 +65,11 @@ $blue: #128ad3;
   padding: 0;
 }
 
+.no-backgroundsize .site-title {
+  background-position: 0 0;
+  padding: 0;
+}
+
 .site-title a {
   background: url(/wp-content/themes/america/sites/climate/images/mark.png) 0 0 no-repeat;
   background-size: 260px 81px;
@@ -76,6 +81,10 @@ $blue: #128ad3;
   &:hover {
     line-height: 1em;
   }
+}
+
+.no-backgroundsize .site-title a {
+  background: url(/wp-content/themes/america/sites/climate/images/mark-old-ie.png) 0 0 no-repeat;
 }
 
 .header-widget-area {
