@@ -571,7 +571,7 @@ figure.alignleft {
 
 .genesis-nav-menu a {
   color: $black;
-  display: block;
+  display: inline-block;
   padding: em(16, 14) em(20, 14);
   position: relative;
 }
@@ -603,6 +603,12 @@ figure.alignleft {
   @include bp($tablet) {
     top: 0;
   }
+}
+
+.no-backgroundsize .genesis-nav-menu .menu-item-language-current > a:after,
+.no-backgroundsize .genesis-nav-menu .menu-item-has-children > a:after {
+  color: $black;
+  top: 0;
 }
 
 .genesis-nav-menu .menu-item-language-current .submenu-languages a:after {
