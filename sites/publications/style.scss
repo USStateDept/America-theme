@@ -342,7 +342,7 @@
   visibility: hidden;
 
   @include bp($tablet) {
-    background: $white url(images/icon-select-arrow.png) 90% 50% no-repeat;
+    background: $white url(images/dist/icon-select-arrow.png) 90% 50% no-repeat;
     display: block;
     float: left;
     margin-right: 1%;
@@ -505,15 +505,15 @@
 }
 
 .downloads-file.epub {
-  background: url(images/epub.min.svg) center left no-repeat;
+  background: url(images/dist/epub.min.svg) center left no-repeat;
 }
 
 .downloads-file.mobi {
-  background: url(images/mobi.min.svg) center left no-repeat;
+  background: url(images/dist/mobi.min.svg) center left no-repeat;
 }
 
 .downloads-file.pdf {
-  background: url(images/pdf.min.svg) center left no-repeat;
+  background: url(images/dist/pdf.min.svg) center left no-repeat;
 }
 
 .downloads-file.mobi,
