@@ -42,21 +42,21 @@ module.exports = function(grunt) {
               },
               {
                 expand: true,
-                cwd: 'sites/misinfo/images-src/',
+                cwd: 'sites/misinfo/images/src/',
                 src: ['**/*.{png,jpg,gif}'],
-                dest: 'sites/misinfo/images/'
+                dest: 'sites/misinfo/images/dist/'
               },
               {
                 expand: true,
-                cwd: 'sites/climate/images-src/',
+                cwd: 'sites/climate/images/src/',
                 src: ['**/*.{png,jpg,gif}'],
-                dest: 'sites/climate/images/'
+                dest: 'sites/climate/images/dist/'
               },
               {
                 expand: true,
-                cwd: 'sites/publications/images-src/',
+                cwd: 'sites/publications/images/src/',
                 src: ['**/*.{png,jpg,gif}'],
-                dest: 'sites/publications/images/'
+                dest: 'sites/publications/images/dist/'
               }
             ]
           }
@@ -70,13 +70,31 @@ module.exports = function(grunt) {
             ]
           },
           dist: {
-            files: [{
-              expand: true,
-              cwd: 'images-src',
+            files: [
+              {expand: true,
+              cwd: 'images/src',
               src: ['*.svg'],
-              dest: 'images',
-              ext: '.min.svg'
-            }]
+              dest: 'images/dist',
+              ext: '.min.svg'},
+
+              {expand: true,
+              cwd: 'sites/publications/images/src',
+              src: ['*.svg'],
+              dest: 'sites/publications/images/dist',
+              ext: '.min.svg'},
+
+              {expand: true,
+              cwd: 'sites/misinfo/images/src',
+              src: ['*.svg'],
+              dest: 'sites/misinfo/images/dist',
+              ext: '.min.svg'},
+
+              {expand: true,
+              cwd: 'sites/climate/images/src',
+              src: ['*.svg'],
+              dest: 'sites/climate/images/dist',
+              ext: '.min.svg'}
+            ]
           }
         },
 
@@ -88,10 +106,28 @@ module.exports = function(grunt) {
             },
             files: [
               {expand: true,
-               cwd: 'images',
+               cwd: 'images/dist',
                src: ['*.svg'],
-               dest: 'images',
-               ext: '.svgz'}
+               dest: 'images/dist',
+               ext: '.svgz'},
+
+              {expand: true,
+               cwd: 'sites/publications/images/dist',
+               src: ['*.svg'],
+               dest: 'sites/publications/images/dist',
+               ext: '.svgz'},
+
+               {expand: true,
+                cwd: 'sites/misinfo/images/dist',
+                src: ['*.svg'],
+                dest: 'sites/misinfo/images/dist',
+                ext: '.svgz'},
+
+                {expand: true,
+                 cwd: 'sites/climate/images/dist',
+                 src: ['*.svg'],
+                 dest: 'sites/climate/images/dist',
+                 ext: '.svgz'}
             ]
           }
         },

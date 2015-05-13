@@ -32,7 +32,7 @@
 }
 
 .search-form input[type="search"] {
-  background: $white url(images/icon-search.png) no-repeat right;
+  background: $white url(images/dist/icon-search.png) no-repeat right;
   background-size: 36px 16px;
   color: $dark-gray;
   font-size: 10px;
@@ -298,7 +298,7 @@ figure.alignleft {
 }
 
 .content .entry-header .entry-meta .entry-comments-link a {
-  background: url(images/icon-comments.png) no-repeat left;
+  background: url(images/dist/icon-comments.png) no-repeat left;
   background-size: em(16, 12) em(16, 12);
   color: $white;
   padding-left: em(32, 12);
@@ -441,7 +441,7 @@ figure.alignleft {
 }
 
 .site-title {
-  background: url(images/dos-seal.png) 3% center no-repeat;
+  background: url(images/dist/dos-seal.png) 3% center no-repeat;
   background-size: 15%;
   font-family: $body-font;
   font-size: 25px;
@@ -683,14 +683,14 @@ figure.alignleft {
 }
 
 .genesis-nav-menu > .rss > a {
-  background: url(images/icon-rss.png) no-repeat left;
+  background: url(images/dist/icon-rss.png) no-repeat left;
   background-size: 12px 12px;
   margin-left: 12px;
   padding-left: 16px;
 }
 
 .genesis-nav-menu > .twitter > a {
-  background: url(images/icon-twitter-nav.png) no-repeat left;
+  background: url(images/dist/icon-twitter-nav.png) no-repeat left;
   background-size: 16px 16px;
   padding-left: 20px;
 }
@@ -783,8 +783,8 @@ figure.alignleft {
 
 .format-video .video-watermark,
 .category-video .video-watermark {
-  background: url(images/video.png) 0 0 no-repeat;
-  background: url(images/video.min.svg) 0 0 no-repeat;
+  background: url(images/dist/video.png) 0 0 no-repeat;
+  background: url(images/dist/video.min.svg) 0 0 no-repeat;
   background-size: em(50);
   height: em(50);
   margin: 0.5em;
@@ -833,7 +833,7 @@ figure.alignleft {
 }
 
 .footer-widgets-1 {
-  background: url(images/shareamerica-flag.png) no-repeat 1em em(16, 12);
+  background: url(images/dist/shareamerica-flag.png) no-repeat 1em em(16, 12);
   padding: 1em 1em 1em 5em;
 
   @include bp($tablet) {
