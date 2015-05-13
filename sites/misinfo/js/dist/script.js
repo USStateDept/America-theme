@@ -1,1 +1,1 @@
-!function(a){a(".genesis-nav-menu").responsiveMenu(),a(".menu-item-language").addClass("menu-item-has-children")}();
+!function(a,b,c){a(c).ready(function(){a(".genesis-nav-menu").responsiveMenu(),a(".menu-item-language").addClass("menu-item-has-children")})}(jQuery,window,document);

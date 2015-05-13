@@ -1,4 +1,4 @@
-jQuery(function($) {
+;(function ( $, window, document, undefined ) {
   var $vidThumbs = $(
     '.archive .content .format-video .entry-image,
      .archive .content .category-video .entry-image,
@@ -10,4 +10,4 @@ jQuery(function($) {
 
   $vidThumbs.after($videoWatermark);
 
-});
+})( jQuery, window, document );
