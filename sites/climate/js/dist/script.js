@@ -1,0 +1,1 @@
+!function(){jQuery(".genesis-nav-menu").responsiveMenu()}();

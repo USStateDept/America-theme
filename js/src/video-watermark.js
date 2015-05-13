@@ -6,8 +6,8 @@ jQuery(function($) {
      .blog .content .category-video .entry-image'
   );
 
-  var $playButton = $('<div/>').addClass('play-button');
+  var $videoWatermark = $('<div/>').addClass('video-watermark');
 
-  $vidThumbs.after($playButton);
+  $vidThumbs.after($videoWatermark);
 
 });
