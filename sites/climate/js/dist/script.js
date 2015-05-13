@@ -1,1 +1,1 @@
-!function(){jQuery(".genesis-nav-menu").responsiveMenu()}();
+!function(a,b,c){a(c).ready(function(){a(".genesis-nav-menu").responsiveMenu()})}(jQuery,window,document);

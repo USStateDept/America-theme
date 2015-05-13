@@ -1,4 +1,4 @@
-jQuery(function( $ ){
+;(function ( $, window, document, undefined ) {
 
   var $files = $('.downloads-file');
 
@@ -9,4 +9,4 @@ jQuery(function( $ ){
     $this.addClass($ext);
   });
 
-});
+})( jQuery, window, document );

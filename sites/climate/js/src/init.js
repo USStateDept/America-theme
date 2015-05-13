@@ -1,3 +1,7 @@
-(function ( $, window, document, undefined ) {
-    jQuery('.genesis-nav-menu').responsiveMenu();
-})();
+;(function ( $, window, document, undefined ) {
+
+    $(document).ready(function() {
+        $('.genesis-nav-menu').responsiveMenu();
+    });
+
+})( jQuery, window, document );
