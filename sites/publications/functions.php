@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Initialize the America_Theme_Extender class if it is not already loaded
  * sending in both a path to the direcotry on filesystem where assets are
@@ -9,7 +8,7 @@
  *
  * @param  string $path default path to granchild assets (i.e. sites/publications)
  */
-function initialize_site( $path) {
+function initialize_site( $path ) {
 
 	$dir = get_stylesheet_directory() . '/' . $path;
 	$uri = get_stylesheet_directory_uri() . '/' . $path;

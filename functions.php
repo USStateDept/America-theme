@@ -245,6 +245,20 @@ function shortcode_empty_paragraph_fix( $content ) {
 add_filter( 'the_content', 'shortcode_empty_paragraph_fix' );
 
 
+// Sends errors/output to log file (wp-content/debug.log)
+if (!function_exists('debug')) {
+    function debug ( $log )  {
+        if ( true === WP_DEBUG ) {
+            if ( is_array( $log ) || is_object( $log ) ) {
+                error_log( print_r( $log, true ) );
+            } else {
+                error_log( $log );
+            }
+        }
+    }
+}
+
+
 /************************************** MOVE TO PLUGIN AND MAKE GENERIC ************************************** */
 
 // When moved to plugin, associated styles need to moved as well.
