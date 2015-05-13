@@ -37,17 +37,17 @@ add_theme_support( 'genesis-responsive-viewport' );
 add_action( 'wp_enqueue_scripts', 'america_load_scripts' );
 function america_load_scripts() {
 
-	wp_enqueue_script( 'america-file-extensions', get_bloginfo( 'stylesheet_directory' ) . '/js/main.min.js', array( 'jquery' ), '1.0.0' );
+	wp_enqueue_script( 'america-file-extensions', get_bloginfo( 'stylesheet_directory' ) . '/js/dist/main.min.js', array( 'jquery' ), '1.0.0' );
 
 	wp_enqueue_style( 'dashicons' );
 
 	wp_enqueue_style( 'google-font', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Signika', array(), CHILD_THEME_VERSION );
 
 	// IE Specific Script
-	wp_enqueue_script( 'lte-ie8', get_bloginfo( 'stylesheet_directory' ) . '/js/lte-ie8.min.js', array(), '1.0.0', false );
+	wp_enqueue_script( 'lte-ie8', get_bloginfo( 'stylesheet_directory' ) . '/js/dist/lte-ie8.min.js', array(), '1.0.0', false );
 
 	// Event tracking script
-	wp_enqueue_script( 'analytics-events', get_bloginfo( 'stylesheet_directory' ) . '/js/analytics-events.min.js', array(), '1.0.0', false );
+	wp_enqueue_script( 'analytics-events', get_bloginfo( 'stylesheet_directory' ) . '/js/dist/analytics-events.min.js', array(), '1.0.0', false );
 
 	add_filter( 'script_loader_tag', function( $tag, $handle ) {
 	    if ( $handle === 'lte-ie8' ) {
