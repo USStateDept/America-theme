@@ -62,7 +62,7 @@ function america_load_scripts() {
 //* init shortcodes
 function america_register_shortcodes(){
 	add_shortcode('iframe', 'america_responsive_iframe');
-	add_shortcode('takeaway', 'america_takeaway');
+	add_shortcode('breakout', 'america_breakout');
 	add_shortcode('blockquote', 'america_blockquote');
 }
 add_action('init', 'america_register_shortcodes');
@@ -225,7 +225,7 @@ america_load_grandchild_theme();
 function shortcode_empty_paragraph_fix( $content ) {
 
     // define your shortcodes to filter, '' filters all shortcodes
-    $shortcodes = array( 'iframe', 'takeaway', 'blockquote' );
+    $shortcodes = array( 'iframe', 'breakout', 'blockquote' );
 
     foreach ( $shortcodes as $shortcode ) {
 
