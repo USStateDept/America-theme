@@ -23,3 +23,18 @@ add_filter( 'genesis_pre_load_favicon', 'sp_favicon_filter' );
 function sp_favicon_filter( $favicon_url ) {
 	return '/wp-content/themes/america/sites/publications/images/dist/favicon.ico';
 }
+
+//* Add image sizes
+add_image_size( 'publication', 424, 530, TRUE );
+
+//* Redirect search, category and taxonomy archives to use archive-publication template
+/*function get_publication_template( $template ) {
+  if(  is_category() || is_search() || is_tax() ) {
+  	$template = get_query_template( 'archive-publication' );
+  }
+  return $template;
+}
+
+add_filter( 'template_include', 'get_publication_template' );*/
+
+/********************************************** END MOVE TO PLUGIN ******************************************* */
