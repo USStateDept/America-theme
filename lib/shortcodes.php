@@ -35,14 +35,16 @@ function america_responsive_iframe( $atts, $content = null ) {
 }
 
 
-function america_takeaway( $atts, $content = null ) {
+function america_breakout( $atts, $content = null ) {
   extract(shortcode_atts(array(
-    'title' => 'Key Takeways',
     'align' => 'alignleft',
+    'title' => 'Key Takeways',
+    'type' => 'takeway',
+    'width' => ''
   ), $atts));
 
-  $markup = '<div class="takeaway '.$align.'">';
-    $markup .= '<h3 class="takeaway-title">'.$title.'</h3>';
+  $markup = '<div class="breakout '. $type . ' ' . $align . ' ' . $width .'">';
+    $markup .= '<h3 class="breakout-title">'.$title.'</h3>';
     $markup .= '<ul>'.$content.'</ul></div>';
   return $markup;
 }
