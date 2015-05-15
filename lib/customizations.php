@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Utility class that returns the customizations directory. 
+ * Class that returns the customizations directory. 
  * Folder names MUST match:
  * Development enviroment: path to site (i.e climate of  america.dev/climate) 
  * Staging/production : first part of domain name (i.e. climate of climate.edit.america.gov)
