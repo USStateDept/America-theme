@@ -5,8 +5,7 @@
             url = window.location.href;
 
         function buildTweet ( $listItem ) {
-            var text = $listItem.data('tweetContent'),
-                url = $listItem.data('tweetUrl'),
+            var text = $listItem.text(),
                 intentQuery = $.param({ 'text': text, 'url': url }),
                 intentHref = 'https://twitter.com/intent/tweet?' + intentQuery;
 
@@ -14,12 +13,8 @@
         }
 
         function buildIntent ( item ) {
-            var $this = $(item);
-
-            $this.attr('data-tweet-content', $this.text());
-            $this.attr('data-tweet-url', url);
-
-            var $link = buildTweet( $this );
+            var $this = $(item),
+                $link = buildTweet( $this );
 
             $this.html($link);
         }
