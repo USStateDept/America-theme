@@ -208,7 +208,7 @@ figure.alignleft {
   margin-bottom: em(40);
 }
 
-.entry-content ol
+.entry-content ol,
 .entry-content p,
 .entry-content ul,
 .quote-caption {
@@ -957,7 +957,6 @@ figure.alignleft {
   line-height: 1.25em;
   list-style-type: disc;
   margin: 0;
-  padding: 1em 0;
 
   &:first-child {
     border-top: 1px solid $border-color;
@@ -968,11 +967,19 @@ figure.alignleft {
   }
 }
 
+.content .breakout li {
+  padding: 1em 0;
+}
+
 .shareline li {
   background: url(images/dist/icon-twitter.min.svg) 0 50% no-repeat;
   background-size: em(26, 14) em(26, 14);
   line-height: 1.25em;
   list-style-type: none;
+  padding-left: em(35, 14);
+}
+
+.js .shareline li {
   padding: 1.25em 1.25em 1.25em 0;
 }
 
