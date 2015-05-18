@@ -788,7 +788,7 @@ figure.alignleft {
 .format-video .video-watermark,
 .category-video .video-watermark {
   background: url(images/dist/video.png) 0 0 no-repeat;
-  background: url(images/dist/video.svgz) 0 0 no-repeat;
+  background: url(images/dist/video.mim.svg) 0 0 no-repeat;
   background-size: em(50);
   height: em(50);
   margin: 0.5em;
@@ -969,7 +969,7 @@ figure.alignleft {
 }
 
 .shareline li {
-  background: url(images/dist/icon-twitter.svgz) 0 50% no-repeat;
+  background: url(images/dist/icon-twitter.min.svg) 0 50% no-repeat;
   background-size: em(26, 14) em(26, 14);
   line-height: 1.25em;
   list-style-type: none;
