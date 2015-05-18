@@ -81,7 +81,7 @@ function america_publication_file() {
     $html .= "<h3 class='downloads-title'>Download</h3>";
 
     foreach ( $files as $file ) {
-      $file_size = format_file_size( remote_filesize( $file['url'] ) );
+      $file_size = america_format_file_size( america_remote_filesize( $file['url'] ) );
       $html .= "<p><a href='{$file['url']}' title='{$file['title']}' class='downloads-file'>{$file['title']}</a> $file_size</p>";
     }
 

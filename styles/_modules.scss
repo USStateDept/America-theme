@@ -215,17 +215,21 @@ figure.alignleft {
   margin-bottom: em(25);
 }
 
-.entry-content ol li,
-.entry-content ul li {
+.entry-content ol,
+.entry-content ul {
+  overflow: hidden;
+}
+
+.entry-content li {
   margin-left: em(40);
+}
+
+.entry-content li {
+  list-style-type: disc;
 }
 
 .entry-content ol > li {
   list-style-type: decimal;
-}
-
-.entry-content ul > li {
-  list-style-type: disc;
 }
 
 .entry-content ol ol,
@@ -784,7 +788,7 @@ figure.alignleft {
 .format-video .video-watermark,
 .category-video .video-watermark {
   background: url(images/dist/video.png) 0 0 no-repeat;
-  background: url(images/dist/video.min.svg) 0 0 no-repeat;
+  background: url(images/dist/video.mim.svg) 0 0 no-repeat;
   background-size: em(50);
   height: em(50);
   margin: 0.5em;
@@ -911,22 +915,26 @@ figure.alignleft {
 
 
 /**
-  * Takeaways
+  * Breakouts
   */
 
-.takeaway.alignright {
+.breakout.alignright {
   float: right;
   margin: 0 0 1em 1em;
 }
 
-.takeaway.alignleft {
+.breakout.alignleft {
   float: left;
   margin: 0 1em 1em 0;
 }
 
-.takeaway {
-  border: 1px dotted $border-color;
-  padding: 1em;
+.breakout.full-width {
+  width: 100%;
+}
+
+.breakout {
+  border: 1px solid $border-color;
+  padding: 1em 1em 0 1em;
   width: 100%;
 
   @include bp($tablet) {
@@ -934,22 +942,21 @@ figure.alignleft {
   }
 }
 
-.takeaway-title {
+.breakout-title {
   font-size: em(18, 16);
   margin-top: 0;
 }
 
-.takeaway ul {
+.breakout ul {
   margin-bottom: 0;
 }
 
-.takeaway ul > li {
+.breakout li {
   border-bottom: 1px solid $border-color;
   font-size: em(14);
   line-height: 1.25em;
-  list-style-type: none;
+  list-style-type: disc;
   margin: 0;
-  padding: 1em 0;
 
   &:first-child {
     border-top: 1px solid $border-color;
@@ -957,7 +964,36 @@ figure.alignleft {
 
   &:last-child {
     border-bottom: 0;
-    padding-bottom: 0;
+  }
+}
+
+.content .breakout li {
+  padding: 1em 0;
+}
+
+.shareline li {
+  background: url(images/dist/icon-twitter.min.svg) 0 50% no-repeat;
+  background-size: em(26, 14) em(26, 14);
+  line-height: 1.25em;
+  list-style-type: none;
+  padding-left: em(35, 14);
+}
+
+.js .shareline li {
+  padding: 1.25em 1.25em 1.25em 0;
+}
+
+.no-backgroundsize .shareline li {
+  background: url(images/dist/icon-twitter.png) 0 50% no-repeat;
+}
+
+.shareline li a {
+  color: $black;
+  display: inline-block;
+  padding-left: em(35, 14);
+
+  &:hover {
+    color: $black;
   }
 }
 

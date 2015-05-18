@@ -23,3 +23,7 @@ add_filter( 'genesis_pre_load_favicon', 'sp_favicon_filter' );
 function sp_favicon_filter( $favicon_url ) {
 	return '/wp-content/themes/america/sites/misinfo/images/dist/favicon.ico';
 }
+
+add_image_size( 'disinfo-featured', 720, 470, TRUE );
+add_image_size( 'disinfo-archive', 340, 200, TRUE );
+add_image_size( 'disinfo-sidebar', 100, 100, TRUE );
