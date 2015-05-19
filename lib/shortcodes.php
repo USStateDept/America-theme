@@ -6,6 +6,7 @@ function america_responsive_iframe( $atts, $content = null ) {
       'chat' => 0,
       'iframe_class' => '',
       'ratio' => '16-9',
+      'responsive' => 1,
       'frameborder' => 0,
       'height' => 315,
       'width' => 560,
@@ -23,6 +24,12 @@ function america_responsive_iframe( $atts, $content = null ) {
      $container_classes .= ' ratio-4-3';
    } else {
      $container_classes .= ' ratio-16-9';
+   }
+
+   if ( $responsive == '0' ) {
+     $container_classes .= ' no-responsive';
+   } else {
+     $container_classes .= ' responsive';
    }
 
    $markup = '<div class="media-container' . $container_classes . '">' ;

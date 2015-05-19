@@ -13,7 +13,8 @@ module.exports = function(grunt) {
               'style.css': 'style.scss',
               'sites/misinfo/style.css': 'sites/misinfo/style.scss',
               'sites/climate/style.css': 'sites/climate/style.scss',
-              'sites/publications/style.css': 'sites/publications/style.scss'
+              'sites/publications/style.css': 'sites/publications/style.scss',
+              'sites/docs/style.css': 'sites/docs/style.scss'
             },
           }
         },
@@ -26,7 +27,8 @@ module.exports = function(grunt) {
               'js/dist/analytics-events.min.js': ['js/src/analytics/analytics-social-events.js', 'js/src/analytics/analytics-video-events.js'],
               'sites/misinfo/js/dist/script.js': ['sites/misinfo/js/src/init.js'],
               'sites/climate/js/dist/script.js': ['sites/climate/js/src/init.js'],
-              'sites/publications/js/dist/script.js': ['sites/publications/js/src/init.js']
+              'sites/publications/js/dist/script.js': ['sites/publications/js/src/init.js'],
+              'sites/docs/js/dist/script.js': ['sites/docs/js/src/prism.js']
             }
           }
         },
@@ -57,6 +59,12 @@ module.exports = function(grunt) {
                 cwd: 'sites/publications/images/src/',
                 src: ['**/*.{png,jpg,gif}'],
                 dest: 'sites/publications/images/dist/'
+              },
+              {
+                expand: true,
+                cwd: 'sites/docs/images/src/',
+                src: ['**/*.{png,jpg,gif}'],
+                dest: 'sites/docs/images/dist/'
               }
             ]
           }
