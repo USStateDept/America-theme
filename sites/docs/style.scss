@@ -1,0 +1,28 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+
+.site-title {
+  background-image: url(images/dist/logo.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+
+  @include bp($tablet) {
+    background-size: 95px;
+  }
+}
+
+.content {
+  padding: 0;
+}
+
+tbody tr:nth-child(odd) {
+  background: $gray;
+}
+
+td {
+  padding: em(10);
+  line-height: 1.25em;
+}
+
+@import 'prism.css';
