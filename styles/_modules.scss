@@ -900,7 +900,15 @@ figure.alignleft {
     padding-bottom: 75%;
   }
 
-  iframe {
+  &.no-responsive {
+    padding: 0;
+  }
+
+  &.no-responsive iframe {
+    position: static;
+  }
+
+  &.responsive iframe {
     height: 100%;
     left: 0;
     position: absolute;
