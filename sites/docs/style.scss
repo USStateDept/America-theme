@@ -2,6 +2,35 @@
 @import '../../styles/mixins';
 
 
+h3 {
+  margin-top: 2.5em;
+}
+
+h3:nth-of-type(1) {
+  margin-top: 1.3em;
+}
+
+code {
+  background-color: inherit;
+  color: inherit;
+}
+
+pre,
+code {
+  white-space: pre-wrap !important;
+}
+
+tbody tr:nth-child(odd) {
+  background: $gray;
+}
+
+td,
+th {
+  padding: em(10);
+  line-height: 1.25em;
+}
+
+
 .site-title {
   background-image: url(images/dist/logo.png);
   background-position: 0 0;
@@ -14,15 +43,6 @@
 
 .content {
   padding: 0;
-}
-
-tbody tr:nth-child(odd) {
-  background: $gray;
-}
-
-td {
-  padding: em(10);
-  line-height: 1.25em;
 }
 
 @import 'prism.css';
