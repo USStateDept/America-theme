@@ -1,28 +1,25 @@
 ;(function ( $, window, document, undefined ) {
 
-    $(document).ready(function() {
-        var $sharelines = $('.shareline li'),
-            url = window.location.href;
+    var $sharelines = $('.shareline li'),
+        url = window.location.href;
 
-        function buildTweet ( $listItem ) {
-            var text = $listItem.text(),
-                intentQuery = $.param({ 'text': text, 'url': url }),
-                intentHref = 'https://twitter.com/intent/tweet?' + intentQuery;
+    function buildTweet ( $listItem ) {
+        var text = $listItem.text(),
+            intentQuery = $.param({ 'text': text, 'url': url }),
+            intentHref = 'https://twitter.com/intent/tweet?' + intentQuery;
 
-            return $('<a></a>').attr('href', intentHref).text(text);
-        }
+        return $('<a></a>').attr('href', intentHref).text(text);
+    }
 
-        function buildIntent ( item ) {
-            var $this = $(item),
-                $link = buildTweet( $this );
+    function buildIntent ( item ) {
+        var $this = $(item),
+            $link = buildTweet( $this );
 
-            $this.html($link);
-        }
+        $this.html($link);
+    }
 
-        $sharelines.each(function() {
-            buildIntent(this);
-        });
-
+    $sharelines.each(function() {
+        buildIntent(this);
     });
 
 })( jQuery, window, document );
