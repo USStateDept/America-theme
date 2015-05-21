@@ -1,14 +1,12 @@
 ;(function ( $, window, document, undefined ) {
 
-  $(document).ready(function() {
-      var $files = $('.downloads-file');
+    var $files = $('.downloads-file');
 
-      $files.each(function() {
-          var $this = $(this),
-              $ext = $this.attr('href').split('.').pop();
+    $files.each(function() {
+        var $this = $(this),
+            $ext = $this.attr('href').split('.').pop();
 
-          $this.addClass($ext);
-      });
-  });
+        $this.addClass($ext);
+    });
 
 })( jQuery, window, document );
