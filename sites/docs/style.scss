@@ -2,14 +2,6 @@
 @import '../../styles/mixins';
 
 
-h3 {
-  margin-top: 2.5em;
-}
-
-h3:nth-of-type(1) {
-  margin-top: 1.3em;
-}
-
 code {
   background-color: inherit;
   color: inherit;
@@ -43,6 +35,14 @@ th {
 
 .content {
   padding: 0;
+}
+
+.entry-content > h3 {
+  margin-top: 2.5em;
+}
+
+.entry-content > h3:nth-of-type(1) {
+  margin-top: 1.3em;
 }
 
 @import 'prism.css';

@@ -28,7 +28,7 @@ module.exports = function(grunt) {
               'sites/misinfo/js/dist/script.js': ['sites/misinfo/js/src/init.js'],
               'sites/climate/js/dist/script.js': ['sites/climate/js/src/init.js'],
               'sites/publications/js/dist/script.js': ['sites/publications/js/src/init.js'],
-              'sites/docs/js/dist/script.js': ['sites/docs/js/src/prism.js']
+              'sites/docs/js/dist/script.js': ['sites/docs/js/src/prism.js', 'sites/docs/js/src/init.js']
             }
           }
         },
@@ -63,7 +63,7 @@ module.exports = function(grunt) {
               {
                 expand: true,
                 cwd: 'sites/docs/images/src/',
-                src: ['**/*.{png,jpg,gif}'],
+                src: ['**/*.{png,jpg,gif,ico}'],
                 dest: 'sites/docs/images/dist/'
               }
             ]

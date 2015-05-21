@@ -537,13 +537,31 @@ figure.alignleft {
     width: 50%;
   }
 
-  @include bp($desktop) {
-    width: 60%;
-  }
 }
 
 .header-widget-area {
   display: block;
+}
+
+
+/**
+  * Site header search widget.
+  */
+
+.header-widget-area .search-form {
+  margin-top: 1em;
+
+  @include bp($tablet) {
+    float: right;
+    margin-top: 0;
+    position: relative;
+    top: em(27);
+    width: em(260);
+  }
+
+  @include bp($desktop) {
+    width: em(300);
+  }
 }
 
 
