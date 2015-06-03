@@ -14,7 +14,8 @@ module.exports = function(grunt) {
               'sites/misinfo/style.css': 'sites/misinfo/style.scss',
               'sites/climate/style.css': 'sites/climate/style.scss',
               'sites/publications/style.css': 'sites/publications/style.scss',
-              'sites/docs/style.css': 'sites/docs/style.scss'
+              'sites/docs/style.css': 'sites/docs/style.scss',
+              'sites/interactive/style.css': 'sites/interactive/style.scss'
             },
           }
         },
@@ -65,6 +66,12 @@ module.exports = function(grunt) {
                 cwd: 'sites/docs/images/src/',
                 src: ['**/*.{png,jpg,gif,ico}'],
                 dest: 'sites/docs/images/dist/'
+              },
+              {
+                expand: true,
+                cwd: 'sites/interactive/images/src/',
+                src: ['**/*.{png,jpg,gif}'],
+                dest: 'sites/interactive/images/dist/'
               }
             ]
           }

@@ -1,0 +1,128 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+$green: #66A5B4;
+$blue: #128ad3;
+
+
+/*------------------------------------*\
+  #GENERAL
+\*------------------------------------*/
+
+.interactive {
+  background-color: #ebebeb;
+
+  a, a:hover {
+    color: #66A5B4;
+  }
+
+  .chat {
+
+      @include bp($tablet) {
+        min-height: 260px;
+      }
+
+      @include bp($laptop) {
+        min-height: 338px;
+      }
+
+       @include bp($desktop) {
+        min-height: 400px;
+      }
+  }
+
+  .presentation {
+    margin-top: 30px;
+  }
+
+  .clearfix {
+     margin-top: 40px;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  input[type="password"] {
+    margin-top: em(5);
+  }
+
+  input[type="submit"] {
+    background-color: #D6B989;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-top: em(25);
+  }
+  
+}
+
+.site-container {
+  border-right: 1px solid #dddddd;
+  border-left: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+}
+
+.content {
+  background-color: $gray;
+  padding: em(40) em(30) em(20);
+}
+
+
+/*------------------------------------*\
+  #SITE-HEADER
+\*------------------------------------*/
+
+.site-header {
+  position: relative;
+  background-color: $green;
+  background: url(images/dist/bg-iip.png) 0 0 no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  min-height: em(80);
+
+  @include bp($tablet) {
+    min-height: em(230);
+  }
+}
+
+.site-title {
+  background: none;
+}
+
+
+/*------------------------------------*\
+  #POST-ENTRIES
+\*------------------------------------*/
+
+.entry-title {
+   position: absolute;
+   bottom: em(8);
+   left: em(20);
+   margin: 0;
+   padding: 0;
+   font-size: em(22);
+   color: #07182E;
+   color: rgba(7, 24, 46, 0.8);
+
+  @include bp($tablet) {
+   font-size: em(26);
+  }
+}
+
+
+/*------------------------------------*\
+  #SITE-FOOTER
+\*------------------------------------*/
+.footer-widgets-1 {
+  margin: .5em auto;
+  width: 95%;
+}
+
+.footer-widgets-2 {
+  min-height: em(40);
+}
+
+
