@@ -6,6 +6,7 @@ function america_responsive_iframe( $atts, $content = null ) {
       'chat' => 0,
       'iframe_class' => '',
       'ratio' => '16-9',
+      'responsive' => 1,
       'frameborder' => 0,
       'height' => 315,
       'width' => 560,
@@ -25,6 +26,12 @@ function america_responsive_iframe( $atts, $content = null ) {
      $container_classes .= ' ratio-16-9';
    }
 
+   if ( $responsive == '0' ) {
+     $container_classes .= ' no-responsive';
+   } else {
+     $container_classes .= ' responsive';
+   }
+
    $markup = '<div class="media-container' . $container_classes . '">' ;
 
    $markup .= '<iframe class="' . $iframe_class . '" src="' . $content . '" width="' . $width . '" height="' . $height . '" frameborder="' . $frameborder . '" allowfullscreen="' . $allowfullscreen . '" ></iframe>';
@@ -35,14 +42,16 @@ function america_responsive_iframe( $atts, $content = null ) {
 }
 
 
-function america_takeaway( $atts, $content = null ) {
+function america_breakout( $atts, $content = null ) {
   extract(shortcode_atts(array(
-    'title' => 'Key Takeways',
     'align' => 'alignleft',
+    'title' => 'Key Takeways',
+    'type' => 'takeway',
+    'width' => ''
   ), $atts));
 
-  $markup = '<div class="takeaway '.$align.'">';
-    $markup .= '<h3 class="takeaway-title">'.$title.'</h3>';
+  $markup = '<div class="breakout '. $type . ' ' . $align . ' ' . $width .'">';
+    $markup .= '<h3 class="breakout-title">'.$title.'</h3>';
     $markup .= '<ul>'.$content.'</ul></div>';
   return $markup;
 }

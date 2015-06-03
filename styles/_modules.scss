@@ -32,7 +32,7 @@
 }
 
 .search-form input[type="search"] {
-  background: $white url(images/icon-search.png) no-repeat right;
+  background: $white url(images/dist/icon-search.png) no-repeat right;
   background-size: 36px 16px;
   color: $dark-gray;
   font-size: 10px;
@@ -215,17 +215,21 @@ figure.alignleft {
   margin-bottom: em(25);
 }
 
-.entry-content ol li,
-.entry-content ul li {
+.entry-content ol,
+.entry-content ul {
+  overflow: hidden;
+}
+
+.entry-content li {
   margin-left: em(40);
+}
+
+.entry-content li {
+  list-style-type: disc;
 }
 
 .entry-content ol > li {
   list-style-type: decimal;
-}
-
-.entry-content ul > li {
-  list-style-type: disc;
 }
 
 .entry-content ol ol,
@@ -298,7 +302,7 @@ figure.alignleft {
 }
 
 .content .entry-header .entry-meta .entry-comments-link a {
-  background: url(images/icon-comments.png) no-repeat left;
+  background: url(images/dist/icon-comments.png) no-repeat left;
   background-size: em(16, 12) em(16, 12);
   color: $white;
   padding-left: em(32, 12);
@@ -441,7 +445,7 @@ figure.alignleft {
 }
 
 .site-title {
-  background: url(images/dos-seal.png) 3% center no-repeat;
+  background: url(images/dist/dos-seal.png) 3% center no-repeat;
   background-size: 15%;
   font-family: $body-font;
   font-size: 25px;
@@ -533,13 +537,31 @@ figure.alignleft {
     width: 50%;
   }
 
-  @include bp($desktop) {
-    width: 60%;
-  }
 }
 
 .header-widget-area {
   display: block;
+}
+
+
+/**
+  * Site header search widget.
+  */
+
+.header-widget-area .search-form {
+  margin-top: 1em;
+
+  @include bp($tablet) {
+    float: right;
+    margin-top: 0;
+    position: relative;
+    top: em(27);
+    width: em(260);
+  }
+
+  @include bp($desktop) {
+    width: em(300);
+  }
 }
 
 
@@ -683,14 +705,14 @@ figure.alignleft {
 }
 
 .genesis-nav-menu > .rss > a {
-  background: url(images/icon-rss.png) no-repeat left;
+  background: url(images/dist/icon-rss.png) no-repeat left;
   background-size: 12px 12px;
   margin-left: 12px;
   padding-left: 16px;
 }
 
 .genesis-nav-menu > .twitter > a {
-  background: url(images/icon-twitter-nav.png) no-repeat left;
+  background: url(images/dist/icon-twitter-nav.png) no-repeat left;
   background-size: 16px 16px;
   padding-left: 20px;
 }
@@ -732,120 +754,6 @@ figure.alignleft {
 
 .site-header .sub-menu .sub-menu {
   margin-top: -40px;
-}
-
-
-/**
-  * Responsive Navigation
-  */
-
-.responsive-menu-icon::before {
-  content: "\f333";
-  display: block;
-  font: normal 25px/2em 'dashicons';
-  font: normal 7.5vw/2em 'dashicons';
-  margin: 0 auto;
-  padding: 0 3px;
-  text-align: right;
-
-  @include bp($big-mobile) {
-    font: normal 6vw/2em 'dashicons';
-  }
-}
-
-.responsive-menu-icon {
-  background-color: $white;
-  cursor: pointer;
-
-  @include bp($tablet) {
-    display: none;
-  }
-}
-
-.genesis-nav-menu.responsive-menu {
-  background-color: transparent;
-  float: left;
-  width: 100%;
-}
-
-.genesis-nav-menu.responsive-menu > .menu-item > .sub-menu,
-.genesis-nav-menu.responsive-menu {
-  display: none;
-}
-
-.genesis-nav-menu.responsive-menu .menu-item {
-  display: block;
-}
-
-.genesis-nav-menu.responsive-menu .menu-item:hover {
-  position: static;
-}
-
-.genesis-nav-menu.responsive-menu .menu-item-has-children {
-  cursor: pointer;
-}
-
-.genesis-nav-menu.responsive-menu .menu-item-has-children > a {
-  margin-right: 60px;
-}
-
-.genesis-nav-menu.responsive-menu > .menu-item-has-children:before {
-  content: "\f140";
-  float: right;
-  font: normal 20px/1 'dashicons';
-  height: 20px;
-  padding: 12px 20px;
-  right: 0;
-  text-align: right;
-  z-index: 9999;
-}
-
-.genesis-nav-menu.responsive-menu .menu-open.menu-item-has-children:before {
-  content: "\f142";
-}
-
-.genesis-nav-menu.responsive-menu .sub-menu {
-  background-color: $mobile-navL2;
-  border: none;
-  left: auto;
-  opacity: 1;
-  padding-left: 20px;
-  position: relative;
-  width: 100%;
-  z-index: 99;
-}
-
-.genesis-nav-menu.responsive-menu .sub-menu .sub-menu {
-  margin: 0;
-}
-
-.genesis-nav-menu.responsive-menu a,
-.genesis-nav-menu.responsive-menu li,
-.genesis-nav-menu.responsive-menu a:hover,
-.genesis-nav-menu.responsive-menu li:hover {
-  color: $black;
-  background: transparent;
-  border: 0;
-  display: block;
-  line-height: 1em;
-  padding: 16px;
-  position: relative;
-  text-transform: none;
-  width: 100%;
-}
-
-.genesis-nav-menu.responsive-menu li,
-.genesis-nav-menu.responsive-menu li:hover {
-  padding: 0;
-}
-
-.genesis-nav-menu.responsive-menu .menu-item-has-children > a:after {
-  content: '';
-  display: none;
-}
-
-.genesis-nav-menu.responsive-menu .sub-menu .current-menu-item > a {
-  background: none;
 }
 
 
@@ -895,10 +803,10 @@ figure.alignleft {
   padding-bottom: 1em;
 }
 
-.format-video .play-button,
-.category-video .play-button {
-  background: url(images/video.png) 0 0 no-repeat;
-  background: url(images/video.min.svg) 0 0 no-repeat;
+.format-video .video-watermark,
+.category-video .video-watermark {
+  background: url(images/dist/video.png) 0 0 no-repeat;
+  background: url(images/dist/video.mim.svg) 0 0 no-repeat;
   background-size: em(50);
   height: em(50);
   margin: 0.5em;
@@ -947,7 +855,7 @@ figure.alignleft {
 }
 
 .footer-widgets-1 {
-  background: url(images/shareamerica-flag.png) no-repeat 1em em(16, 12);
+  background: url(images/dist/shareamerica-flag.png) no-repeat 1em em(16, 12);
   padding: 1em 1em 1em 5em;
 
   @include bp($tablet) {
@@ -1010,7 +918,15 @@ figure.alignleft {
     padding-bottom: 75%;
   }
 
-  iframe {
+  &.no-responsive {
+    padding: 0;
+  }
+
+  &.no-responsive iframe {
+    position: static;
+  }
+
+  &.responsive iframe {
     height: 100%;
     left: 0;
     position: absolute;
@@ -1025,22 +941,26 @@ figure.alignleft {
 
 
 /**
-  * Takeaways
+  * Breakouts
   */
 
-.takeaway.alignright {
+.breakout.alignright {
   float: right;
   margin: 0 0 1em 1em;
 }
 
-.takeaway.alignleft {
+.breakout.alignleft {
   float: left;
   margin: 0 1em 1em 0;
 }
 
-.takeaway {
-  border: 1px dotted $border-color;
-  padding: 1em;
+.breakout.full-width {
+  width: 100%;
+}
+
+.breakout {
+  border: 1px solid $border-color;
+  padding: 1em 1em 0 1em;
   width: 100%;
 
   @include bp($tablet) {
@@ -1048,22 +968,21 @@ figure.alignleft {
   }
 }
 
-.takeaway-title {
+.breakout-title {
   font-size: em(18, 16);
   margin-top: 0;
 }
 
-.takeaway ul {
+.breakout ul {
   margin-bottom: 0;
 }
 
-.takeaway ul > li {
+.breakout li {
   border-bottom: 1px solid $border-color;
   font-size: em(14);
   line-height: 1.25em;
-  list-style-type: none;
+  list-style-type: disc;
   margin: 0;
-  padding: 1em 0;
 
   &:first-child {
     border-top: 1px solid $border-color;
@@ -1071,7 +990,36 @@ figure.alignleft {
 
   &:last-child {
     border-bottom: 0;
-    padding-bottom: 0;
+  }
+}
+
+.content .breakout li {
+  padding: 1em 0;
+}
+
+.shareline li {
+  background: url(images/dist/icon-twitter.min.svg) 0 50% no-repeat;
+  background-size: em(26, 14) em(26, 14);
+  line-height: 1.25em;
+  list-style-type: none;
+  padding-left: em(35, 14);
+}
+
+.js .shareline li {
+  padding: 1.25em 1.25em 1.25em 0;
+}
+
+.no-backgroundsize .shareline li {
+  background: url(images/dist/icon-twitter.png) 0 50% no-repeat;
+}
+
+.shareline li a {
+  color: $black;
+  display: inline-block;
+  padding-left: em(35, 14);
+
+  &:hover {
+    color: $black;
   }
 }
 

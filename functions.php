@@ -9,7 +9,10 @@ include_once( get_stylesheet_directory() . '/lib/theme-defaults.php' );
 //* Get shortcodes
 include_once( get_stylesheet_directory() . '/lib/shortcodes.php' );
 
-//* Get theme customizations
+//* Load common utility functions
+include_once( get_stylesheet_directory() . '/lib/utils.php' );
+
+//* Load theme customizations
 include_once( get_stylesheet_directory() . '/lib/customizations.php' );
 
 
@@ -33,21 +36,21 @@ add_theme_support( 'post-formats', array( 'gallery', 'image', 'video', 'audio' )
 //* Add viewport meta tag for mobile browsers
 add_theme_support( 'genesis-responsive-viewport' );
 
+
 //* Enqueue Scripts
 add_action( 'wp_enqueue_scripts', 'america_load_scripts' );
 function america_load_scripts() {
-
-	wp_enqueue_script( 'america-file-extensions', get_bloginfo( 'stylesheet_directory' ) . '/js/main.min.js', array( 'jquery' ), '1.0.0' );
+	wp_enqueue_script( 'america-file-extensions', get_bloginfo( 'stylesheet_directory' ) . '/js/dist/main.min.js', array( 'jquery' ), '1.0.0', true);
 
 	wp_enqueue_style( 'dashicons' );
 
 	wp_enqueue_style( 'google-font', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Signika', array(), CHILD_THEME_VERSION );
 
 	// IE Specific Script
-	wp_enqueue_script( 'lte-ie8', get_bloginfo( 'stylesheet_directory' ) . '/js/lte-ie8.min.js', array(), '1.0.0', false );
+	wp_enqueue_script( 'lte-ie8', get_bloginfo( 'stylesheet_directory' ) . '/js/dist/lte-ie8.min.js', array(), '1.0.0', false );
 
 	// Event tracking script
-	wp_enqueue_script( 'analytics-events', get_bloginfo( 'stylesheet_directory' ) . '/js/analytics-events.min.js', array(), '1.0.0', false );
+	wp_enqueue_script( 'analytics-events', get_bloginfo( 'stylesheet_directory' ) . '/js/dist/analytics-events.min.js', array(), '1.0.0', true );
 
 	add_filter( 'script_loader_tag', function( $tag, $handle ) {
 	    if ( $handle === 'lte-ie8' ) {
@@ -62,7 +65,7 @@ function america_load_scripts() {
 //* init shortcodes
 function america_register_shortcodes(){
 	add_shortcode('iframe', 'america_responsive_iframe');
-	add_shortcode('takeaway', 'america_takeaway');
+	add_shortcode('breakout', 'america_breakout');
 	add_shortcode('blockquote', 'america_blockquote');
 }
 add_action('init', 'america_register_shortcodes');
@@ -71,11 +74,6 @@ add_action('init', 'america_register_shortcodes');
 //* Add new image sizes
 add_image_size( 'featured-primary', 700, 475, TRUE );
 add_image_size( 'featured-category', 500, 500, TRUE );
-add_image_size( 'disinfo-featured', 720, 470, TRUE );
-add_image_size( 'disinfo-archive', 340, 200, TRUE );
-add_image_size( 'disinfo-sidebar', 100, 100, TRUE );
-//add_image_size( 'publication', 424, 530, TRUE );
-
 
 //* Add support for custom header
 add_theme_support( 'custom-header', array(
@@ -132,19 +130,12 @@ function america_secondary_menu_args( $args ){
 
 }
 
-/************************************** Removed for Disinfo; Check publications ************************************** */
-//* Relocate the post info
-// remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
-// add_action( 'genesis_entry_header', 'genesis_post_info', 5 );
-
-
 //* Remove comment form allowed tags
 add_filter( 'comment_form_defaults', 'america_remove_comment_form_allowed_tags' );
 function america_remove_comment_form_allowed_tags( $defaults ) {
 
 	$defaults['comment_notes_after'] = '';
 	return $defaults;
-
 }
 
 
@@ -186,36 +177,6 @@ add_theme_support( 'genesis-footer-widgets', 2 );
 remove_action( 'genesis_footer', 'genesis_do_footer' );
 
 
-//* Untility function to get file size
-function remote_filesize($url) {
-	static $regex = '/^Content-Length: *+\K\d++$/im';
-
-	if ( !$fp = @fopen( $url, 'rb' ) ) {
-		return false;
-	}
-
-	if ( isset( $http_response_header ) && preg_match( $regex, implode( "\n", $http_response_header ), $matches ) ) {
-		return (int)$matches[0];
-	}
-
-	return strlen(stream_get_contents($fp));
-}
-
-
-//* Utility function to format file size
-function format_file_size( $size ) {
-	if ( $size >= 1000000000 ) {
-		$fileSize = round( $size / 1000000000, 1 ) . 'GB';
-	} elseif ( $size >= 1000000 ) {
-		$fileSize = round( $size / 1000000, 1) . 'MB';
-	} elseif ( $size >= 1000 ){
-		$fileSize = round( $size / 1000, 1 ) . 'KB';
-	} else {
-		$fileSize = $size . ' bytes';
-	}
-	return $fileSize;
-}
-
 // Load theme extender
 america_load_grandchild_theme();
 
@@ -225,7 +186,7 @@ america_load_grandchild_theme();
 function shortcode_empty_paragraph_fix( $content ) {
 
     // define your shortcodes to filter, '' filters all shortcodes
-    $shortcodes = array( 'iframe', 'takeaway', 'blockquote' );
+    $shortcodes = array( 'iframe', 'breakout', 'blockquote' );
 
     foreach ( $shortcodes as $shortcode ) {
 
@@ -243,6 +204,7 @@ function shortcode_empty_paragraph_fix( $content ) {
 }
 
 add_filter( 'the_content', 'shortcode_empty_paragraph_fix' );
+
 
 
 /************************************** MOVE TO PLUGIN AND MAKE GENERIC ************************************** */
@@ -263,16 +225,3 @@ function custom_replace_featured_category_widget() {
 
 add_action( 'widgets_init', 'custom_replace_featured_post_widget' );
 add_action( 'widgets_init', 'custom_replace_featured_category_widget' );
-
-
-//* Redirect search, category and taxonomy archives to use archive-publication template
-/*function get_publication_template( $template ) {
-  if(  is_category() || is_search() || is_tax() ) {
-  	$template = get_query_template( 'archive-publication' );
-  }
-  return $template;
-}
-
-add_filter( 'template_include', 'get_publication_template' );*/
-
-/********************************************** END MOVE TO PLUGIN ******************************************* */

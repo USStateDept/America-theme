@@ -1,0 +1,112 @@
+/**
+  * Responsive Navigation
+  */
+
+.responsive-menu-icon::before {
+  content: "\f333";
+  display: block;
+  font: normal 25px/2em 'dashicons';
+  font: normal 7.5vw/2em 'dashicons';
+  margin: 0 auto;
+  padding: 0 3px;
+  text-align: right;
+
+  @include bp($big-mobile) {
+    font: normal 6vw/2em 'dashicons';
+  }
+}
+
+.responsive-menu-icon {
+  background-color: $white;
+  cursor: pointer;
+
+  @include bp($tablet) {
+    display: none;
+  }
+}
+
+.genesis-nav-menu.responsive-menu {
+  background-color: transparent;
+  float: left;
+  width: 100%;
+}
+
+.genesis-nav-menu.responsive-menu > .menu-item > .sub-menu,
+.genesis-nav-menu.responsive-menu {
+  display: none;
+}
+
+.genesis-nav-menu.responsive-menu .menu-item {
+  display: block;
+}
+
+.genesis-nav-menu.responsive-menu .menu-item:hover {
+  position: static;
+}
+
+.genesis-nav-menu.responsive-menu .menu-item-has-children {
+  cursor: pointer;
+}
+
+.genesis-nav-menu.responsive-menu .menu-item-has-children > a {
+  margin-right: 60px;
+}
+
+.genesis-nav-menu.responsive-menu > .menu-item-has-children:before {
+  content: "\f140";
+  float: right;
+  font: normal 20px/1 'dashicons';
+  height: 20px;
+  padding: 12px 20px;
+  right: 0;
+  text-align: right;
+  z-index: 9999;
+}
+
+.genesis-nav-menu.responsive-menu .menu-open.menu-item-has-children:before {
+  content: "\f142";
+}
+
+.genesis-nav-menu.responsive-menu .sub-menu {
+  background-color: $mobile-navL2;
+  border: none;
+  left: auto;
+  opacity: 1;
+  padding-left: 20px;
+  position: relative;
+  width: 100%;
+  z-index: 99;
+}
+
+.genesis-nav-menu.responsive-menu .sub-menu .sub-menu {
+  margin: 0;
+}
+
+.genesis-nav-menu.responsive-menu a,
+.genesis-nav-menu.responsive-menu li,
+.genesis-nav-menu.responsive-menu a:hover,
+.genesis-nav-menu.responsive-menu li:hover {
+  color: $black;
+  background: transparent;
+  border: 0;
+  display: block;
+  line-height: 1em;
+  padding: 16px;
+  position: relative;
+  text-transform: none;
+  width: 100%;
+}
+
+.genesis-nav-menu.responsive-menu li,
+.genesis-nav-menu.responsive-menu li:hover {
+  padding: 0;
+}
+
+.genesis-nav-menu.responsive-menu .menu-item-has-children > a:after {
+  content: '';
+  display: none;
+}
+
+.genesis-nav-menu.responsive-menu .sub-menu .current-menu-item > a {
+  background: none;
+}
