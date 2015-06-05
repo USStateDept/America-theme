@@ -51,6 +51,34 @@ $light-gray:      #f1f3f1;
   }
 }
 
+html[lang|=ru] .site-title {
+  background-image: url(images/dist/dbf_banner_russian.jpg)
+}
+
+html[lang|=es] .site-title {
+  background-image: url(images/dist/dbf_banner_spanish.jpg)
+}
+
+html[lang|=fr] .site-title {
+  background-image: url(images/dist/dbf_banner_french.jpg)
+}
+
+html[lang|=zh] .site-title {
+  background-image: url(images/dist/dbf_banner_chinese.jpg)
+}
+
+html[lang|=ar] .site-title {
+  background-image: url(images/dist/dbf_banner_arabic.jpg)
+}
+
+html[lang|=fa] .site-title {
+  background-image: url(images/dist/dbf_banner_persian.jpg)
+}
+
+html[lang|=pt] .site-title {
+  background-image: url(images/dist/dbf_banner_portuguese.jpg)
+}
+
 .no-backgroundsize .site-title {
   background: url(images/dist/pinocchio-oldIE.jpg) 0 0 no-repeat;
   height: 7em;
