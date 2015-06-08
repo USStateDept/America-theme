@@ -17,6 +17,12 @@ function initialize_site( $path ) {
 	}
 }
 
+//* Display a custom favicon
+add_filter( 'genesis_pre_load_favicon', 'iip_favicon_filter' );
+function iip_favicon_filter( $favicon_url ) {
+	return '/wp-content/themes/america/sites/docs/images/dist/favicon.ico';
+}
+
 //* remove site title
 remove_action( 'genesis_site_title', 'genesis_seo_site_title' );
 
@@ -44,6 +50,6 @@ add_filter( 'allowed_redirect_hosts' , 'interactive_allowed_redirect_hosts' , 10
 function interactive_allowed_redirect_hosts( $content ){
 	$content[] = 'interactive.edit.america.gov';
 	$content[] = 'edit.america.gov';
-	
+
 	return $content;
 }
