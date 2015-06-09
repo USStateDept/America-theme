@@ -84,6 +84,34 @@ html[lang|=pt] .site-title {
   height: 7em;
 }
 
+html[lang|=ru].no-backgroundsize .site-title {
+  background-image: url(images/dist/pinocchio-oldIE-ru.jpg)
+}
+
+html[lang|=es].no-backgroundsize .site-title {
+  background-image: url(images/dist/pinocchio-oldIE-es.jpg)
+}
+
+html[lang|=fr].no-backgroundsize .site-title {
+  background-image: url(images/dist/pinocchio-oldIE-fr.jpg)
+}
+
+html[lang|=zh].no-backgroundsize .site-title {
+  background-image: url(images/dist/pinocchio-oldIE-zh.jpg)
+}
+
+html[lang|=ar].no-backgroundsize .site-title {
+  background-image: url(images/dist/pinocchio-oldIE-ar.jpg)
+}
+
+html[lang|=fa].no-backgroundsize .site-title {
+  background-image: url(images/dist/pinocchio-oldIE-fa.jpg)
+}
+
+html[lang|=pt].no-backgroundsize .site-title {
+  background-image: url(images/dist/pinocchio-oldIE-pt.jpg)
+}
+
 .america .site-title a,
 .america .site-title a:hover {
   color: transparent;
