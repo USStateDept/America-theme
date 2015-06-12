@@ -35,6 +35,13 @@ function translate_date_format($format) {
 }
 
 
+//* Remove WPML Widget
+add_action('wp_dashboard_setup', 'wpml_remove_dashboard_widget' );
+function wpml_remove_dashboard_widget() {
+	remove_meta_box( 'icl_dashboard_widget', 'dashboard', 'side' );
+}
+
+
 add_image_size( 'disinfo-featured', 720, 470, TRUE );
 add_image_size( 'disinfo-archive', 340, 200, TRUE );
 add_image_size( 'disinfo-sidebar', 100, 100, TRUE );

@@ -22,6 +22,14 @@ $light-gray:      #f1f3f1;
   margin-top: 1em;
 }
 
+html[dir="rtl"] .sidebar-primary {
+  float: left;
+}
+
+html[dir="rtl"] .content-sidebar .content {
+  float: right;
+}
+
 
 
 
