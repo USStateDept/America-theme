@@ -45,11 +45,3 @@ function interactive_remove_protected( $text ){
   $text = '%s';
   return $text;
 }
-
-add_filter( 'allowed_redirect_hosts' , 'interactive_allowed_redirect_hosts' , 10 );
-function interactive_allowed_redirect_hosts( $content ){
-	$content[] = 'interactive.edit.america.gov';
-	$content[] = 'edit.america.gov';
-
-	return $content;
-}
