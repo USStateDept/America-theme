@@ -72,8 +72,8 @@ add_action('init', 'america_register_shortcodes');
 
 
 //* Add new image sizes
-add_image_size( 'featured-primary', 700, 475, TRUE );
-add_image_size( 'featured-category', 500, 500, TRUE );
+//add_image_size( 'featured-primary', 700, 475, TRUE );
+//add_image_size( 'featured-category', 500, 500, TRUE );
 
 //* Add support for custom header
 add_theme_support( 'custom-header', array(

@@ -132,11 +132,6 @@ $blue: #128ad3;
   padding: 1em;
 }
 
-.entry-title {
-  font-size: 30px;
-  margin-top: 0;
-}
-
 .home .entry-header .entry-meta {
   background-color: $blue;
   color: #ffffff;
@@ -150,15 +145,35 @@ $blue: #128ad3;
   color: #ffffff;
 }
 
+.home .entry-meta a,
+.home .entry-meta a:hover {
+  color: #ffffff;
+}
+
+.home .alignleft .entry-image {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+
+.home .entry-content p {
+  overflow: hidden;
+}
+
+.home a.more-link {
+  clear: both;
+  float: right;
+  margin-bottom: 0;
+}
+
+.entry-title {
+  font-size: 30px;
+  margin-top: 0;
+}
+
 .entry-meta > * {
-  display: block;
   line-height: 1.5em;
   margin-left: 5px;
   text-transform: none;
-
-  @include bp($tablet) {
-    display: inline-block;
-  }
 }
 
 .entry-meta a,
@@ -166,20 +181,18 @@ $blue: #128ad3;
   color: $dark-gray;
 }
 
-.home .entry-meta a,
-.home .entry-meta a:hover {
-  color: #ffffff;
-}
-
 .entry-footer .entry-meta {
   background-color: transparent;
   padding: 0;
 }
 
-.america-home a.more-link {
+.single-post .entry-content h1,
+.single-post .entry-content h2,
+.single-post .entry-content h3,
+.single-post .entry-content h4,
+.single-post .entry-content h5,
+.single-post .entry-content h6 {
   clear: both;
-  float: right;
-  margin-bottom: 0;
 }
 
 
@@ -220,4 +233,33 @@ input[type="submit"] {
 #twitter-widget-0 {
   margin: 0 auto !important;
   width: 100% !important;
+}
+
+
+
+
+/*------------------------------------*\
+  #REMOVE AFTER PICTUREFILL IS ADDED)
+\*------------------------------------*/
+
+
+.single .entry-content .wp-caption,
+.single .entry-content .wp-caption .size-medium,
+.home .entry-image,
+.archive .entry-image,
+.blog .entry-image {
+  width: 100%;
+
+  @include bp($big-mobile) {
+    width: auto;
+  }
+}
+
+
+.home .entry-title {
+  clear: both;
+
+@include bp($tablet) {
+    clear: none;
+  }
 }
