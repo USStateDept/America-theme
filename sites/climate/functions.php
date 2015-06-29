@@ -25,8 +25,12 @@ function sp_favicon_filter( $favicon_url ) {
 
 
 //* Add image sizes
-add_image_size( 'medium', 285, 190, TRUE );
-add_image_size( 'large', 768, 396, TRUE);
+add_image_size( 'medium', 285, 190, TRUE ); //homepage thumb, archive thumb, post-inline-float
+add_image_size( 'archive-mobile', 365, 243, TRUE ); //mobile archive thumb
+add_image_size( 'post-feature-laptop', 660, 371, TRUE ); // laptop feature image
+add_image_size( 'large', 768, 396, TRUE); //tablet feature image
+add_image_size( 'post-feature-big-mobile', 630, 354, TRUE); //big mobile feature image, big mobile archive
+add_image_size( 'post-feature-mobile', 364, 205, TRUE); //mobile feature image
 
 
 //* Set Feature Image Size
@@ -40,30 +44,3 @@ function climate_custom_sizes( $sizes ) {
 				'post-thumbnail' => __( 'Post Feature Image Default' ),
     ) );
 }
-
-
-/*add_filter( 'img_caption_shortcode', 'fix_img_caption_shortcode_inline_style', 10, 3 );
-function fix_img_caption_shortcode_inline_style( $empty, $attr, $content ) {
-
-	$atts = shortcode_atts( array(
-		'id'	  => '',
-		'align'	  => 'alignnone',
-		'width'	  => '',
-		'caption' => '',
-		'class'   => '',
-	), $attr, 'caption' );
-
-	$atts['width'] = (int) $atts['width'];
-	if ( $atts['width'] < 1 || empty( $atts['caption'] ) )
-		return $content;
-
-	if ( ! empty( $atts['id'] ) )
-		$atts['id'] = 'id="' . esc_attr( $atts['id'] ) . '" ';
-
-	$class = trim( 'wp-caption ' . $atts['align'] . ' ' . $atts['class'] );
-
-	if ( current_theme_supports( 'html5', 'caption' ) ) {
-		return '<figure ' . $atts['id'] . 'class="' . esc_attr( $class ) . '">'
-		. do_shortcode( $content ) . '<figcaption style="width: ' . (int) $atts['width'] . 'px;"' . 'class="wp-caption-text">' . $atts['caption'] . '</figcaption></figure>';
-	}
-}*/

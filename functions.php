@@ -40,17 +40,21 @@ add_theme_support( 'genesis-responsive-viewport' );
 //* Enqueue Scripts
 add_action( 'wp_enqueue_scripts', 'america_load_scripts' );
 function america_load_scripts() {
-	wp_enqueue_script( 'america-file-extensions', get_bloginfo( 'stylesheet_directory' ) . '/js/dist/main.min.js', array( 'jquery' ), '1.0.0', true);
-
 	wp_enqueue_style( 'dashicons' );
 
 	wp_enqueue_style( 'google-font', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Signika', array(), CHILD_THEME_VERSION );
 
-	// IE Specific Script
-	wp_enqueue_script( 'lte-ie8', get_bloginfo( 'stylesheet_directory' ) . '/js/dist/lte-ie8.min.js', array(), '1.0.0', false );
+	wp_enqueue_script( 'modernizr', get_bloginfo( 'stylesheet_directory' ) . '/js/dist/modernizr.min.js', array(), '2.8.3' , false );
+
+	wp_enqueue_script( 'picturefill', get_bloginfo( 'stylesheet_directory' ) . '/js/dist/picturefill.min.js', array(), '2.3.1' , false );
+
+	wp_enqueue_script( 'america-file-extensions', get_bloginfo( 'stylesheet_directory' ) . '/js/dist/main.min.js', array( 'jquery' ), '1.0.0', true);
 
 	// Event tracking script
 	wp_enqueue_script( 'analytics-events', get_bloginfo( 'stylesheet_directory' ) . '/js/dist/analytics-events.min.js', array(), '1.0.0', true );
+
+	// IE Specific Script
+	wp_enqueue_script( 'lte-ie8', get_bloginfo( 'stylesheet_directory' ) . '/js/dist/lte-ie8.min.js', array(), '1.0.0', false );
 
 	add_filter( 'script_loader_tag', function( $tag, $handle ) {
 	    if ( $handle === 'lte-ie8' ) {
@@ -67,6 +71,7 @@ function america_register_shortcodes(){
 	add_shortcode('iframe', 'america_responsive_iframe');
 	add_shortcode('breakout', 'america_breakout');
 	add_shortcode('blockquote', 'america_blockquote');
+	add_shortcode('picturefill', 'america_picturefill');
 }
 add_action('init', 'america_register_shortcodes');
 

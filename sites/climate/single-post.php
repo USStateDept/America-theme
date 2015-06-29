@@ -20,27 +20,14 @@ if ( !is_page() ) {
 }}
 
 
-//* Wrap the post thumbnail (feature image) in figure tag and add figcaption
-function america_post_thumbnail_html() {
-	$id = get_post_thumbnail_id();
-	$caption = get_post( $id ) -> post_excerpt;
-
-	$html = '<figure id="attachment_' . $id . '" class="wp-caption alignnone">';
-		$html .= get_the_post_thumbnail();
-		$html .= '<figcaption class="wp-caption-text">';
-			$html .= $caption;
-		$html .= '</figcaption>';
-	$html .= '</figure>';
-
-	echo $html;
-}
-
-
-//* Add feature image if Single Post
-add_action( 'genesis_entry_content', 'climate_featured_image', 1 );
-function climate_featured_image() {
-	if ( is_singular( 'post' ) ) {
-		america_post_thumbnail_html();
+//* Add feature image if Standard Single Post
+if( false == get_post_format() ) {
+	add_action( 'genesis_entry_content', 'climate_featured_image', 1 );
+	function climate_featured_image() {
+		if ( is_singular( 'post' ) ) {
+			$id = get_post_thumbnail_id();
+			echo do_shortcode("[picturefill id='$id' names='post-thumbnail,post-feature-laptop,large,post-feature-big-mobile,post-feature-mobile' sizes='800, 660, 768, 630, 364' min_widths='75, 64, 50, 25']");
+		}
 	}
 }
 

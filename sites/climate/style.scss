@@ -229,7 +229,6 @@ input[type="submit"] {
   #TWITTER-WIDGET
 \*------------------------------------*/
 
-
 #twitter-widget-0 {
   margin: 0 auto !important;
   width: 100% !important;
@@ -239,27 +238,26 @@ input[type="submit"] {
 
 
 /*------------------------------------*\
-  #REMOVE AFTER PICTUREFILL IS ADDED)
+  #PICTUREFILL
 \*------------------------------------*/
 
+.blog .wp-caption,
+.archive .wp-caption {
+  @include bp($tablet) {
+    float: left;
+    margin: 0 1em 1em 0;
+  }
+}
 
-.single .entry-content .wp-caption,
-.single .entry-content .wp-caption .size-medium,
-.home .entry-image,
-.archive .entry-image,
-.blog .entry-image {
-  width: 100%;
+.blog .wp-caption-text,
+.archive .wp-caption-text {
+  width: auto;
 
   @include bp($big-mobile) {
     width: auto;
   }
-}
 
-
-.home .entry-title {
-  clear: both;
-
-@include bp($tablet) {
-    clear: none;
+  @include bp($tablet) {
+    width: 285px;
   }
 }

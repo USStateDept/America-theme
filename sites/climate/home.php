@@ -31,11 +31,9 @@ function america_responsive_image() {
 	$id = get_post_thumbnail_id();
 
 	if ( empty( $id ) == false ) {
-		echo do_shortcode("[picturefill id='$id' names='medium,post-feature-big-mobile,archive-mobile' sizes='285,630,365' min_widths='50,25']");
+		echo do_shortcode("[picturefill id='$id' align='alignnone' names='medium,post-feature-big-mobile,archive-mobile' sizes='285,630,365' min_widths='50,25']");
 	}
 }
-
-
 
 
 //* Add back the post content

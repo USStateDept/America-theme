@@ -23,7 +23,9 @@ module.exports = function(grunt) {
         uglify: {
           build: {
             files: {
-              'js/dist/main.min.js': ['js/src/vendor/modernizr.min.js', 'js/src/file-ext.js', 'js/src/video-watermark.js', 'js/src/sharelines.js', 'js/src/plugins/responsive-menu.js'],
+              'js/dist/modernizr.min.js': ['js/src/vendor/modernizr.min.js'],
+              'js/dist/picturefill.min.js': ['js/src/vendor/picturefill.min.js'],
+              'js/dist/main.min.js': ['js/src/file-ext.js', 'js/src/video-watermark.js', 'js/src/sharelines.js', 'js/src/plugins/responsive-menu.js'],
               'js/dist/lte-ie8.min.js': ['js/src/vendor/html5shiv.min.js', 'js/src/vendor/respond.min.js'],
               'js/dist/analytics-events.min.js': ['js/src/analytics/analytics-social-events.js', 'js/src/analytics/analytics-video-events.js'],
               'sites/misinfo/js/dist/script.js': ['sites/misinfo/js/src/init.js'],
