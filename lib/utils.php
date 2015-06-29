@@ -43,3 +43,37 @@ if (!function_exists('america_debug')) {
         }
     }
 }
+
+
+function america_generate_srcset( $id, $names, $sizes ) {
+	$markup = 'srcset="';
+	$length = count( $names );
+	$last = $length - 1;
+
+  for ( $i=0; $i<$length; $i++ ) {
+		if ( $i === $last ) {
+			$markup .= wp_get_attachment_image_src($id, $names[$i], $icon = false)[0] . ' ' . $sizes[$i] . 'w" ' ;
+		} else {
+			$markup .= wp_get_attachment_image_src($id, $names[$i], $icon = false)[0] . ' ' . $sizes[$i] . 'w, ' ;
+		}
+	}
+
+	return $markup;
+}
+
+
+function america_generate_sizes( $min_widths, $sizes ) {
+	$markup = 'sizes="';
+	$length = count( $min_widths );
+	$last = $length - 1;
+
+	for ( $i=0; $i<$length; $i++ ) {
+		if ( $i === $last ) {
+			$markup .= '(min-width:' . $min_widths[$i] . 'em) ' . $sizes[$i] . 'px, '. $sizes[$length] .'px"';
+		} else {
+			$markup .= '(min-width:' . $min_widths[$i] . 'em) ' . $sizes[$i] . 'px, ';
+		}
+	}
+
+  return $markup;
+}

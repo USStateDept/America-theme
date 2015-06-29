@@ -1,7 +1,7 @@
 <?php
 
 function america_responsive_iframe( $atts, $content = null ) {
-  extract(shortcode_atts(array(
+  extract( shortcode_atts( array(
       'allowfullscreen' => 1,
       'chat' => 0,
       'iframe_class' => '',
@@ -10,7 +10,7 @@ function america_responsive_iframe( $atts, $content = null ) {
       'frameborder' => 0,
       'height' => 315,
       'width' => 560,
-  ), $atts));
+  ), $atts ));
 
    $container_classes = '';
 
@@ -43,12 +43,12 @@ function america_responsive_iframe( $atts, $content = null ) {
 
 
 function america_breakout( $atts, $content = null ) {
-  extract(shortcode_atts(array(
+  extract( shortcode_atts( array(
     'align' => 'alignleft',
     'title' => 'Key Takeways',
     'type' => 'takeway',
     'width' => ''
-  ), $atts));
+  ), $atts ));
 
   $markup = '<div class="breakout '. $type . ' ' . $align . ' ' . $width .'">';
     $markup .= '<h3 class="breakout-title">'.$title.'</h3>';
@@ -58,14 +58,46 @@ function america_breakout( $atts, $content = null ) {
 
 
 function america_blockquote( $atts, $content = null ) {
-  extract(shortcode_atts(array(
+  extract( shortcode_atts( array(
     'type' => 'default',
     'align' => 'aligncenter',
-  ), $atts));
+  ), $atts ));
 
   $markup = '<blockquote class="' . $type . ' ' . $align . '">';
 
   $markup .= $content . '</blockquote>';
 
   return $markup;
+}
+
+
+function america_picturefill( $atts ) {
+  extract( shortcode_atts( array(
+    'id' => '',
+    'names' => '',
+    'sizes' => '',
+    'min_widths' => '',
+    'align' => 'alignnone',
+    'class' => '',
+  ), $atts ));
+
+  $names = preg_split( "/(, |,)/", $names );
+  $sizes = preg_split( "/(, |,)/", $sizes );
+  $min_widths = preg_split( "/(, |,)/", $min_widths );
+  $alt = isset( get_post_meta( $id, '_wp_attachment_image_alt', false)[0] ) ? esc_attr__( get_post_meta( $id, '_wp_attachment_image_alt', false )[0] ) : esc_attr( '' );
+  $caption = trim( strip_tags( get_post( $id ) -> post_excerpt ) );
+  $class = trim( 'wp-caption ' . $align . ' ' . $class );
+
+  $markup = '<figure id="attachment_'. esc_attr( $id ) . '" class="' . esc_attr( $class ) . '">';
+		$markup .= '<img ';
+      $markup .= america_generate_srcset( $id, $names, $sizes );
+      $markup .= america_generate_sizes( $min_widths, $sizes );
+      $markup .= 'alt="'. $alt .'"';
+    $markup .= '>';
+    $markup .= '<figcaption class="wp-caption-text">';
+			$markup .= $caption;
+		$markup .= '</figcaption>';
+	$markup .= '</figure>';
+
+	return $markup;
 }
