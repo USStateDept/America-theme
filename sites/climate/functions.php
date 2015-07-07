@@ -22,3 +22,24 @@ add_filter( 'genesis_pre_load_favicon', 'sp_favicon_filter' );
 function sp_favicon_filter( $favicon_url ) {
 	return '/wp-content/themes/america/sites/climate/images/dist/favicon.ico';
 }
+
+
+//* Add image sizes
+add_image_size( 'medium', 285, 190, TRUE ); //homepage thumb, archive thumb, post-inline-float
+add_image_size( 'archive-mobile', 365, 243, TRUE ); //mobile archive thumb
+add_image_size( 'post-feature-laptop', 660, 371, TRUE ); // laptop feature image
+add_image_size( 'large', 768, 396, TRUE); //tablet feature image
+add_image_size( 'post-feature-big-mobile', 630, 354, TRUE); //big mobile feature image, big mobile archive
+
+
+//* Set Feature Image Size
+set_post_thumbnail_size( 800, 450, TRUE );
+
+
+//* Make custom image sizes selectable from WordPress admin
+add_filter( 'image_size_names_choose', 'climate_custom_sizes' );
+function climate_custom_sizes( $sizes ) {
+    return array_merge( $sizes, array(
+				'post-thumbnail' => __( 'Post Feature Image Default' ),
+    ) );
+}
