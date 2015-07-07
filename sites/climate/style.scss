@@ -153,6 +153,14 @@ $blue: #128ad3;
 .home .alignleft .entry-image {
   float: left;
   margin: 0 1em 1em 0;
+
+  @include bp($big-mobile) {
+    width: 100%;
+  }
+
+  @include bp($tablet) {
+    width: auto;
+  }
 }
 
 .home .entry-content p {
@@ -259,5 +267,14 @@ input[type="submit"] {
 
   @include bp($tablet) {
     width: 285px;
+  }
+}
+
+.home .alignleft .entry-image {
+  width: 100%;
+
+  @include bp($tablet) {
+    width: 365px;
+    height: auto;
   }
 }

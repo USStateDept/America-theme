@@ -24,9 +24,9 @@ if ( !is_page() ) {
 if( false == get_post_format() ) {
 	add_action( 'genesis_entry_content', 'climate_featured_image', 1 );
 	function climate_featured_image() {
-		if ( is_singular( 'post' ) ) {
-			$id = get_post_thumbnail_id();
-			echo do_shortcode("[picturefill id='$id' names='post-thumbnail,post-feature-laptop,large,post-feature-big-mobile,post-feature-mobile' sizes='800, 660, 768, 630, 364' min_widths='75, 64, 50, 25']");
+		$id = get_post_thumbnail_id();
+		if ( !$id == '' ) {
+			echo do_shortcode("[picturefill id='$id' names='post-thumbnail,post-feature-laptop,large,post-feature-big-mobile,archive-mobile' sizes='800, 660, 768, 630, 365' min_widths='75, 64, 50, 25']");
 		}
 	}
 }
