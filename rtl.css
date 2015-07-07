@@ -100,19 +100,18 @@
 .rtl .sidebar .entry-title {
   font-size: 1.75em; }
 
+.rtl .sidebar .simple-social-icons ul {
+  float: right; }
+
 /*------------------------------------*\
   #ARCHIVE
 \*------------------------------------*/
-.rtl.archive .entry-image,
-.rtl.blog .entry-image {
-  width: 100%; }
-  @media (min-width: 50em) {
-    .rtl.archive .entry-image,
-    .rtl.blog .entry-image {
-      float: right;
-      width: auto;
-      max-width: 21.25em;
-      margin: 0 0 1em 1em; } }
+@media (min-width: 50em) {
+  .rtl.archive .entry-image,
+  .rtl.blog .entry-image,
+  .rtl.search .entry-image {
+    float: right;
+    margin: 0 0 1em 1em; } }
 
 /*------------------------------------*\
   #FOOTER

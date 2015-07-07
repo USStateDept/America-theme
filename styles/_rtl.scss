@@ -109,6 +109,10 @@
   font-size: em(28);
 }
 
+.rtl .sidebar .simple-social-icons ul {
+  float: right;
+}
+
 
 
 
@@ -117,13 +121,11 @@
 \*------------------------------------*/
 
 .rtl.archive .entry-image,
-.rtl.blog .entry-image {
-  width: 100%;
+.rtl.blog .entry-image,
+.rtl.search .entry-image {
 
   @include bp($tablet) {
     float: right;
-    width: auto;
-    max-width: em(340);
     margin: 0 0 1em 1em;
   }
 }
