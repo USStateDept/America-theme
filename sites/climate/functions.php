@@ -30,7 +30,6 @@ add_image_size( 'archive-mobile', 365, 243, TRUE ); //mobile archive thumb
 add_image_size( 'post-feature-laptop', 660, 371, TRUE ); // laptop feature image
 add_image_size( 'large', 768, 396, TRUE); //tablet feature image
 add_image_size( 'post-feature-big-mobile', 630, 354, TRUE); //big mobile feature image, big mobile archive
-add_image_size( 'post-feature-mobile', 364, 205, TRUE); //mobile feature image
 
 
 //* Set Feature Image Size
