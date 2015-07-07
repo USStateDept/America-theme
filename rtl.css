@@ -1,0 +1,132 @@
+/*------------------------------------*\
+  #COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+  #TYPOGRAPHY
+\*------------------------------------*/
+/*------------------------------------*\
+  #MEDIA-QUERIES
+\*------------------------------------*/
+/*------------------------------------*\
+  #REPEATED-STYLES
+\*------------------------------------*/
+/*------------------------------------*\
+  #EM-CONVERSION
+\*------------------------------------*/
+/*------------------------------------*\
+  #MEDIA-QUERY
+\*------------------------------------*/
+/*------------------------------------*\
+  #VISUALLY-HIDDEN
+\*------------------------------------*/
+/*------------------------------------*\
+  #NAVIGATION
+\*------------------------------------*/
+.rtl .genesis-nav-menu .menu-item {
+  font-size: 1.14286em; }
+
+.rtl .genesis-nav-menu.responsive-menu .menu-item-has-children > a {
+  margin: 0 0 0 40px; }
+
+.rtl .genesis-nav-menu.responsive-menu > .menu-item-has-children:before {
+  display: none; }
+
+.rtl .genesis-nav-menu .menu-item-language-current > a:after,
+.rtl .genesis-nav-menu .menu-item-has-children > a:after {
+  content: '\f140';
+  display: inline-block;
+  float: left;
+  font: normal 20px/1 'dashicons';
+  height: 20px;
+  padding-right: 4px;
+  position: relative;
+  top: -3px;
+  width: 20px; }
+  @media (min-width: 50em) {
+    .rtl .genesis-nav-menu .menu-item-language-current > a:after,
+    .rtl .genesis-nav-menu .menu-item-has-children > a:after {
+      top: 0; } }
+
+@media (min-width: 64em) {
+  .rtl .genesis-nav-menu .menu-item-language-current {
+    float: left; }
+
+  .rtl .genesis-nav-menu .sub-menu {
+    width: 95px; }
+
+  .rtl .genesis-nav-menu .submenu-languages li {
+    font-size: 0.875em; }
+
+  .rtl .genesis-nav-menu .submenu-languages li a:after {
+    display: none; } }
+.rtl .genesis-nav-menu.responsive-menu a,
+.rtl .genesis-nav-menu.responsive-menu li,
+.rtl .genesis-nav-menu.responsive-menu a:hover,
+.rtl .genesis-nav-menu.responsive-menu li:hover {
+  text-align: start; }
+
+/*------------------------------------*\
+  #POST-ENTRIES
+\*------------------------------------*/
+.rtl .entry-content p, .rtl .entry-content li, .rtl .entry-content blockquote {
+  font-size: 20px;
+  line-height: 1.5em; }
+
+.rtl .featured-content .entry-title,
+.rtl.archive .entry-title,
+.rtl.single-post .entry-title,
+.rtl.page .entry-title {
+  font-size: 2.8125em; }
+
+.rtl .entry .entry-meta > .entry-time,
+.rtl .entry .entry-meta > .entry-categories {
+  margin: 0 0 0 1em; }
+
+.rtl .entry .entry-meta > *:before {
+  margin: 0 0 0 0.35714em; }
+
+.rtl .wp-caption-text {
+  position: relative;
+  font-size: 0.85em;
+  right: 0; }
+
+/*------------------------------------*\
+  #SIDEBARS
+\*------------------------------------*/
+.rtl .sidebar .featured-content .entry-image {
+  float: right;
+  margin: 0 0 1em 1em; }
+
+.rtl .sidebar .entry-title {
+  font-size: 1.75em; }
+
+/*------------------------------------*\
+  #ARCHIVE
+\*------------------------------------*/
+.rtl.archive .entry-image,
+.rtl.blog .entry-image {
+  width: 100%; }
+  @media (min-width: 50em) {
+    .rtl.archive .entry-image,
+    .rtl.blog .entry-image {
+      float: right;
+      width: auto;
+      max-width: 21.25em;
+      margin: 0 0 1em 1em; } }
+
+/*------------------------------------*\
+  #FOOTER
+\*------------------------------------*/
+.rtl .footer-widgets {
+  font-size: 1em; }
+
+.rtl .footer-widgets-1 {
+  background-position: right center;
+  padding: 1em 3.5em 1em 1em;
+  position: relative;
+  right: 1em; }
+
+.rtl .menu {
+  float: right; }
+
+/*# sourceMappingURL=rtl.css.map */
