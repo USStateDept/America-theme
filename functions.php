@@ -65,6 +65,33 @@ function america_load_scripts() {
 
 }
 
+// **** ENQUEUE FOR DEV ONLY (appears on new aws to display enviroment ***** //
+function add_aws_marker() {  ?>
+    <style type="text/css">
+    	#wpwrap:before,
+        .login:before,
+        .site-header:before {
+            position: absolute;
+            left: 200px;
+            z-index: 2000;
+            background-color: green;
+		    color: #fff;
+		    text-transform: uppercase;
+		    text-align: center;
+		    padding: 10px;
+		    width: 300px;
+		    content: 'DESIGN - AWS ENVIROMENT'
+        }
+    </style>
+<?php }
+
+if( !empty(AWS_ENV) ) {
+	add_action( 'wp_head', 'add_aws_marker' );
+	add_action( 'login_enqueue_scripts', 'add_aws_marker' );
+	add_action( 'admin_enqueue_scripts', 'add_aws_marker' );
+}
+// **** END DEV ONLY ***** //
+
 
 //* init shortcodes
 function america_register_shortcodes(){
@@ -132,13 +159,12 @@ function america_secondary_menu_args( $args ){
 
 	$args['depth'] = 1;
 	return $args;
-
 }
+
 
 //* Remove comment form allowed tags
 add_filter( 'comment_form_defaults', 'america_remove_comment_form_allowed_tags' );
 function america_remove_comment_form_allowed_tags( $defaults ) {
-
 	$defaults['comment_notes_after'] = '';
 	return $defaults;
 }
