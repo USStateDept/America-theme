@@ -173,7 +173,7 @@ class America_Featured_Custom_Post extends WP_Widget {
 					the_excerpt();
 				}
 				elseif ( 'content-limit' == $instance['show_content'] ) {
-					the_content_limit( (int) $instance['content_limit'], esc_html( $instance['more_text'] ) );
+					the_content_limit( (int) $instance['content_limit'], $this->defaults['more_text'] );
 				}
 				else {
 

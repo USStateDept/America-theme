@@ -824,8 +824,10 @@ figure.alignleft {
   width: 100%;
 
   @include bp($tablet) {
+    float: left;
     width: auto;
     max-width: em(340);
+    margin: 0 1em 1em 0;
   }
 }
 
