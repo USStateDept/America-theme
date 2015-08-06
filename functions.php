@@ -85,7 +85,7 @@ function add_aws_marker() {  ?>
     </style>
 <?php }
 
-if( !empty(AWS_ENV) ) {
+if( AWS_ENV == 'STARBUCK' ) {
 	add_action( 'wp_head', 'add_aws_marker' );
 	add_action( 'login_enqueue_scripts', 'add_aws_marker' );
 	add_action( 'admin_enqueue_scripts', 'add_aws_marker' );
