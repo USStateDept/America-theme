@@ -30,7 +30,7 @@ class America_Featured_Custom_Post extends WP_Widget {
 
 		$this->defaults = array(
 			'title'                   => '',
-			'post_type'								=> '',
+			'post_type'				  => '',
 			'posts_cat'               => '',
 			'posts_num'               => 1,
 			'posts_offset'            => 0,
@@ -48,7 +48,7 @@ class America_Featured_Custom_Post extends WP_Widget {
 			'post_info'               => '[post_date] ' . __( 'By', 'genesis' ) . ' [post_author_posts_link] [post_comments]',
 			'show_content'            => 'excerpt',
 			'content_limit'           => '',
-			'more_text'               => __( '[Read More...]', 'genesis' ),
+			'more_text'               => __( 'Read More...', 'america' ),
 			'extra_num'               => '',
 			'extra_title'             => '',
 			'more_from_category'      => '',
@@ -173,7 +173,7 @@ class America_Featured_Custom_Post extends WP_Widget {
 					the_excerpt();
 				}
 				elseif ( 'content-limit' == $instance['show_content'] ) {
-					the_content_limit( (int) $instance['content_limit'], esc_html( $instance['more_text'] ) );
+					the_content_limit( (int) $instance['content_limit'], $this->defaults['more_text'] );
 				}
 				else {
 
