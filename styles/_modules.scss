@@ -253,7 +253,7 @@ figure.alignleft {
     line-height: em(20, 14);
     margin: 0 0 em(20, 14) 0;
     max-width: none;
-    overflow: auto;
+    overflow: visibile;
     padding: 0;
     text-transform: uppercase;
 }
@@ -824,8 +824,10 @@ figure.alignleft {
   width: 100%;
 
   @include bp($tablet) {
+    float: left;
     width: auto;
     max-width: em(340);
+    margin: 0 1em 1em 0;
   }
 }
 

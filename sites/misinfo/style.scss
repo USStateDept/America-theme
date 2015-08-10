@@ -6,8 +6,6 @@ $blue:            #306d85;
 $light-gray:      #f1f3f1;
 
 
-
-
 /*------------------------------------*\
   #General
 \*------------------------------------*/
@@ -338,4 +336,15 @@ html[lang|=pt].no-backgroundsize .site-title {
 .simple-social-icons ul li.social-facebook a,
 .simple-social-icons ul li.social-facebook a:hover {
   background-color: #3b5998 !important;
+}
+
+
+
+
+/*------------------------------------*\
+  #SITE FOOTER
+\*------------------------------------*/
+
+.footer-widgets .menu-item-language {
+  display: none;
 }
