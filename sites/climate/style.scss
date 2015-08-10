@@ -298,17 +298,18 @@ input[type="submit"] {
 
 .archive .archive-title {
   padding: 220px 0 13px 25px;
+  text-shadow: 0px 1px 3px #404040;
 
   @include bp($big-mobile) {
-    padding: 220px 0 13px 25px;
+    padding: 229px 0 4px 15px;
   }
 
   @include bp($tablet) {
-    padding: 181px 0 30px 43px;
+    padding: 181px 0 30px 41px;
   }
 
   @include bp($laptop) {
-    padding: 245px 0 15px 25px;
+    padding: 223px 0 37px 48px;
   }
 
   @include bp($desktop) {
@@ -338,35 +339,45 @@ input[type="submit"] {
 
 .category-energy-solutions .archive-title {
   background: url(/wp-content/themes/america/sites/climate/images/dist/energy-solutions-364.jpg) 0 0 no-repeat;
+  padding: 168px 0 13px 25px;
 
   @include bp($big-mobile) {
-    background-image: url();
+    background-image: url(/wp-content/themes/america/sites/climate/images/dist/energy-solutions-630.jpg);
+    padding: 229px 0 4px 13px;
   }
   @include bp($tablet) {
-    background-image: url();
+    background-image: url(/wp-content/themes/america/sites/climate/images/dist/energy-solutions-768.jpg);
+    padding: 181px 0 30px 39px;
   }
   @include bp($laptop) {
-    background-image: url();
+    background-image: url(/wp-content/themes/america/sites/climate/images/dist/energy-solutions-660.jpg);
+    padding: 223px 0 37px 48px;
   }
   @include bp($desktop) {
-    background-image: url();
+    background-image: url(/wp-content/themes/america/sites/climate/images/dist/energy-solutions-800.jpg);
+    padding: 200px 0 35px 45px;
   }
 }
 
 .category-smart-technology-finance .archive-title {
   background: url(/wp-content/themes/america/sites/climate/images/dist/smart-tech-364.jpg) 0 0 no-repeat;
+  padding: 116px 0 13px 25px;
 
   @include bp($big-mobile) {
-    background-image: url();
+    background-image: url(/wp-content/themes/america/sites/climate/images/dist/smart-tech-630.jpg);
+    padding: 177px 0 4px 16px;
   }
   @include bp($tablet) {
-    background-image: url();
+    background-image: url(/wp-content/themes/america/sites/climate/images/dist/smart-tech-768.jpg);
+    padding: 181px 0 30px 42px;
   }
   @include bp($laptop) {
-    background-image: url();
+    background-image: url(/wp-content/themes/america/sites/climate/images/dist/smart-tech-660.jpg);
+    padding: 223px 0 37px 48px;
   }
   @include bp($desktop) {
-    background-image: url();
+    background-image: url(/wp-content/themes/america/sites/climate/images/dist/smart-tech-800.jpg);
+    padding: 200px 0 35px 45px;
   }
 }
 
@@ -374,15 +385,15 @@ input[type="submit"] {
   background: url(/wp-content/themes/america/sites/climate/images/dist/global-action-364.jpg) 0 0 no-repeat;
 
   @include bp($big-mobile) {
-    background-image: url();
+    background-image: url(/wp-content/themes/america/sites/climate/images/dist/global-action-630.jpg);
   }
   @include bp($tablet) {
-    background-image: url();
+    background-image: url(/wp-content/themes/america/sites/climate/images/dist/global-action-768.jpg);
   }
   @include bp($laptop) {
-    background-image: url();
+    background-image: url(/wp-content/themes/america/sites/climate/images/dist/global-action-660.jpg);
   }
   @include bp($desktop) {
-    background-image: url();
+    background-image: url(/wp-content/themes/america/sites/climate/images/dist/global-action-800.jpg);
   }
 }
