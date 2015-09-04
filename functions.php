@@ -102,6 +102,9 @@ function america_register_shortcodes(){
 }
 add_action('init', 'america_register_shortcodes');
 
+//* Make sure widgets read shortcodes
+add_filter('widget_text', 'do_shortcode');
+
 
 //* Add new image sizes
 //add_image_size( 'featured-primary', 700, 475, TRUE );

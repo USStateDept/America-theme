@@ -317,7 +317,8 @@ input[type="submit"] {
   }
 }
 
-.category-air-quality .archive-title {
+.category-air-quality .archive-title,
+.category-air-quality-hi .archive-title {
   background: url(/wp-content/themes/america/sites/climate/images/dist/air-quality-364.jpg) 0 0 no-repeat;
 
   @include bp($big-mobile) {
@@ -337,7 +338,8 @@ input[type="submit"] {
   }
 }
 
-.category-energy-solutions .archive-title {
+.category-energy-solutions .archive-title,
+.category-energy-solutions-hi .archive-title {
   background: url(/wp-content/themes/america/sites/climate/images/dist/energy-solutions-364.jpg) 0 0 no-repeat;
   padding: 168px 0 13px 25px;
 
@@ -359,7 +361,8 @@ input[type="submit"] {
   }
 }
 
-.category-smart-technology-finance .archive-title {
+.category-smart-technology-finance .archive-title,
+.category-smart-technology-finance-hi .archive-title {
   background: url(/wp-content/themes/america/sites/climate/images/dist/smart-tech-364.jpg) 0 0 no-repeat;
   padding: 116px 0 13px 25px;
 
@@ -381,7 +384,8 @@ input[type="submit"] {
   }
 }
 
-.category-global-action .archive-title {
+.category-global-action .archive-title,
+.category-global-action-hi .archive-title {
   background: url(/wp-content/themes/america/sites/climate/images/dist/global-action-364.jpg) 0 0 no-repeat;
 
   @include bp($big-mobile) {
