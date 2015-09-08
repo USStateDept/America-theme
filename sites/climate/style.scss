@@ -87,6 +87,11 @@ $blue: #128ad3;
   background: url(/wp-content/themes/america/sites/climate/images/dist/mark-old-ie.png) 0 0 no-repeat;
 }
 
+.header-widget-area .widgettitle {
+  position: absolute;
+  left: -9999px;
+}
+
 .nav-primary {
   border-bottom: 1px solid $green;;
 
