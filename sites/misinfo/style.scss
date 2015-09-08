@@ -28,6 +28,15 @@ html[dir="rtl"] .content-sidebar .content {
   float: right;
 }
 
+.america.category .archive-title {
+  position: absolute;
+  left: -9999px;
+}
+
+.archive .archive-description {
+  margin: 0;
+}
+
 
 
 
@@ -231,6 +240,7 @@ html[lang|=pt].no-backgroundsize .site-title {
   font-weight: 700;
   letter-spacing: 1px;
   margin: 0 0 15px;
+  overflow: hidden;
   padding: 5px 15px;
   text-transform: uppercase;
 }
@@ -261,6 +271,14 @@ html[lang|=pt].no-backgroundsize .site-title {
 .home-middle .featured-content .entry:nth-of-type(2n+1) {
     clear: left;
     margin-right: 40px;
+}
+
+.blog .home-middle .entry-image {
+
+  @include bp($tablet) {
+    float: none !important;
+    max-width: 100%! important;
+  }
 }
 
 
