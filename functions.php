@@ -36,6 +36,9 @@ add_theme_support( 'post-formats', array( 'gallery', 'image', 'video', 'audio' )
 //* Add viewport meta tag for mobile browsers
 add_theme_support( 'genesis-responsive-viewport' );
 
+//* Add Genesis accessibility
+add_theme_support( 'genesis-accessibility' );
+
 
 //* Enqueue Scripts
 add_action( 'wp_enqueue_scripts', 'america_load_scripts' );

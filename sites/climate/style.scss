@@ -210,7 +210,7 @@ $blue: #128ad3;
   #WIDGET
 \*------------------------------------*/
 
-.sidebar .widget:first-child {
+.sidebar .widget:first-of-type {
   background-color: $gray;
   clear: both;
   padding: em(15);
