@@ -104,11 +104,14 @@ $blue: #128ad3;
   margin-bottom: 2em;
 }
 
-.america .genesis-nav-menu .current-menu-parent > a,
 .america .genesis-nav-menu .current-menu-item > a {
   @include bp($tablet) {
     border-bottom: 3px solid $blue;
   }
+}
+
+.genesis-nav-menu.responsive-menu .sub-menu {
+  background-color: #FFFFFF;
 }
 
 
@@ -291,7 +294,14 @@ input[type="submit"] {
   #ARCHIVE HERO
 \*------------------------------------*/
 
-.taxonomy-description {
+.category-air-quality .taxonomy-description,
+.category-air-quality-hi .taxonomy-description,
+.category-energy-solutions .taxonomy-description,
+.category-energy-solutions-hi .taxonomy-description,
+.category-smart-technology-finance .taxonomy-description,
+.category-smart-technology-finance-hi .taxonomy-description,
+.category-global-action .taxonomy-description,
+.category-global-action-hi .taxonomy-description {
   border-bottom: 1px solid $border-color;
   margin-bottom: 2em;
   padding-bottom: 1em;
@@ -301,45 +311,31 @@ input[type="submit"] {
   margin-top: 0;
 }
 
-.archive .archive-title {
+.category-air-quality .archive-title,
+.category-air-quality-hi .archive-title {
+  background: url(/wp-content/themes/america/sites/climate/images/dist/air-quality-364.jpg) 0 0 no-repeat;
   padding: 220px 0 13px 25px;
+  position: static;
   text-shadow: 0px 1px 3px #404040;
 
   @include bp($big-mobile) {
+    background-image: url(/wp-content/themes/america/sites/climate/images/dist/air-quality-630.jpg);
     padding: 229px 0 4px 15px;
   }
 
   @include bp($tablet) {
+    background-image: url(/wp-content/themes/america/sites/climate/images/dist/air-quality-768.jpg);
     padding: 181px 0 30px 41px;
   }
 
   @include bp($laptop) {
+    background-image: url(/wp-content/themes/america/sites/climate/images/dist/air-quality-660.jpg);
     padding: 223px 0 37px 48px;
   }
 
   @include bp($desktop) {
-    padding: 200px 0 35px 45px;
-  }
-}
-
-.category-air-quality .archive-title,
-.category-air-quality-hi .archive-title {
-  background: url(/wp-content/themes/america/sites/climate/images/dist/air-quality-364.jpg) 0 0 no-repeat;
-
-  @include bp($big-mobile) {
-    background-image: url(/wp-content/themes/america/sites/climate/images/dist/air-quality-630.jpg);
-  }
-
-  @include bp($tablet) {
-    background-image: url(/wp-content/themes/america/sites/climate/images/dist/air-quality-768.jpg);
-  }
-
-  @include bp($laptop) {
-    background-image: url(/wp-content/themes/america/sites/climate/images/dist/air-quality-660.jpg);
-  }
-
-  @include bp($desktop) {
     background-image: url(/wp-content/themes/america/sites/climate/images/dist/air-quality-800.jpg);
+    padding: 200px 0 35px 45px;
   }
 }
 
@@ -347,6 +343,8 @@ input[type="submit"] {
 .category-energy-solutions-hi .archive-title {
   background: url(/wp-content/themes/america/sites/climate/images/dist/energy-solutions-364.jpg) 0 0 no-repeat;
   padding: 168px 0 13px 25px;
+  position: static;
+  text-shadow: 0px 1px 3px #404040;
 
   @include bp($big-mobile) {
     background-image: url(/wp-content/themes/america/sites/climate/images/dist/energy-solutions-630.jpg);
@@ -370,6 +368,8 @@ input[type="submit"] {
 .category-smart-technology-finance-hi .archive-title {
   background: url(/wp-content/themes/america/sites/climate/images/dist/smart-tech-364.jpg) 0 0 no-repeat;
   padding: 116px 0 13px 25px;
+  position: static;
+  text-shadow: 0px 1px 3px #404040;
 
   @include bp($big-mobile) {
     background-image: url(/wp-content/themes/america/sites/climate/images/dist/smart-tech-630.jpg);
@@ -392,17 +392,24 @@ input[type="submit"] {
 .category-global-action .archive-title,
 .category-global-action-hi .archive-title {
   background: url(/wp-content/themes/america/sites/climate/images/dist/global-action-364.jpg) 0 0 no-repeat;
+  padding: 220px 0 13px 25px;
+  position: static;
+  text-shadow: 0px 1px 3px #404040;
 
   @include bp($big-mobile) {
     background-image: url(/wp-content/themes/america/sites/climate/images/dist/global-action-630.jpg);
+    padding: 229px 0 4px 15px;
   }
   @include bp($tablet) {
     background-image: url(/wp-content/themes/america/sites/climate/images/dist/global-action-768.jpg);
+    padding: 181px 0 30px 41px;
   }
   @include bp($laptop) {
     background-image: url(/wp-content/themes/america/sites/climate/images/dist/global-action-660.jpg);
+    padding: 223px 0 37px 48px;
   }
   @include bp($desktop) {
     background-image: url(/wp-content/themes/america/sites/climate/images/dist/global-action-800.jpg);
+    padding: 200px 0 35px 45px;
   }
 }

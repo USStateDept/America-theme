@@ -169,7 +169,6 @@ html[lang|=pt].no-backgroundsize .site-title {
 }
 
 @include bp($laptop) {
-  .america .genesis-nav-menu .current-menu-parent > a,
   .america .genesis-nav-menu .current-menu-item > a {
     border-bottom: 3px solid $blue;
   }
