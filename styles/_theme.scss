@@ -39,7 +39,6 @@
 
 .term-book.america .genesis-nav-menu .menu-item-type-custom > a[title~=books],
 .term-pamphlet.america .genesis-nav-menu .menu-item-type-custom > a[title~=pamphlets],
-.america .genesis-nav-menu .current-menu-parent > a,
 .america .genesis-nav-menu .current-menu-item > a {
     @include bp($tablet) {
       background-color: $white;

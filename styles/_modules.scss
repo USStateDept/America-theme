@@ -600,6 +600,14 @@ figure.alignleft {
   display: inline-block;
   padding: em(16, 14) em(20, 14);
   position: relative;
+
+  @include bp($tablet) {
+    padding: em(16, 14) em(12, 14);
+  }
+
+  @include bp($laptop) {
+    padding: em(16, 14) em(20, 14);
+  }
 }
 
 .genesis-nav-menu li:hover,
@@ -841,11 +849,13 @@ figure.alignleft {
   }
 }
 
+.archive .archive-title,
 .blog .archive-title {
   position: absolute;
   left: -9999px;
 }
 
+.archive .archive-description,
 .blog .archive-description {
   margin-bottom: 0;
 }
