@@ -52,22 +52,21 @@ function america_add_publication_body_class( $classes ) {
  *
  */
 
+//* Add the entry header markup and entry title
+add_action( 'genesis_before_content', 'america_add_entry_header' );
+function america_add_entry_header()
+{
+  genesis_entry_header_markup_open();
+  genesis_do_post_title();
+  genesis_entry_header_markup_close();
+}
+
 //* Open 1/3 column. We're hijacking genesis_entry_header to do what we want.
 add_action( 'genesis_entry_header', 'america_entry_header_markup_open' );
 function america_entry_header_markup_open() {
   $html = '<div class="one-third first">';
   echo $html;
 }
-
-
-//* Add featured image to single-publication page.
-add_action( 'genesis_entry_header', 'america_publication_featured_image' );
-function america_publication_featured_image() {
-  if ( $image = genesis_get_image( 'format=url' ) ) {
-    printf( '<div class="publication-featured-image"><img src="%s" alt="%s" /></div>', $image, the_title_attribute( 'echo=0' ) );
-  }
-}
-
 
 //* Add file from Publication File meta box to view, if one exists
 add_action( 'genesis_entry_header', 'america_publication_file' );
@@ -93,6 +92,15 @@ function america_publication_file() {
 }
 
 
+//* Add featured image to single-publication page.
+add_action( 'genesis_entry_header', 'america_publication_featured_image' );
+function america_publication_featured_image() {
+  if ( $image = genesis_get_image( 'format=url' ) ) {
+    printf( '<div class="publication-featured-image"><img src="%s" alt="%s" /></div>', $image, the_title_attribute( 'echo=0' ) );
+  }
+}
+
+
 //* Close 1/3 column
 add_action( 'genesis_entry_header', 'america_entry_header_markup_close' );
 function america_entry_header_markup_close() {
@@ -101,32 +109,19 @@ function america_entry_header_markup_close() {
 }
 
 
-//* Open 2/3 column
+//* Open 1/3 column
 add_action( 'genesis_before_entry_content', 'america_before_entry_markup', 1 );
 function america_before_entry_markup() {
-  $html = '<div class="two-thirds">';
+  $html = '<div class="one-third">';
   echo $html;
 }
 
 
-//* Output Title within 2/3 column
-add_filter( 'genesis_before_entry_content', 'america_post_title_output', 2 );
-function america_post_title_output( $title ) {
-  $title = apply_filters( 'genesis_post_title_text', get_the_title() );
-
-  $html = '<header class="entry-header">';
-    $html .= '<h2 class="entry-title" itemprop="headline">' . $title . '</h2>';
-  $html .= '</header>';
-
-  echo $html;
-}
-
-
-//* Output post content in 2/3 column
+//* Output post content in 1/3 column
 add_action( 'genesis_entry_content', 'genesis_do_post_content' );
 
 
-//* Output post meta in 2/3 column. Add category, tags, and type to the publication post meta data
+//* Output post meta in 1/3 column. Add category, tags, and type to the publication post meta data
 add_action( 'genesis_after_entry_content', 'genesis_post_meta' );
 add_filter( 'genesis_post_meta', 'america_post_meta_filter' );
 function america_post_meta_filter($post_meta) {
@@ -136,7 +131,7 @@ function america_post_meta_filter($post_meta) {
 }
 
 
-//* Close 2/3 column
+//* Close 1/3 column
 add_action( 'genesis_after_entry_content', 'america_after_entry_markup' );
 function america_after_entry_markup() {
   $html = '</div>';
