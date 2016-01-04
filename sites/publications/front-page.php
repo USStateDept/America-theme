@@ -26,7 +26,7 @@ function publications_home_about_loop() {
 	if( $loop->have_posts() ) {
 		// loop through posts
 		while( $loop->have_posts() ): $loop->the_post();
-		echo '<div class="one-third">';
+		echo '<div class="one-third-home">';
 			echo '<div class="home-post-thumb clearfix">' . get_the_post_thumbnail() . '</div>';
 			echo '<h6>' . get_the_title() . '</h6>';
 			echo '<p><a href="' . get_the_permalink() . '"</a></p>';
@@ -35,4 +35,6 @@ function publications_home_about_loop() {
 	}
 	wp_reset_postdata();
 }
+
+
 genesis();
