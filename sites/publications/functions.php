@@ -26,6 +26,8 @@ function sp_favicon_filter( $favicon_url ) {
 
 //* Add image sizes
 add_image_size( 'publication', 424, 530, TRUE );
+add_image_size( 'pub-small', 200, 250, TRUE );
+set_post_thumbnail_size(150, 188, TRUE);
 
 //* Redirect search, category and taxonomy archives to use archive-publication template
 /*function get_publication_template( $template ) {

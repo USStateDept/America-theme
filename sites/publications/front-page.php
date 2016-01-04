@@ -27,8 +27,8 @@ function publications_home_about_loop() {
 		// loop through posts
 		while( $loop->have_posts() ): $loop->the_post();
 		echo '<div class="one-third">';
+			echo '<div class="home-post-thumb clearfix">' . get_the_post_thumbnail() . '</div>';
 			echo '<h6>' . get_the_title() . '</h6>';
-			echo '<p>' . get_the_post_thumbnail() . '</p>';
 			echo '<p><a href="' . get_the_permalink() . '"</a></p>';
 		echo '</div>';
 		endwhile;
