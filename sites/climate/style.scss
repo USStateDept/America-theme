@@ -258,22 +258,16 @@ input[type="submit"] {
 \*------------------------------------*/
 
 .blog .wp-caption,
-.archive .wp-caption {
-  @include bp($tablet) {
-    float: left;
-    margin: 0 1em 1em 0;
-  }
-}
-
-.blog .wp-caption-text,
-.archive .wp-caption-text {
+.archive .wp-caption,
+.search .wp-caption {
   width: auto;
 
   @include bp($big-mobile) {
     width: auto;
   }
-
   @include bp($tablet) {
+    float: left;
+    margin: 0 1em 1em 0;
     width: 285px;
   }
 }
