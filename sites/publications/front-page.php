@@ -62,7 +62,29 @@ function publications_home_human_rights_loop() {
 	wp_reset_postdata();
 }
 
+// Add our custom loop
+add_action( 'genesis_loop', 'publications_home_democracy_loop' );
+function publications_home_democracy_loop() {
+	$args = array(
+		'post_type' => 'publications', 
+		'category_name' => 'democracy',
+		'orderby'       => 'post_date',
+		'order'         => 'DESC',
+		'posts_per_page'=> '3', // overrides posts per page in theme settings
+	);
+	$loop = new WP_Query( $args );
+	if( $loop->have_posts() ) {
+		// loop through posts
+		while( $loop->have_posts() ): $loop->the_post();
+		echo '<div class="one-third-home">';
+			echo '<div class="home-post-thumb clearfix">' . get_the_post_thumbnail() . '</div>';
+			echo '<h6>' . get_the_title() . '</h6>';
+			echo '<p><a href="' . get_the_permalink() . '"</a></p>';
+		echo '</div>';
+		endwhile;
+	}
+	wp_reset_postdata();
+}
 
 
-
-genesis();
+genesis(); ?>
