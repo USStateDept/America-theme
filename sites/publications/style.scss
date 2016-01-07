@@ -265,6 +265,22 @@
   }
 }
 
+.category-header {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  float: left;
+}
+
+.category-header-more {
+  float: right;
+  margin-top: 2.5em;
+}
+
+.home-category-header {
+  border-bottom: solid 1px $black;
+  margin-bottom: 2em;
+}
+
 
 
 
@@ -534,4 +550,10 @@
 .downloads-file.pdf {
   background-size: 15px 20px;
   padding: 5px 0 5px 23px;
+}
+
+/* Modifications to default Genesis breadcrumb code */
+.breadcrumb {
+  background-color: #fff;
+  margin-top: 20px;
 }

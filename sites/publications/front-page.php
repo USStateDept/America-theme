@@ -26,12 +26,16 @@ function publications_home_about_loop() {
 	);
 	$loop = new WP_Query( $args );
 	if( $loop->have_posts() ) {
+		echo '<div class="home-category-header clearfix">
+				<h3 class="category-header clearfix">About America</h3>
+				<span class="category-header-more clearfix"><a href="/about-america">More</></span>
+			  </div>';
+
 		// loop through posts
 		while( $loop->have_posts() ): $loop->the_post();
 		echo '<div class="one-third-home">';
 			echo '<div class="home-post-thumb clearfix">' . get_the_post_thumbnail() . '</div>';
-			echo '<h6>' . get_the_title() . '</h6>';
-			echo '<p><a href="' . get_the_permalink() . '"</a></p>';
+			echo '<h6><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h6>';
 		echo '</div>';
 		endwhile;
 	}
@@ -50,12 +54,15 @@ function publications_home_human_rights_loop() {
 	);
 	$loop = new WP_Query( $args );
 	if( $loop->have_posts() ) {
+		echo '<div class="home-category-header clearfix">
+				<h3 class="category-header clearfix">Human Rights</h3>
+				<span class="category-header-more clearfix"><a href="/human-rights">More</></span>
+			  </div>';
 		// loop through posts
 		while( $loop->have_posts() ): $loop->the_post();
 		echo '<div class="one-third-home">';
 			echo '<div class="home-post-thumb clearfix">' . get_the_post_thumbnail() . '</div>';
-			echo '<h6>' . get_the_title() . '</h6>';
-			echo '<p><a href="' . get_the_permalink() . '"</a></p>';
+			echo '<h6><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h6>';
 		echo '</div>';
 		endwhile;
 	}
@@ -74,12 +81,15 @@ function publications_home_democracy_loop() {
 	);
 	$loop = new WP_Query( $args );
 	if( $loop->have_posts() ) {
+		echo '<div class="home-category-header clearfix">
+				<h3 class="category-header clearfix">Democracy</h3>
+				<span class="category-header-more clearfix"><a href="/democracy">More</></span>
+			  </div>';
 		// loop through posts
 		while( $loop->have_posts() ): $loop->the_post();
 		echo '<div class="one-third-home">';
 			echo '<div class="home-post-thumb clearfix">' . get_the_post_thumbnail() . '</div>';
-			echo '<h6>' . get_the_title() . '</h6>';
-			echo '<p><a href="' . get_the_permalink() . '"</a></p>';
+			echo '<h6><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h6>';
 		echo '</div>';
 		endwhile;
 	}

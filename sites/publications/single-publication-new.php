@@ -49,25 +49,58 @@ function america_add_publication_body_class( $classes ) {
  * Rebuilding the page with our custom markup
  */
 
+//* Adding breadcrumb back in
+add_action( 'genesis_after_header', 'genesis_do_breadcrumbs' );
+//* Modify breadcrumb arguments.
+add_filter( 'genesis_breadcrumb_args', 'sp_breadcrumb_args' );
+function sp_breadcrumb_args( $args ) {
+  $args['home'] = 'Home';
+  $args['sep'] = ' / ';
+  $args['list_sep'] = ', '; // Genesis 1.5 and later
+  $args['prefix'] = '<div class="breadcrumb">';
+  $args['suffix'] = '</div>';
+  $args['heirarchial_attachments'] = true; // Genesis 1.5 and later
+  $args['heirarchial_categories'] = true; // Genesis 1.5 and later
+  $args['display'] = true;
+  $args['labels']['prefix'] = '';
+  $args['labels']['author'] = 'Archives for ';
+  $args['labels']['category'] = 'Archives for '; // Genesis 1.6 and later
+  $args['labels']['tag'] = 'Archives for ';
+  $args['labels']['date'] = 'Archives for ';
+  $args['labels']['search'] = 'Search for ';
+  $args['labels']['tax'] = 'Archives for ';
+  $args['labels']['post_type'] = 'Archives for ';
+  $args['labels']['404'] = 'Not found: '; // Genesis 1.5 and later
+return $args;
+}
+
 // remove Genesis default loop
-remove_action( 'genesis_loop', 'genesis_do_loop' );
+remove_action( 'genesis_loop', 'genesis_do_loop' ); ?>
 
 <article itemtype="http://schema.org/CreativeWork" itemscope="itemscope" class="post-<?php print $pageid; ?> page type-page status-publish entry">
-<div class="entry-content" itemprop=”text”>
 
-<div class="">
-<?php if(have_posts()) : while(have_posts()) : the_post();
+    <div class="two-thirds first">
+      <?php while ( have_posts() ) : the_post(); ?>
 
-/* Custom meta boxes */
-echo '<div class="intro-tekst"> ' . get_field('intro_tekst') . ' </div>';
-echo '<div class="images"> ' . get_field('images') . ' </div>';
-echo '<div class="trailer"> ' . get_field('trailer') . ' </div>';
-echo '<div class="teknisk-info"> ' . get_field('teknisk_info') . ' </div>';
-echo '<div class="synopsis"> ' . get_field('synopsis') . ' </div>';
+      <h1><? the_title(); ?></h1>
 
-endwhile; endif;
-?>
-</div></div></article>
+      <div class="">
+        <? the_post_thumbnail() ); ?>
+      </div>
+
+      <div class="">
+        
+      </div>
+
+      <?php endwhile; // End of the loop. ?>
+    </div>
+
+    <div class="one-third">
+      
+
+    </div>
+
+</article>
 
 
 
