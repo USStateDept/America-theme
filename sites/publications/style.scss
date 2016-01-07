@@ -124,15 +124,26 @@
 
 .one-third-home {
   float: left;
-  width: 30%;
-  margin-right: 20px;
+  width: 31%;
+  margin-right: 15px;
   margin-bottom: 20px;
 }
 
 .home-post-thumb {
   float: left;
   width: 150px;
+  margin-right: 10px;
 }
+
+.home-post-data h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.blurb {
+  font-size: 10px !important;
+}
+
 
 
 // TODO: This is not flexible enough
