@@ -85,15 +85,17 @@ function publications_cat_loop() {
 		'category_name' => 'about-america',
 		'orderby'       => 'post_date',
 		'order'         => 'DESC',
-		'posts_per_page'=> '3', // overrides posts per page in theme settings
+		'posts_per_page'=> '20', // overrides posts per page in theme settings
 	);
 	$loop = new WP_Query( $args );
 	if( $loop->have_posts() ) {
 		// loop through posts
 		while( $loop->have_posts() ): $loop->the_post();
-		echo '<div class="one-third-home">';
 			echo '<div class="home-post-thumb clearfix">' . get_the_post_thumbnail() . '</div>';
-			echo '<h6><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h6>';
+			echo '<div class="home-post-data">';
+				echo '<h6><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h6>';
+				echo '<div class="blurb">' . the_field('blurb') . '</div>';
+			echo '</div>';
 		echo '</div>';
 		endwhile;
 	}
