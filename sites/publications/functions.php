@@ -29,6 +29,7 @@ add_image_size( 'publication', 424, 530, TRUE );
 add_image_size( 'pub-small', 200, 250, TRUE );
 set_post_thumbnail_size(150, 188, TRUE);
 
+
 //* Redirect search, category and taxonomy archives to use archive-publication template
 /*function get_publication_template( $template ) {
   if(  is_category() || is_search() || is_tax() ) {

@@ -89,6 +89,8 @@ function publications_cat_loop() {
 	);
 	$loop = new WP_Query( $args );
 	if( $loop->have_posts() ) {
+        echo '<div class="home-category-header clearfix">
+        <h3 class="category-header clearfix">About America</h3></div>';
 		// loop through posts
 		while( $loop->have_posts() ): $loop->the_post();
 		echo '<div class="one-third-home clearfix">';
