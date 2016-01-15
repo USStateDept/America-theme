@@ -570,8 +570,11 @@
 }
 
 /* Modifications to default Genesis entry output for publications */
-.publication {
-
+.archive .entry {
+  float: left;
+  width: 31%;
+  margin-right: 15px;
+  margin-bottom: 20px;
 }
 
 

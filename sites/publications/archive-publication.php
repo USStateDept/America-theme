@@ -22,6 +22,17 @@ remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
 //* Remove the post image
 remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
 
+//* Remove the post info function
+remove_action( 'genesis_entry_header', 'genesis_post_info', 5 );
+
+//* Remove the author box
+remove_action( 'genesis_after_entry', 'genesis_do_author_box', 8 );
+
+//* Remove Post Meta
+remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_open', 5 );
+remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_close', 15 );
+remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
+
 //* Add publication body class to the head
 add_filter( 'body_class', 'america_add_publication_body_class' );
 function america_add_publication_body_class( $classes ) {
