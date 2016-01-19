@@ -30,6 +30,12 @@ add_image_size( 'pub-small', 200, 250, TRUE );
 set_post_thumbnail_size(150, 188, TRUE);
 
 
+//* Modify the length of post excerpts
+add_filter( 'excerpt_length', 'sp_excerpt_length' );
+function sp_excerpt_length( $length ) {
+	return 30; // pull first 50 words
+}
+
 //* Redirect search, category and taxonomy archives to use archive-publication template
 /*function get_publication_template( $template ) {
   if(  is_category() || is_search() || is_tax() ) {
