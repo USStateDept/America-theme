@@ -36,6 +36,16 @@ function sp_excerpt_length( $length ) {
 	return 30; // pull first 50 words
 }
 
+//* Reomve archive pages from search results
+function america_search_filter($query) {
+  if ( !is_admin() && $query->is_main_query() ) {
+    if ($query->is_search) {
+      $query->set('post_type', array( 'post', 'publication' ) );
+    }
+  }
+}
+add_action('pre_get_posts','america_search_filter');
+
 //* Redirect search, category and taxonomy archives to use archive-publication template
 /*function get_publication_template( $template ) {
   if(  is_category() || is_search() || is_tax() ) {

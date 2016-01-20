@@ -570,6 +570,8 @@
 }
 
 /* Modifications to default Genesis entry output for publications */
+
+
 .archive .entry {
   float: left;
   width: 31%;
@@ -585,6 +587,10 @@
   font-size: 1.2em;
 }
 
+.archive .entry-content {
+  margin-bottom: 15px;
+}
+
 .archive .entry-content img {
   width: 150px;
 }
@@ -592,6 +598,10 @@
 .archive .entry-content p {
   font-size: .9em;
   line-height: 1.3em;
+}
+
+.archive article {
+  float: left;
 }
 
 
