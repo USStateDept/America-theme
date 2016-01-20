@@ -12,16 +12,20 @@ add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_c
 //* Remove the breadcrumb navigation
 remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
 
-//* Remove the post info function
-remove_action( 'genesis_entry_header', 'genesis_post_info', 5 );
-
-//* Remove the author box on single posts
-remove_action( 'genesis_after_entry', 'genesis_do_author_box_single', 8 );
-
-//* Remove Post Meta
-remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_open', 5 );
-remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_close', 15 );
+remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
+remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
+remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
+remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
 remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
+remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
+remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
+
+add_action( 'genesis_sidebar', 'america_add_sidebar_filter' );
+add_action( 'genesis_before_content', 'america_add_search_term' );
+add_action( 'genesis_entry_content', 'genesis_do_post_image', 10 );
+add_action( 'genesis_entry_content', 'genesis_do_post_title', 11 );
+add_action( 'genesis_entry_content', 'genesis_post_meta', 12 );
+add_action( 'genesis_entry_content', 'genesis_do_post_content', 13 );
 
 //* Add custom body class for publication type
 add_filter( 'body_class', 'america_add_publication_body_class' );

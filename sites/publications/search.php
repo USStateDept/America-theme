@@ -28,7 +28,7 @@ function publications_archive_post_class( $classes ) {
     
   $classes[] = 'one-half';
   $classes[] = 'pubs-search-post';
-  if( 0 == $wp_query->current_post || 0 == $wp_query->current_post % 3 )
+  if( 0 == $wp_query->current_post || 0 == $wp_query->current_post % 2 )
     $classes[] = 'first';
   return $classes;
 }
