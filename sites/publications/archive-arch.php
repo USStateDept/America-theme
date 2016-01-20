@@ -1,6 +1,6 @@
 <?php
 /**
- * Archive Template
+ * Custom Category Template
  * @author Office of Design, Bureau of International Information Programs
  * @package America.gov
  * @subpackage Publications
@@ -58,6 +58,8 @@ function sp_breadcrumb_args( $args ) {
   $args['labels']['404'] = 'Not found: '; // Genesis 1.5 and later
 return $args;
 }
+
+
 
 
 genesis();
