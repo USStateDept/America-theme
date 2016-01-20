@@ -68,7 +68,7 @@ function publications_category_info() {
     $html = '<h3 class="archive-header">';
     echo $html;
     single_term_title();
-    $html = '<span class="pub-type-filter">Filter by: Books, Pamphlet, All</span>';
+    $html = '<span class="pub-type-filter">[aasf filter_by="publication-type" layout="url"]</span>';
     echo $html;
     $html = '</h3>';
     echo $html;
