@@ -26,6 +26,7 @@ add_action( 'genesis_entry_content', 'genesis_do_post_image', 10 );
 add_action( 'genesis_entry_content', 'genesis_do_post_title', 11 );
 add_action( 'genesis_entry_content', 'genesis_post_meta', 12 );
 add_action( 'genesis_entry_content', 'genesis_do_post_content', 13 );
+add_action( 'genesis_before_loop', 'publications_archive_header' );
 
 //* Add custom body class for publication type
 add_filter( 'body_class', 'america_add_publication_body_class' );
@@ -63,5 +64,15 @@ function sp_breadcrumb_args( $args ) {
 return $args;
 }
 
+add_action( 'genesis_before_loop', 'publications_category_info' );
+function publications_category_info() {
+  if ( is_category() || is_tag() || is_tax() ) {
+    $html = '<h3 class="archive-header">';
+    echo $html;
+    single_term_title();
+    $html = '</h3>';
+    echo $html;
+  }
+}
 
 genesis();
