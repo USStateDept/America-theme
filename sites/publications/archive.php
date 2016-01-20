@@ -20,11 +20,9 @@ remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
 remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
 
-add_action( 'genesis_sidebar', 'america_add_sidebar_filter' );
 add_action( 'genesis_before_content', 'america_add_search_term' );
 add_action( 'genesis_entry_content', 'genesis_do_post_image', 10 );
 add_action( 'genesis_entry_content', 'genesis_do_post_title', 11 );
-add_action( 'genesis_entry_content', 'genesis_post_meta', 12 );
 add_action( 'genesis_entry_content', 'genesis_do_post_content', 13 );
 add_action( 'genesis_before_loop', 'publications_archive_header' );
 
@@ -70,9 +68,13 @@ function publications_category_info() {
     $html = '<h3 class="archive-header">';
     echo $html;
     single_term_title();
+    $html = '<span class="pub-type-filter">Filter by: Books, Pamphlet, All</span>';
+    echo $html;
     $html = '</h3>';
     echo $html;
   }
 }
+
+
 
 genesis();
