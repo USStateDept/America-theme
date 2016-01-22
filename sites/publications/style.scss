@@ -620,8 +620,61 @@
   padding-left: 20px;
 }
 
+.home-top h4 {
+  font-size: 2em;
+  border-bottom: solid 1px $black;
+  padding-bottom: 0;
+  margin-bottom: 2.5em;
+  overflow: hidden;
+}
 
+.widget-wrap article:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.widget-wrap article { display: inline-block; }
+/* start commented backslash hack \*/
+* html .widget-wrap article { height: 1%; }
 
+.widget-wrap article { 
+  display: block; 
+  float: left;
+  width: 31%;
+  margin-right: 15px;
+  margin-bottom: 20px;
+}
+/* close commented backslash hack */
+
+.home-top article img {
+  width: 150px;
+}
+
+.home-top h3 {
+  font-size: 1em;
+}
+
+.home-top .entry-title {
+  float: left;
+  display: inline-block;
+  z-index: 10;
+  font-size: 1em;
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.home-top .entry-content p {
+  float: left;
+  display: inline-block;
+  z-index: 10;
+  font-size: .9em;
+  line-height: 1.3em;
+}
 
 
 

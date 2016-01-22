@@ -28,7 +28,7 @@ function america_home_genesis_meta() {
 function america_home_sections() {
 
 	genesis_widget_area( 'home-top', array(
-		'before' => '<div class="home-top widget-area clearfix">',
+		'before' => '<div class="home-top widget-area">',
 		'after'  => '</div>',
 	) );
 
