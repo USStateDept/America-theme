@@ -46,6 +46,18 @@ function america_search_filter($query) {
 }
 add_action('pre_get_posts','america_search_filter');
 
+//* Remove Footer Credits
+remove_action( 'genesis_footer', 'genesis_do_footer' );
+add_action( 'genesis_footer', 'sp_custom_footer' );
+function sp_custom_footer() {
+  ?>
+
+  <p class="site-footer footer-contact">Want a publication on a specific topic, but it doesn't exist? <a href="/contact-us/">Contact Us</a></div>
+
+  <p class="site-footer-legal">This site is managed by the <a href="http://www.state.gov/r/iip" target="_blank">Bureau of International Information Programs</a> within the  <a href="http://www.state.gov" target="_blank">U.S. Department of State</a>. External links to other Internet sites should not be construed as an endorsement of the views or privacy policies contained therein.</p>
+  <?php
+}
+
 //* Redirect search, category and taxonomy archives to use archive-publication template
 /*function get_publication_template( $template ) {
   if(  is_category() || is_search() || is_tax() ) {
