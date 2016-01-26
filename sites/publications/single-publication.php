@@ -83,7 +83,7 @@ function america_add_entry_header()
 //* Open 1/3 column. We're hijacking genesis_entry_header to do what we want.
 add_action( 'genesis_entry_header', 'america_entry_header_markup_open' );
 function america_entry_header_markup_open() {
-  $html = '<div class="one-third first">';
+  $html = '<div class="one-fourth first">';
   echo $html;
 }
 
@@ -130,7 +130,7 @@ function america_entry_header_markup_close() {
 //* Open 1/3 column
 add_action( 'genesis_before_entry_content', 'america_before_entry_markup', 1 );
 function america_before_entry_markup() {
-  $html = '<div class="one-third">';
+  $html = '<div class="one-half">';
   echo $html;
 }
 
@@ -155,6 +155,19 @@ function america_after_entry_markup() {
   $html = '</div>';
   echo $html;
 }
+
+
+//* Add related pubs
+add_action( 'genesis_entry_footer', 'publications_related' );
+function publications_related() {
+  $html = '<div class="one-fourth pubs-related">';
+  echo $html;
+  $html = '<h4>Other publications you might be interested in</h4>';
+  echo $html;
+  $html = '</div>';
+  echo $html;
+}
+
 
 
 genesis();
