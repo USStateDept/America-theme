@@ -106,14 +106,9 @@ genesis_unregister_layout( 'sidebar-content-sidebar' );
 genesis_unregister_layout( 'sidebar-sidebar-content' );
 
 
-//* Unregister secondary sidebar
-unregister_sidebar( 'sidebar-alt' );
-
-
 //* Load Admin Stylesheet
 add_action( 'admin_enqueue_scripts', 'america_load_admin_styles' );
 function america_load_admin_styles() {
-
   wp_register_style( 'custom_wp_admin_css', get_stylesheet_directory_uri() . '/lib/admin-style.css', false, '1.0.0' );
   wp_enqueue_style( 'custom_wp_admin_css' );
 
@@ -147,7 +142,6 @@ function america_remove_comment_form_allowed_tags( $defaults ) {
   $defaults['comment_notes_after'] = '';
   return $defaults;
 }
-
 
 //* Add support for after entry widget
 add_theme_support( 'genesis-after-entry-widget-area' );

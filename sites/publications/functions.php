@@ -36,11 +36,12 @@ function sp_excerpt_length( $length ) {
 	return 30; // pull first 50 words
 }
 
-//* Reomve archive pages from search results
+//* Remove archive pages from search results & pull all results
 function america_search_filter($query) {
   if ( !is_admin() && $query->is_main_query() ) {
     if ($query->is_search) {
       $query->set('post_type', array( 'post', 'publication' ) );
+      $query->set( 'posts_per_page', -1 );
     }
   }
 }
@@ -57,15 +58,3 @@ function sp_custom_footer() {
   <p class="site-footer-legal">This site is managed by the <a href="http://www.state.gov/r/iip" target="_blank">Bureau of International Information Programs</a> within the  <a href="http://www.state.gov" target="_blank">U.S. Department of State</a>. External links to other Internet sites should not be construed as an endorsement of the views or privacy policies contained therein.</p>
   <?php
 }
-
-//* Redirect search, category and taxonomy archives to use archive-publication template
-/*function get_publication_template( $template ) {
-  if(  is_category() || is_search() || is_tax() ) {
-  	$template = get_query_template( 'archive-publication' );
-  }
-  return $template;
-}
-
-add_filter( 'template_include', 'get_publication_template' );*/
-
-/********************************************** END MOVE TO PLUGIN ******************************************* */
