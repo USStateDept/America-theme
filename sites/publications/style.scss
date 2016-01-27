@@ -3,8 +3,6 @@
 @import '../../styles/utilities';
 
 
-
-
 /*------------------------------------*\
   #TITLES
 \*------------------------------------*/
@@ -348,6 +346,8 @@
 .search-results article {
   font-size: .875em;
   line-height: 1.4;
+  display: inline-block;
+  margin: 0 10px 0 0;
 }
 
 .search-results .entry-title {
