@@ -126,7 +126,12 @@
   margin-right: 15px;
   margin-bottom: 20px;
 }
-
+p.more-from-category {
+    position: static;
+    margin: -7em 0 0;
+    float: right;
+    right: 0;
+}
 .home-post-thumb {
   float: left;
   width: 150px;
@@ -303,7 +308,11 @@
 
 
 .featuredpost .widget-title {
-  display: inline-block;
+  display: block;
+}
+
+.featuredpost .more-from-category-mobile a:after, .featuredpost .more-from-category a:after{
+  display:none !important;
 }
 
 .featuredpost .more-from-category {
@@ -320,6 +329,16 @@
 .featuredpost .more-from-category-mobile a,
 .featuredpost .more-from-category a {
   color: $black;
+  text-decoration: none;
+  font-size: em(15);
+  font-family:'Source Sans Pro', sans-serif;
+}
+
+.featuredpost .more-from-category-mobile a:hover,
+.featuredpost .more-from-category a:hover,
+.featuredpost .more-from-category-mobile a:focus,
+.featuredpost .more-from-category a:focus {
+  color:rgb(98, 137, 175);
 }
 
 .featuredpost .more-from-category-mobile a:after,
@@ -492,6 +511,28 @@
     overflow: hidden;
 }
 
+.full-width-content .content {
+    padding: 25px 0;
+}
+
+article a.alignleft {
+    width: 50%;
+    float: left;
+}
+
+header.entry-header {
+    float: right;
+    word-break:break-word;
+    width:50%;
+
+}
+
+.entry-content {
+    width: 50%;
+    float: right;
+    vertical-align:bottom;
+    position:relative;
+}
 
 /**
   * Downloads box.
@@ -606,7 +647,7 @@
 /* Modifications to default Genesis breadcrumb code */
 .breadcrumb {
   background-color: #fff;
-  margin-top: 20px;
+  margin: 20px -20px;
 }
 
 /* Modifications to default Genesis entry output for publications */
@@ -620,7 +661,7 @@
 }
 
 .archive .entry-meta {
-  
+
 }
 
 .archive .entry-title {
@@ -661,7 +702,9 @@
 }
 
 .home-top h4 {
-  font-size: 2em;
+  font-family: 'Signika', sans-serif;
+  font-size: em(33);
+  text-transform:none;
   border-bottom: solid 1px $black;
   padding-bottom: 0;
   margin-bottom: 2.5em;
@@ -680,8 +723,8 @@
 /* start commented backslash hack \*/
 * html .widget-wrap article { height: 1%; }
 
-.widget-wrap article { 
-  display: block; 
+.widget-wrap article {
+  display: block;
   float: left;
   width: 31%;
   margin-right: 15px;
@@ -701,7 +744,9 @@
   float: left;
   display: inline-block;
   z-index: 10;
-  font-size: 1em;
+  font-family: "Signika", serif;
+  font-size: 1.3em;
+  font-weight: 700;
   margin-top: 0;
   padding-top: 0;
   margin-bottom: 0;
@@ -712,6 +757,7 @@
   float: left;
   display: inline-block;
   z-index: 10;
+  font-family:"Source Sans Pro", sans-serif;
   font-size: .9em;
   line-height: 1.3em;
 }
@@ -719,6 +765,20 @@
 /*------------------------------------*\
   #SITE-NAVIGATION
 \*------------------------------------*/
+header-widget-area section {
+  display: inline-block;
+}
+
+section#nav_menu-2 {
+  width: 35%;
+  float:left;
+}
+
+section#search-4 {
+  width: 57%;
+  float: right;
+}
+
 .genesis-nav-menu {
   background-color: #ffffff;
   clear: both;
@@ -772,7 +832,6 @@
   -ms-transition: opacity .4s ease-in-out;
   -o-transition: opacity .4s ease-in-out;
   transition: opacity .4s ease-in-out;
-  width: 155px;
   z-index: 999; }
 
 .genesis-nav-menu .sub-menu a {
@@ -782,7 +841,7 @@
   color: #222222;
   padding: 10px 18px;
   position: relative;
-  width: 155px; }
+  width: 200px; }
 
 .genesis-nav-menu .sub-menu a:hover {
   background-color: #f5f5f5;
@@ -967,6 +1026,3 @@
   background: #222222 url(images/dist/shareamerica-flag.png) no-repeat 1em 16px;
   margin: 0;
   padding: 1em 5em; }
-
-
-
