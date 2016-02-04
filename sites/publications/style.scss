@@ -362,14 +362,11 @@ p.more-from-category {
   padding: 0;
 }
 
-.search-results .entry-content {
-  width: 100%;
-}
-
 .search-results article {
   font-size: .875em;
   line-height: 1.4;
   display: inline-block;
+  margin: 0 10px 0 0;
 }
 
 .search-results .entry-title {
@@ -378,28 +375,9 @@ p.more-from-category {
   margin: 0 0 8px;
 }
 
-.search-results .publication-featured-image {
-    float: left;
-    margin-right: 3%;
-    line-height: 0;
-    width: 40%;
-}
 
-.search-results .publication-content {
-    float: right;
-    width: 57%;
-    padding-right: 1em;
-}
 
-.search-results  .page-numbers {
-  width: 100%;
-  overflow: hidden;
 
-  li {
-     display: inline-block;
-     margin-right: 1em;
-  }
-}
 
 /*------------------------------------*\
   #PUBLICATIONS-SEARCH
@@ -549,11 +527,12 @@ header.entry-header {
 
 }
 
-.entry-content {
+.home .entry-content {
     width: 50%;
     float: right;
     vertical-align:bottom;
     position:relative;
+    padding: 0 15px 0 0;
 }
 
 /**
@@ -675,14 +654,12 @@ header.entry-header {
 /* Modifications to default Genesis entry output for publications */
 
 
-// .archive .entry {
-//   float: left;
-//   width: 31%;
-//   margin-right: 15px;
-//   margin-bottom: 20px;
-// }
-// 
-
+.archive .entry {
+  float: left;
+  width: 31%;
+  margin-right: 15px;
+  margin-bottom: 20px;
+}
 
 .archive .entry-meta {
 
@@ -751,7 +728,7 @@ header.entry-header {
   display: block;
   float: left;
   width: 31%;
-  margin-right: 15px;
+  margin-right: 25px;
   margin-bottom: 20px;
 }
 /* close commented backslash hack */
@@ -806,41 +783,49 @@ section#search-4 {
 .genesis-nav-menu {
   background-color: #ffffff;
   clear: both;
-  -ms-transition: opacity .4s ease-in-out;
-  -o-transition: opacity .4s ease-in-out;
-  transition: opacity .4s ease-in-out;
   color: #222222;
   font-size: 14px;
   line-height: 1.5;
   margin: 0;
   overflow: hidden;
   padding: 0;
-  width: 155px;
-  //width: 100%; 
-  z-index: 999;
-}
+  width: 100%; }
 
-.widget_nav_menu {
-  float: left;
-}
+.genesis-nav-menu .menu-item {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  text-align: left; }
 
-.widget_search {
-  float: right;
-}
+.genesis-nav-menu a {
+  color: #222222;
+  display: block;
+  padding: 16px 20px;
+  position: relative; }
 
-.genesis-nav-menu .menu-item-language-current > a:after, 
+.genesis-nav-menu li:hover,
+.genesis-nav-menu a:hover {
+  background-color: #ffffff;
+  color: #222222;
+  text-decoration: none; }
+
+.america .genesis-nav-menu .sub-menu .current-menu-item > a {
+  background-color: #80a3bc;
+  color: #FFFFFF; }
+
 .genesis-nav-menu .menu-item-has-children > a:after {
   content: '\f140';
   display: inline-block;
   font: normal 20px/1 'dashicons';
   height: 20px;
   position: relative;
-  top: 5px;
-  width: 20px; 
-}
+  top: 2em;
+  left:1.4em;
+  width: 20px; }
 
 .genesis-nav-menu .sub-menu {
   left: -9999px;
+  top:9em;
   margin: 0;
   opacity: 0;
   padding: 0;
@@ -854,8 +839,7 @@ section#search-4 {
 
 .genesis-nav-menu .sub-menu a {
   background-color: #ffffff;
-  border: 1px solid #ebebeb;
-  border-top: none;
+  border: 1px solid #F3F2F2;
   color: #222222;
   padding: 10px 18px;
   position: relative;
@@ -1003,8 +987,7 @@ section#search-4 {
   display: none; }
 
 .genesis-nav-menu.responsive-menu .sub-menu .current-menu-item > a {
-  background: none; 
-}
+  background: #A1B5CA; }
 
 /**
   * Secondary navigation. // TODO: Do we need this?
@@ -1013,13 +996,13 @@ section#search-4 {
 .nav-secondary .genesis-nav-menu a:hover,
 .nav-secondary .genesis-nav-menu li.current-menu-item a:hover {
   background-color: transparent;
-  color: #222222; 
-}
+  color: #222222; }
 
 .nav-secondary .genesis-nav-menu .current-menu-item > a {
   background-color: transparent;
-  color: #4db2ec; 
-} //
+  color: #4db2ec; }
+
+
 
 
 /*------------------------------------*\
@@ -1045,3 +1028,119 @@ section#search-4 {
   background: #222222 url(images/dist/shareamerica-flag.png) no-repeat 1em 16px;
   margin: 0;
   padding: 1em 5em; }
+
+
+  /*------------------------------------*\
+    #RESPONSIVE - BREAKPOINTS
+  \*------------------------------------*/
+
+@media(max-width:1220px){
+  .widget-wrap article, .archive .entry{
+    width:auto;
+  }
+  article a.alignleft {
+    width: 20%;
+  }
+  header.entry-header, .home .entry-content, .archive .entry-image, .blog .entry-image{
+    width:75%;
+  }
+}
+
+@media(max-width:1024px){
+  .archive .content .entry-content p {
+      clear:none;
+  }
+
+  /* Header */
+  .title-area{
+    width:100%;
+  }
+  .header-widget-area {
+    width: 100%;
+  }
+  .genesis-nav-menu .sub-menu{
+    top:16em;
+  }
+
+}
+
+@media(max-width:800px){
+  /* Header */
+
+  .responsive-menu-icon::before{
+    text-align:center;
+  }
+  .genesis-nav-menu.responsive-menu a, .genesis-nav-menu.responsive-menu li, .genesis-nav-menu.responsive-menu a:hover, .genesis-nav-menu.responsive-menu li:hover{
+    color: #222222;
+  }
+  .genesis-nav-menu .sub-menu {
+    top: 0em;
+  }
+  .genesis-nav-menu.responsive-menu .sub-menu, .genesis-nav-menu .sub-menu li a {
+    background-color:#FFFFFF;
+  }
+  .genesis-nav-menu.responsive-menu{
+    width:200px;
+  }
+  .genesis-nav-menu.responsive-menu a:hover, .genesis-nav-menu.responsive-menu li:hover{
+    background-color: #f5f5f5;
+  }
+
+  /* Content */
+  article a.alignleft {
+      display: block;
+      float: left;
+  }
+
+
+}
+
+@media(max-width:480px){
+  /* Header */
+  section#search-4 {
+    width: 100%;
+  }
+  section#nav_menu-2 {
+    width: 100%;
+    float: none;
+  }
+
+
+}
+
+@media(max-width:320px){
+
+  /* Header */
+
+  .genesis-nav-menu.responsive-menu>.menu-item>.sub-menu, .genesis-nav-menu.responsive-menu{
+    margin:1.5em 0 0;
+    width: 200px;
+  }
+
+  /* Content */
+  .archive .entry-content{
+    margin:0 .8em;
+  }
+
+  .archive .entry-content img{
+    margin:0 auto 2em;
+    width:100%;
+  }
+  .featuredpost .more-from-category{
+    margin:-5em 0 0;
+    float:left;
+  }
+  .home-top article img {
+    width: 65%;
+  }
+  article a.alignleft {
+      display: block;
+      float: none;
+      text-align: center;
+      width:100%;
+  }
+  header.entry-header, .home .entry-content, .archive .entry-image, .blog .entry-image{
+    width:100%;
+  }
+
+}
