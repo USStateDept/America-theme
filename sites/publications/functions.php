@@ -19,38 +19,38 @@ function initialize_site( $path ) {
 }
 
 //* Display a custom favicon
-add_filter( 'genesis_pre_load_favicon', 'sp_favicon_filter' );
-function sp_favicon_filter( $favicon_url ) {
+add_filter( 'genesis_pre_load_favicon', 'amgov_pubs_favicon_filter' );
+function amgov_pubs_favicon_filter( $favicon_url ) {
 	return '/wp-content/themes/america/sites/publications/images/dist/favicon.ico';
 }
 
 //* Add image sizes
-add_image_size( 'publication', 424, 530, TRUE );
-add_image_size( 'pub-small', 200, 250, TRUE );
-set_post_thumbnail_size(150, 188, TRUE);
+add_image_size( 'publication', 424, 530, true );
+add_image_size( 'publication-small', 200, 250, true );
+set_post_thumbnail_size( 150, 188, true );
 
 
 //* Modify the length of post excerpts
-add_filter( 'excerpt_length', 'sp_excerpt_length' );
-function sp_excerpt_length( $length ) {
+add_filter( 'excerpt_length', 'amgov_pubs_excerpt_length' );
+function amgov_pubs__excerpt_length( $length ) {
 	return 30; // pull first 50 words
 }
 
-//* Remove archive pages from search results & pull all results
-function america_search_filter($query) {
+//* Remove archive pages from search results 
+add_action('pre_get_posts','amgov_pubs_search_filter');
+function amgov_pubs_search_filter($query) {
   if ( !is_admin() && $query->is_main_query() ) {
     if ($query->is_search) {
-      $query->set('post_type', array( 'post', 'publication' ) );
-      $query->set( 'posts_per_page', -1 );
+      $query->set( 'post_type', array('post', 'publication') );
+     // $query->set( 'posts_per_page', -1 );
     }
   }
 }
-add_action('pre_get_posts','america_search_filter');
 
 //* Remove Footer Credits
 remove_action( 'genesis_footer', 'genesis_do_footer' );
-add_action( 'genesis_footer', 'sp_custom_footer' );
-function sp_custom_footer() {
+add_action( 'genesis_footer', 'amgov_pubs_custom_footer' );
+function amgov_pubs_custom_footer() {
   ?>
 
   <p class="site-footer footer-contact">Want a publication on a specific topic, but it doesn't exist? <a href="/contact-us/">Contact Us</a></div>

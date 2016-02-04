@@ -45,9 +45,9 @@ remove_action( 'genesis_entry_content', 'genesis_entry_meta' );
 //* Add custom body class for publication type
 add_filter( 'body_class', 'america_add_publication_body_class' );
 function america_add_publication_body_class( $classes ) {
-  if ( has_term( 'pamphlet', 'publication-type' ) ) {
+  if ( has_term( 'pamphlet', 'publication_type' ) ) {
     $classes[] = 'term-pamphlet';
-  } else if ( has_term( 'book', 'publication-type' ) ) {
+  } else if ( has_term( 'book', 'publication_type' ) ) {
     $classes[] = 'term-book';
   }
   return $classes;

@@ -29,11 +29,24 @@ add_action( 'genesis_before_loop', 'publications_archive_header' );
 //* Add custom body class for publication type
 add_filter( 'body_class', 'america_add_publication_body_class' );
 function america_add_publication_body_class( $classes ) {
-  if ( has_term( 'pamphlet', 'publication-type' ) ) {
+  if ( has_term( 'pamphlet', 'publication_type' ) ) {
     $classes[] = 'term-pamphlet';
-  } else if ( has_term( 'book', 'publication-type' ) ) {
+  } else if ( has_term( 'book', 'publication_type' ) ) {
     $classes[] = 'term-book';
   }
+  return $classes;
+}
+
+//* Add custom post class for publication type
+add_filter( 'post_class', 'amgov_pubs_archive_post_class' );
+function amgov_pubs_archive_post_class( $classes ) {
+  global $wp_query;
+  if( ! $wp_query->is_main_query() )
+    return $classes;
+    
+  $classes[] = 'one-third';
+  if( 0 == $wp_query->current_post || 0 == $wp_query->current_post % 3 )
+    $classes[] = 'first';
   return $classes;
 }
 
@@ -68,7 +81,7 @@ function publications_category_info() {
     $html = '<h3 class="archive-header">';
     echo $html;
     single_term_title();
-    $html = '<span class="pub-type-filter">[aasf filter_by="publication-type" layout="url"]</span>';
+    $html = '<span class="pub-type-filter">[aasf filter_by="publication_type" layout="url"]</span>';
     echo $html;
     $html = '</h3>';
     echo $html;

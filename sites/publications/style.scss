@@ -362,11 +362,14 @@ p.more-from-category {
   padding: 0;
 }
 
+.search-results .entry-content {
+  width: 100%;
+}
+
 .search-results article {
   font-size: .875em;
   line-height: 1.4;
   display: inline-block;
-  margin: 0 10px 0 0;
 }
 
 .search-results .entry-title {
@@ -375,9 +378,28 @@ p.more-from-category {
   margin: 0 0 8px;
 }
 
+.search-results .publication-featured-image {
+    float: left;
+    margin-right: 3%;
+    line-height: 0;
+    width: 40%;
+}
 
+.search-results .publication-content {
+    float: right;
+    width: 57%;
+    padding-right: 1em;
+}
 
+.search-results  .page-numbers {
+  width: 100%;
+  overflow: hidden;
 
+  li {
+     display: inline-block;
+     margin-right: 1em;
+  }
+}
 
 /*------------------------------------*\
   #PUBLICATIONS-SEARCH
@@ -653,12 +675,14 @@ header.entry-header {
 /* Modifications to default Genesis entry output for publications */
 
 
-.archive .entry {
-  float: left;
-  width: 31%;
-  margin-right: 15px;
-  margin-bottom: 20px;
-}
+// .archive .entry {
+//   float: left;
+//   width: 31%;
+//   margin-right: 15px;
+//   margin-bottom: 20px;
+// }
+// 
+
 
 .archive .entry-meta {
 
@@ -782,36 +806,29 @@ section#search-4 {
 .genesis-nav-menu {
   background-color: #ffffff;
   clear: both;
+  -ms-transition: opacity .4s ease-in-out;
+  -o-transition: opacity .4s ease-in-out;
+  transition: opacity .4s ease-in-out;
   color: #222222;
   font-size: 14px;
   line-height: 1.5;
   margin: 0;
   overflow: hidden;
   padding: 0;
-  width: 100%; }
+  width: 155px;
+  //width: 100%; 
+  z-index: 999;
+}
 
-.genesis-nav-menu .menu-item {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  text-align: left; }
+.widget_nav_menu {
+  float: left;
+}
 
-.genesis-nav-menu a {
-  color: #222222;
-  display: block;
-  padding: 16px 20px;
-  position: relative; }
+.widget_search {
+  float: right;
+}
 
-.genesis-nav-menu li:hover,
-.genesis-nav-menu a:hover {
-  background-color: #ffffff;
-  color: #222222;
-  text-decoration: none; }
-
-.genesis-nav-menu .current-menu-item > a {
-  background-color: #4db2ec;
-  color: #ffffff; }
-
+.genesis-nav-menu .menu-item-language-current > a:after, 
 .genesis-nav-menu .menu-item-has-children > a:after {
   content: '\f140';
   display: inline-block;
@@ -819,7 +836,8 @@ section#search-4 {
   height: 20px;
   position: relative;
   top: 5px;
-  width: 20px; }
+  width: 20px; 
+}
 
 .genesis-nav-menu .sub-menu {
   left: -9999px;
@@ -985,7 +1003,8 @@ section#search-4 {
   display: none; }
 
 .genesis-nav-menu.responsive-menu .sub-menu .current-menu-item > a {
-  background: none; }
+  background: none; 
+}
 
 /**
   * Secondary navigation. // TODO: Do we need this?
@@ -994,13 +1013,13 @@ section#search-4 {
 .nav-secondary .genesis-nav-menu a:hover,
 .nav-secondary .genesis-nav-menu li.current-menu-item a:hover {
   background-color: transparent;
-  color: #222222; }
+  color: #222222; 
+}
 
 .nav-secondary .genesis-nav-menu .current-menu-item > a {
   background-color: transparent;
-  color: #4db2ec; }
-
-
+  color: #4db2ec; 
+} //
 
 
 /*------------------------------------*\
