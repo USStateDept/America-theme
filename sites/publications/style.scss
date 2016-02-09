@@ -50,9 +50,6 @@
   color: $white;
 }
 
-
-
-
 /*------------------------------------*\
   #HOMEPAGE
 \*------------------------------------*/
@@ -355,6 +352,68 @@ p.more-from-category {
 }
 
 /*------------------------------------*\
+  #UBLICATIONS-ARCHIVE
+\*------------------------------------*/
+
+.publication-archive  {
+
+  .aasf-tax-term {
+    display: inline-block;
+    margin-left: .8em;
+    font-size: .5em;
+    font-weight: normal;
+  }
+
+  .aasf-terms-parent {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.archive .entry {
+  float: left;
+  margin-bottom: 20px;
+}
+
+.archive .entry-title {
+  font-size: 1em;
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.archive .entry-content {
+  margin-bottom: 15px;
+}
+
+.archive .entry-content img {
+  width: 150px;
+}
+
+.archive .entry-content p {
+  font-size: .9em;
+  line-height: 1.3em;
+}
+
+.archive article {
+  float: left;
+}
+
+.archive .page-header {
+  border-bottom: solid 1px #eee;
+  padding-bottom: 0;
+  margin-bottom: 1.5em;
+
+  .aasf-label {
+    display: inline-block;
+    margin-left: 1em;
+    font-size: 0.5em;
+    vertical-align: middle;
+  }
+}
+
+/*------------------------------------*\
   #PUBLICATIONS-SEARCH-RESULTS
 \*------------------------------------*/
 
@@ -370,7 +429,6 @@ p.more-from-category {
   font-size: .875em;
   line-height: 1.4;
   display: inline-block;
-  //margin: 0 10px 0 0;
 }
 
 .search-results .entry-title {
@@ -379,14 +437,16 @@ p.more-from-category {
   margin: 0 0 8px;
 }
 
-.search-results .publication-featured-image {
+.search-results .publication-featured-image,
+.archive .publication-featured-image {
     float: left;
     margin-right: 3%;
     line-height: 0;
     width: 40%;
 }
 
-.search-results .publication-content {
+.search-results .publication-content,
+.archive .publication-content  {
     float: right;
     width: 57%;
     padding-right: 1em;
@@ -395,6 +455,7 @@ p.more-from-category {
 .search-results  .page-numbers {
   width: 100%;
   overflow: hidden;
+  margin-bottom: 1.5em;
 
   li {
      display: inline-block;
@@ -402,13 +463,16 @@ p.more-from-category {
   }
 }
 
-
+.search-results .page-header {
+  .aasf-label {
+    font-weight: normal;
+  }
+}
 
 
 /*------------------------------------*\
   #PUBLICATIONS-SEARCH
 \*------------------------------------*/
-
 
 .resources-search {
   border: $border;
@@ -510,8 +574,6 @@ p.more-from-category {
 .resources-search :-ms-input-placeholder {
   color: $black;
 }
-
-
 
 
 /*------------------------------------*\
@@ -678,63 +740,6 @@ header.entry-header {
 }
 
 /* Modifications to default Genesis entry output for publications */
-
-
-.archive .entry {
-  float: left;
-  width: 31%;
-  margin-right: 15px;
-  margin-bottom: 20px;
-}
-
-// .archive .entry {
-//   float: left;
-//   width: 31%;
-//   margin-right: 15px;
-//   margin-bottom: 20px;
-// }
-// 
-
-.archive .entry-meta {
-
-}
-
-.archive .entry-title {
-  font-size: 1em;
-  margin-top: 0;
-  padding-top: 0;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.archive .entry-content {
-  margin-bottom: 15px;
-}
-
-.archive .entry-content img {
-  width: 150px;
-}
-
-.archive .entry-content p {
-  font-size: .9em;
-  line-height: 1.3em;
-}
-
-.archive article {
-  float: left;
-}
-
-.archive-header {
-  border-bottom: solid 1px $black;
-  padding-bottom: 0;
-  margin-bottom: 1.5em;
-}
-
-.pub-type-filter {
-  font-size: .5em;
-  font-weight: normal;
-  padding-left: 20px;
-}
 
 .home-top h4 {
   font-family: 'Signika', sans-serif;
@@ -1043,9 +1048,9 @@ section#search-4 {
   #SITE-FOOTER
 \*------------------------------------*/
 .site-footer {
-  background: #222222;
+  background: #07182e;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 12px; 
   line-height: 1.6em;
   text-align: left; }
 
@@ -1059,7 +1064,7 @@ section#search-4 {
   color: #4db2ec; }
 
 .site-footer-legal {
-  background: #222222 url(images/dist/shareamerica-flag.png) no-repeat 1em 16px;
+  background: #adadad url(images/dist/shareamerica-flag.png) no-repeat 1em 16px;
   margin: 0;
   padding: 1em 5em; }
 

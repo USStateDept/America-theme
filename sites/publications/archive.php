@@ -1,44 +1,30 @@
 <?php
-/**
- * Archive Template
- * @author Office of Design, Bureau of International Information Programs
- * @package America.gov
- * @subpackage Publications
- */
 
-//* Force full width content layout
 add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+add_filter( 'body_class', 'amgov_pubs_body_class' );
+add_filter( 'post_class', 'amgov_pubs_archive_post_class' );
+add_filter( 'genesis_post_meta', 'america_post_meta_format_filter' );
 
-//* Remove the breadcrumb navigation
-remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
+remove_action( 'genesis_entry_header',   'genesis_entry_header_markup_open', 5 );
+remove_action( 'genesis_entry_header',   'genesis_do_post_title' );
+remove_action( 'genesis_entry_header',   'genesis_post_info', 12 );
+remove_action( 'genesis_entry_header',   'genesis_entry_header_markup_close', 15 );
+remove_action( 'genesis_entry_content',  'genesis_do_post_image', 8 );
+remove_action( 'genesis_entry_content',  'genesis_do_post_content' );
+remove_action( 'genesis_entry_footer',   'genesis_entry_footer_markup_open', 5 );
+remove_action( 'genesis_entry_footer',   'genesis_entry_footer_markup_close', 15 );
+remove_action( 'genesis_entry_footer',   'genesis_post_meta' );
 
-remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
-remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
-remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
-remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
-remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
-remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
-remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
+//remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );  // remove default pagination (added via search plugin to append query vars)
 
-add_action( 'genesis_before_content', 'america_add_search_term' );
-add_action( 'genesis_entry_content', 'genesis_do_post_image', 10 );
-add_action( 'genesis_entry_content', 'genesis_do_post_title', 11 );
-add_action( 'genesis_entry_content', 'genesis_do_post_content', 13 );
-add_action( 'genesis_before_loop', 'publications_archive_header' );
+add_action( 'genesis_before_content', 'amgov_pubs_filters' );
+add_action( 'genesis_entry_content',  'amgov_pubs_do_post_content' );
 
-//* Add custom body class for publication type
-add_filter( 'body_class', 'america_add_publication_body_class' );
-function america_add_publication_body_class( $classes ) {
-  if ( has_term( 'pamphlet', 'publication_type' ) ) {
-    $classes[] = 'term-pamphlet';
-  } else if ( has_term( 'book', 'publication_type' ) ) {
-    $classes[] = 'term-book';
-  }
+function amgov_pubs_body_class( $classes ) {
+  $classes[] = 'publication-archive';
   return $classes;
 }
 
-//* Add custom post class for publication type
-add_filter( 'post_class', 'amgov_pubs_archive_post_class' );
 function amgov_pubs_archive_post_class( $classes ) {
   global $wp_query;
   if( ! $wp_query->is_main_query() )
@@ -50,44 +36,61 @@ function amgov_pubs_archive_post_class( $classes ) {
   return $classes;
 }
 
-//* Adding breadcrumb back in
-add_action( 'genesis_after_header', 'genesis_do_breadcrumbs' );
-//* Modify breadcrumb arguments.
-add_filter( 'genesis_breadcrumb_args', 'sp_breadcrumb_args' );
-function sp_breadcrumb_args( $args ) {
-  $args['home'] = 'Home';
-  $args['sep'] = ' / ';
-  $args['list_sep'] = ', '; // Genesis 1.5 and later
-  $args['prefix'] = '<div class="breadcrumb">';
-  $args['suffix'] = '</div>';
-  $args['heirarchial_attachments'] = true; // Genesis 1.5 and later
-  $args['heirarchial_categories'] = true; // Genesis 1.5 and later
-  $args['display'] = true;
-  $args['labels']['prefix'] = '';
-  $args['labels']['author'] = 'Archives for ';
-  $args['labels']['category'] = 'Archives for '; // Genesis 1.6 and later
-  $args['labels']['tag'] = 'Archives for ';
-  $args['labels']['date'] = 'Archives for ';
-  $args['labels']['search'] = 'Search for ';
-  $args['labels']['tax'] = 'Archives for ';
-  $args['labels']['post_type'] = 'Archives for ';
-  $args['labels']['404'] = 'Not found: '; // Genesis 1.5 and later
-return $args;
+function america_post_meta_format_filter( $post_meta ) {
+  $post_meta .= '[publication_type before="Format: "]';
+  return $post_meta;
 }
 
-add_action( 'genesis_before_loop', 'publications_category_info' );
-function publications_category_info() {
+function amgov_pubs_do_post_content() {
+  global $post;
+  
+  amgov_pubs_do_post_image(); 
+  echo '<div class="publication-content">';
+  genesis_do_post_title();
+  amgov_pubs_meta_format();
+  genesis_do_post_content();
+  echo '</div>';
+}
+
+function amgov_pubs_do_post_image() {
+  $image = genesis_get_image( 'format=url&size=post-thumbnail' );
+  if( !$image ) {
+    $image = 'http://dummyimage.com/150x188/ddd/aaa.png&text=placeholder';
+  }
+  printf( '<div class="publication-featured-image"><a href="%s" rel="bookmark"><img src="%s" alt="%s" width="150" height="188"/></a></div>', get_permalink(), $image, the_title_attribute( 'echo=0' ) );
+}
+
+function amgov_pubs_meta_format () {
+  global $post;
+  
+  $terms = wp_get_post_terms( $post->ID, 'publication_type' );
+  echo amgov_pubs_show_terms( $terms, 'Format');
+}
+
+function amgov_pubs_show_terms( $terms, $label ) {
+  $html = '';
+
+  if( count($terms) ) {
+    $html .=  '<div><span class="aasf-label">' . $label  . ':   </span>';
+    foreach ( $terms as $term ) {
+      $html .=  "<a href='". get_term_link( $term ) . "'>" . $term->name . "</a>";
+      if ( $term !== end($terms) ) {
+        $html .= ', ';
+      }
+    }
+    $html .= '</div>';
+  }
+
+  return $html;
+}
+
+function amgov_pubs_filters () {
   if ( is_category() || is_tag() || is_tax() ) {
-    $html = '<h3 class="archive-header">';
-    echo $html;
+    echo '<h3 class="page-header">';
     single_term_title();
-    $html = '<span class="pub-type-filter">[aasf filter_by="publication_type" layout="url"]</span>';
-    echo $html;
-    $html = '</h3>';
-    echo $html;
+    echo do_shortcode( '[aasf label="Filter by:" filter_by="publication_type|url"]' ); 
+    echo '</h3>';
   }
 }
 
-
-
-genesis();
+genesis(); 

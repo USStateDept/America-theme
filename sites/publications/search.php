@@ -1,8 +1,9 @@
 <?php
 
 add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_sidebar_content' );
-add_filter( 'post_class',                         'amgov_pubs_archive_post_class' );
-add_filter( 'genesis_post_meta',                  'america_post_meta_format_filter' );
+add_filter('body_class', 'amgov_pubs_remove_body_class', 20, 2);
+add_filter( 'post_class', 'amgov_pubs_archive_post_class' );
+add_filter( 'genesis_post_meta', 'america_post_meta_format_filter' );
 
 remove_action( 'genesis_entry_header',   'genesis_entry_header_markup_open', 5 );
 remove_action( 'genesis_entry_header',   'genesis_do_post_title' );
@@ -13,12 +14,20 @@ remove_action( 'genesis_entry_content',  'genesis_do_post_content' );
 remove_action( 'genesis_entry_footer',   'genesis_entry_footer_markup_open', 5 );
 remove_action( 'genesis_entry_footer',   'genesis_entry_footer_markup_close', 15 );
 remove_action( 'genesis_entry_footer',   'genesis_post_meta' );
-remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );  // remove default pagination as we need to add query vars to track checkboxes selected (see america-ajax-search-filter plugin)
-
+remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );  // remove default pagination (added via search plugin to append query vars)
 
 add_action( 'genesis_after_header',   'amgov_pubs_swap_sidebars' );
 add_action( 'genesis_before_content', 'america_add_search_term' );
 add_action( 'genesis_entry_content',  'amgov_pubs_do_post_content' );
+
+function amgov_pubs_remove_body_class( $classes ){
+  foreach( $classes as $key => $value ) {
+    if ( $value == 'archive' ) {
+      unset($classes[$key]); 
+    }
+  }
+  return $classes;
+}
 
 function amgov_pubs_archive_post_class( $classes ) {
   global $wp_query;
@@ -46,9 +55,11 @@ function amgov_pubs_swap_sidebars() {
 }
 
 function america_add_search_term() {
-  global $wp_query;
-  echo $wp_query->found_posts;
-  echo '<h3>Search results for <span>' . get_query_var('s') .'</span></h3>';
+  // global $wp_query;
+  // echo $wp_query->found_posts;
+  $search_term = get_query_var('s');
+  $search_term = empty($search_term) ? '' : ' for "' . $search_term . '"';
+  echo '<h3 class="page-header">Search results<span>' . $search_term . '</span></h3>';
 }
 
 function amgov_pubs_do_post_content() {
