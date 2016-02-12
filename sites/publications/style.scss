@@ -847,6 +847,10 @@ header.entry-header {
   width:150px;
   padding:0em;
 }
+@include bp($laptop) {
+  width: 100%;
+  padding:0em;
+}
 
 
 }
