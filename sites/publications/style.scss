@@ -426,10 +426,15 @@ p.more-from-category {
 }
 
 .search-results article {
+  display: inline-block;
+  vertical-align: top;
   font-size: .875em;
   line-height: 1.4;
-  display: inline-block;
-}
+
+  @include bp($tablet) {
+    width: 48%;
+  }
+} 
 
 .search-results .entry-title {
   font-size: 1.125em;
@@ -453,10 +458,11 @@ p.more-from-category {
 }
 
 .search-results  .page-numbers {
+  //position: relative;
+  //left: 10.60em;
   width: 100%;
   overflow: hidden;
   margin-bottom: 1.5em;
-
   li {
      display: inline-block;
      margin-right: 1em;
@@ -467,6 +473,11 @@ p.more-from-category {
   .aasf-label {
     font-weight: normal;
   }
+}
+
+.search-results .one-half,
+.search-results .one-third {
+  margin-left: 0;
 }
 
 
