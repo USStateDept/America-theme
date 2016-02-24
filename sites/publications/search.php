@@ -2,7 +2,6 @@
 
 add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_sidebar_content' );
 add_filter('body_class', 'amgov_pubs_remove_body_class', 20, 2);
-add_filter( 'post_class', 'amgov_pubs_archive_post_class' );
 add_filter( 'genesis_post_meta', 'america_post_meta_format_filter' );
 
 remove_action( 'genesis_entry_header',   'genesis_entry_header_markup_open', 5 );
@@ -29,17 +28,6 @@ function amgov_pubs_remove_body_class( $classes ){
   return $classes;
 }
 
-function amgov_pubs_archive_post_class( $classes ) {
-  global $wp_query;
-  if( ! $wp_query->is_main_query() )
-    return $classes;
-    
-  $classes[] = 'one-half';
-  if( 0 == $wp_query->current_post || 0 == $wp_query->current_post % 2 )
-    $classes[] = 'first';
-  return $classes;
-}
-
 function america_post_meta_format_filter( $post_meta ) {
   $post_meta .= '[publication_type before="Format: "]';
   return $post_meta;
@@ -55,8 +43,6 @@ function amgov_pubs_swap_sidebars() {
 }
 
 function america_add_search_term() {
-  // global $wp_query;
-  // echo $wp_query->found_posts;
   $search_term = get_query_var('s');
   $search_term = empty($search_term) ? '' : ' for "' . $search_term . '"';
   echo '<h3 class="page-header">Search results<span>' . $search_term . '</span></h3>';
@@ -74,14 +60,13 @@ function amgov_pubs_do_post_content() {
   echo '</div>';
 }
 
-function amgov_pubs_do_post_image() {
+function amgov_pubs_do_post_image() {  // duplicated in content.php template file, combine both
   $image = genesis_get_image( 'format=url&size=post-thumbnail' );
   if( !$image ) {
     $image = 'http://dummyimage.com/150x188/ddd/aaa.png&text=placeholder';
   }
   printf( '<div class="publication-featured-image"><a href="%s" rel="bookmark"><img src="%s" alt="%s" width="150" height="188"/></a></div>', get_permalink(), $image, the_title_attribute( 'echo=0' ) );
 }
-
 
 function amgov_pubs_meta_format () {
   global $post;

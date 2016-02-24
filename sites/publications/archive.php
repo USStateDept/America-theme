@@ -2,7 +2,6 @@
 
 add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 add_filter( 'body_class', 'amgov_pubs_body_class' );
-add_filter( 'post_class', 'amgov_pubs_archive_post_class' );
 add_filter( 'genesis_post_meta', 'america_post_meta_format_filter' );
 
 remove_action( 'genesis_entry_header',   'genesis_entry_header_markup_open', 5 );
@@ -22,17 +21,6 @@ add_action( 'genesis_entry_content',  'amgov_pubs_do_post_content' );
 
 function amgov_pubs_body_class( $classes ) {
   $classes[] = 'publication-archive';
-  return $classes;
-}
-
-function amgov_pubs_archive_post_class( $classes ) {
-  global $wp_query;
-  if( ! $wp_query->is_main_query() )
-    return $classes;
-    
-  $classes[] = 'one-third';
-  if( 0 == $wp_query->current_post || 0 == $wp_query->current_post % 3 )
-    $classes[] = 'first';
   return $classes;
 }
 
