@@ -789,7 +789,7 @@ header.entry-header {
   font-family: 'Signika', sans-serif;
   font-size: em(33);
   text-transform:none;
-  border-bottom: solid 1px $black;
+  border-bottom: solid 1px #ebebeb;
   padding-bottom: 0;
   margin-bottom: 1.5em;
   overflow: hidden;
@@ -892,8 +892,11 @@ header.entry-header {
     top: 0em;
   }
   @include bp($tablet) {
-    top: -0.8em;
-    width:58%;
+    top: 0.1em;
+    width:56%;
+  }
+  @include bp($laptop) {
+    top: 0.55em;
   }
 }
 
@@ -910,7 +913,7 @@ header.entry-header {
 }
 .site-header{
   @include bp($tablet) {
-    padding:1.25em 0 0;
+    padding:0.25em 0 0;
   }
 }
 .title-area{
@@ -919,11 +922,14 @@ header.entry-header {
 
   @include bp($tablet) {
     width:40%;
+    top: 3.3em;
   }
   @include bp($laptop) {
     position:relative;
-    width:40%;
+    width:44%;
     float:left;
+    left:-3%;
+    top: 0.3em;
   }
   @include bp($desktop) {
     position:relative;
@@ -935,11 +941,14 @@ header.entry-header {
 .site-title{
   @include bp($tablet) {
     font-size: 30px;
-    padding-left: 3.2em;
-    background-size: 23%;
-  }
-  @include bp($tablet) {
+    padding-left: 2.6em;
     background-size: 16%;
+  }
+  @include bp($laptop) {
+    font-size:42px;
+  }
+  @include bp($desktop) {
+    font-size:46px;
   }
 }
 
@@ -1218,20 +1227,26 @@ header.entry-header {
 .site-footer {
   background: #07182e;
   color: #ffffff;
+  font-weight:300;
   font-size: 12px;
   line-height: 1.6em;
   text-align: left; }
 
 .footer-contact {
-  font-size: 1.5em;
+  font-size: 2.2em;
   text-align: center;
-  padding-top: 2em;
+  padding-top: 1.2em;
 }
 
-.site-footer a {
-  color: #4db2ec; }
+.site-footer a  {
+  font-weight:600;
+  color:$white;
+  text-decoration:none; }
+
+.site-footer a:hover  {
+  color:#417B9C;  }
 
 .site-footer-legal {
-  background: #adadad url(images/dist/shareamerica-flag.png) no-repeat 1em 16px;
+  background: #adadad url(images/dist/shareamerica-flag.png) no-repeat 2.5em 33px;
   margin: 0;
-  padding: 1em 5em; }
+  padding: 2em 7em; }
