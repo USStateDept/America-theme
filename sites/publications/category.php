@@ -62,7 +62,7 @@ function amgov_pubs_show_terms( $terms, $label ) {
     $html .=  '<div><span class="aasf-label">' . $label  . ':   </span>';
     foreach ( $terms as $term ) {
 
-      if (!$term || is_wp_error($term)) {
+       if (!$term || is_wp_error( get_term_link( $term ))) {
           $html .=  "<a href='". get_term_link( $term ) . "'>" . $term->name . "</a>";
       }
      
