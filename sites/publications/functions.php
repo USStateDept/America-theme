@@ -32,7 +32,7 @@ set_post_thumbnail_size( 150, 188, true );
 
 //* Modify the length of post excerpts
 add_filter( 'excerpt_length', 'amgov_pubs_excerpt_length' );
-function amgov_pubs__excerpt_length( $length ) {
+function amgov_pubs_excerpt_length( $length ) {
 	return 30; // pull first 50 words
 }
 
