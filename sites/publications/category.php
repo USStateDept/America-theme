@@ -63,9 +63,9 @@ function amgov_pubs_show_terms( $terms, $label ) {
     foreach ( $terms as $term ) {
 
       if (!$term || is_wp_error($term)) {
-          continue;
+          $html .=  "<a href='". get_term_link( $term ) . "'>" . $term->name . "</a>";
       }
-      $html .=  "<a href='". get_term_link( $term ) . "'>" . $term->name . "</a>";
+     
       if ( $term !== end($terms) ) {
         $html .= ', ';
       }
