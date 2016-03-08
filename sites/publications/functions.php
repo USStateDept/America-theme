@@ -25,9 +25,9 @@ function amgov_pubs_favicon_filter( $favicon_url ) {
 }
 
 //* Add image sizes
-add_image_size( 'publication', 424, 530, true );
-add_image_size( 'publication-small', 200, 250, true );
-set_post_thumbnail_size( 150, 188, true );
+add_image_size( 'publication', 450, 564, true ); // 400 x 600
+add_image_size( 'publication-small', 200, 250, true ); 
+set_post_thumbnail_size( 150, 190, true );   // 150 x 190
 
 
 //* Modify the length of post excerpts
