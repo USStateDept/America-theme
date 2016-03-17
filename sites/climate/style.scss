@@ -238,7 +238,23 @@ input[type="submit"] {
   width: 100%;
 }
 
+/*-------------------------------------------*\
+  #SUBSCRIBE FORM - CLIMATE PARTNERS (BRAZIL)
+\*-------------------------------------------*/
 
+body :lang(pt-br) .sidebar-primary section#text_icl-6 .widget-wrap {
+    background: #009CDA !important;
+    padding: 18px 16px;
+}
+
+body :lang(pt-br) .sidebar-primary section#text_icl-6 h4, :lang(pt-br) .sidebar-primary section#text_icl-6 .widget-newsletter form p {
+    color: #FFFFFF;
+}
+
+body :lang(pt-br) .sidebar-primary section#text_icl-6 input[type="submit"]{
+    background: #8CC63E;
+    color:#FFFFFF;
+}
 
 
 /*------------------------------------*\
