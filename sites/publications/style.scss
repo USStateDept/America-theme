@@ -632,9 +632,13 @@ p.more-from-category {
 \*------------------------------------*/
 
 .single-publication .entry {
-    margin-bottom: 1em;
-    padding-bottom: 2em;
-    border-bottom: 1px solid #eee;
+  margin-bottom: 1em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid #eee;
+}
+
+.single-publication h3.entry-title  {
+  font-size: 26px;
 }
 
 .single-publication .entry-title {

@@ -151,12 +151,11 @@ function amgov_pubs_do_related_content() {
       }
   }
   
-  //echo '<div>Suggested for you</div>';  
+  echo '<h3 class="entry-title">Suggested for you</h3>';  
 
   // render to screen
   foreach ( $final as $f ) {
-      //amgov_pubs_display( $f );
-    
+     // amgov_pubs_display( $f );
      ?>
      <article class="related-pubs" id="post-<?php $id ?>">
       <div class="entry-content">
@@ -164,7 +163,6 @@ function amgov_pubs_do_related_content() {
            <?php 
            $image = get_the_post_thumbnail( $f->ID, 'post-thumbnail', array( 'alt' => the_title_attribute( 'echo=0' ) ));
            echo sprintf( '<a href="%s" rel="bookmark">', esc_url( get_permalink() ) ) . $image . '</a>';
-           
            ?>
         </div>
         <div class="publication-content">
