@@ -54,6 +54,11 @@
   #HOMEPAGE
 \*------------------------------------*/
 
+.home .widget-title {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
 
 .home-middle {
   padding: 0 30px 0;
@@ -125,7 +130,7 @@
 }
 p.more-from-category {
     position: static;
-    margin: -5em 0 0;
+    margin: -4em 0 0;
     float: right;
     right: 0;
 }
@@ -367,7 +372,7 @@ p.more-from-category {
 .archive .page-header {
   border-bottom: solid 1px #eee;
   padding-bottom: 0;
-  margin-bottom: .5em;
+  margin-bottom: 1.5em;
 
   .aasf-terms-parent {
     display: inline-block;
@@ -415,6 +420,7 @@ p.more-from-category {
 
 .archive .entry-title {
   font-size: 1.125em;
+  line-height: 1.25em;
   padding: 0;
   margin: 0 0 8px;
 }
@@ -506,8 +512,6 @@ p.more-from-category {
 }
 
 .search-results .page-numbers {
-  // position: relative;
-  // left: 10.60em;
   width: 100%;
   overflow: hidden;
   margin-bottom: 1.5em;
@@ -627,34 +631,104 @@ p.more-from-category {
   #SINGLE-PUBLICATION
 \*------------------------------------*/
 
+.single-publication .entry {
+    margin-bottom: 1em;
+    padding-bottom: 2em;
+    border-bottom: 1px solid #eee;
+}
+
+.single-publication .entry-title {
+  font-family: 'Signika-Bold';
+  font-size: 35px;
+  color: #07182e;
+  line-height: 1.25em;
+}
+
+.single-publication .related-pubs {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 1.4;
+  margin-bottom: 1.5em;
+
+  .publication-content {
+    vertical-align: top;
+    font-size: .85em
+  }
+
+  .entry-title {
+    margin: 0 0  .8em;
+  }
+
+  .publication-featured-image {
+     margin-right: 10px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  @include bp($tablet) {
+    width: 48%;
+  }
+
+  @include bp($desktop) {
+    width: 33%;
+  }
+}
+
+.single-publication .entry-content {
+  position: relative;
+  overflow: hidden;
+  margin-top: 1.5em;
+}
 
 /**
   * Basic publication content.
   */
 
-.single-publication .publication-featured-image {
-    float: left;
-    margin: 0 0 1em 0;
+.single-publication .publication-featured-image { 
+    display: inline-block;
+    margin-right: 30px;
+    vertical-align: top;
 }
 
-.entry-title {
-  font-size: 30px;
-  line-height: 1.25em;
+.single-publication .publication-content {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 55%;
 }
 
-.single-publication .entry-content {
-    overflow: hidden;
+.single-publication .publication-label {
+    text-transform: uppercase;
+    margin-top: 40px;
+    font-weight: bold;
+    color: #07182e;
 }
+
+.single-publication .publication-tags {
+  font-style: italic;
+  margin-top: 50px;
+  font-size: .95em;
+  color: #adadad;
+}
+
+.single-publication .publication-files li {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+  line-height: 1.8;
+}
+
 
 .full-width-content .content {
-    padding: 25px 0;
+    padding: 0;
 }
 
 article a.alignleft {
   display: block;
   float: none;
   text-align: center;
-  width:100%;
+  width: 100%;
 
   @include bp($big-mobile) {
     width: 40%;
@@ -664,7 +738,7 @@ article a.alignleft {
   @include bp($tablet) {
     width: inherit;
     float: left;
-    width:80%;
+    width: 80%;
     text-align:center;
   }
   @include bp($laptop) {
@@ -672,8 +746,6 @@ article a.alignleft {
     float: left;
   }
 }
-
-
 
 
 
@@ -823,7 +895,6 @@ header.entry-header {
 }
 
 
-
 /* Modifications to default Genesis breadcrumb code */
 .breadcrumb {
   background-color: #fff;
@@ -904,6 +975,7 @@ header.entry-header {
 
 .home-top h3 {
   font-size: 1em;
+  line-height: 1.3;
 }
 
 .home-top .entry-title {
@@ -911,11 +983,11 @@ header.entry-header {
   display: inline-block;
   z-index: 10;
   font-family: "Signika", serif;
-  font-size: 1.3em;
+  //font-size: 1.3em;
   font-weight: 700;
   margin-top: 0;
   padding-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 10px;
   padding-bottom: 0;
 }
 

@@ -25,7 +25,7 @@ function amgov_pubs_favicon_filter( $favicon_url ) {
 }
 
 //* Add image sizes
-add_image_size( 'publication', 450, 564, true ); // 400 x 600
+add_image_size( 'publication', 450, 564 ); // 400 x 600
 add_image_size( 'publication-small', 200, 250, true ); 
 set_post_thumbnail_size( 150, 190, true );   // 150 x 190
 
@@ -33,6 +33,7 @@ set_post_thumbnail_size( 150, 190, true );   // 150 x 190
 //* Modify the length of post excerpts
 add_filter( 'excerpt_length', 'amgov_pubs_excerpt_length' );
 function amgov_pubs_excerpt_length( $length ) {
+  echo 'length';
 	return 30; // pull first 50 words
 }
 

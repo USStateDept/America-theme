@@ -8,13 +8,15 @@ remove_action( 'genesis_entry_header',   'genesis_entry_header_markup_open', 5 )
 remove_action( 'genesis_entry_header',   'genesis_do_post_title' );
 remove_action( 'genesis_entry_header',   'genesis_post_info', 12 );
 remove_action( 'genesis_entry_header',   'genesis_entry_header_markup_close', 15 );
+
 remove_action( 'genesis_entry_content',  'genesis_do_post_image', 8 );
 remove_action( 'genesis_entry_content',  'genesis_do_post_content' );
+
 remove_action( 'genesis_entry_footer',   'genesis_entry_footer_markup_open', 5 );
 remove_action( 'genesis_entry_footer',   'genesis_entry_footer_markup_close', 15 );
 remove_action( 'genesis_entry_footer',   'genesis_post_meta' );
 
-//remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );  // remove default pagination (added via search plugin to append query vars)
+remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );  // remove default pagination (added via search plugin to append query vars)
 
 add_action( 'genesis_before_content', 'amgov_pubs_filters' );
 add_action( 'genesis_entry_content',  'amgov_pubs_do_post_content' );
