@@ -40,12 +40,10 @@ function amgov_pubs_do_post_content() {
   amgov_pubs_featured_image(); 
   echo '<div class="publication-content">';
   genesis_do_post_title();
-  //amgov_pubs_meta_format();
   amgov_pubs_add_label();
   genesis_do_post_content();  // need to  add tags
   amgov_pubs_add_downloadables();
   amggov_pubs_show_tags();
-  //amgov_pubs_do_related_content();
   echo '</div>';
 }
 
@@ -157,24 +155,24 @@ function amgov_pubs_do_related_content() {
   foreach ( $final as $f ) {
      // amgov_pubs_display( $f );
      ?>
-     <article class="related-pubs" id="post-<?php $id ?>">
+     <article class="related-pubs" id="post-<?php $f->ID ?>">
       <div class="entry-content">
         <div class="publication-featured-image">
            <?php 
-           $image = get_the_post_thumbnail( $f->ID, 'post-thumbnail', array( 'alt' => the_title_attribute( 'echo=0' ) ));
-           echo sprintf( '<a href="%s" rel="bookmark">', esc_url( get_permalink() ) ) . $image . '</a>';
+           $url = get_permalink( $f->ID );
+           $image = get_the_post_thumbnail( $f->ID, 'post-thumbnail', array( 'alt' => esc_attr( get_the_title($f->ID) ) ));
+           echo sprintf( '<a href="%s" rel="bookmark">', esc_url( $url ) ) . $image . '</a>';
            ?>
         </div>
         <div class="publication-content">
-          <h2 class="entry-title"><a href="" rel="bookmark"><?php echo $f->post_title ?></a></h2>
+          <h2 class="entry-title"><a href="<?php echo esc_url( $url ) ?>" rel="bookmark"><?php echo $f->post_title ?></a></h2>
            <?php if( taxonomy_exists('publication_type') ) { 
-                    $formats = get_the_term_list( $post->ID, 'publication_type', '<div><span class="aasf-label">Format:</span> ', ', ', '</div>' );
+                    $formats = get_the_term_list( $f->ID, 'publication_type', '<div><span class="aasf-label">Format:</span> ', ', ', '</div>' );
                     if( $formats ) {
                       echo $formats;
                     }
                   } 
-                  the_excerpt(); 
-                
+                  echo $f->post_excerpt; 
                   // $cats = get_the_term_list( $post->ID, 'category', '<div><span class="aasf-label">Subject:</span> ', ', ', '</div>' );
                   // if( $cats ) { 
                   //     echo $cats;

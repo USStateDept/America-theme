@@ -18,6 +18,12 @@ function initialize_site( $path ) {
 	}
 }
 
+//* Enqueue Scripts
+add_action( 'wp_enqueue_scripts', 'amgov_pubs_load_scripts' );
+function amgov_pubs_load_scripts() {
+  wp_enqueue_style( 'google-font-amgov-pubs', '//fonts.googleapis.com/css?family=Signika:600,700', array(), CHILD_THEME_VERSION );
+}
+
 //* Display a custom favicon
 add_filter( 'genesis_pre_load_favicon', 'amgov_pubs_favicon_filter' );
 function amgov_pubs_favicon_filter( $favicon_url ) {
@@ -25,15 +31,14 @@ function amgov_pubs_favicon_filter( $favicon_url ) {
 }
 
 //* Add image sizes
-add_image_size( 'publication', 450, 564 ); // 400 x 600
+add_image_size( 'publication', 450, 564 ); 
 add_image_size( 'publication-small', 200, 250, true ); 
-set_post_thumbnail_size( 150, 190, true );   // 150 x 190
+set_post_thumbnail_size( 150, 190, true );  
 
 
 //* Modify the length of post excerpts
 add_filter( 'excerpt_length', 'amgov_pubs_excerpt_length' );
 function amgov_pubs_excerpt_length( $length ) {
-  echo 'length';
 	return 30; // pull first 50 words
 }
 
