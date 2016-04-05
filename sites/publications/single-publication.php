@@ -63,9 +63,9 @@ function amgov_pubs_add_label() {
   echo '<div class="publication-label">Overview</div>';
 }
 
-function amgov_pubs_size( $path ) {
-    $bytes = sprintf('%u', filesize($path));
 
+function amgov_pubs_size( $fn ) {
+    $bytes = sprintf('%u', filesize($path));
     if ($bytes > 0) {
         $unit = intval(log($bytes, 1024));
         $units = array('B', 'KB', 'MB', 'GB');
@@ -74,38 +74,58 @@ function amgov_pubs_size( $path ) {
             return sprintf('%d %s', $bytes / pow(1024, $unit), $units[$unit]);
         }
     }
+
     return $bytes;
 }
 
+function amgov_pubs_get_path( $fn ) {
+  // get the first part of the upload base_dir and the last part of the file url
+  // concatenate together to get the path to the file on disk
+  $file_start = strpos( $fn, 'uploads' );
+  $file_path = substr( $fn, $file_start );
+  $base_dir = wp_upload_dir()['basedir'];
+  $dir_start = strpos( $base_dir, 'uploads' );
+  $dir_path = substr( $base_dir, 0, $dir_start );
+  $full_path = $dir_path . $file_path;
+
+  return  $full_path;
+}
+
+function amgov_pubs_get_values( $files ) {
+  $formats = array();
+  foreach ( $files as $file ) {
+    $format = $file['format'];
+    $lang = $file['language'];
+    if( $formats[$format] ) {
+      $formats[$format][$lang] = $file['file'];
+    } else {
+      $formats[$format] = array();
+      $formats[$format][$lang] = $file['file'];
+    }
+  }
+  return $formats;
+}
+
 function amgov_pubs_add_downloadables() {
-  $files = get_field('attach_files');
-   if( $files ) {
-      echo '<ul class="publication-files">';
+  $files = get_field( 'attach_files' );  
+  
+  if( $files ) {
+    $formats = amgov_pubs_get_values( $files );
+    //var_dump($formats);
+    echo '<div class="publication-container">';
 
-      foreach( $files as $file ) {
-        $fn =  $file['file'];
-        
-        if( trim( $fn ) ) {
-          $cf =  explode( '-', $file['format'] );
-          $ff = trim( $cf[0] );
-          if( $ff == 'PDF' ) {
-            $ff .= '  (' . trim($cf[1]) . ')';
-          }
-          
-          // get the first part of the upload base_dir and the last part of the file url
-          // concatenate together to get the path to the file on disk
-          $file_start = strpos( $fn, 'uploads' );
-          $file_path = substr( $fn, $file_start );
-          $base_dir = wp_upload_dir()['basedir'];
-          $dir_start = strpos( $base_dir, 'uploads' );
-          $dir_path = substr( $base_dir, 0, $dir_start );
-          $full_path = $dir_path . $file_path;
-          $size =  amgov_pubs_size( $full_path );
-
-          echo '<li><a href="' . $file['file'] . '" target="_NEW">Download ' . $ff . '</a> (' . $size . ')</li>';
-        }
+    foreach( $formats as $format => $values ) {
+      echo '<div class="publication-row">'; 
+      echo '<div class="publication-column-header">' . $format . '</div>';
+      foreach( $values as $lang => $path ) {
+        $fn =  amgov_pubs_get_path( $path );
+        $size = amgov_pubs_size( $fn );
+        //<span class="dashicons dashicons-download"></span>
+        echo '<div class="publication-column"><a href="' . $path . '" target="_NEW">' . $lang . '</a></div>';
       }
-      echo '</ul>';
+      echo '</div>';
+    }
+   echo '</div>';
   }
 }
 

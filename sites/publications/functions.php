@@ -18,10 +18,10 @@ function initialize_site( $path ) {
 	}
 }
 
-//* Enqueue Scripts
+//* Enqueue Scripts (add additional font weights)
 add_action( 'wp_enqueue_scripts', 'amgov_pubs_load_scripts' );
 function amgov_pubs_load_scripts() {
-  wp_enqueue_style( 'google-font-amgov-pubs', '//fonts.googleapis.com/css?family=Signika:600,700', array(), CHILD_THEME_VERSION );
+  wp_enqueue_style( 'google-font-amgov-pubs', '//fonts.googleapis.com/css?family=Signika:600,700|Source+Sans+Pro:600', array(), CHILD_THEME_VERSION );
 }
 
 //* Display a custom favicon
@@ -48,7 +48,7 @@ function amgov_pubs_search_filter($query) {
   if ( !is_admin() && $query->is_main_query() ) {
     if ($query->is_search) {
       $query->set( 'post_type', array('post', 'publication') );
-     // $query->set( 'posts_per_page', 12 );
+      //$query->set( 'posts_per_page', 12 );
     }
   }
 }
@@ -57,9 +57,11 @@ function amgov_pubs_search_filter($query) {
 remove_action( 'genesis_footer', 'genesis_do_footer' );
 add_action( 'genesis_footer', 'amgov_pubs_custom_footer' );
 function amgov_pubs_custom_footer() {
+  $contact_url = site_url( '/contact-us/' ); 
+
   ?>
 
-  <p class="site-footer footer-contact">Want a publication on a specific topic, but it doesn't exist? <a href="/contact-us/">Contact Us</a></div>
+  <p class="site-footer footer-contact">Want a publication on a specific topic, but it doesn't exist? <a href="<?php echo $contact_url ?>">Contact Us</a></div>
 
   <p class="site-footer-legal">This site is managed by the <a href="http://www.state.gov/r/iip" target="_blank">Bureau of International Information Programs</a> within the  <a href="http://www.state.gov" target="_blank">U.S. Department of State</a>. External links to other Internet sites should not be construed as an endorsement of the views or privacy policies contained therein.</p>
   <?php
