@@ -9,7 +9,7 @@
 
 
 .entry-title {
-  font-size: 42px;
+  font-size: 2.0625em;
   line-height: 1;
   margin-bottom: 20px;
 }
@@ -700,6 +700,10 @@ p.more-from-category {
     display: inline-block;
     vertical-align: bottom;
     width: 55%;
+
+    h1 {
+      margin-top: 0;
+    }
 }
 
 .single-publication .publication-label {
@@ -720,7 +724,33 @@ p.more-from-category {
   list-style: none;
   padding-left: 0;
   margin-left: 0;
-  line-height: 1.8;
+  line-height: 1.9;
+}
+
+.publication-container {
+  display: table;
+  font-size: .95em;
+}
+
+.publication-row {
+  display: table-row;
+}
+
+.publication-column {
+  display: table-cell;
+  padding: .2em 1.5em .2em 0;
+
+  .dashicons {
+    font-size: 1em;
+    vertical-align: bottom;
+  }
+}
+
+.publication-column-header {
+  display: table-cell;
+  padding: .2em 1.5em .2em 0;
+  font-weight: 600;
+  color: #07182e;
 }
 
 
@@ -753,7 +783,7 @@ article a.alignleft {
 
 
 
-header.entry-header {
+.home header.entry-header {
   width:100%;
   word-break:break-word;
 
@@ -908,7 +938,7 @@ header.entry-header {
 /* Modifications to default Genesis entry output for publications */
 
 .home-top h4, h3.page-header {
-  font-family: 'Signika', sans-serif;
+  font-family: 'Signika', sans-serif;  //$heading-font
   font-size: em(33);
   text-transform:none;
   border-bottom: solid 1px #ebebeb;
@@ -986,7 +1016,7 @@ header.entry-header {
   float: left;
   display: inline-block;
   z-index: 10;
-  font-family: "Signika", serif;
+  font-family: "Signika", serif;  //$heading-font
   //font-size: 1.3em;
   font-weight: 700;
   margin-top: 0;
@@ -999,7 +1029,7 @@ header.entry-header {
   float: left;
   display: inline-block;
   z-index: 10;
-  font-family:"Source Sans Pro", sans-serif;
+  font-family:"Source Sans Pro", sans-serif; //$body-font
   font-size: .9em;
   line-height: 1.3em;
 }

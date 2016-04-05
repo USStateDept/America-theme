@@ -43,7 +43,7 @@
   #TITLES
 \*------------------------------------*/
 .entry-title {
-  font-size: 42px;
+  font-size: 2.0625em;
   line-height: 1;
   margin-bottom: 20px; }
 
@@ -585,6 +585,8 @@ p.more-from-category {
   display: inline-block;
   vertical-align: bottom;
   width: 55%; }
+  .single-publication .publication-content h1 {
+    margin-top: 0; }
 
 .single-publication .publication-label {
   text-transform: uppercase;
@@ -602,7 +604,27 @@ p.more-from-category {
   list-style: none;
   padding-left: 0;
   margin-left: 0;
-  line-height: 1.8; }
+  line-height: 1.9; }
+
+.publication-container {
+  display: table;
+  font-size: .95em; }
+
+.publication-row {
+  display: table-row; }
+
+.publication-column {
+  display: table-cell;
+  padding: .2em 1.5em .2em 0; }
+  .publication-column .dashicons {
+    font-size: 1em;
+    vertical-align: bottom; }
+
+.publication-column-header {
+  display: table-cell;
+  padding: .2em 1.5em .2em 0;
+  font-weight: 600;
+  color: #07182e; }
 
 .full-width-content .content {
   padding: 0; }
@@ -627,19 +649,19 @@ article a.alignleft {
       width: 40%;
       float: left; } }
 
-header.entry-header {
+.home header.entry-header {
   width: 100%;
   word-break: break-word; }
   @media (min-width: 25em) {
-    header.entry-header {
+    .home header.entry-header {
       float: right;
       width: 55%; } }
   @media (min-width: 50em) {
-    header.entry-header {
+    .home header.entry-header {
       float: right;
       width: 100%; } }
   @media (min-width: 64em) {
-    header.entry-header {
+    .home header.entry-header {
       float: right;
       width: 55%; } }
 
