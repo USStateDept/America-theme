@@ -1405,23 +1405,33 @@ article a.alignleft {
   font-weight:300;
   font-size: 12px;
   line-height: 1.6em;
-  text-align: left; }
-
-.footer-contact {
-  font-size: 2.2em;
-  text-align: center;
-  padding-top: 1.2em;
+  text-align: left; 
 }
 
 .site-footer a  {
   font-weight:600;
   color:$white;
-  text-decoration:none; }
+  text-decoration:none; 
+}
 
 .site-footer a:hover  {
-  color:#417B9C;  }
+  color:#417B9C;  
+}
+
+.footer-contact {
+   font-size: 2.2em;
+   text-align: center;
+   padding-top: 1.2em;
+   a {
+    text-decoration: underline;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
 
 .site-footer-legal {
   background: #adadad url(images/dist/shareamerica-flag.png) no-repeat 2.5em 33px;
   margin: 0;
-  padding: 2em 7em; }
+  padding: 2em 7em; 
+}
