@@ -40,7 +40,6 @@ function amgov_pubs_do_post_content() {
   amgov_pubs_featured_image(); 
   echo '<div class="publication-content">';
   genesis_do_post_title();
-  amgov_pubs_add_label();
   genesis_do_post_content();  // need to  add tags
   amgov_pubs_add_downloadables();
   amggov_pubs_show_tags();
@@ -59,13 +58,8 @@ function amgov_pubs_featured_image() {
 }
 
 
-function amgov_pubs_add_label() {
-  echo '<div class="publication-label">Overview</div>';
-}
-
-
 function amgov_pubs_size( $fn ) {
-    $bytes = sprintf('%u', filesize($path));
+    $bytes = sprintf('%u', filesize($fn));
     if ($bytes > 0) {
         $unit = intval(log($bytes, 1024));
         $units = array('B', 'KB', 'MB', 'GB');
@@ -74,7 +68,6 @@ function amgov_pubs_size( $fn ) {
             return sprintf('%d %s', $bytes / pow(1024, $unit), $units[$unit]);
         }
     }
-
     return $bytes;
 }
 
@@ -93,14 +86,17 @@ function amgov_pubs_get_path( $fn ) {
 
 function amgov_pubs_get_values( $files ) {
   $formats = array();
+
   foreach ( $files as $file ) {
     $format = $file['format'];
-    $lang = $file['language'];
-    if( $formats[$format] ) {
-      $formats[$format][$lang] = $file['file'];
-    } else {
-      $formats[$format] = array();
-      $formats[$format][$lang] = $file['file'];
+    if( count($format) ) {
+      $lang = $file['language'];
+     if( isset($formats[$format]) ) {
+        $formats[$format][$lang] = $file['file'];
+      } else {
+        $formats[$format] = array();
+        $formats[$format][$lang] = $file['file'];
+     }
     }
   }
   return $formats;
@@ -111,7 +107,7 @@ function amgov_pubs_add_downloadables() {
   
   if( $files ) {
     $formats = amgov_pubs_get_values( $files );
-    //var_dump($formats);
+  
     echo '<div class="publication-container">';
 
     foreach( $formats as $format => $values ) {
@@ -119,9 +115,9 @@ function amgov_pubs_add_downloadables() {
       echo '<div class="publication-column-header">' . $format . '</div>';
       foreach( $values as $lang => $path ) {
         $fn =  amgov_pubs_get_path( $path );
-        $size = amgov_pubs_size( $fn );
-        //<span class="dashicons dashicons-download"></span>
-        echo '<div class="publication-column"><a href="' . $path . '" target="_NEW">' . $lang . '</a></div>';
+        $size = '<span>(' . amgov_pubs_size( $fn ) . ')</span>';
+
+        echo '<div class="publication-column"><a href="' . $path . '" target="_NEW">' . $lang . '</a>  ' . $size . '</div>';
       }
       echo '</div>';
     }

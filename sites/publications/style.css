@@ -83,6 +83,11 @@
 .home .widget-title {
   margin-top: 1em;
   margin-bottom: 1em; }
+  .home .widget-title a {
+    color: #222222;
+    text-decoration: none; }
+  .home .widget-title a:hover {
+    color: #4db2ec; }
 
 .home-middle {
   padding: 0 30px 0; }
@@ -579,11 +584,11 @@ p.more-from-category {
 .single-publication .publication-featured-image {
   display: inline-block;
   margin-right: 30px;
-  vertical-align: top; }
+  vertical-align: middle; }
 
 .single-publication .publication-content {
   display: inline-block;
-  vertical-align: bottom;
+  vertical-align: middle;
   width: 55%; }
   .single-publication .publication-content h1 {
     margin-top: 0; }
@@ -619,6 +624,10 @@ p.more-from-category {
   .publication-column .dashicons {
     font-size: 1em;
     vertical-align: bottom; }
+  .publication-column span {
+    display: inline-block;
+    font-size: .9em;
+    color: #555; }
 
 .publication-column-header {
   display: table-cell;
@@ -909,10 +918,15 @@ article a.alignleft {
       width: 40%;
       float: left; } }
 
+.site-title a {
+  background: url(images/dist/dos-seal.png) left center no-repeat;
+  background-size: 15%;
+  padding: 0px 0px 0px 1.8em;
+  margin: 0px 0px 0px -2em; }
 @media (min-width: 50em) {
   .site-title {
     font-size: 30px;
-    padding-left: 2.6em;
+    padding-left: 2em;
     background-size: 16%; } }
 @media (min-width: 64em) {
   .site-title {

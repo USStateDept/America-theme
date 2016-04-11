@@ -89,21 +89,6 @@ class America_Featured_Custom_Post extends WP_Widget {
 		//* Merge with defaults
 		$instance = wp_parse_args( (array) $instance, $this->defaults );
 
-		echo $args['before_widget'];
-
-		//* Set up the author bio
-		if ( ! empty( $instance['title'] ) )
-			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base ) . $args['after_title'];
-
-		if ( ! empty( $instance['more_from_category'] ) && ! empty( $instance['posts_cat'] ) )
-			printf(
-			'<p class="more-from-category"><a href="%1$s" title="%2$s">%3$s</a></p>',
-			esc_url( get_category_link( $instance['posts_cat'] ) ),
-			esc_attr( get_cat_name( $instance['posts_cat'] ) ),
-			esc_html( $instance['more_from_category_text'] )
-		);
-
-
 		$query_args = array(
 			'post_type' => $instance['post_type'],
 			'cat'       => $instance['posts_cat'],
@@ -118,7 +103,40 @@ class America_Featured_Custom_Post extends WP_Widget {
 			$query_args['post__not_in'] = (array) $_genesis_displayed_ids;
 
 		$wp_query = new WP_Query( $query_args );
+		
+ 		$num = $wp_query->found_posts;
+ 		$posts_to_show = $instance['posts_num'];
+ 		$create_link = ( $num > $posts_to_show );
 
+		echo $args['before_widget'];
+
+		//* Set up the author bio
+		if ( ! empty( $instance['title'] ) ) {
+			
+			echo $args['before_title']; 
+			if( $create_link ) {
+				echo '<a class="" href="#">';
+			}
+			echo apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
+			
+			if( $create_link ) {
+				echo '</a>';
+			}
+			echo $args['after_title'];
+
+			
+		}
+
+		if ( ! empty( $instance['more_from_category'] ) && ! empty( $instance['posts_cat'] ) )
+			printf(
+			'<p class="more-from-category"><a href="%1$s" title="%2$s">%3$s</a></p>',
+			esc_url( get_category_link( $instance['posts_cat'] ) ),
+			esc_attr( get_cat_name( $instance['posts_cat'] ) ),
+			esc_html( $instance['more_from_category_text'] )
+		);
+
+
+		// query was moved up before title to check whether or not a link should be generated based on num of posts
 		if ( have_posts() ) : while ( have_posts() ) : the_post();
 
 			$_genesis_displayed_ids[] = get_the_ID();
@@ -168,6 +186,15 @@ class America_Featured_Custom_Post extends WP_Widget {
 			if ( ! empty( $instance['show_content'] ) ) {
 
 				echo genesis_html5() ? '<div class="entry-content">' : '';
+
+				// show publication format if it exists
+				if( taxonomy_exists('publication_type') ) { 
+					$id = get_the_ID();
+	             	$formats = get_the_term_list( $id, 'publication_type', '<div><span class="aasf-label">Format:</span> ', ', ', '</div>' );
+	             	if( $formats ) {
+	               		echo $formats;
+	             	}
+	            } 
 
 				if ( 'excerpt' == $instance['show_content'] ) {
 					the_excerpt();
@@ -242,6 +269,7 @@ class America_Featured_Custom_Post extends WP_Widget {
 			esc_html( $instance['more_from_category_text'] )
 		);
 
+		
 		echo $args['after_widget'];
 
 	}

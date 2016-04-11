@@ -46,14 +46,12 @@ function amgov_pubs_excerpt_length( $length ) {
 add_action('pre_get_posts','amgov_pubs_search_filter');
 function amgov_pubs_search_filter($query) {
   if ( !is_admin() && $query->is_main_query() ) {
-    if ($query->is_search) {
-      $query->set( 'post_type', array('post', 'publication') );
+    if ($query->is_search || $query->is_category ) {
+      $query->set( 'post_type', array('publication') );
       //$query->set( 'posts_per_page', 12 );
     }
   }
 }
-
-
 
 //* Add Google Tag Manager
 add_action('genesis_before', 'amgov_pubs_gtm');

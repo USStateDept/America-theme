@@ -12,6 +12,7 @@ add_action( 'genesis_meta', 'america_home_genesis_meta' );
  * Add widget support for homepage. If no widgets active, display the default loop.
  *
  */
+
 function america_home_genesis_meta() {
 
 	if ( is_active_sidebar( 'home-slider' ) || is_active_sidebar( 'home-top' ) || is_active_sidebar( 'home-cta' ) || is_active_sidebar( 'home-bottom' ) ) {
