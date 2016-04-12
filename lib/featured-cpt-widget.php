@@ -113,6 +113,7 @@ class America_Featured_Custom_Post extends WP_Widget {
 		//* Set up the author bio
 		if ( ! empty( $instance['title'] ) ) {
 			
+			// only create a link if there are more than 3 posts
 			echo $args['before_title']; 
 			if( $create_link ) {
 				echo '<a class="" href="#">';

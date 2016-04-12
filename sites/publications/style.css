@@ -42,6 +42,9 @@
 /*------------------------------------*\
   #TITLES
 \*------------------------------------*/
+a:visited {
+  color: #a9daf6; }
+
 .entry-title {
   font-size: 2.0625em;
   line-height: 1;
