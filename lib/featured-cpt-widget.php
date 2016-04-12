@@ -106,17 +106,21 @@ class America_Featured_Custom_Post extends WP_Widget {
 		
  		$num = $wp_query->found_posts;
  		$posts_to_show = $instance['posts_num'];
- 		$create_link = ( $num > $posts_to_show );
-
+ 		$create_link = ( $num > $posts_to_show );	
+				
 		echo $args['before_widget'];
 
 		//* Set up the author bio
 		if ( ! empty( $instance['title'] ) ) {
 			
-			// only create a link if there are more than 3 posts
+			// only create a link if there are more than $instance['posts_num'] posts
+			// need to add an option in the admin widget to turn linking on/off
 			echo $args['before_title']; 
 			if( $create_link ) {
-				echo '<a class="" href="#">';
+				if( ! empty( $instance['posts_cat'] ) ) {
+					$link = esc_url( get_category_link( $instance['posts_cat'] ) );
+				}
+				echo '<a class="" href="' . $link . '">';
 			}
 			echo apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
 			
@@ -129,12 +133,14 @@ class America_Featured_Custom_Post extends WP_Widget {
 		}
 
 		if ( ! empty( $instance['more_from_category'] ) && ! empty( $instance['posts_cat'] ) )
+			if( $create_link ) { 
 			printf(
-			'<p class="more-from-category"><a href="%1$s" title="%2$s">%3$s</a></p>',
-			esc_url( get_category_link( $instance['posts_cat'] ) ),
-			esc_attr( get_cat_name( $instance['posts_cat'] ) ),
-			esc_html( $instance['more_from_category_text'] )
-		);
+				'<p class="more-from-category"><a href="%1$s" title="%2$s">%3$s</a></p>',
+				esc_url( get_category_link( $instance['posts_cat'] ) ),
+				esc_attr( get_cat_name( $instance['posts_cat'] ) ),
+				esc_html( $instance['more_from_category_text'] )
+			);
+		}
 
 
 		// query was moved up before title to check whether or not a link should be generated based on num of posts
