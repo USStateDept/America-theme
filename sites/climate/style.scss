@@ -263,27 +263,27 @@ body :lang(pt-br) .sidebar-primary section#text_icl-6 .custom-select select{
   #POPUP SUBSCRIBE FORM - CLIMATE PARTNERS (BRAZIL)
 \*-------------------------------------------*/
 
-#om-udtyvufueazyjjuf #boone-optin {
+#boone-optin {
     width: 800px !important;
 }
 .boone-form-wrap div#mc4wp-form-2 {
     width: 85%;
     margin: 0 auto;
 }
-html body  div#om-udtyvufueazyjjuf .boone-close{
+.boone-close{
   font-size: 43px;
   font-weight: 400;
   color: rgba(255,255,255,.9);
 }
 
-html body div#om-udtyvufueazyjjuf .boone-form input{
+.boone-form input{
   box-shadow:none;
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   border-radius:0;
 }
 
-html body div#om-udtyvufueazyjjuf .boone-form input[type=submit] {
+.boone-form input[type=submit] {
     background-color:#8cc63e;
     box-shadow:none;
     -moz-box-shadow:none;
@@ -292,7 +292,7 @@ html body div#om-udtyvufueazyjjuf .boone-form input[type=submit] {
     font-size: 20px;
 }
 
-html body div#om-udtyvufueazyjjuf .boone-header {
+.boone-header {
     padding: 50px 22px 15px;
     width: 650px;
 }
@@ -312,18 +312,18 @@ a.popup-exitlink {
     position: relative;
 }
 
-html div#om-udtyvufueazyjjuf .boone-form .custom-select{
+.boone-form .custom-select{
     border: 0px solid transparent;
     box-shadow:none;
     -moz-box-shadow:none;
     -webkit-box-shadow:none;
     border-radius:0;
-    width:74.25%;
+    width:63%;
     margin:0 auto;
     color:#B9B9B9;
 
 }
-html div#om-udtyvufueazyjjuf .boone-form select{
+.boone-form select{
     font-family:inherit;
     color:#B9B9B9;
 }
@@ -353,6 +353,7 @@ p.boone-powered-by {
     color: #FFFFFF;
     text-align: center;
 }
+
 
 /*------------------------------------*\
   #TWITTER-WIDGET
