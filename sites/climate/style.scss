@@ -325,10 +325,12 @@ html div#om-udtyvufueazyjjuf .boone-form .custom-select, html div#om-d2fty6fbc7p
 }
 html div#om-udtyvufueazyjjuf .boone-form select, html div#om-d2fty6fbc7pgb1em .boone-form select{
     font-family:inherit;
-
 }
 
-// html body div#om-udtyvufueazyjjuf .boone-form input:-webkit-input-placeholder
+#boone-optin .mc4wp-success {
+    color: #FFFFFF;
+}
+
   ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
       color:    #B9B9B9;
   }
