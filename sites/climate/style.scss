@@ -248,14 +248,113 @@ body :lang(pt-br) .sidebar-primary section#text_icl-6 .widget-wrap {
 }
 
 body :lang(pt-br) .sidebar-primary section#text_icl-6 h4, :lang(pt-br) .sidebar-primary section#text_icl-6 .widget-newsletter form p {
-    color: #FFFFFF;
+    color: $white;
 }
 
 body :lang(pt-br) .sidebar-primary section#text_icl-6 input[type="submit"]{
-    background: #8CC63E;
-    color:#FFFFFF;
+    background: $green;
+    color:$white;
+}
+body :lang(pt-br) .sidebar-primary section#text_icl-6 .custom-select select{
+  color:#B9B9B9;
 }
 
+/*-------------------------------------------*\
+  #POPUP SUBSCRIBE FORM - CLIMATE PARTNERS
+\*-------------------------------------------*/
+
+#om-udtyvufueazyjjuf #boone-optin, #om-d2fty6fbc7pgb1em #boone-optin {
+    width: 800px !important;
+}
+.boone-form-wrap div#mc4wp-form-2 {
+    width: 85%;
+    margin: 0 auto;
+}
+html body  div#om-udtyvufueazyjjuf .boone-close, html body  div#om-d2fty6fbc7pgb1em .boone-close{
+  font-size: 43px;
+  font-weight: 400;
+  color: rgba(255,255,255,.9);
+}
+
+html body div#om-udtyvufueazyjjuf .boone-form input, html body div#om-d2fty6fbc7pgb1em .boone-form input{
+  box-shadow:none;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  border-radius:0;
+}
+
+html body div#om-udtyvufueazyjjuf .boone-form input[type=submit], html body div#om-d2fty6fbc7pgb1em .boone-form input[type=submit] {
+    background-color:#8cc63e;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    border: none;
+    font-size: 20px;
+}
+
+html body div#om-udtyvufueazyjjuf .boone-header, html body div#om-d2fty6fbc7pgb1em .boone-header {
+    padding: 50px 22px 15px;
+    width: 650px;
+}
+
+a.popup-exitlink:hover {
+    color: #B9B9B9;
+}
+
+a.popup-exitlink {
+    display: block;
+    color: #FFFFFF;
+    font-size: 14px;
+    text-decoration: underline;
+    font-weight: 700;
+    text-align: center;
+    top: -10px;
+    position: relative;
+}
+
+html div#om-udtyvufueazyjjuf .boone-form .custom-select, html div#om-d2fty6fbc7pgb1em .boone-form .custom-select{
+    border: 0px solid transparent;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    border-radius:0;
+    width:63%;
+    margin:0 auto;
+    color:#B9B9B9;
+
+}
+html div#om-udtyvufueazyjjuf .boone-form select, html div#om-d2fty6fbc7pgb1em .boone-form select{
+    font-family:inherit;
+}
+
+#boone-optin .mc4wp-success {
+    color: #FFFFFF;
+}
+
+  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+      color:    #B9B9B9;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+     color:    #B9B9B9;
+     opacity:  1;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+     color:    #B9B9B9;
+     opacity:  1;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+     color:    #B9B9B9;
+  }
+
+
+p.boone-powered-by {
+    display: none;
+}
+
+.boone-form-wrap .mc4wp-form p:first-child{
+    color: #FFFFFF;
+    text-align: center;
+}
 
 /*------------------------------------*\
   #TWITTER-WIDGET
