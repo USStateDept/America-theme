@@ -729,6 +729,10 @@ p.more-from-category {
   margin-top: 50px;
   font-size: .95em;
   color: #adadad;
+
+  a {
+    color: #adadad;
+  }
 }
 
 .single-publication .publication-files li {
@@ -758,7 +762,7 @@ p.more-from-category {
 
   span {
     display: inline-block;
-    font-size: .9em;
+    font-size: .85em;
     color: #555;
   }
 }
@@ -1437,4 +1441,11 @@ article a.alignleft {
   background: #adadad url(images/dist/shareamerica-flag.png) no-repeat 2.5em 33px;
   margin: 0;
   padding: 2em 7em; 
+}
+
+/*------------------------------------*\
+  #LANGUAGES
+\*------------------------------------*/
+.zh {
+  font-family: 'Arial MS Unicode';
 }

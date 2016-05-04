@@ -116,8 +116,8 @@ function amgov_pubs_add_downloadables() {
       foreach( $values as $lang => $path ) {
         $fn =  amgov_pubs_get_path( $path );
         $size = '<span>(' . amgov_pubs_size( $fn ) . ')</span>';
-
-        echo '<div class="publication-column"><a href="' . $path . '" target="_NEW">' . $lang . '</a>  ' . $size . '</div>';
+        $cls =  ( $lang == '中文' ) ? 'zh' : ''; // crappy implementation
+        echo '<div class="publication-column ' . $cls . '"><a href="' . $path . '" target="_NEW">' . $lang . '</a>  ' . $size . '</div>';
       }
       echo '</div>';
     }
@@ -130,7 +130,8 @@ function amggov_pubs_show_tags() {
   if ( $posttags ) {
     echo '<div class="publication-tags">';
     foreach( $posttags as $tag ) {
-      echo $tag->name;
+      $link = get_term_link($tag->term_id);
+      echo "<a href='{$link}' alt='{$tag->name }'>{$tag->name }</a>";
       if( end($posttags) !== $tag ) {
         echo ', '; 
       }
@@ -152,17 +153,18 @@ function amgov_pubs_get_categories() {
 }
 
 
-function amgov_pubs_get_related() {
+function amgov_pubs_get_related() { // do not display the same pub as single being displayed
   $related = array();
   
   if( have_rows('related_pubs') ){
-
     while( have_rows('related_pubs') ) {
       the_row(); 
-      $related[] = get_sub_field('related_pub');
+      $pub = get_sub_field('related_pub');
+      if( $pub ) {
+        $related[] = get_sub_field( 'related_pub' );
+      }
     }
   }
-
   return $related;
 }
 
@@ -183,12 +185,13 @@ function amgov_pubs_do_related_content() {
       $pubs_in_cat = get_posts( $args );
   }
   $pubs = array_merge ($acf_related_pubs, $pubs_in_cat);
-  
   // remove duplicates
   $final  = array();
   foreach ( $pubs as $current ) {
       if ( ! in_array($current, $final) ) {
+        if( $current->ID != get_the_ID() ) {   // do not put the publication being displayed in the related content area
           $final[] = $current;
+        }
       }
   }
   
