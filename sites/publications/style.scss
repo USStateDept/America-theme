@@ -58,21 +58,24 @@ a:visited {
 \*------------------------------------*/
 
 .home .widget-title {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  // margin-top: 1em;
+  // margin-bottom: 1em;
+
+  margin-top: .5em;
+  margin-bottom: .5em;
   
   a {
     color: $black;
-    text-decoration: none;
+    text-decoration: none; 
   }
 
   a:hover {
-    color: #4db2ec;
+    color: #000;
   }
 }
 
 .home-middle {
-  padding: 0 30px 0;
+  padding: 0 30px 0; //
 }
 
 .home-bottom,
@@ -436,22 +439,12 @@ p.more-from-category {
   margin: 0 0 8px;
 }
 
-.archive .publication-featured-image {
-    float: left;
-    margin-right: 3%;
-    line-height: 0;
-    width: 40%;
-}
-
-.archive .publication-content {
-    float: left;
-    width: 57%;
-    padding-right: 1em;
-
-    @include bp($desktop) {
-      float: right;
-    }
-}
+// .archive .publication-featured-image {
+//     float: left;
+//     margin-right: 3%;
+//     line-height: 0;
+//     width: 40%;
+// }
 
 .archive .page-numbers {
   // position: relative;
@@ -509,18 +502,14 @@ p.more-from-category {
   margin: 0 0 8px;
 }
 
-.search-results .publication-featured-image {
-    float: left;
-    margin-right: 3%;
-    line-height: 0;
-    width: 40%;
-}
+// .search-results .publication-featured-image {
+//     float: left;
+//     margin-right: 3%;
+//     line-height: 0;
+//     width: 40%;
+// }
 
-.search-results .publication-content {
-    float: right;
-    width: 57%;
-    padding-right: 1em;
-}
+
 
 .search-results .page-numbers {
   width: 100%;
@@ -643,46 +632,61 @@ p.more-from-category {
 \*------------------------------------*/
 
 .single-publication .entry {
-  margin-bottom: 1em;
-  padding-bottom: 2em;
+  margin-bottom: 0;
+  padding-bottom: 1.3em;
   border-bottom: 1px solid #eee;
+
+  @include bp($big-mobile) {
+   padding-bottom: 1.5em;
+  }
 }
 
 .single-publication h3.entry-title  {
-  font-size: 26px;
+  font-size: em(24);
+  //padding: 1em;
+  margin: 1em 0;
+
+  @include bp($big-mobile) {
+    font-size: em(26);
+  }
 }
 
 .single-publication .entry-title {
-  font-size: 35px;
+  //font-size: 35px;
+  font-size: 1.5em;
   font-weight: 600;
   color: #07182e;
   line-height: 1.25em;
 }
 
-.single-publication .related-pubs {
-  display: inline-block;
+
+.single-publication .related-pubs  {
+  //display: inline-block;
+  
   vertical-align: top;
   line-height: 1.4;
-  margin-bottom: 1.5em;
-
-  .publication-content {
-    vertical-align: top;
-    font-size: .85em
-  }
+  margin-bottom: em(30);
+  // margin-right: em(20);
+  width: 100%;
 
   .entry-title {
     margin: 0 0  .8em;
   }
 
-  .publication-featured-image {
-     margin-right: 10px;
+  .entry-content {
+    width: 100%;
   }
 
   h2 {
     font-size: 16px;
   }
 
+  @include bp($big-mobile) {
+    margin-bottom: em(24);
+  }
+
   @include bp($tablet) {
+    display: inline-block;
     width: 48%;
   }
 
@@ -694,28 +698,16 @@ p.more-from-category {
 .single-publication .entry-content {
   position: relative;
   overflow: hidden;
-  margin-top: 1.5em;
+  margin-top: .5em;
 }
+
+
 
 /**
   * Basic publication content.
   */
 
-.single-publication .publication-featured-image { 
-    display: inline-block;
-    margin-right: 30px;
-    vertical-align: middle;
-}
 
-.single-publication .publication-content {
-    display: inline-block;
-    vertical-align: middle;
-    width: 55%;
-
-    h1 {
-      margin-top: 0;
-    }
-}
 
 .single-publication .publication-label {
     text-transform: uppercase;
@@ -780,57 +772,60 @@ p.more-from-category {
 }
 
 article a.alignleft {
-  display: block;
-  float: none;
+  //display: block;
+  float: left;
   text-align: center;
-  width: 100%;
+  width: 35%;
 
   @include bp($big-mobile) {
-    width: 40%;
-    float: left;
+    width: 30%;
+  }
+
+  @include bp($sm-tablet) {
+    //width: 30%;
   }
 
   @include bp($tablet) {
     width: inherit;
-    float: left;
+    //float: left;
     width: 80%;
     text-align:center;
   }
   @include bp($laptop) {
     width: 40%;
-    float: left;
   }
 }
 
-
-
 .home header.entry-header {
-  width:100%;
-  word-break:break-word;
+  width: 60%;
+  float: right;
+  word-break: break-word;
 
 @include bp($big-mobile) {
-  float: right;
-  width:55%;
+  //float: right;
+  width:65%;
 }
 @include bp($tablet) {
-  float:right;
+  //float:right;
   width:100%;
 }
 @include bp($laptop) {
-  float:right;
+  //float:right;
   width:55%;
 }
 
 }
 
 .home .entry-content {
-    width: 100%;
-    vertical-align:bottom;
-    position:relative;
-    padding: 0 15px 0 0;
+  width: 60%;
+  float: right;
+  vertical-align:bottom;
+  position:relative;
+  //padding: 0 15px 0 0;
+  padding: 0;
 
 @include bp($big-mobile) {
-  width:55%;
+  width:65%;
   float: right;
 }
 @include bp($tablet) {
@@ -960,12 +955,21 @@ article a.alignleft {
 
 .home-top h4, h3.page-header {
   font-family: 'Signika', sans-serif;  //$heading-font
-  font-size: em(33);
+  font-size: em(25);
   text-transform:none;
   border-bottom: solid 1px #ebebeb;
-  padding-bottom: 0;
+  padding: 0 0 0 .2em;
   margin-bottom: 1.5em;
   overflow: hidden;
+  
+  @include bp($big-mobile) {
+    font-size: em(28);
+  }
+
+  @include bp($tablet) {
+    font-size: em(26);
+  }
+
 }
 
 .widget-wrap article:after {
@@ -975,42 +979,48 @@ article a.alignleft {
      content: " ";
      clear: both;
      height: 0;
-     }
-.widget-wrap article { display: inline-block; }
+  }
+
+.widget-wrap article { 
+  display: inline-block; 
+}
+
 /* start commented backslash hack \*/
-* html .widget-wrap article { height: 1%; }
+* html .widget-wrap article { 
+  height: 1%; 
+}
 
 .widget-wrap article {
   display: block;
   float: left;
-  margin-right: 25px;
+  padding: 0 .3em;
   margin-bottom: 20px;
 
-@include bp($big-mobile) {
-  width:100%;
-  margin-right: 20px;
-}
+  @include bp($big-mobile) {
+    width:100%;
+    margin-right: 20px;
+  }
 
-@include bp($tablet) {
-  width: 31%;
-  margin-right: 17px;
-}
+  @include bp($tablet) {
+    width: 31%;
+    margin-right: 17px;
+  }
 
-@include bp($laptop) {
-  width:31%;
-  margin-right:20px;
-}
+  @include bp($laptop) {
+    width:31%;
+    margin-right:20px;
+  }
 
-@include bp($desktop) {
-  width: 32%;
-  margin-right: 15px;
-}
+  @include bp($desktop) {
+    width: 32%;
+    margin-right: 15px;
+  }
 }
 /* close commented backslash hack */
 
 .home article img.entry-image {
   width: 100%;
-  padding: 0 2em;
+  padding: 0 0;
 
 @include bp($big-mobile) {
   width:220px;
@@ -1034,7 +1044,8 @@ article a.alignleft {
 }
 
 .home-top .entry-title {
-  float: left;
+  float: none;
+  //float: left;
   display: inline-block;
   z-index: 10;
   font-family: "Signika", serif;  //$heading-font
@@ -1058,16 +1069,16 @@ article a.alignleft {
 /*------------------------------------*\
   #SITE-NAVIGATION
 \*------------------------------------*/
-.header-widget-area{
+.header-widget-area {
   position: relative;
+  width: 100%;
 
   @include bp($big-mobile) {
-    width: 58%;
     top: 0em;
   }
   @include bp($tablet) {
     top: 0.1em;
-    width:56%;
+    width: 56%;
   }
   @include bp($laptop) {
     top: 0.55em;
@@ -1096,7 +1107,7 @@ article a.alignleft {
 
   @include bp($tablet) {
     width:40%;
-    top: 3.3em;
+    top: 2.8em;
   }
   @include bp($laptop) {
     position:relative;
@@ -1112,34 +1123,41 @@ article a.alignleft {
   }
 }
 
-.site-title {
+.site-title { 
+  text-align: left;
+  padding-left: 1em;
+
   a {
     background: url(images/dist/dos-seal.png) left center no-repeat;
-    background-size: 15%;
+    background-size: 13%;
     padding: 0px 0px 0px 1.8em;
-    margin: 0px 0px 0px -2em;
+    // margin: 0px 0px 0px -2em;
+    margin: 0px 0px 0px -1em;
   }
- 
 
   @include bp($tablet) {
-    font-size: 30px;
-    padding-left: 2em;
-    background-size: 16%;
+    font-size: em(32);
+    padding-left: 1em;
+    a {
+      // background-size: 13%;
+    }
+   
   }
+
   @include bp($laptop) {
-    font-size:42px;
+    font-size:em(36);
   }
+
   @include bp($desktop) {
-    font-size:46px;
+    font-size:em(46);
   }
 }
 
-.header-widget-area section.widget_nav_menu{
+.header-widget-area section.widget_nav_menu {
   float:right;
   width:100%;
 
   @include bp($big-mobile) {
-    width:60%;
     float: right;
   }
   @include bp($tablet) {
@@ -1401,8 +1419,6 @@ article a.alignleft {
   color: #4db2ec; }
 
 
-
-
 /*------------------------------------*\
   #SITE-FOOTER
 \*------------------------------------*/
@@ -1426,7 +1442,7 @@ article a.alignleft {
 }
 
 .footer-contact {
-   font-size: 2.2em;
+   font-size: 1.4em;
    text-align: center;
    padding-top: 1.2em;
    a {
@@ -1435,12 +1451,22 @@ article a.alignleft {
   a:hover {
     text-decoration: none;
   }
+
+  @include bp($sm-tablet) {
+    font-size: 1.8em;
+    padding-top: .9em;
+  }
+
+  @include bp($tablet) {
+    font-size: 2.2em;
+  }
 }
 
 .site-footer-legal {
-  background: #adadad url(images/dist/shareamerica-flag.png) no-repeat 2.5em 33px;
+  background: #adadad url(images/dist/shareamerica-flag.png) no-repeat 1.2em 33px; //2.5em 
   margin: 0;
-  padding: 2em 7em; 
+  //padding: 2em 7em; 
+  padding: 1.5em 1.2em 2em 6em;
 }
 
 /*------------------------------------*\
@@ -1448,4 +1474,96 @@ article a.alignleft {
 \*------------------------------------*/
 .zh {
   font-family: 'Arial MS Unicode';
+}
+
+
+/*------------------------------------*\
+  #PUBLICATION FEATURED IMAGE
+\*------------------------------------*/
+
+.single-publication article:not(.related-pubs) .publication-featured-image {     
+    @include bp($big-mobile) {
+      display: inline-block;
+      //padding-right: em(60);
+      vertical-align: middle;
+
+      @include bp($tablet) {
+        vertical-align: top;
+        padding-right: em(16);
+        width: 45%;
+      }
+
+      @include bp($desktop) {
+        vertical-align: middle;
+        padding-right: 0;
+        width: 40%;
+      }
+  }
+}
+
+.single-publication .related-pubs .publication-featured-image,
+.search-results .publication-featured-image,
+.archive .publication-featured-image {
+   //margin-right: 10px;
+   width: 35%;
+   float:left;
+   padding-right: em(16);
+
+  @include bp(32em) {
+    width: 175px;
+    padding-right: 0;
+  }
+
+  @include bp($tablet) {
+    width: 35%;
+   // padding-right: em(16);
+  }
+}
+
+
+/*------------------------------------*\
+  #PUBLICATION CONTENT
+\*------------------------------------*/
+
+.single-publication article:not(.related-pubs)  .publication-content  {
+    display: inline-block;
+    vertical-align: middle;
+
+    h1 {
+      margin-top: 0;
+    }
+
+    @include bp($tablet) {
+      width: 55%;
+    }
+
+    @include bp($desktop) {
+      width: 50%;
+    }
+}
+
+.archive .publication-content,
+.search-results .publication-content,
+.single-publication .related-pubs .publication-content {
+    float: right;
+    width: 60%;
+    padding-right: 1em;
+
+    @include bp($big-mobile) {
+      float: left;
+    }
+
+    @include bp($tablet) {
+      float: right;
+    }
+
+    @include bp($desktop) {
+      float: right;
+    }
+}
+
+.single-publication .related-pubs .publication-content {
+  vertical-align: top;
+  font-size: .85em;
+    
 }

@@ -15,9 +15,14 @@ remove_action( 'genesis_entry_footer',   'genesis_entry_footer_markup_close', 15
 remove_action( 'genesis_entry_footer',   'genesis_post_meta' );
 remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );  // remove default pagination (added via search plugin to append query vars)
 
+remove_action( 'genesis_after_content', 'genesis_get_sidebar' );  // put sidebar above main so that they stack properly on mobile
+add_action( 'genesis_before_content', 'genesis_get_sidebar' );
+
 add_action( 'genesis_after_header',   'amgov_pubs_swap_sidebars' );
 add_action( 'genesis_before_content', 'america_add_search_term' );
 add_action( 'genesis_entry_content',  'amgov_pubs_do_post_content' );
+
+
 
 function amgov_pubs_remove_body_class( $classes ){
   foreach( $classes as $key => $value ) {
