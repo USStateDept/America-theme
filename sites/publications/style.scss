@@ -509,7 +509,27 @@ p.more-from-category {
 //     width: 40%;
 // }
 
+.search-results .widget  {
+  margin: 0;
+}
 
+.search-results {
+  .aasf-trigger,
+  .aasf-trigger:hover {
+    color: #333; 
+    text-decoration: none
+  }
+}
+
+.search-results .aasf-wrapper {
+  width: 100%;
+
+  .aasf-tax-terms,
+  .aasf-tax-term {
+    width: 100%;
+  }
+
+}
 
 .search-results .page-numbers {
   width: 100%;

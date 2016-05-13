@@ -19,7 +19,7 @@ remove_action( 'genesis_after_content', 'genesis_get_sidebar' );  // put sidebar
 add_action( 'genesis_before_content', 'genesis_get_sidebar' );
 
 add_action( 'genesis_after_header',   'amgov_pubs_swap_sidebars' );
-add_action( 'genesis_before_content', 'america_add_search_term' );
+add_action( 'genesis_after_header', 'america_add_search_term' );
 add_action( 'genesis_entry_content',  'amgov_pubs_do_post_content' );
 
 
