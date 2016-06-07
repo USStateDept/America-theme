@@ -371,8 +371,21 @@ p.boone-powered-by {
   width: 100% !important;
 }
 
+/*------------------------------------*\
+  #LANGUAGE SWITCHER ADJUSTMENTS
+\*------------------------------------*/
 
+.genesis-nav-menu:lang(en-sa) {
+  display: none;
+}
 
+.search-form:lang(en-sa) {
+  display: none;
+}
+
+.footer-widgets:lang(en-sa) {
+  display: none;
+}
 
 /*------------------------------------*\
   #PICTUREFILL
