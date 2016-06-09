@@ -68,6 +68,11 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
   echo $html;
 }
 
+add_filter( 'genesis_search_text', 'amgov_pubs_search_text' );
+function amgov_pubs_search_text( $text ) {
+  return esc_attr( 'Search Publications' );
+}
+
 //* Remove Footer Credits
 remove_action( 'genesis_footer', 'genesis_do_footer' );
 add_action( 'genesis_footer', 'amgov_pubs_custom_footer' );

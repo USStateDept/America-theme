@@ -104,20 +104,17 @@ class America_Featured_Custom_Post extends WP_Widget {
 
 		$wp_query = new WP_Query( $query_args );
 		
- 		$num = $wp_query->found_posts;
- 		$posts_to_show = $instance['posts_num'];
- 		$create_link = ( $num > $posts_to_show );	
 				
 		echo $args['before_widget'];
 
 		//* Set up the author bio
 		if ( ! empty( $instance['title'] ) ) {
-			
-			// only create a link if there are more than $instance['posts_num'] posts
-			// need to add an option in the admin widget to turn linking on/off
+						
+			// TODO: add an option in the admin widget to turn linking on/off $instance['title_link']. For now, set $create_link == true
+ 			$create_link = true; // ( $num > $posts_to_show );	
 			echo $args['before_title']; 
 			if( $create_link ) {
-				if( ! empty( $instance['posts_cat'] ) ) {
+				if( ! empty( $instance['posts_cat'] ) ) {  
 					$link = esc_url( get_category_link( $instance['posts_cat'] ) );
 				}
 				echo '<a class="" href="' . $link . '">';
@@ -127,9 +124,7 @@ class America_Featured_Custom_Post extends WP_Widget {
 			if( $create_link ) {
 				echo '</a>';
 			}
-			echo $args['after_title'];
-
-			
+			echo $args['after_title'];		
 		}
 
 		if ( ! empty( $instance['more_from_category'] ) && ! empty( $instance['posts_cat'] ) )
@@ -141,7 +136,6 @@ class America_Featured_Custom_Post extends WP_Widget {
 				esc_html( $instance['more_from_category_text'] )
 			);
 		}
-
 
 		// query was moved up before title to check whether or not a link should be generated based on num of posts
 		if ( have_posts() ) : while ( have_posts() ) : the_post();
@@ -197,11 +191,17 @@ class America_Featured_Custom_Post extends WP_Widget {
 				// show publication format if it exists
 				if( taxonomy_exists('publication_type') ) { 
 					$id = get_the_ID();
-	             	$formats = get_the_term_list( $id, 'publication_type', '<div><span class="aasf-label">Format:</span> ', ', ', '</div>' );
-	             	if( $formats ) {
-	               		echo $formats;
+	             	$terms = get_the_terms( $id , 'publication_type' );
+	             	if ( $terms  && ! is_wp_error( $terms  ) ) {
+	             		$formats = array();
+	             		foreach ( $terms as $term ) {
+					        $formats[] = $term->name;
+					    }
+					    $list = join( ", ", $formats );
+					    echo '<div><span class="aasf-label">Format: ' . esc_html( $list ) . '</span></div>';
 	             	}
 	            } 
+
 
 				if ( 'excerpt' == $instance['show_content'] ) {
 					the_excerpt();

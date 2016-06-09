@@ -68,7 +68,8 @@ function amgov_pubs_do_post_content() {
 function amgov_pubs_do_post_image() {  // duplicated in content.php template file, combine both
   $image = genesis_get_image( 'format=url&size=post-thumbnail' );
   if( !$image ) {
-    $image = 'http://dummyimage.com/150x188/ddd/aaa.png&text=placeholder';
+    //$image = 'http://dummyimage.com/150x188/ddd/aaa.png&text=placeholder';
+    $image = wp_get_attachment_image( 307, 'thumbnail');
   }
   printf( '<div class="publication-featured-image"><a href="%s" rel="bookmark"><img src="%s" alt="%s" width="150" height="188"/></a></div>', get_permalink(), $image, the_title_attribute( 'echo=0' ) );
 }
@@ -93,7 +94,7 @@ function amgov_pubs_show_terms( $terms, $label ) {
   if( count($terms) ) {
     $html .=  '<div><span class="aasf-label">' . $label  . ':   </span>';
     foreach ( $terms as $term ) {
-      $html .=  "<a href='". get_term_link( $term, $term->taxonomy  ) . "'>" . $term->name . "</a>";
+      $html .=  $term->name;
       if ( $term !== end($terms) ) {
         $html .= ', ';
       }

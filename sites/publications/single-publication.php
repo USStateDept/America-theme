@@ -213,9 +213,15 @@ function amgov_pubs_do_related_content() {
         <div class="publication-content">
           <h2 class="entry-title"><a href="<?php echo esc_url( $url ) ?>" rel="bookmark"><?php echo $f->post_title ?></a></h2>
            <?php if( taxonomy_exists('publication_type') ) { 
-                    $formats = get_the_term_list( $f->ID, 'publication_type', '<div><span class="aasf-label">Format:</span> ', ', ', '</div>' );
-                    if( $formats ) {
-                      echo $formats;
+                  $id = get_the_ID();
+                  $terms = get_the_terms( $id , 'publication_type' );
+                    if ( $terms  && ! is_wp_error( $terms  ) ) {
+                        $formats = array();
+                        foreach ( $terms as $term ) {
+                        $formats[] = $term->name;
+                    }
+                      $list = join( ", ", $formats );
+                      echo '<div><span class="aasf-label">Format: ' . esc_html( $list ) . '</span></div>';
                     }
                   } 
                   echo $f->post_excerpt; 

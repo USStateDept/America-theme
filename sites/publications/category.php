@@ -63,7 +63,7 @@ function amgov_pubs_show_terms( $terms, $label ) {
   if( count($terms) ) {
     $html .=  '<div><span class="aasf-label">' . $label  . ':   </span>';
     foreach ( $terms as $term ) {
-      $html .=  "<a href='". get_term_link( $term, $term->taxonomy ) . "'>" . $term->name . "</a>";
+      $html .=  $term->name;
       if ( $term !== end($terms) ) {
         $html .= ', ';
       }
