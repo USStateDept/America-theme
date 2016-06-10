@@ -94,7 +94,12 @@ function amgov_pubs_show_terms( $terms, $label ) {
   if( count($terms) ) {
     $html .=  '<div><span class="aasf-label">' . $label  . ':   </span>';
     foreach ( $terms as $term ) {
-      $html .=  $term->name;
+      if( $label == 'Format' ) {
+        $html .=  $term->name;
+      } else {
+        $html .=  "<a href='". get_term_link( $term, $term->taxonomy  ) . "'>" . $term->name . "</a>";
+      }
+     
       if ( $term !== end($terms) ) {
         $html .= ', ';
       }
@@ -104,5 +109,7 @@ function amgov_pubs_show_terms( $terms, $label ) {
 
   return $html;
 }
+
+
 
 genesis(); 
