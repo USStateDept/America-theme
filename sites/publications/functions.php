@@ -53,6 +53,16 @@ function amgov_pubs_search_filter($query) {
   }
 }
 
+// make additional file types available for upload
+add_filter('upload_mimes', 'amgov_pubs_upload_mimes');
+function amgov_pubs_upload_mimes( $mime_types ) {
+    $mime_types['epub'] = 'application/epub+zip'; 
+    $mime_types['mobi'] = 'application/x-mobipocket-ebook'; 
+    
+    return $mime_types;
+}
+
+
 //* Add Google Tag Manager
 add_action('genesis_before', 'amgov_pubs_gtm');
 function amgov_pubs_gtm() {
