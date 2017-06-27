@@ -31,9 +31,9 @@ function amgov_pubs_favicon_filter( $favicon_url ) {
 }
 
 //* Add image sizes
-add_image_size( 'publication', 450, 564 ); 
-add_image_size( 'publication-small', 200, 250, true ); 
-set_post_thumbnail_size( 150, 190, true );  
+add_image_size( 'publication', 450, 564 );
+add_image_size( 'publication-small', 200, 250, true );
+set_post_thumbnail_size( 150, 190, true );
 
 
 //* Modify the length of post excerpts
@@ -42,7 +42,7 @@ function amgov_pubs_excerpt_length( $length ) {
 	return 30; // pull first 50 words
 }
 
-//* Remove archive pages from search results 
+//* Remove archive pages from search results
 add_action('pre_get_posts','amgov_pubs_search_filter');
 function amgov_pubs_search_filter($query) {
   if ( !is_admin() && $query->is_main_query() ) {
@@ -56,24 +56,30 @@ function amgov_pubs_search_filter($query) {
 // make additional file types available for upload
 add_filter('upload_mimes', 'amgov_pubs_upload_mimes');
 function amgov_pubs_upload_mimes( $mime_types ) {
-    $mime_types['epub'] = 'application/epub+zip'; 
-    $mime_types['mobi'] = 'application/x-mobipocket-ebook'; 
-    
+    $mime_types['epub'] = 'application/epub+zip';
+    $mime_types['mobi'] = 'application/x-mobipocket-ebook';
+
     return $mime_types;
 }
 
 
 //* Add Google Tag Manager
-add_action('genesis_before', 'amgov_pubs_gtm');
-function amgov_pubs_gtm() {
+add_action('wp_head', 'amgov_pubs_gtm_head');
+function amgov_pubs_gtm_head() {
+	$html = '<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
+	new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
+	"//www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,"script","dataLayer","GTM-T2866D");</script>
+	<!-- End Google Tag Manager -->';
+	  echo $html;
+}
+add_action('genesis_before', 'amgov_pubs_gtm_body');
+function amgov_pubs_gtm_body() {
   $html = '<!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-T2866D"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
-new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
-"//www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,"script","dataLayer","GTM-T2866D");</script>
 <!-- End Google Tag Manager -->';
   echo $html;
 }
