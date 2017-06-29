@@ -95,7 +95,7 @@ add_action( 'genesis_footer', 'amgov_pubs_custom_footer' );
 function amgov_pubs_custom_footer() {
   ?>
 
-  <p class="site-footer footer-contact">Comments? Suggestions?  <a href="mailto:iippublications@america.gov">Contact Us</a></div>
+  <p class="site-footer footer-contact">Comments? Suggestions?  <a href="mailto:iip_graphics@america.gov">Contact Us</a></div>
 
   <p class="site-footer-legal">This site is managed by the <a href="http://www.state.gov/r/iip" target="_blank">Bureau of International Information Programs</a> within the  <a href="http://www.state.gov" target="_blank">U.S. Department of State</a>. External links to other Internet sites should not be construed as an endorsement of the views or privacy policies contained therein.</p>
   <?php
