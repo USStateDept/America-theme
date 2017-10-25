@@ -45,3 +45,18 @@ function interactive_remove_protected( $text ){
   $text = '%s';
   return $text;
 }
+
+// Add Google Analytics
+add_action('wp_head', 'insert_interactive_analytics');
+function insert_interactive_analytics() {
+	?> <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-22995010-75"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-22995010-75');
+	</script>
+	<?php
+}
