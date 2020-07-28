@@ -2,11 +2,11 @@
 
 /**
  * Initialize the America_Theme_Extender class if it is not already loaded
- * sending in both a path to the direcotry on filesystem where assets are
+ * sending in both a path to the directory on filesystem where assets are
  * located and url to assets. The params are set to reasonable defaults
  * and can be changed if necessary.
  *
- * @param  string $path default path to granchild assets (i.e. sites/publications)
+ * @param  string $path default path to grandchild assets (i.e. sites/publications)
  */
 function initialize_site( $path ) {
 
@@ -95,8 +95,8 @@ add_action( 'genesis_footer', 'amgov_pubs_custom_footer' );
 function amgov_pubs_custom_footer() {
   ?>
 
-  <p class="site-footer footer-contact">Comments? Suggestions?  <a href="mailto:iip_graphics@america.gov">Contact Us</a></div>
+  <p class="site-footer footer-contact">Comments? Suggestions?  <a href="mailto:gpa_graphics@america.gov">Contact Us</a></div>
 
-  <p class="site-footer-legal">This site is managed by the <a href="http://www.state.gov/r/iip" target="_blank">Bureau of International Information Programs</a> within the  <a href="http://www.state.gov" target="_blank">U.S. Department of State</a>. External links to other Internet sites should not be construed as an endorsement of the views or privacy policies contained therein.</p>
+  <p class="site-footer-legal">This site is managed by the <a href="https://www.state.gov/bureaus-offices/under-secretary-for-public-diplomacy-and-public-affairs/bureau-of-global-public-affairs/" target="_blank">Bureau of Global Public Affairs</a> within the  <a href="http://www.state.gov" target="_blank">U.S. Department of State</a>. External links to other Internet sites should not be construed as an endorsement of the views or privacy policies contained therein.</p>
   <?php
 }
